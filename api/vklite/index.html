@@ -1,0 +1,2643 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-performance interactive scientific data visualization library">
+      
+      
+      
+        <meta name="author" content="Cyrille Rossant">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>vklite API - Datoviz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vklite-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Datoviz Documentation" class="md-header-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Datoviz Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              vklite API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../howto/" class="md-tabs__link">
+        How to guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        C API reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../discussions/" class="md-tabs__link">
+        Discussions
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    Datoviz Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/install/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/quickstart/" class="md-nav__link">
+        Simple test with Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/signals/" class="md-nav__link">
+        Digital signals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/image/" class="md-nav__link">
+        Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/france/" class="md-nav__link">
+        France departements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/raster/" class="md-nav__link">
+        Raster plot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/molecule/" class="md-nav__link">
+        Molecule 3D mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain/" class="md-nav__link">
+        3D brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain_highres/" class="md-nav__link">
+        3D high-res brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/twopanels/" class="md-nav__link">
+        Two panels
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        How to guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to guides" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          How to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_scene/" class="md-nav__link">
+        How to write a standalone C app
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/visual/" class="md-nav__link">
+        How to write a custom visual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/graphics/" class="md-nav__link">
+        How to write a custom graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_canvas/" class="md-nav__link">
+        How to use the canvas C API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_vklite/" class="md-nav__link">
+        How to use the vklite C API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" data-md-state="indeterminate" type="checkbox" id="nav-5" checked>
+      
+      <label class="md-nav__link" for="nav-5">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/visuals/" class="md-nav__link">
+        List of visuals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/graphics/" class="md-nav__link">
+        List of graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/colormaps/" class="md-nav__link">
+        List of colormaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/controllers/" class="md-nav__link">
+        List of controllers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      
+      <label class="md-nav__link" for="nav-6">
+        C API reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C API reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          C API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene/" class="md-nav__link">
+        Scene API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visual/" class="md-nav__link">
+        Visual API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        Controller API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/" class="md-nav__link">
+        GUI API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        Canvas API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpu/" class="md-nav__link">
+        GPU API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vklite API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        vklite API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    GPU
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu" class="md-nav__link">
+    dvz_gpu()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu_request_features" class="md-nav__link">
+    dvz_gpu_request_features()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu_queue" class="md-nav__link">
+    dvz_gpu_queue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu_create" class="md-nav__link">
+    dvz_gpu_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu_destroy" class="md-nav__link">
+    dvz_gpu_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coarse-synchronization" class="md-nav__link">
+    Coarse synchronization
+  </a>
+  
+    <nav class="md-nav" aria-label="Coarse synchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_queue_wait" class="md-nav__link">
+    dvz_queue_wait()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_app_wait" class="md-nav__link">
+    dvz_app_wait()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_gpu_wait" class="md-nav__link">
+    dvz_gpu_wait()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#window" class="md-nav__link">
+    Window
+  </a>
+  
+    <nav class="md-nav" aria-label="Window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_window" class="md-nav__link">
+    dvz_window()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_window_get_size" class="md-nav__link">
+    dvz_window_get_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_window_poll_events" class="md-nav__link">
+    dvz_window_poll_events()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_window_destroy" class="md-nav__link">
+    dvz_window_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swapchain" class="md-nav__link">
+    Swapchain
+  </a>
+  
+    <nav class="md-nav" aria-label="Swapchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain" class="md-nav__link">
+    dvz_swapchain()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_format" class="md-nav__link">
+    dvz_swapchain_format()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_present_mode" class="md-nav__link">
+    dvz_swapchain_present_mode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_requested_size" class="md-nav__link">
+    dvz_swapchain_requested_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_create" class="md-nav__link">
+    dvz_swapchain_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_recreate" class="md-nav__link">
+    dvz_swapchain_recreate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_acquire" class="md-nav__link">
+    dvz_swapchain_acquire()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_present" class="md-nav__link">
+    dvz_swapchain_present()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_swapchain_destroy" class="md-nav__link">
+    dvz_swapchain_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-buffers" class="md-nav__link">
+    Command buffers
+  </a>
+  
+    <nav class="md-nav" aria-label="Command buffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_commands" class="md-nav__link">
+    dvz_commands()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_begin" class="md-nav__link">
+    dvz_cmd_begin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_end" class="md-nav__link">
+    dvz_cmd_end()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_reset" class="md-nav__link">
+    dvz_cmd_reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_free" class="md-nav__link">
+    dvz_cmd_free()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_submit_sync" class="md-nav__link">
+    dvz_cmd_submit_sync()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_commands_destroy" class="md-nav__link">
+    dvz_commands_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-buffer" class="md-nav__link">
+    GPU buffer
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU buffer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer" class="md-nav__link">
+    dvz_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_size" class="md-nav__link">
+    dvz_buffer_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_type" class="md-nav__link">
+    dvz_buffer_type()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_usage" class="md-nav__link">
+    dvz_buffer_usage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_memory" class="md-nav__link">
+    dvz_buffer_memory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_queue_access" class="md-nav__link">
+    dvz_buffer_queue_access()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_create" class="md-nav__link">
+    dvz_buffer_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_resize" class="md-nav__link">
+    dvz_buffer_resize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_map" class="md-nav__link">
+    dvz_buffer_map()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_unmap" class="md-nav__link">
+    dvz_buffer_unmap()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_download" class="md-nav__link">
+    dvz_buffer_download()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_upload" class="md-nav__link">
+    dvz_buffer_upload()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_destroy" class="md-nav__link">
+    dvz_buffer_destroy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_regions" class="md-nav__link">
+    dvz_buffer_regions()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_regions_map" class="md-nav__link">
+    dvz_buffer_regions_map()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_regions_unmap" class="md-nav__link">
+    dvz_buffer_regions_unmap()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_buffer_regions_upload" class="md-nav__link">
+    dvz_buffer_regions_upload()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-images" class="md-nav__link">
+    GPU images
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images" class="md-nav__link">
+    dvz_images()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_format" class="md-nav__link">
+    dvz_images_format()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_layout" class="md-nav__link">
+    dvz_images_layout()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_size" class="md-nav__link">
+    dvz_images_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_tiling" class="md-nav__link">
+    dvz_images_tiling()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_usage" class="md-nav__link">
+    dvz_images_usage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_memory" class="md-nav__link">
+    dvz_images_memory()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_aspect" class="md-nav__link">
+    dvz_images_aspect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_queue_access" class="md-nav__link">
+    dvz_images_queue_access()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_create" class="md-nav__link">
+    dvz_images_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_resize" class="md-nav__link">
+    dvz_images_resize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_transition" class="md-nav__link">
+    dvz_images_transition()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_download" class="md-nav__link">
+    dvz_images_download()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_images_destroy" class="md-nav__link">
+    dvz_images_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampler" class="md-nav__link">
+    Sampler
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler" class="md-nav__link">
+    dvz_sampler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler_min_filter" class="md-nav__link">
+    dvz_sampler_min_filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler_mag_filter" class="md-nav__link">
+    dvz_sampler_mag_filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler_address_mode" class="md-nav__link">
+    dvz_sampler_address_mode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler_create" class="md-nav__link">
+    dvz_sampler_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sampler_destroy" class="md-nav__link">
+    dvz_sampler_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-slots" class="md-nav__link">
+    Pipeline slots
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_slots" class="md-nav__link">
+    dvz_slots()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_slots_binding" class="md-nav__link">
+    dvz_slots_binding()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_slots_push" class="md-nav__link">
+    dvz_slots_push()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_slots_create" class="md-nav__link">
+    dvz_slots_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_slots_destroy" class="md-nav__link">
+    dvz_slots_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-bindings" class="md-nav__link">
+    Pipeline bindings
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_bindings" class="md-nav__link">
+    dvz_bindings()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_bindings_buffer" class="md-nav__link">
+    dvz_bindings_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_bindings_texture" class="md-nav__link">
+    dvz_bindings_texture()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_bindings_update" class="md-nav__link">
+    dvz_bindings_update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_bindings_destroy" class="md-nav__link">
+    dvz_bindings_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-pipeline" class="md-nav__link">
+    Graphics pipeline
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphics pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics" class="md-nav__link">
+    dvz_graphics()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_renderpass" class="md-nav__link">
+    dvz_graphics_renderpass()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_topology" class="md-nav__link">
+    dvz_graphics_topology()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_shader_glsl" class="md-nav__link">
+    dvz_graphics_shader_glsl()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_shader_spirv" class="md-nav__link">
+    dvz_graphics_shader_spirv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_shader" class="md-nav__link">
+    dvz_graphics_shader()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_vertex_binding" class="md-nav__link">
+    dvz_graphics_vertex_binding()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_vertex_attr" class="md-nav__link">
+    dvz_graphics_vertex_attr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_blend" class="md-nav__link">
+    dvz_graphics_blend()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_depth_test" class="md-nav__link">
+    dvz_graphics_depth_test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_polygon_mode" class="md-nav__link">
+    dvz_graphics_polygon_mode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_cull_mode" class="md-nav__link">
+    dvz_graphics_cull_mode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_front_face" class="md-nav__link">
+    dvz_graphics_front_face()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_create" class="md-nav__link">
+    dvz_graphics_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_slot" class="md-nav__link">
+    dvz_graphics_slot()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_push" class="md-nav__link">
+    dvz_graphics_push()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_graphics_destroy" class="md-nav__link">
+    dvz_graphics_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compute-pipeline" class="md-nav__link">
+    Compute pipeline
+  </a>
+  
+    <nav class="md-nav" aria-label="Compute pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute" class="md-nav__link">
+    dvz_compute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_create" class="md-nav__link">
+    dvz_compute_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_code" class="md-nav__link">
+    dvz_compute_code()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_slot" class="md-nav__link">
+    dvz_compute_slot()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_push" class="md-nav__link">
+    dvz_compute_push()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_bindings" class="md-nav__link">
+    dvz_compute_bindings()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_compute_destroy" class="md-nav__link">
+    dvz_compute_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#barrier" class="md-nav__link">
+    Barrier
+  </a>
+  
+    <nav class="md-nav" aria-label="Barrier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier" class="md-nav__link">
+    dvz_barrier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_stages" class="md-nav__link">
+    dvz_barrier_stages()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_buffer" class="md-nav__link">
+    dvz_barrier_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_buffer_queue" class="md-nav__link">
+    dvz_barrier_buffer_queue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_buffer_access" class="md-nav__link">
+    dvz_barrier_buffer_access()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_images" class="md-nav__link">
+    dvz_barrier_images()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_images_layout" class="md-nav__link">
+    dvz_barrier_images_layout()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_images_queue" class="md-nav__link">
+    dvz_barrier_images_queue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_barrier_images_access" class="md-nav__link">
+    dvz_barrier_images_access()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semaphores" class="md-nav__link">
+    Semaphores
+  </a>
+  
+    <nav class="md-nav" aria-label="Semaphores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_semaphores" class="md-nav__link">
+    dvz_semaphores()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_semaphores_destroy" class="md-nav__link">
+    dvz_semaphores_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fences" class="md-nav__link">
+    Fences
+  </a>
+  
+    <nav class="md-nav" aria-label="Fences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences" class="md-nav__link">
+    dvz_fences()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences_copy" class="md-nav__link">
+    dvz_fences_copy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences_wait" class="md-nav__link">
+    dvz_fences_wait()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences_ready" class="md-nav__link">
+    dvz_fences_ready()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences_reset" class="md-nav__link">
+    dvz_fences_reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fences_destroy" class="md-nav__link">
+    dvz_fences_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renderpass" class="md-nav__link">
+    Renderpass
+  </a>
+  
+    <nav class="md-nav" aria-label="Renderpass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass" class="md-nav__link">
+    dvz_renderpass()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_clear" class="md-nav__link">
+    dvz_renderpass_clear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_attachment" class="md-nav__link">
+    dvz_renderpass_attachment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_attachment_layout" class="md-nav__link">
+    dvz_renderpass_attachment_layout()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_attachment_ops" class="md-nav__link">
+    dvz_renderpass_attachment_ops()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_subpass_attachment" class="md-nav__link">
+    dvz_renderpass_subpass_attachment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_subpass_dependency" class="md-nav__link">
+    dvz_renderpass_subpass_dependency()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_subpass_dependency_access" class="md-nav__link">
+    dvz_renderpass_subpass_dependency_access()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_subpass_dependency_stage" class="md-nav__link">
+    dvz_renderpass_subpass_dependency_stage()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_create" class="md-nav__link">
+    dvz_renderpass_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_renderpass_destroy" class="md-nav__link">
+    dvz_renderpass_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framebuffers" class="md-nav__link">
+    Framebuffers
+  </a>
+  
+    <nav class="md-nav" aria-label="Framebuffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_framebuffers" class="md-nav__link">
+    dvz_framebuffers()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_framebuffers_attachment" class="md-nav__link">
+    dvz_framebuffers_attachment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_framebuffers_create" class="md-nav__link">
+    dvz_framebuffers_create()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_framebuffers_destroy" class="md-nav__link">
+    dvz_framebuffers_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit" class="md-nav__link">
+    Submit
+  </a>
+  
+    <nav class="md-nav" aria-label="Submit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit" class="md-nav__link">
+    dvz_submit()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit_commands" class="md-nav__link">
+    dvz_submit_commands()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit_wait_semaphores" class="md-nav__link">
+    dvz_submit_wait_semaphores()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit_signal_semaphores" class="md-nav__link">
+    dvz_submit_signal_semaphores()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit_send" class="md-nav__link">
+    dvz_submit_send()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_submit_reset" class="md-nav__link">
+    dvz_submit_reset()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-buffer-recording" class="md-nav__link">
+    Command buffer recording
+  </a>
+  
+    <nav class="md-nav" aria-label="Command buffer recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_begin_renderpass" class="md-nav__link">
+    dvz_cmd_begin_renderpass()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_end_renderpass" class="md-nav__link">
+    dvz_cmd_end_renderpass()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_compute" class="md-nav__link">
+    dvz_cmd_compute()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_barrier" class="md-nav__link">
+    dvz_cmd_barrier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_copy_buffer_to_image" class="md-nav__link">
+    dvz_cmd_copy_buffer_to_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_copy_image_to_buffer" class="md-nav__link">
+    dvz_cmd_copy_image_to_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_copy_image" class="md-nav__link">
+    dvz_cmd_copy_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_viewport" class="md-nav__link">
+    dvz_cmd_viewport()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_bind_graphics" class="md-nav__link">
+    dvz_cmd_bind_graphics()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_bind_vertex_buffer" class="md-nav__link">
+    dvz_cmd_bind_vertex_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_bind_index_buffer" class="md-nav__link">
+    dvz_cmd_bind_index_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_draw" class="md-nav__link">
+    dvz_cmd_draw()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_draw_indexed" class="md-nav__link">
+    dvz_cmd_draw_indexed()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_draw_indirect" class="md-nav__link">
+    dvz_cmd_draw_indirect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_draw_indexed_indirect" class="md-nav__link">
+    dvz_cmd_draw_indexed_indirect()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_copy_buffer" class="md-nav__link">
+    dvz_cmd_copy_buffer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_cmd_push" class="md-nav__link">
+    dvz_cmd_push()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc/" class="md-nav__link">
+        Misc API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enums/" class="md-nav__link">
+        Enumerations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        Discussions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Discussions" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Discussions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/vulkan/" class="md-nav__link">
+        Vulkan crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/architecture/" class="md-nav__link">
+        Library architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/developer/" class="md-nav__link">
+        Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datoviz/datoviz/edit/master/docs/api/vklite.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="vklite-api">vklite API<a class="headerlink" href="#vklite-api" title="Permanent link">&para;</a></h1>
+<h2 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_gpu"><code>dvz_gpu()</code><a class="headerlink" href="#dvz_gpu" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_gpu_request_features"><code>dvz_gpu_request_features()</code><a class="headerlink" href="#dvz_gpu_request_features" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_gpu_queue"><code>dvz_gpu_queue()</code><a class="headerlink" href="#dvz_gpu_queue" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_gpu_create"><code>dvz_gpu_create()</code><a class="headerlink" href="#dvz_gpu_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_gpu_destroy"><code>dvz_gpu_destroy()</code><a class="headerlink" href="#dvz_gpu_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="coarse-synchronization">Coarse synchronization<a class="headerlink" href="#coarse-synchronization" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_queue_wait"><code>dvz_queue_wait()</code><a class="headerlink" href="#dvz_queue_wait" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_app_wait"><code>dvz_app_wait()</code><a class="headerlink" href="#dvz_app_wait" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_gpu_wait"><code>dvz_gpu_wait()</code><a class="headerlink" href="#dvz_gpu_wait" title="Permanent link">&para;</a></h3>
+<h2 id="window">Window<a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_window"><code>dvz_window()</code><a class="headerlink" href="#dvz_window" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_window_get_size"><code>dvz_window_get_size()</code><a class="headerlink" href="#dvz_window_get_size" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_window_poll_events"><code>dvz_window_poll_events()</code><a class="headerlink" href="#dvz_window_poll_events" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_window_destroy"><code>dvz_window_destroy()</code><a class="headerlink" href="#dvz_window_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="swapchain">Swapchain<a class="headerlink" href="#swapchain" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_swapchain"><code>dvz_swapchain()</code><a class="headerlink" href="#dvz_swapchain" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_format"><code>dvz_swapchain_format()</code><a class="headerlink" href="#dvz_swapchain_format" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_present_mode"><code>dvz_swapchain_present_mode()</code><a class="headerlink" href="#dvz_swapchain_present_mode" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_requested_size"><code>dvz_swapchain_requested_size()</code><a class="headerlink" href="#dvz_swapchain_requested_size" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_create"><code>dvz_swapchain_create()</code><a class="headerlink" href="#dvz_swapchain_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_recreate"><code>dvz_swapchain_recreate()</code><a class="headerlink" href="#dvz_swapchain_recreate" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_acquire"><code>dvz_swapchain_acquire()</code><a class="headerlink" href="#dvz_swapchain_acquire" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_present"><code>dvz_swapchain_present()</code><a class="headerlink" href="#dvz_swapchain_present" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_swapchain_destroy"><code>dvz_swapchain_destroy()</code><a class="headerlink" href="#dvz_swapchain_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="command-buffers">Command buffers<a class="headerlink" href="#command-buffers" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_commands"><code>dvz_commands()</code><a class="headerlink" href="#dvz_commands" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_begin"><code>dvz_cmd_begin()</code><a class="headerlink" href="#dvz_cmd_begin" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_end"><code>dvz_cmd_end()</code><a class="headerlink" href="#dvz_cmd_end" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_reset"><code>dvz_cmd_reset()</code><a class="headerlink" href="#dvz_cmd_reset" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_free"><code>dvz_cmd_free()</code><a class="headerlink" href="#dvz_cmd_free" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_submit_sync"><code>dvz_cmd_submit_sync()</code><a class="headerlink" href="#dvz_cmd_submit_sync" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_commands_destroy"><code>dvz_commands_destroy()</code><a class="headerlink" href="#dvz_commands_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="gpu-buffer">GPU buffer<a class="headerlink" href="#gpu-buffer" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_buffer"><code>dvz_buffer()</code><a class="headerlink" href="#dvz_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_size"><code>dvz_buffer_size()</code><a class="headerlink" href="#dvz_buffer_size" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_type"><code>dvz_buffer_type()</code><a class="headerlink" href="#dvz_buffer_type" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_usage"><code>dvz_buffer_usage()</code><a class="headerlink" href="#dvz_buffer_usage" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_memory"><code>dvz_buffer_memory()</code><a class="headerlink" href="#dvz_buffer_memory" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_queue_access"><code>dvz_buffer_queue_access()</code><a class="headerlink" href="#dvz_buffer_queue_access" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_create"><code>dvz_buffer_create()</code><a class="headerlink" href="#dvz_buffer_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_resize"><code>dvz_buffer_resize()</code><a class="headerlink" href="#dvz_buffer_resize" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_map"><code>dvz_buffer_map()</code><a class="headerlink" href="#dvz_buffer_map" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_unmap"><code>dvz_buffer_unmap()</code><a class="headerlink" href="#dvz_buffer_unmap" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_download"><code>dvz_buffer_download()</code><a class="headerlink" href="#dvz_buffer_download" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_upload"><code>dvz_buffer_upload()</code><a class="headerlink" href="#dvz_buffer_upload" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_destroy"><code>dvz_buffer_destroy()</code><a class="headerlink" href="#dvz_buffer_destroy" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_regions"><code>dvz_buffer_regions()</code><a class="headerlink" href="#dvz_buffer_regions" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_regions_map"><code>dvz_buffer_regions_map()</code><a class="headerlink" href="#dvz_buffer_regions_map" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_regions_unmap"><code>dvz_buffer_regions_unmap()</code><a class="headerlink" href="#dvz_buffer_regions_unmap" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_buffer_regions_upload"><code>dvz_buffer_regions_upload()</code><a class="headerlink" href="#dvz_buffer_regions_upload" title="Permanent link">&para;</a></h3>
+<h2 id="gpu-images">GPU images<a class="headerlink" href="#gpu-images" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_images"><code>dvz_images()</code><a class="headerlink" href="#dvz_images" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_format"><code>dvz_images_format()</code><a class="headerlink" href="#dvz_images_format" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_layout"><code>dvz_images_layout()</code><a class="headerlink" href="#dvz_images_layout" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_size"><code>dvz_images_size()</code><a class="headerlink" href="#dvz_images_size" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_tiling"><code>dvz_images_tiling()</code><a class="headerlink" href="#dvz_images_tiling" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_usage"><code>dvz_images_usage()</code><a class="headerlink" href="#dvz_images_usage" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_memory"><code>dvz_images_memory()</code><a class="headerlink" href="#dvz_images_memory" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_aspect"><code>dvz_images_aspect()</code><a class="headerlink" href="#dvz_images_aspect" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_queue_access"><code>dvz_images_queue_access()</code><a class="headerlink" href="#dvz_images_queue_access" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_create"><code>dvz_images_create()</code><a class="headerlink" href="#dvz_images_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_resize"><code>dvz_images_resize()</code><a class="headerlink" href="#dvz_images_resize" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_transition"><code>dvz_images_transition()</code><a class="headerlink" href="#dvz_images_transition" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_download"><code>dvz_images_download()</code><a class="headerlink" href="#dvz_images_download" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_images_destroy"><code>dvz_images_destroy()</code><a class="headerlink" href="#dvz_images_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="sampler">Sampler<a class="headerlink" href="#sampler" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_sampler"><code>dvz_sampler()</code><a class="headerlink" href="#dvz_sampler" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_sampler_min_filter"><code>dvz_sampler_min_filter()</code><a class="headerlink" href="#dvz_sampler_min_filter" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_sampler_mag_filter"><code>dvz_sampler_mag_filter()</code><a class="headerlink" href="#dvz_sampler_mag_filter" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_sampler_address_mode"><code>dvz_sampler_address_mode()</code><a class="headerlink" href="#dvz_sampler_address_mode" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_sampler_create"><code>dvz_sampler_create()</code><a class="headerlink" href="#dvz_sampler_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_sampler_destroy"><code>dvz_sampler_destroy()</code><a class="headerlink" href="#dvz_sampler_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="pipeline-slots">Pipeline slots<a class="headerlink" href="#pipeline-slots" title="Permanent link">&para;</a></h2>
+<p>Vulkan terminology: descriptor set layout.</p>
+<h3 id="dvz_slots"><code>dvz_slots()</code><a class="headerlink" href="#dvz_slots" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_slots_binding"><code>dvz_slots_binding()</code><a class="headerlink" href="#dvz_slots_binding" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_slots_push"><code>dvz_slots_push()</code><a class="headerlink" href="#dvz_slots_push" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_slots_create"><code>dvz_slots_create()</code><a class="headerlink" href="#dvz_slots_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_slots_destroy"><code>dvz_slots_destroy()</code><a class="headerlink" href="#dvz_slots_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="pipeline-bindings">Pipeline bindings<a class="headerlink" href="#pipeline-bindings" title="Permanent link">&para;</a></h2>
+<p>Vulkan terminology: descriptor sets</p>
+<h3 id="dvz_bindings"><code>dvz_bindings()</code><a class="headerlink" href="#dvz_bindings" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_bindings_buffer"><code>dvz_bindings_buffer()</code><a class="headerlink" href="#dvz_bindings_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_bindings_texture"><code>dvz_bindings_texture()</code><a class="headerlink" href="#dvz_bindings_texture" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_bindings_update"><code>dvz_bindings_update()</code><a class="headerlink" href="#dvz_bindings_update" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_bindings_destroy"><code>dvz_bindings_destroy()</code><a class="headerlink" href="#dvz_bindings_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="graphics-pipeline">Graphics pipeline<a class="headerlink" href="#graphics-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_graphics"><code>dvz_graphics()</code><a class="headerlink" href="#dvz_graphics" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_renderpass"><code>dvz_graphics_renderpass()</code><a class="headerlink" href="#dvz_graphics_renderpass" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_topology"><code>dvz_graphics_topology()</code><a class="headerlink" href="#dvz_graphics_topology" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_shader_glsl"><code>dvz_graphics_shader_glsl()</code><a class="headerlink" href="#dvz_graphics_shader_glsl" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_shader_spirv"><code>dvz_graphics_shader_spirv()</code><a class="headerlink" href="#dvz_graphics_shader_spirv" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_shader"><code>dvz_graphics_shader()</code><a class="headerlink" href="#dvz_graphics_shader" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_vertex_binding"><code>dvz_graphics_vertex_binding()</code><a class="headerlink" href="#dvz_graphics_vertex_binding" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_vertex_attr"><code>dvz_graphics_vertex_attr()</code><a class="headerlink" href="#dvz_graphics_vertex_attr" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_blend"><code>dvz_graphics_blend()</code><a class="headerlink" href="#dvz_graphics_blend" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_depth_test"><code>dvz_graphics_depth_test()</code><a class="headerlink" href="#dvz_graphics_depth_test" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_polygon_mode"><code>dvz_graphics_polygon_mode()</code><a class="headerlink" href="#dvz_graphics_polygon_mode" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_cull_mode"><code>dvz_graphics_cull_mode()</code><a class="headerlink" href="#dvz_graphics_cull_mode" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_front_face"><code>dvz_graphics_front_face()</code><a class="headerlink" href="#dvz_graphics_front_face" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_create"><code>dvz_graphics_create()</code><a class="headerlink" href="#dvz_graphics_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_slot"><code>dvz_graphics_slot()</code><a class="headerlink" href="#dvz_graphics_slot" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_push"><code>dvz_graphics_push()</code><a class="headerlink" href="#dvz_graphics_push" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_graphics_destroy"><code>dvz_graphics_destroy()</code><a class="headerlink" href="#dvz_graphics_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="compute-pipeline">Compute pipeline<a class="headerlink" href="#compute-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_compute"><code>dvz_compute()</code><a class="headerlink" href="#dvz_compute" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_create"><code>dvz_compute_create()</code><a class="headerlink" href="#dvz_compute_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_code"><code>dvz_compute_code()</code><a class="headerlink" href="#dvz_compute_code" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_slot"><code>dvz_compute_slot()</code><a class="headerlink" href="#dvz_compute_slot" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_push"><code>dvz_compute_push()</code><a class="headerlink" href="#dvz_compute_push" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_bindings"><code>dvz_compute_bindings()</code><a class="headerlink" href="#dvz_compute_bindings" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_compute_destroy"><code>dvz_compute_destroy()</code><a class="headerlink" href="#dvz_compute_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="barrier">Barrier<a class="headerlink" href="#barrier" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_barrier"><code>dvz_barrier()</code><a class="headerlink" href="#dvz_barrier" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_stages"><code>dvz_barrier_stages()</code><a class="headerlink" href="#dvz_barrier_stages" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_buffer"><code>dvz_barrier_buffer()</code><a class="headerlink" href="#dvz_barrier_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_buffer_queue"><code>dvz_barrier_buffer_queue()</code><a class="headerlink" href="#dvz_barrier_buffer_queue" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_buffer_access"><code>dvz_barrier_buffer_access()</code><a class="headerlink" href="#dvz_barrier_buffer_access" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_images"><code>dvz_barrier_images()</code><a class="headerlink" href="#dvz_barrier_images" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_images_layout"><code>dvz_barrier_images_layout()</code><a class="headerlink" href="#dvz_barrier_images_layout" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_images_queue"><code>dvz_barrier_images_queue()</code><a class="headerlink" href="#dvz_barrier_images_queue" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_barrier_images_access"><code>dvz_barrier_images_access()</code><a class="headerlink" href="#dvz_barrier_images_access" title="Permanent link">&para;</a></h3>
+<h2 id="semaphores">Semaphores<a class="headerlink" href="#semaphores" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_semaphores"><code>dvz_semaphores()</code><a class="headerlink" href="#dvz_semaphores" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_semaphores_destroy"><code>dvz_semaphores_destroy()</code><a class="headerlink" href="#dvz_semaphores_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="fences">Fences<a class="headerlink" href="#fences" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_fences"><code>dvz_fences()</code><a class="headerlink" href="#dvz_fences" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fences_copy"><code>dvz_fences_copy()</code><a class="headerlink" href="#dvz_fences_copy" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fences_wait"><code>dvz_fences_wait()</code><a class="headerlink" href="#dvz_fences_wait" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fences_ready"><code>dvz_fences_ready()</code><a class="headerlink" href="#dvz_fences_ready" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fences_reset"><code>dvz_fences_reset()</code><a class="headerlink" href="#dvz_fences_reset" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fences_destroy"><code>dvz_fences_destroy()</code><a class="headerlink" href="#dvz_fences_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="renderpass">Renderpass<a class="headerlink" href="#renderpass" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_renderpass"><code>dvz_renderpass()</code><a class="headerlink" href="#dvz_renderpass" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_clear"><code>dvz_renderpass_clear()</code><a class="headerlink" href="#dvz_renderpass_clear" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_attachment"><code>dvz_renderpass_attachment()</code><a class="headerlink" href="#dvz_renderpass_attachment" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_attachment_layout"><code>dvz_renderpass_attachment_layout()</code><a class="headerlink" href="#dvz_renderpass_attachment_layout" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_attachment_ops"><code>dvz_renderpass_attachment_ops()</code><a class="headerlink" href="#dvz_renderpass_attachment_ops" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_subpass_attachment"><code>dvz_renderpass_subpass_attachment()</code><a class="headerlink" href="#dvz_renderpass_subpass_attachment" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_subpass_dependency"><code>dvz_renderpass_subpass_dependency()</code><a class="headerlink" href="#dvz_renderpass_subpass_dependency" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_subpass_dependency_access"><code>dvz_renderpass_subpass_dependency_access()</code><a class="headerlink" href="#dvz_renderpass_subpass_dependency_access" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_subpass_dependency_stage"><code>dvz_renderpass_subpass_dependency_stage()</code><a class="headerlink" href="#dvz_renderpass_subpass_dependency_stage" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_create"><code>dvz_renderpass_create()</code><a class="headerlink" href="#dvz_renderpass_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_renderpass_destroy"><code>dvz_renderpass_destroy()</code><a class="headerlink" href="#dvz_renderpass_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="framebuffers">Framebuffers<a class="headerlink" href="#framebuffers" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_framebuffers"><code>dvz_framebuffers()</code><a class="headerlink" href="#dvz_framebuffers" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_framebuffers_attachment"><code>dvz_framebuffers_attachment()</code><a class="headerlink" href="#dvz_framebuffers_attachment" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_framebuffers_create"><code>dvz_framebuffers_create()</code><a class="headerlink" href="#dvz_framebuffers_create" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_framebuffers_destroy"><code>dvz_framebuffers_destroy()</code><a class="headerlink" href="#dvz_framebuffers_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="submit">Submit<a class="headerlink" href="#submit" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_submit"><code>dvz_submit()</code><a class="headerlink" href="#dvz_submit" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_submit_commands"><code>dvz_submit_commands()</code><a class="headerlink" href="#dvz_submit_commands" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_submit_wait_semaphores"><code>dvz_submit_wait_semaphores()</code><a class="headerlink" href="#dvz_submit_wait_semaphores" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_submit_signal_semaphores"><code>dvz_submit_signal_semaphores()</code><a class="headerlink" href="#dvz_submit_signal_semaphores" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_submit_send"><code>dvz_submit_send()</code><a class="headerlink" href="#dvz_submit_send" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_submit_reset"><code>dvz_submit_reset()</code><a class="headerlink" href="#dvz_submit_reset" title="Permanent link">&para;</a></h3>
+<h2 id="command-buffer-recording">Command buffer recording<a class="headerlink" href="#command-buffer-recording" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_cmd_begin_renderpass"><code>dvz_cmd_begin_renderpass()</code><a class="headerlink" href="#dvz_cmd_begin_renderpass" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_end_renderpass"><code>dvz_cmd_end_renderpass()</code><a class="headerlink" href="#dvz_cmd_end_renderpass" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_compute"><code>dvz_cmd_compute()</code><a class="headerlink" href="#dvz_cmd_compute" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_barrier"><code>dvz_cmd_barrier()</code><a class="headerlink" href="#dvz_cmd_barrier" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_copy_buffer_to_image"><code>dvz_cmd_copy_buffer_to_image()</code><a class="headerlink" href="#dvz_cmd_copy_buffer_to_image" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_copy_image_to_buffer"><code>dvz_cmd_copy_image_to_buffer()</code><a class="headerlink" href="#dvz_cmd_copy_image_to_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_copy_image"><code>dvz_cmd_copy_image()</code><a class="headerlink" href="#dvz_cmd_copy_image" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_viewport"><code>dvz_cmd_viewport()</code><a class="headerlink" href="#dvz_cmd_viewport" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_bind_graphics"><code>dvz_cmd_bind_graphics()</code><a class="headerlink" href="#dvz_cmd_bind_graphics" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_bind_vertex_buffer"><code>dvz_cmd_bind_vertex_buffer()</code><a class="headerlink" href="#dvz_cmd_bind_vertex_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_bind_index_buffer"><code>dvz_cmd_bind_index_buffer()</code><a class="headerlink" href="#dvz_cmd_bind_index_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_draw"><code>dvz_cmd_draw()</code><a class="headerlink" href="#dvz_cmd_draw" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_draw_indexed"><code>dvz_cmd_draw_indexed()</code><a class="headerlink" href="#dvz_cmd_draw_indexed" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_draw_indirect"><code>dvz_cmd_draw_indirect()</code><a class="headerlink" href="#dvz_cmd_draw_indirect" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_draw_indexed_indirect"><code>dvz_cmd_draw_indexed_indirect()</code><a class="headerlink" href="#dvz_cmd_draw_indexed_indirect" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_copy_buffer"><code>dvz_cmd_copy_buffer()</code><a class="headerlink" href="#dvz_cmd_copy_buffer" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_cmd_push"><code>dvz_cmd_push()</code><a class="headerlink" href="#dvz_cmd_push" title="Permanent link">&para;</a></h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../gpu/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                GPU API
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../misc/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Misc API
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.tabs.sticky', 'navigation.expand', 'toc.integrate'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

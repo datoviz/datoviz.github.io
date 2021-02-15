@@ -1,0 +1,2794 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-performance interactive scientific data visualization library">
+      
+      
+      
+        <meta name="author" content="Cyrille Rossant">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>List of visuals - Datoviz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visuals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Datoviz Documentation" class="md-header-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Datoviz Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              List of visuals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../howto/" class="md-tabs__link">
+        How to guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        C API reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../discussions/" class="md-tabs__link">
+        Discussions
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    Datoviz Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/install/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/quickstart/" class="md-nav__link">
+        Simple test with Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/signals/" class="md-nav__link">
+        Digital signals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/image/" class="md-nav__link">
+        Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/france/" class="md-nav__link">
+        France departements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/raster/" class="md-nav__link">
+        Raster plot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/molecule/" class="md-nav__link">
+        Molecule 3D mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain/" class="md-nav__link">
+        3D brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain_highres/" class="md-nav__link">
+        3D high-res brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/twopanels/" class="md-nav__link">
+        Two panels
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        How to guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to guides" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          How to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_scene/" class="md-nav__link">
+        How to write a standalone C app
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/visual/" class="md-nav__link">
+        How to write a custom visual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/graphics/" class="md-nav__link">
+        How to write a custom graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_canvas/" class="md-nav__link">
+        How to use the canvas C API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_vklite/" class="md-nav__link">
+        How to use the vklite C API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      
+      <label class="md-nav__link" for="nav-5">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          List of visuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        List of visuals
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-notes" class="md-nav__link">
+    Technical notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2d-visuals" class="md-nav__link">
+    2D visuals
+  </a>
+  
+    <nav class="md-nav" aria-label="2D visuals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marker" class="md-nav__link">
+    Marker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polygon" class="md-nav__link">
+    Polygon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-image-with-colormap" class="md-nav__link">
+    Scalar image with colormap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axes" class="md-nav__link">
+    Axes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3d-visuals" class="md-nav__link">
+    3D visuals
+  </a>
+  
+    <nav class="md-nav" aria-label="3D visuals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    Mesh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    Volume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-slice" class="md-nav__link">
+    Volume slice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-visuals" class="md-nav__link">
+    Basic visuals
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic visuals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point" class="md-nav__link">
+    Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    Line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-strip" class="md-nav__link">
+    Line strip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangle" class="md-nav__link">
+    Triangle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangle-strip" class="md-nav__link">
+    Triangle strip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangle-fan" class="md-nav__link">
+    Triangle fan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-data" class="md-nav__link">
+    Common data
+  </a>
+  
+    <nav class="md-nav" aria-label="Common data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-sources" class="md-nav__link">
+    Common sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-props" class="md-nav__link">
+    Common props
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-enums" class="md-nav__link">
+    Common enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Common enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-transform" class="md-nav__link">
+    Visual transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-clip" class="md-nav__link">
+    Visual clip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    Data types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/" class="md-nav__link">
+        List of graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colormaps/" class="md-nav__link">
+        List of colormaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controllers/" class="md-nav__link">
+        List of controllers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" data-md-state="indeterminate" type="checkbox" id="nav-6" checked>
+      
+      <label class="md-nav__link" for="nav-6">
+        C API reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C API reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          C API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/scene/" class="md-nav__link">
+        Scene API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/visual/" class="md-nav__link">
+        Visual API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/controller/" class="md-nav__link">
+        Controller API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/gui/" class="md-nav__link">
+        GUI API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/canvas/" class="md-nav__link">
+        Canvas API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/gpu/" class="md-nav__link">
+        GPU API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/vklite/" class="md-nav__link">
+        vklite API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/misc/" class="md-nav__link">
+        Misc API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/enums/" class="md-nav__link">
+        Enumerations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        Discussions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Discussions" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Discussions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/vulkan/" class="md-nav__link">
+        Vulkan crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/architecture/" class="md-nav__link">
+        Library architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/developer/" class="md-nav__link">
+        Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datoviz/datoviz/edit/master/docs/reference/visuals.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="visuals">Visuals<a class="headerlink" href="#visuals" title="Permanent link">&para;</a></h1>
+<p>This page lists all visuals currently implemented in the library.</p>
+<h2 id="technical-notes">Technical notes<a class="headerlink" href="#technical-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In a given visual, a prop is entirely defined by its type and its index. A visual may have multiple props of the same type. For example, the <code>segment</code> visual has a first prop <code>pos</code> with the segment start position, and another with the segment end position. The tables below specify the role of these indices in each case.</li>
+<li>A <strong>visual source</strong> corresponds to a GPU object holding the data for the visual. Common source types include: vertex buffer, index buffer, uniform buffer, texture. In a given visual, a source is entirely defined by its type and its index. Each prop is typically linked to a given source. Most props correspond either to shader attributes, in which case they are associated with the vertex buffer, or to global variables, in which case they are associated with uniform buffers.</li>
+<li>A visual is composed of one or several <strong>pipelines</strong>: graphics pipelines (or just <strong>graphics</strong>), and optionally compute pipelines (or just <strong>computes</strong>). A graphics pipeline corresponds to a vertex shader, a fragment shader, and possibly other shaders. In a given visual, each pipeline is entirely defined by its type (graphics or compute) and its index. The tables below specify the different pipelines when there are several of them in a given visual. For example, the axes visual contains a <code>segment</code> graphics for tick segments, and a <code>text</code> graphics for tick labels.</li>
+<li>Props marked <em>uniform</em> below can only receive a single value. They correspond to struct fields in a uniform buffer, and they are thus shared across all vertices of a given visual.</li>
+</ul>
+<h2 id="2d-visuals">2D visuals<a class="headerlink" href="#2d-visuals" title="Permanent link">&para;</a></h2>
+<h3 id="marker">Marker<a class="headerlink" href="#marker" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/marker.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>marker position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>marker  color</td>
+</tr>
+<tr>
+<td><code>marker_size</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td>marker size</td>
+</tr>
+<tr>
+<td><code>marker_type</code></td>
+<td>0</td>
+<td><code>char</code></td>
+<td>marker type</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td>0</td>
+<td><code>char</code></td>
+<td>marker angle, between 0 (0) and 256 (<code>M_2PI</code>) excluded</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td>0</td>
+<td><code>char</code></td>
+<td>transform enum</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>1</td>
+<td><code>vec4</code></td>
+<td>edge color (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>line_width</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td>edge line width (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h4>Marker types</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Marker shapes are computed in real-time in the fragment shader (vector graphics rather than bitmaps). The GLSL code is from <a href="http://jcgt.org/published/0003/04/01/">Rougier 2014, <em>Antialiased 2D Grid, Marker, and Arrow Shaders</em></a>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Marker</th>
+<th>Value</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disc</code></td>
+<td>0</td>
+<td><img alt="marker_disc" src="../../images/graphics/marker_disc.png" /></td>
+</tr>
+<tr>
+<td><code>asterisk</code></td>
+<td>1</td>
+<td><img alt="marker_asterisk" src="../../images/graphics/marker_asterisk.png" /></td>
+</tr>
+<tr>
+<td><code>chevron</code></td>
+<td>2</td>
+<td><img alt="marker_chevron" src="../../images/graphics/marker_chevron.png" /></td>
+</tr>
+<tr>
+<td><code>clover</code></td>
+<td>3</td>
+<td><img alt="marker_clover" src="../../images/graphics/marker_clover.png" /></td>
+</tr>
+<tr>
+<td><code>club</code></td>
+<td>4</td>
+<td><img alt="marker_club" src="../../images/graphics/marker_club.png" /></td>
+</tr>
+<tr>
+<td><code>cross</code></td>
+<td>5</td>
+<td><img alt="marker_cross" src="../../images/graphics/marker_cross.png" /></td>
+</tr>
+<tr>
+<td><code>diamond</code></td>
+<td>6</td>
+<td><img alt="marker_diamond" src="../../images/graphics/marker_diamond.png" /></td>
+</tr>
+<tr>
+<td><code>arrow</code></td>
+<td>7</td>
+<td><img alt="marker_arrow" src="../../images/graphics/marker_arrow.png" /></td>
+</tr>
+<tr>
+<td><code>ellipse</code></td>
+<td>8</td>
+<td><img alt="marker_ellipse" src="../../images/graphics/marker_ellipse.png" /></td>
+</tr>
+<tr>
+<td><code>hbar</code></td>
+<td>9</td>
+<td><img alt="marker_hbar" src="../../images/graphics/marker_hbar.png" /></td>
+</tr>
+<tr>
+<td><code>heart</code></td>
+<td>10</td>
+<td><img alt="marker_heart" src="../../images/graphics/marker_heart.png" /></td>
+</tr>
+<tr>
+<td><code>infinity</code></td>
+<td>11</td>
+<td><img alt="marker_infinity" src="../../images/graphics/marker_infinity.png" /></td>
+</tr>
+<tr>
+<td><code>pin</code></td>
+<td>12</td>
+<td><img alt="marker_pin" src="../../images/graphics/marker_pin.png" /></td>
+</tr>
+<tr>
+<td><code>ring</code></td>
+<td>13</td>
+<td><img alt="marker_ring" src="../../images/graphics/marker_ring.png" /></td>
+</tr>
+<tr>
+<td><code>spade</code></td>
+<td>14</td>
+<td><img alt="marker_spade" src="../../images/graphics/marker_spade.png" /></td>
+</tr>
+<tr>
+<td><code>square</code></td>
+<td>15</td>
+<td><img alt="marker_square" src="../../images/graphics/marker_square.png" /></td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td>16</td>
+<td><img alt="marker_tag" src="../../images/graphics/marker_tag.png" /></td>
+</tr>
+<tr>
+<td><code>triangle</code></td>
+<td>17</td>
+<td><img alt="marker_triangle" src="../../images/graphics/marker_triangle.png" /></td>
+</tr>
+<tr>
+<td><code>vbar</code></td>
+<td>18</td>
+<td><img alt="marker_vbar" src="../../images/graphics/marker_vbar.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="path">Path<a class="headerlink" href="#path" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/path.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>all path points, concatenated</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>0</td>
+<td><code>uint</code></td>
+<td>path lengths, one integer per path</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>point colors, one per point</td>
+</tr>
+<tr>
+<td><code>topology</code></td>
+<td>0</td>
+<td><code>DvzPathTopology</code> (int)</td>
+<td>topology of each path (0=open, 1=closed)</td>
+</tr>
+<tr>
+<td><code>line_width</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td>line width of all paths (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>cap_type</code></td>
+<td>0</td>
+<td><code>DvzCapType</code> (int)</td>
+<td>cap type (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>join_type</code></td>
+<td>0</td>
+<td><code>DvzJoinType</code> (int)</td>
+<td>join type (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="polygon">Polygon<a class="headerlink" href="#polygon" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/polygon.png" /></p>
+<p>This visual currently only uses a basic <code>triangle</code> underlying graphics. It performs a triangulation of the polygons with the earcut C++ library by mapbox. Several arbitrary-sized polygons can be specified in the same visual.</p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>all polygon points, concatenated</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>0</td>
+<td><code>uint</code></td>
+<td>polygon lengths, one integer per polygon</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>polygon colors, one per polygon</td>
+</tr>
+</tbody>
+</table>
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/image.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>top left position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>top right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>2</td>
+<td><code>dvec3</code></td>
+<td>bottom right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>3</td>
+<td><code>dvec3</code></td>
+<td>bottom left position</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>0</td>
+<td><code>vec3</code></td>
+<td>top left texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>1</td>
+<td><code>vec3</code></td>
+<td>top right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>2</td>
+<td><code>vec3</code></td>
+<td>bottom right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>3</td>
+<td><code>vec3</code></td>
+<td>bottom left texture coordinates</td>
+</tr>
+</tbody>
+</table>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td>vertex buffer</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>0</td>
+<td>parameter struct</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>0..3</td>
+<td>2D texture with image #i</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scalar-image-with-colormap">Scalar image with colormap<a class="headerlink" href="#scalar-image-with-colormap" title="Permanent link">&para;</a></h3>
+<p>This visual is similar to the image visual, except that it accepts scalar images and colormaps computed on the GPU.</p>
+<p><img alt="" src="../../images/visuals/image_cmap.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>top left position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>top right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>2</td>
+<td><code>dvec3</code></td>
+<td>bottom right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>3</td>
+<td><code>dvec3</code></td>
+<td>bottom left position</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>0</td>
+<td><code>vec3</code></td>
+<td>top left texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>1</td>
+<td><code>vec3</code></td>
+<td>top right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>2</td>
+<td><code>vec3</code></td>
+<td>bottom right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>3</td>
+<td><code>vec3</code></td>
+<td>bottom left texture coordinates</td>
+</tr>
+<tr>
+<td><code>vrange</code></td>
+<td>0</td>
+<td><code>vec2</code></td>
+<td>colormap range (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>cmap</code></td>
+<td>0</td>
+<td><code>int</code></td>
+<td>colormap number (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td>vertex buffer</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>0</td>
+<td>parameter struct</td>
+</tr>
+<tr>
+<td><code>color_texture</code></td>
+<td>0</td>
+<td>colormap texture</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>0</td>
+<td>2D texture with image</td>
+</tr>
+</tbody>
+</table>
+<h3 id="axes">Axes<a class="headerlink" href="#axes" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/axes.png" /></p>
+<h4>Tick level</h4>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>minor</code></td>
+<td>minor ticks</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>major</code></td>
+<td>major ticks</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>grid</code></td>
+<td>grid</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>lim</code></td>
+<td>axes delimiters</td>
+</tr>
+</tbody>
+</table>
+<h4>Graphics</h4>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Graphics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>segment</code></td>
+<td>ticks (minor, major, grid, lim)</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>text</code></td>
+<td>tick labels</td>
+</tr>
+</tbody>
+</table>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Graphics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>any level</td>
+<td><code>double</code></td>
+<td><code>segment</code></td>
+<td>tick positions in data coordinates</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>any level</td>
+<td><code>cvec4</code></td>
+<td><code>segment</code></td>
+<td>tick colors</td>
+</tr>
+<tr>
+<td><code>line_width</code></td>
+<td>any level</td>
+<td><code>float</code></td>
+<td><code>segment</code></td>
+<td>tick line width</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td><code>minor</code></td>
+<td><code>float</code></td>
+<td><code>segment</code></td>
+<td>minor tick length</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td><code>major</code></td>
+<td><code>float</code></td>
+<td><code>segment</code></td>
+<td>major tick length</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>0</td>
+<td><code>str</code></td>
+<td><code>text</code></td>
+<td>tick labels text</td>
+</tr>
+<tr>
+<td><code>text_size</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td><code>text</code></td>
+<td>tick labels font size</td>
+</tr>
+</tbody>
+</table>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Graphics</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td><code>segment</code></td>
+<td>vertex buffer for ticks</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>0</td>
+<td><code>segment</code></td>
+<td>index buffer for ticks</td>
+</tr>
+<tr>
+<td><code>vertex</code></td>
+<td>1</td>
+<td><code>text</code></td>
+<td>vertex buffer for labels</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>1</td>
+<td><code>text</code></td>
+<td>index buffer for labels</td>
+</tr>
+<tr>
+<td><code>font_atlas</code></td>
+<td>0</td>
+<td><code>text</code></td>
+<td>font atlas for labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3d-visuals">3D visuals<a class="headerlink" href="#3d-visuals" title="Permanent link">&para;</a></h2>
+<h3 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/mesh.png" /></p>
+<p>Features:</p>
+<ul>
+<li>Up to four blendable textures</li>
+<li>Up to four lights</li>
+<li>Automatic computation of normals (cross product of face vertices) if the <code>normal</code> prop is not provided</li>
+</ul>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>vertex position</td>
+</tr>
+<tr>
+<td><code>normal</code></td>
+<td>0</td>
+<td><code>vec3</code></td>
+<td>vertex normal</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>0</td>
+<td><code>vec2</code></td>
+<td>texture coordinates</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>color as RGB 3-bytes</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>0</td>
+<td><code>char</code></td>
+<td>alpha transparency value</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>0</td>
+<td><code>uint32</code></td>
+<td>faces, as vertex indices</td>
+</tr>
+<tr>
+<td><code>light_pos</code></td>
+<td>0</td>
+<td><code>mat4</code></td>
+<td>light positions (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>light_params</code></td>
+<td>0</td>
+<td><code>mat4</code></td>
+<td>light coefficients (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>texcoefs</code></td>
+<td>0</td>
+<td><code>vec4</code></td>
+<td>texture blending coefficients (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>clip</code></td>
+<td>0</td>
+<td><code>vec4</code></td>
+<td>clip vector (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code>texcoords</code> and <code>color</code> props are mutually exclusive. The color has precedence over the texcoords. The mesh vertex struct has no color field, only a texcoord field. When the color prop is set, special texcoords values are computed (packing 3 bytes into the second texture coordinate floating-point number).</p>
+</div>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td>vertex buffer (vertices)</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>0</td>
+<td>index buffer (faces)</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>0</td>
+<td>parameter struct</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>0..3</td>
+<td>2D texture with image #i</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volume">Volume<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/volume.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>first corner</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>opposite corner</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>0</td>
+<td><code>vec3</code></td>
+<td>texture coordinates of the first corner</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>1</td>
+<td><code>vec3</code></td>
+<td>texture coordinates of the opposite corner</td>
+</tr>
+<tr>
+<td><code>colormap</code></td>
+<td>0</td>
+<td><code>int</code></td>
+<td>colormap enum (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td>vertex buffer</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>0</td>
+<td>parameter struct</td>
+</tr>
+<tr>
+<td><code>color_texture</code></td>
+<td>0</td>
+<td>2D texture with the colormap texture</td>
+</tr>
+<tr>
+<td><code>volume</code></td>
+<td>0</td>
+<td>3D texture with the volume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volume-slice">Volume slice<a class="headerlink" href="#volume-slice" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/volume_slice.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>top left position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>top right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>2</td>
+<td><code>dvec3</code></td>
+<td>bottom right position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>3</td>
+<td><code>dvec3</code></td>
+<td>bottom left position</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>0</td>
+<td><code>vec3</code></td>
+<td>top left texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>1</td>
+<td><code>vec3</code></td>
+<td>top right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>2</td>
+<td><code>vec3</code></td>
+<td>bottom right texture coordinates</td>
+</tr>
+<tr>
+<td><code>texcoords</code></td>
+<td>3</td>
+<td><code>vec3</code></td>
+<td>bottom left texture coordinates</td>
+</tr>
+<tr>
+<td><code>transfer_x</code></td>
+<td>0</td>
+<td><code>vec4</code></td>
+<td>colormap transfer function, x values (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>transfer_y</code></td>
+<td>0</td>
+<td><code>vec4</code></td>
+<td>colormap transfer function, y values (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>transfer_x</code></td>
+<td>1</td>
+<td><code>vec4</code></td>
+<td>alpha transfer function, x values (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>transfer_y</code></td>
+<td>1</td>
+<td><code>vec4</code></td>
+<td>alpha transfer function, y values (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>colormap</code></td>
+<td>0</td>
+<td><code>int</code></td>
+<td>colormap enum (<em>uniform</em>)</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td>volume value scaling factor (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h4>Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vertex</code></td>
+<td>0</td>
+<td>vertex buffer</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>0</td>
+<td>parameter struct</td>
+</tr>
+<tr>
+<td><code>color_texture</code></td>
+<td>0</td>
+<td>2D texture with the colormap texture</td>
+</tr>
+<tr>
+<td><code>volume</code></td>
+<td>0</td>
+<td>3D texture with the volume</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-visuals">Basic visuals<a class="headerlink" href="#basic-visuals" title="Permanent link">&para;</a></h2>
+<p>The basic visuals are simpler and more efficient, but they do not support antialiasing.</p>
+<h3 id="point">Point<a class="headerlink" href="#point" title="Permanent link">&para;</a></h3>
+<p>The <strong>point</strong> visual is a trimmed-downed version of the <strong>marker</strong> visual. It is based on the <code>point</code> primitive.</p>
+<p><img alt="" src="../../images/visuals/point.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>point position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>point color</td>
+</tr>
+<tr>
+<td><code>marker_size</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td>point size (<em>uniform</em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="line">Line<a class="headerlink" href="#line" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/line.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>line start position</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>line end position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>color</code></td>
+<td>line color</td>
+</tr>
+</tbody>
+</table>
+<h3 id="line-strip">Line strip<a class="headerlink" href="#line-strip" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/line_strip.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>point position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>cvec4</code></td>
+<td>point color</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>0</td>
+<td><code>uint32</code></td>
+<td>number of points in each line strip</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triangle">Triangle<a class="headerlink" href="#triangle" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/triangle.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>triangle position 0</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>1</td>
+<td><code>dvec3</code></td>
+<td>triangle position 1</td>
+</tr>
+<tr>
+<td><code>pos</code></td>
+<td>2</td>
+<td><code>dvec3</code></td>
+<td>triangle position 2</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>color</code></td>
+<td>triangle color</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triangle-strip">Triangle strip<a class="headerlink" href="#triangle-strip" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/visuals/triangle_strip.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>point position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>color</code></td>
+<td>point color</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triangle-fan">Triangle fan<a class="headerlink" href="#triangle-fan" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This visual is not supported on macOS.</p>
+</div>
+<p><img alt="" src="../../images/visuals/triangle_fan.png" /></p>
+<h4>Props</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td>0</td>
+<td><code>dvec3</code></td>
+<td>point position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>0</td>
+<td><code>color</code></td>
+<td>point color</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-data">Common data<a class="headerlink" href="#common-data" title="Permanent link">&para;</a></h2>
+<p>The sources and props below are shared by all builtin visuals.</p>
+<h3 id="common-sources">Common sources<a class="headerlink" href="#common-sources" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mvp</code></td>
+<td>0</td>
+<td><code>DvzMVP</code> structure with model-view-proj matrices</td>
+</tr>
+<tr>
+<td><code>viewport</code></td>
+<td>0</td>
+<td><code>DvzViewport</code> structure with viewport info</td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-props">Common props<a class="headerlink" href="#common-props" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Index</th>
+<th>Type</th>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>0</td>
+<td><code>mat4</code></td>
+<td><code>mvp</code></td>
+<td>model transformation matrix</td>
+</tr>
+<tr>
+<td><code>view</code></td>
+<td>0</td>
+<td><code>mat4</code></td>
+<td><code>mvp</code></td>
+<td>view transformation matrix</td>
+</tr>
+<tr>
+<td><code>proj</code></td>
+<td>0</td>
+<td><code>mat4</code></td>
+<td><code>mvp</code></td>
+<td>proj transformation matrix</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>0</td>
+<td><code>float</code></td>
+<td><code>mvp</code></td>
+<td>time since app start, in seconds</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-enums">Common enums<a class="headerlink" href="#common-enums" title="Permanent link">&para;</a></h2>
+<h3 id="visual-transform">Visual transform<a class="headerlink" href="#visual-transform" title="Permanent link">&para;</a></h3>
+<h3 id="visual-clip">Visual clip<a class="headerlink" href="#visual-clip" title="Permanent link">&para;</a></h3>
+<h3 id="data-types">Data types<a class="headerlink" href="#data-types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Component size</th>
+<th>Type size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>char</code></td>
+<td>8</td>
+<td>8</td>
+<td>1 byte (unsigned byte)</td>
+</tr>
+<tr>
+<td><code>cvec2</code></td>
+<td>8</td>
+<td>16</td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>cvec3</code></td>
+<td>8</td>
+<td>24</td>
+<td>3 bytes</td>
+</tr>
+<tr>
+<td><code>cvec4</code></td>
+<td>8</td>
+<td>32</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>ushort</code></td>
+<td>16</td>
+<td>16</td>
+<td>1 unsigned short integer</td>
+</tr>
+<tr>
+<td><code>usvec2</code></td>
+<td>16</td>
+<td>32</td>
+<td>2 ushort</td>
+</tr>
+<tr>
+<td><code>usvec3</code></td>
+<td>16</td>
+<td>48</td>
+<td>3 ushort</td>
+</tr>
+<tr>
+<td><code>usvec4</code></td>
+<td>16</td>
+<td>64</td>
+<td>4 ushort</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>16</td>
+<td>16</td>
+<td>1 signed short integer</td>
+</tr>
+<tr>
+<td><code>svec2</code></td>
+<td>16</td>
+<td>32</td>
+<td>2 short</td>
+</tr>
+<tr>
+<td><code>svec3</code></td>
+<td>16</td>
+<td>48</td>
+<td>3 short</td>
+</tr>
+<tr>
+<td><code>svec4</code></td>
+<td>16</td>
+<td>64</td>
+<td>4 short</td>
+</tr>
+<tr>
+<td><code>uint</code></td>
+<td>32</td>
+<td>32</td>
+<td>1 unsigned long integer</td>
+</tr>
+<tr>
+<td><code>uvec2</code></td>
+<td>32</td>
+<td>64</td>
+<td>2 uint</td>
+</tr>
+<tr>
+<td><code>uvec3</code></td>
+<td>32</td>
+<td>96</td>
+<td>3 uint</td>
+</tr>
+<tr>
+<td><code>uvec4</code></td>
+<td>32</td>
+<td>128</td>
+<td>4 uint</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>32</td>
+<td>32</td>
+<td>1 long integer</td>
+</tr>
+<tr>
+<td><code>ivec2</code></td>
+<td>32</td>
+<td>64</td>
+<td>2 int</td>
+</tr>
+<tr>
+<td><code>ivec3</code></td>
+<td>32</td>
+<td>96</td>
+<td>3 int</td>
+</tr>
+<tr>
+<td><code>ivec4</code></td>
+<td>32</td>
+<td>128</td>
+<td>4 int</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>32</td>
+<td>32</td>
+<td>1 single-precision floating-point number</td>
+</tr>
+<tr>
+<td><code>vec2</code></td>
+<td>32</td>
+<td>64</td>
+<td>2 float</td>
+</tr>
+<tr>
+<td><code>vec3</code></td>
+<td>32</td>
+<td>96</td>
+<td>3 float</td>
+</tr>
+<tr>
+<td><code>vec4</code></td>
+<td>32</td>
+<td>128</td>
+<td>4 float</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>64</td>
+<td>64</td>
+<td>1 double-precision floating-point number</td>
+</tr>
+<tr>
+<td><code>dvec2</code></td>
+<td>64</td>
+<td>128</td>
+<td>2 double</td>
+</tr>
+<tr>
+<td><code>dvec3</code></td>
+<td>64</td>
+<td>192</td>
+<td>3 double</td>
+</tr>
+<tr>
+<td><code>dvec4</code></td>
+<td>64</td>
+<td>256</td>
+<td>4 double</td>
+</tr>
+<tr>
+<td><code>mat2</code></td>
+<td>32</td>
+<td>128</td>
+<td>2x2 matrix of floats</td>
+</tr>
+<tr>
+<td><code>mat3</code></td>
+<td>32</td>
+<td>288</td>
+<td>3x3 matrix of floats</td>
+</tr>
+<tr>
+<td><code>mat4</code></td>
+<td>32</td>
+<td>512</td>
+<td>4x4 matrix of floats</td>
+</tr>
+<tr>
+<td><code>custom</code></td>
+<td>-</td>
+<td>-</td>
+<td>used by structured/record arrays (heterogeneous types)</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>64</td>
+<td>64</td>
+<td>pointer to <code>char</code></td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../graphics/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                List of graphics
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.tabs.sticky', 'navigation.expand', 'toc.integrate'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-performance interactive scientific data visualization library">
+      
+      
+      
+        <meta name="author" content="Cyrille Rossant">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>Misc API - Datoviz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#misc-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Datoviz Documentation" class="md-header-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Datoviz Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Misc API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../howto/" class="md-tabs__link">
+        How to guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        C API reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../discussions/" class="md-tabs__link">
+        Discussions
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    Datoviz Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/install/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/quickstart/" class="md-nav__link">
+        Simple test with Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/signals/" class="md-nav__link">
+        Digital signals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/image/" class="md-nav__link">
+        Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/france/" class="md-nav__link">
+        France departements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/raster/" class="md-nav__link">
+        Raster plot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/molecule/" class="md-nav__link">
+        Molecule 3D mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain/" class="md-nav__link">
+        3D brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain_highres/" class="md-nav__link">
+        3D high-res brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/twopanels/" class="md-nav__link">
+        Two panels
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        How to guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to guides" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          How to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_scene/" class="md-nav__link">
+        How to write a standalone C app
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/visual/" class="md-nav__link">
+        How to write a custom visual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/graphics/" class="md-nav__link">
+        How to write a custom graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_canvas/" class="md-nav__link">
+        How to use the canvas C API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_vklite/" class="md-nav__link">
+        How to use the vklite C API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" data-md-state="indeterminate" type="checkbox" id="nav-5" checked>
+      
+      <label class="md-nav__link" for="nav-5">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/visuals/" class="md-nav__link">
+        List of visuals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/graphics/" class="md-nav__link">
+        List of graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/colormaps/" class="md-nav__link">
+        List of colormaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/controllers/" class="md-nav__link">
+        List of controllers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      
+      <label class="md-nav__link" for="nav-6">
+        C API reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C API reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          C API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene/" class="md-nav__link">
+        Scene API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visual/" class="md-nav__link">
+        Visual API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        Controller API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/" class="md-nav__link">
+        GUI API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        Canvas API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpu/" class="md-nav__link">
+        GPU API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vklite/" class="md-nav__link">
+        vklite API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Misc API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Misc API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+    <nav class="md-nav" aria-label="Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array" class="md-nav__link">
+    dvz_array()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_point" class="md-nav__link">
+    dvz_array_point()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_wrap" class="md-nav__link">
+    dvz_array_wrap()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_struct" class="md-nav__link">
+    dvz_array_struct()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_3d" class="md-nav__link">
+    dvz_array_3D()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_resize" class="md-nav__link">
+    dvz_array_resize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_clear" class="md-nav__link">
+    dvz_array_clear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_reshape" class="md-nav__link">
+    dvz_array_reshape()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_data" class="md-nav__link">
+    dvz_array_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_item" class="md-nav__link">
+    dvz_array_item()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_column" class="md-nav__link">
+    dvz_array_column()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_insert" class="md-nav__link">
+    dvz_array_insert()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_copy_region" class="md-nav__link">
+    dvz_array_copy_region()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_array_destroy" class="md-nav__link">
+    dvz_array_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    Object
+  </a>
+  
+    <nav class="md-nav" aria-label="Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_obj_init" class="md-nav__link">
+    dvz_obj_init()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_obj_created" class="md-nav__link">
+    dvz_obj_created()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_obj_destroyed" class="md-nav__link">
+    dvz_obj_destroyed()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_obj_is_created" class="md-nav__link">
+    dvz_obj_is_created()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    Container
+  </a>
+  
+    <nav class="md-nav" aria-label="Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container" class="md-nav__link">
+    dvz_container()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_delete_if_destroyed" class="md-nav__link">
+    dvz_container_delete_if_destroyed()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_alloc" class="md-nav__link">
+    dvz_container_alloc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_get" class="md-nav__link">
+    dvz_container_get()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_iterator" class="md-nav__link">
+    dvz_container_iterator()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_iter" class="md-nav__link">
+    dvz_container_iter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_container_destroy" class="md-nav__link">
+    dvz_container_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_write_png" class="md-nav__link">
+    dvz_write_png()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_write_ppm" class="md-nav__link">
+    dvz_write_ppm()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_read_file" class="md-nav__link">
+    dvz_read_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_read_npy" class="md-nav__link">
+    dvz_read_npy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_read_ppm" class="md-nav__link">
+    dvz_read_ppm()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread" class="md-nav__link">
+    Thread
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_thread" class="md-nav__link">
+    dvz_thread()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_thread_lock" class="md-nav__link">
+    dvz_thread_lock()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_thread_unlock" class="md-nav__link">
+    dvz_thread_unlock()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_thread_join" class="md-nav__link">
+    dvz_thread_join()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifo-queue" class="md-nav__link">
+    FIFO queue
+  </a>
+  
+    <nav class="md-nav" aria-label="FIFO queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo" class="md-nav__link">
+    dvz_fifo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_enqueue" class="md-nav__link">
+    dvz_fifo_enqueue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_dequeue" class="md-nav__link">
+    dvz_fifo_dequeue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_size" class="md-nav__link">
+    dvz_fifo_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_discard" class="md-nav__link">
+    dvz_fifo_discard()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_reset" class="md-nav__link">
+    dvz_fifo_reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_fifo_destroy" class="md-nav__link">
+    dvz_fifo_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    Mesh
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh" class="md-nav__link">
+    dvz_mesh()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_obj" class="md-nav__link">
+    dvz_mesh_obj()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_grid" class="md-nav__link">
+    dvz_mesh_grid()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_surface" class="md-nav__link">
+    dvz_mesh_surface()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_cube" class="md-nav__link">
+    dvz_mesh_cube()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_sphere" class="md-nav__link">
+    dvz_mesh_sphere()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_cylinder" class="md-nav__link">
+    dvz_mesh_cylinder()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_cone" class="md-nav__link">
+    dvz_mesh_cone()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_square" class="md-nav__link">
+    dvz_mesh_square()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_disc" class="md-nav__link">
+    dvz_mesh_disc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_normalize" class="md-nav__link">
+    dvz_mesh_normalize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_destroy" class="md-nav__link">
+    dvz_mesh_destroy()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-transform" class="md-nav__link">
+    Mesh transform
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_transform_reset" class="md-nav__link">
+    dvz_mesh_transform_reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_transform_add" class="md-nav__link">
+    dvz_mesh_transform_add()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_translate" class="md-nav__link">
+    dvz_mesh_translate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_scale" class="md-nav__link">
+    dvz_mesh_scale()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_rotate" class="md-nav__link">
+    dvz_mesh_rotate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_mesh_transform" class="md-nav__link">
+    dvz_mesh_transform()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_rand_byte" class="md-nav__link">
+    dvz_rand_byte()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_rand_float" class="md-nav__link">
+    dvz_rand_float()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_rand_normal" class="md-nav__link">
+    dvz_rand_normal()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dvz_sleep" class="md-nav__link">
+    dvz_sleep()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvz_next_pow2" class="md-nav__link">
+    dvz_next_pow2()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enums/" class="md-nav__link">
+        Enumerations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        Discussions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Discussions" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Discussions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/vulkan/" class="md-nav__link">
+        Vulkan crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/architecture/" class="md-nav__link">
+        Library architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/developer/" class="md-nav__link">
+        Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datoviz/datoviz/edit/master/docs/api/misc.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="misc-api">Misc API<a class="headerlink" href="#misc-api" title="Permanent link">&para;</a></h1>
+<h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_array"><code>dvz_array()</code><a class="headerlink" href="#dvz_array" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_point"><code>dvz_array_point()</code><a class="headerlink" href="#dvz_array_point" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_wrap"><code>dvz_array_wrap()</code><a class="headerlink" href="#dvz_array_wrap" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_struct"><code>dvz_array_struct()</code><a class="headerlink" href="#dvz_array_struct" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_3d"><code>dvz_array_3D()</code><a class="headerlink" href="#dvz_array_3d" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_resize"><code>dvz_array_resize()</code><a class="headerlink" href="#dvz_array_resize" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_clear"><code>dvz_array_clear()</code><a class="headerlink" href="#dvz_array_clear" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_reshape"><code>dvz_array_reshape()</code><a class="headerlink" href="#dvz_array_reshape" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_data"><code>dvz_array_data()</code><a class="headerlink" href="#dvz_array_data" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_item"><code>dvz_array_item()</code><a class="headerlink" href="#dvz_array_item" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_column"><code>dvz_array_column()</code><a class="headerlink" href="#dvz_array_column" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_insert"><code>dvz_array_insert()</code><a class="headerlink" href="#dvz_array_insert" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_copy_region"><code>dvz_array_copy_region()</code><a class="headerlink" href="#dvz_array_copy_region" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_array_destroy"><code>dvz_array_destroy()</code><a class="headerlink" href="#dvz_array_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_obj_init"><code>dvz_obj_init()</code><a class="headerlink" href="#dvz_obj_init" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_obj_created"><code>dvz_obj_created()</code><a class="headerlink" href="#dvz_obj_created" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_obj_destroyed"><code>dvz_obj_destroyed()</code><a class="headerlink" href="#dvz_obj_destroyed" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_obj_is_created"><code>dvz_obj_is_created()</code><a class="headerlink" href="#dvz_obj_is_created" title="Permanent link">&para;</a></h3>
+<h2 id="container">Container<a class="headerlink" href="#container" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_container"><code>dvz_container()</code><a class="headerlink" href="#dvz_container" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_delete_if_destroyed"><code>dvz_container_delete_if_destroyed()</code><a class="headerlink" href="#dvz_container_delete_if_destroyed" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_alloc"><code>dvz_container_alloc()</code><a class="headerlink" href="#dvz_container_alloc" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_get"><code>dvz_container_get()</code><a class="headerlink" href="#dvz_container_get" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_iterator"><code>dvz_container_iterator()</code><a class="headerlink" href="#dvz_container_iterator" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_iter"><code>dvz_container_iter()</code><a class="headerlink" href="#dvz_container_iter" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_container_destroy"><code>dvz_container_destroy()</code><a class="headerlink" href="#dvz_container_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="io">I/O<a class="headerlink" href="#io" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_write_png"><code>dvz_write_png()</code><a class="headerlink" href="#dvz_write_png" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_write_ppm"><code>dvz_write_ppm()</code><a class="headerlink" href="#dvz_write_ppm" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_read_file"><code>dvz_read_file()</code><a class="headerlink" href="#dvz_read_file" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_read_npy"><code>dvz_read_npy()</code><a class="headerlink" href="#dvz_read_npy" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_read_ppm"><code>dvz_read_ppm()</code><a class="headerlink" href="#dvz_read_ppm" title="Permanent link">&para;</a></h3>
+<h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_thread"><code>dvz_thread()</code><a class="headerlink" href="#dvz_thread" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_thread_lock"><code>dvz_thread_lock()</code><a class="headerlink" href="#dvz_thread_lock" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_thread_unlock"><code>dvz_thread_unlock()</code><a class="headerlink" href="#dvz_thread_unlock" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_thread_join"><code>dvz_thread_join()</code><a class="headerlink" href="#dvz_thread_join" title="Permanent link">&para;</a></h3>
+<h2 id="fifo-queue">FIFO queue<a class="headerlink" href="#fifo-queue" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_fifo"><code>dvz_fifo()</code><a class="headerlink" href="#dvz_fifo" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_enqueue"><code>dvz_fifo_enqueue()</code><a class="headerlink" href="#dvz_fifo_enqueue" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_dequeue"><code>dvz_fifo_dequeue()</code><a class="headerlink" href="#dvz_fifo_dequeue" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_size"><code>dvz_fifo_size()</code><a class="headerlink" href="#dvz_fifo_size" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_discard"><code>dvz_fifo_discard()</code><a class="headerlink" href="#dvz_fifo_discard" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_reset"><code>dvz_fifo_reset()</code><a class="headerlink" href="#dvz_fifo_reset" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_fifo_destroy"><code>dvz_fifo_destroy()</code><a class="headerlink" href="#dvz_fifo_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_mesh"><code>dvz_mesh()</code><a class="headerlink" href="#dvz_mesh" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_obj"><code>dvz_mesh_obj()</code><a class="headerlink" href="#dvz_mesh_obj" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_grid"><code>dvz_mesh_grid()</code><a class="headerlink" href="#dvz_mesh_grid" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_surface"><code>dvz_mesh_surface()</code><a class="headerlink" href="#dvz_mesh_surface" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_cube"><code>dvz_mesh_cube()</code><a class="headerlink" href="#dvz_mesh_cube" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_sphere"><code>dvz_mesh_sphere()</code><a class="headerlink" href="#dvz_mesh_sphere" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_cylinder"><code>dvz_mesh_cylinder()</code><a class="headerlink" href="#dvz_mesh_cylinder" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_cone"><code>dvz_mesh_cone()</code><a class="headerlink" href="#dvz_mesh_cone" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_square"><code>dvz_mesh_square()</code><a class="headerlink" href="#dvz_mesh_square" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_disc"><code>dvz_mesh_disc()</code><a class="headerlink" href="#dvz_mesh_disc" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_normalize"><code>dvz_mesh_normalize()</code><a class="headerlink" href="#dvz_mesh_normalize" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_destroy"><code>dvz_mesh_destroy()</code><a class="headerlink" href="#dvz_mesh_destroy" title="Permanent link">&para;</a></h3>
+<h2 id="mesh-transform">Mesh transform<a class="headerlink" href="#mesh-transform" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_mesh_transform_reset"><code>dvz_mesh_transform_reset()</code><a class="headerlink" href="#dvz_mesh_transform_reset" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_transform_add"><code>dvz_mesh_transform_add()</code><a class="headerlink" href="#dvz_mesh_transform_add" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_translate"><code>dvz_mesh_translate()</code><a class="headerlink" href="#dvz_mesh_translate" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_scale"><code>dvz_mesh_scale()</code><a class="headerlink" href="#dvz_mesh_scale" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_rotate"><code>dvz_mesh_rotate()</code><a class="headerlink" href="#dvz_mesh_rotate" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_mesh_transform"><code>dvz_mesh_transform()</code><a class="headerlink" href="#dvz_mesh_transform" title="Permanent link">&para;</a></h3>
+<h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_rand_byte"><code>dvz_rand_byte()</code><a class="headerlink" href="#dvz_rand_byte" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_rand_float"><code>dvz_rand_float()</code><a class="headerlink" href="#dvz_rand_float" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_rand_normal"><code>dvz_rand_normal()</code><a class="headerlink" href="#dvz_rand_normal" title="Permanent link">&para;</a></h3>
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<h3 id="dvz_sleep"><code>dvz_sleep()</code><a class="headerlink" href="#dvz_sleep" title="Permanent link">&para;</a></h3>
+<h3 id="dvz_next_pow2"><code>dvz_next_pow2()</code><a class="headerlink" href="#dvz_next_pow2" title="Permanent link">&para;</a></h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../vklite/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                vklite API
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../enums/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Enumerations
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.tabs.sticky', 'navigation.expand', 'toc.integrate'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

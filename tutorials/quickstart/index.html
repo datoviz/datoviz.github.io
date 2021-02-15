@@ -1,0 +1,1502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-performance interactive scientific data visualization library">
+      
+      
+      
+        <meta name="author" content="Cyrille Rossant">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>Quickstart - Datoviz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quickstart-using-datoviz-in-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Datoviz Documentation" class="md-header-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Datoviz Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Quickstart
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../howto/" class="md-tabs__link">
+        How to guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        C API reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../discussions/" class="md-tabs__link">
+        Discussions
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    Datoviz Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quickstart
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importing-the-library" class="md-nav__link">
+    Importing the library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-canvas" class="md-nav__link">
+    Creating a canvas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-panel" class="md-nav__link">
+    Creating a panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-one-of-the-existing-visuals" class="md-nav__link">
+    Choosing one of the existing visuals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-visual-data" class="md-nav__link">
+    Preparing the visual data
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing the visual data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-positions" class="md-nav__link">
+    Random positions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-marker-size" class="md-nav__link">
+    Random marker size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormap" class="md-nav__link">
+    Colormap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-the-visual-data" class="md-nav__link">
+    Set the visual data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-application" class="md-nav__link">
+    Running the application
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-a-screenshot" class="md-nav__link">
+    Making a screenshot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recording-a-screencast-video" class="md-nav__link">
+    Recording a screencast video
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-callbacks-and-mouse-picking" class="md-nav__link">
+    Event callbacks and mouse picking
+  </a>
+  
+    <nav class="md-nav" aria-label="Event callbacks and mouse picking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    Coordinate systems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-simple-gui" class="md-nav__link">
+    Adding a simple GUI
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding a simple GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-gui-dialog" class="md-nav__link">
+    Adding a GUI dialog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-control-to-the-gui" class="md-nav__link">
+    Adding a control to the GUI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/quickstart/" class="md-nav__link">
+        Simple test with Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/signals/" class="md-nav__link">
+        Digital signals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/image/" class="md-nav__link">
+        Image
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/france/" class="md-nav__link">
+        France departements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/raster/" class="md-nav__link">
+        Raster plot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/molecule/" class="md-nav__link">
+        Molecule 3D mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain/" class="md-nav__link">
+        3D brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/brain_highres/" class="md-nav__link">
+        3D high-res brain mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/twopanels/" class="md-nav__link">
+        Two panels
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        How to guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to guides" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          How to guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_scene/" class="md-nav__link">
+        How to write a standalone C app
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/visual/" class="md-nav__link">
+        How to write a custom visual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/graphics/" class="md-nav__link">
+        How to write a custom graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_canvas/" class="md-nav__link">
+        How to use the canvas C API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_vklite/" class="md-nav__link">
+        How to use the vklite C API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" data-md-state="indeterminate" type="checkbox" id="nav-5" checked>
+      
+      <label class="md-nav__link" for="nav-5">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/visuals/" class="md-nav__link">
+        List of visuals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/graphics/" class="md-nav__link">
+        List of graphics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/colormaps/" class="md-nav__link">
+        List of colormaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/controllers/" class="md-nav__link">
+        List of controllers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" data-md-state="indeterminate" type="checkbox" id="nav-6" checked>
+      
+      <label class="md-nav__link" for="nav-6">
+        C API reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C API reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          C API reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/scene/" class="md-nav__link">
+        Scene API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/visual/" class="md-nav__link">
+        Visual API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/controller/" class="md-nav__link">
+        Controller API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/gui/" class="md-nav__link">
+        GUI API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/canvas/" class="md-nav__link">
+        Canvas API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/gpu/" class="md-nav__link">
+        GPU API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/vklite/" class="md-nav__link">
+        vklite API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/misc/" class="md-nav__link">
+        Misc API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/enums/" class="md-nav__link">
+        Enumerations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        Discussions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Discussions" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Discussions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/vulkan/" class="md-nav__link">
+        Vulkan crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/architecture/" class="md-nav__link">
+        Library architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/developer/" class="md-nav__link">
+        Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datoviz/datoviz/edit/master/docs/tutorials/quickstart.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="quickstart-using-datoviz-in-python">Quickstart: using Datoviz in Python<a class="headerlink" href="#quickstart-using-datoviz-in-python" title="Permanent link">&para;</a></h1>
+<p>Once Datoviz has been properly installed, you can start to use it in a few lines of code!</p>
+<p>In this tutorial, we'll show <strong>how to make a simple 2D plot with Datoviz in Python</strong>, and we'll go through the most important features of the library.</p>
+<!-- IMAGE ../images/screenshots/standalone_scene.png -->
+
+<p>We'll cover the following steps:</p>
+<ul>
+<li>how to create an application,</li>
+<li>how to create a canvas,</li>
+<li>how to create a panel with an axes controller,</li>
+<li>how to add a visual,</li>
+<li>how to use colormaps,</li>
+<li>how to set visual data,</li>
+<li>how to run the application,</li>
+<li>how to create a minimal GUI,</li>
+<li>how to specify event callbacks,</li>
+<li>how to use mouse picking,</li>
+<li>how to make a live screencast video (<em>requires compilation with ffmpeg</em>),</li>
+<li>and more.</li>
+</ul>
+<p>Creating custom visuals, creating standalone C applications with Datoviz are advanced topics, they are covered in the <strong>How to</strong> section of the documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Python bindings are at an early stage of development. They will be significantly improved in the near future.</p>
+</div>
+<h2 id="importing-the-library">Importing the library<a class="headerlink" href="#importing-the-library" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For now, Datoviz should be used from a Python script. Integration with IPython and Jupyter is still a work in progress.</p>
+</div>
+<p>First, we import NumPy and datoviz:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">nr</span>
+
+<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">colormap</span>
+</code></pre></div>
+<h2 id="creating-a-canvas">Creating a canvas<a class="headerlink" href="#creating-a-canvas" title="Permanent link">&para;</a></h2>
+<p>We create a <strong>canvas</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>We can also specify the initial width and height of the window using keyword arguments to <code>canvas()</code>.</p>
+<h2 id="creating-a-panel">Creating a panel<a class="headerlink" href="#creating-a-panel" title="Permanent link">&para;</a></h2>
+<p>Next, we create a <strong>panel</strong>, which is another word for "subplot". By default, there is only one panel spanning the entire canvas, but we can also define multiple panels.</p>
+<p>We also specify the panel's <strong>controller</strong>, which defines how we interact with it. The <code>axes</code> controller displays axes and ticks for 2D graphics.</p>
+<div class="highlight"><pre><span></span><code><span class="n">panel</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="choosing-one-of-the-existing-visuals">Choosing one of the existing visuals<a class="headerlink" href="#choosing-one-of-the-existing-visuals" title="Permanent link">&para;</a></h2>
+<p>We'll make a simple <strong>scatter plot</strong> with 2D random points, and different colors and marker sizes.</p>
+<p>We refer to <a href="../../reference/visuals/">the list of all included visuals</a> provided by the Datoviz documentation, and we find that the <strong>marker visual</strong> is what we want for our scatter plot. We look at the <strong>visual properties</strong> (or <strong>props</strong>) for this visual: this is the data we'll need to feed to our visual.</p>
+<p>But first, we create our visual object by specifying its type:</p>
+<div class="highlight"><pre><span></span><code><span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="preparing-the-visual-data">Preparing the visual data<a class="headerlink" href="#preparing-the-visual-data" title="Permanent link">&para;</a></h2>
+<p>We'll set:</p>
+<ul>
+<li>the <strong>marker positions</strong>: <code>pos</code> prop,</li>
+<li>the <strong>marker colors</strong>: <code>color</code> prop,</li>
+<li>the <strong>marker sizes</strong>: <code>ms</code> prop.</li>
+</ul>
+<p>First, we generate the data for these props.</p>
+<h3 id="random-positions">Random positions<a class="headerlink" href="#random-positions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>Note that <strong>positions always have three dimensions</strong> in Datoviz. When using 2D plotting, we set the third component to zero.</p>
+<p>Datoviz uses the standard OpenGL 3D coordinate system:</p>
+<p><img alt="Datoviz coordinate system" src="../../images/cds.svg" />
+<em>Datoviz coordinate system</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that this is different from the Vulkan coordinate system, where y and z go in the opposite direction. The other difference is that in Datoviz, all axes range in the interval <code>[-1, +1]</code>. In the original Vulkan coordinate system, <code>z</code> goes from 0 to 1 instead. The convention used in Datoviz makes it possible to use existing camera matrix routines implemented in the cglm library. The GPU code of all included shaders include the final OpenGL-&gt;Vulkan transformation right before the vertex shader output. Other conventions for <code>x, y, z</code> axes will be supported in the future.</p>
+</div>
+<p>Position props are specified in the original data coordinate system corresponding to the scientific data to be visualized. Yet, Datoviz requires vertex positions to be in normalized coordinates (between -1 and 1) when sent to the GPU. Since the GPU only deals with single-precision floating point numbers, doing data normalization on the GPU would result in significant loss of precision and would harm performance.</p>
+<p>Therefore, Datoviz provides a system to make transformations on the CPU <strong>in double precision</strong> before uploading the data to the GPU. By default, the data is linearly transformed to fit the [-1, +1] cube. Other types of transformations will soon be implemented (polar coordinates, geographic coordinate systems, and so on).</p>
+<h3 id="random-marker-size">Random marker size<a class="headerlink" href="#random-marker-size" title="Permanent link">&para;</a></h3>
+<p>We define random marker sizes as an array of floating-point values:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ms</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="colormap">Colormap<a class="headerlink" href="#colormap" title="Permanent link">&para;</a></h3>
+<p>Let's define the colors. We could use random RGBA values for the colors, but we'll use one of the built-in <strong>colormap</strong> instead.</p>
+<div class="highlight"><pre><span></span><code><span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">nr</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>The variable <code>color</code> is an <code>(N, 4)</code> array of <code>uint8</code> (byte values between 0 and 255).</p>
+<p>This line involves the following steps:</p>
+<ul>
+<li>Choosing a colormap, here <strong>viridis</strong> (see the <a href="../../reference/colormaps/">colormap reference page</a> with the list of ~150 included colormaps),</li>
+<li>Defining an array of scalar values to be fed to the colormap (random values between 0 and 1 here),</li>
+<li>(Optional) Defining the colormap range (<code>[0, 1]</code> here),</li>
+<li>(Optional) Setting an alpha transparency channel (0.75 here).</li>
+</ul>
+<h2 id="set-the-visual-data">Set the visual data<a class="headerlink" href="#set-the-visual-data" title="Permanent link">&para;</a></h2>
+<p>Finally, the most important bit is to <strong>set the visual prop data with the arrays we just created</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="running-the-application">Running the application<a class="headerlink" href="#running-the-application" title="Permanent link">&para;</a></h2>
+<p>Finally, we run the application by starting the main event loop:</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="making-a-screenshot">Making a screenshot<a class="headerlink" href="#making-a-screenshot" title="Permanent link">&para;</a></h3>
+<p>We can easily make a screenshot of <em>the first frame</em> of the canvas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Screenshot support will be improved soon.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">screenshot</span><span class="o">=</span><span class="s2">&quot;screenshot.png&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="recording-a-screencast-video">Recording a screencast video<a class="headerlink" href="#recording-a-screencast-video" title="Permanent link">&para;</a></h3>
+<p>If the library was compiled with ffmpeg, we can easily make a live mp4 screencast of the canvas.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The canvas should NOT be resized when doing a screencast, or the video will be corrupted.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="s2">&quot;screencast.mp4&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>This command <strong>does not</strong> start the video recording, one needs to press the <em>Play</em> button at the bottom right corner. We can pause and resume at any time. When we're done, we press the <em>Stop</em> button and the video will be saved to disk.</p>
+<p><img alt="Playback buttons for screencast" src="https://user-images.githubusercontent.com/1942359/107956919-2cae4100-6fa0-11eb-97d5-e83a70e01183.png" /></p>
+<h2 id="event-callbacks-and-mouse-picking">Event callbacks and mouse picking<a class="headerlink" href="#event-callbacks-and-mouse-picking" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>From now on, all the code snippets below needs to be added <strong>before</strong> calling <code>run()</code>.</p>
+</div>
+<p>We'll write a callback function that is called when the user clicks in the canvas, and that prints the coordinates of the clicked point in the original data coordinate system.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># We define an event callback to implement mouse picking</span>
+<span class="nd">@c</span><span class="o">.</span><span class="n">connect</span>
+<span class="k">def</span> <span class="nf">on_mouse_click</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">modifiers</span><span class="o">=</span><span class="p">()):</span>
+    <span class="c1"># x, y are in pixel coordinates</span>
+    <span class="c1"># First, we find the picked panel</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># Then, we transform into the data coordinate system</span>
+    <span class="c1"># Supported coordinate systems:</span>
+    <span class="c1">#   target_cds=&#39;data&#39; / &#39;scene&#39; / &#39;vulkan&#39; / &#39;framebuffer&#39; / &#39;window&#39;</span>
+    <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), modifiers=</span><span class="si">{</span><span class="n">modifiers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Clicking somewhere shows in the terminal output: <code>Pick at (0.4605, -0.1992), modifiers=()</code></p>
+<h3 id="coordinate-systems">Coordinate systems<a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h3>
+<p>By default, the <code>panel.pick()</code> function converts coordinates from the window coordinate system (used by the event callbacks) to the data coordinate system. There are other coordinate systems that you can convert to using the <code>target_cds</code> keyword argument to <code>pick()</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>original coordinates of the data</td>
+</tr>
+<tr>
+<td><code>scene</code></td>
+<td>the coordinates <em>before</em> controller transformation (panzoom etc) in <code>[-1, +1]</code></td>
+</tr>
+<tr>
+<td><code>vulkan</code></td>
+<td>the coordinates <em>after</em> controller transformation, in <code>[-1, +1]</code></td>
+</tr>
+<tr>
+<td><code>framebuffer</code></td>
+<td>the coordinates in framebuffer pixel coordinates</td>
+</tr>
+<tr>
+<td><code>window</code></td>
+<td>the coordinates in screen pixel coordinates</td>
+</tr>
+</tbody>
+</table>
+<p>A few technical notes:</p>
+<ul>
+<li>The <code>scene</code> coordinate system corresponds to the <strong>vertex shader input</strong>.</li>
+<li>The <code>vulkan</code> coordinate system corresponds to the <strong>vertex shader output</strong>.</li>
+<li>There's a difference between the <code>framebuffer</code> and <code>window</code> systems with high-DPI monitors. This depends on the OS.</li>
+</ul>
+<p>For now, DPI support is semi-manual. Datoviz supports a special <code>dpi_scaling</code> variable that rescales the visual elements depending on this value, and that can be adjusted manually (to be documented later).</p>
+<h2 id="adding-a-simple-gui">Adding a simple GUI<a class="headerlink" href="#adding-a-simple-gui" title="Permanent link">&para;</a></h2>
+<p>Datoviz integrates the <a href="https://github.com/ocornut/imgui">Dear ImGUI library</a> which allows one to create GUIs directly in a Datoviz canvas, without using external dependencies such as Qt.</p>
+<h3 id="adding-a-gui-dialog">Adding a GUI dialog<a class="headerlink" href="#adding-a-gui-dialog" title="Permanent link">&para;</a></h3>
+<p>We create a new GUI dialog.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># We create a GUI dialog.</span>
+<span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;Test GUI&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="adding-a-control-to-the-gui">Adding a control to the GUI<a class="headerlink" href="#adding-a-control-to-the-gui" title="Permanent link">&para;</a></h3>
+<p>We add a slider to change the visual marker size.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># We add a control, a slider controlling a float</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;marker size&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Every time the slider value changes, we update the visual&#39;s marker size</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">*</span> <span class="n">value</span><span class="p">)</span>
+    <span class="c1"># NOTE: an upcoming version will support partial updates</span>
+</code></pre></div>
+<p><img alt="float slider" src="https://user-images.githubusercontent.com/1942359/107957858-82cfb400-6fa1-11eb-8369-effe0e0c1950.png" /></p>
+<p>We add another slider, using integers this time, to change the colormap.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># We add another control, a slider controlling an int between 1 and 4, to change the colormap.</span>
+<span class="c1"># NOTE: an upcoming version will provide a dropdown menu control</span>
+<span class="n">cmaps</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;cividis&#39;</span><span class="p">,</span> <span class="s1">&#39;autumn&#39;</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">]</span>
+
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_int&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Recompute the colors.</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span>
+        <span class="n">color_values</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmaps</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
+    <span class="c1"># Update the color visual</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="int slider" src="https://user-images.githubusercontent.com/1942359/107957994-ac88db00-6fa1-11eb-9b00-62fc41e77a35.png" /></p>
+<p>Finally we add a button to regenerate the marker positions.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># We add a button to regenerate the marker positions</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;new positions&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="https://user-images.githubusercontent.com/1942359/107958095-d17d4e00-6fa1-11eb-9a90-b1b6ba07785d.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../install/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../examples/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.tabs.sticky', 'navigation.expand', 'toc.integrate'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
