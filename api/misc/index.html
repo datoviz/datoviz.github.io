@@ -1639,78 +1639,1694 @@
                 <h1 id="misc-api">Misc API<a class="headerlink" href="#misc-api" title="Permanent link">&para;</a></h1>
 <h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_array"><code>dvz_array()</code><a class="headerlink" href="#dvz_array" title="Permanent link">&para;</a></h3>
+<p>Create a new 1D array.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">dtype</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>initial number of elements</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dtype</code></td>
+<td><code>DvzDataType</code></td>
+<td>the data type of the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzArray</code></td>
+<td>new array</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_point"><code>dvz_array_point()</code><a class="headerlink" href="#dvz_array_point" title="Permanent link">&para;</a></h3>
+<p>Create an array with a single dvec3 position.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_point</span><span class="p">(</span><span class="n">dvec3</span> <span class="n">pos</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>dvec3</code></td>
+<td>initial number of elements</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzArray</code></td>
+<td>new array</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_wrap"><code>dvz_array_wrap()</code><a class="headerlink" href="#dvz_array_wrap" title="Permanent link">&para;</a></h3>
+<p>Create a 1D array from an existing compatible memory buffer.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_wrap</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">dtype</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements in the passed buffer</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dtype</code></td>
+<td><code>DvzDataType</code></td>
+<td>the data type of the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzArray</code></td>
+<td>array wrapping the buffer</td>
+</tr>
+</tbody>
+</table>
+<p>The created array does not allocate memory, it uses the passed buffer instead.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Destroying the array will free the passed pointer!</p>
+</div>
 <h3 id="dvz_array_struct"><code>dvz_array_struct()</code><a class="headerlink" href="#dvz_array_struct" title="Permanent link">&para;</a></h3>
+<p>Create a 1D record array with heterogeneous data type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_struct</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">item_size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>size, in bytes, of each item</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzArray</code></td>
+<td>array</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_3d"><code>dvz_array_3D()</code><a class="headerlink" href="#dvz_array_3d" title="Permanent link">&para;</a></h3>
+<p>Create a 3D array holding a texture.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_3D</span><span class="p">(</span>
+    <span class="kt">uint32_t</span> <span class="n">ndims</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span>
+    <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">item_size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>ndims</code></td>
+<td><code>uint32_t</code></td>
+<td>number of dimensions (1, 2, 3)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 1st dimension</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 2nd dimension</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>depth</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 3rd dimension</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>size of each item in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzArray</code></td>
+<td>array</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_resize"><code>dvz_array_resize()</code><a class="headerlink" href="#dvz_array_resize" title="Permanent link">&para;</a></h3>
+<p>Resize an existing array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_resize</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array to resize</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>the new number of items</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>If the new size is equal to the old size, do nothing.</li>
+<li>If the new size is smaller than the old size, change the size attribute but do not reallocate</li>
+<li>If the new size is larger than the old size, reallocate memory and copy over the old values</li>
+</ul>
 <h3 id="dvz_array_clear"><code>dvz_array_clear()</code><a class="headerlink" href="#dvz_array_clear" title="Permanent link">&para;</a></h3>
+<p>Reset to 0 the contents of an existing array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_clear</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array to clear</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_reshape"><code>dvz_array_reshape()</code><a class="headerlink" href="#dvz_array_reshape" title="Permanent link">&para;</a></h3>
+<p>Reshape a 3D array and <em>delete all the data in it</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_reshape</span><span class="p">(</span>
+    <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array to reshape and clear</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 1st dimension</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 2nd dimension</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>depth</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements along the 3rd dimension</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The contents of the array will be cleared. Copying the existing data would require more work
+and is not necessary at the moment.</p>
+</div>
 <h3 id="dvz_array_data"><code>dvz_array_data()</code><a class="headerlink" href="#dvz_array_data" title="Permanent link">&para;</a></h3>
+<p>Copy data into an array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_data</span><span class="p">(</span>
+    <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">first_item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span>
+    <span class="kt">uint32_t</span> <span class="n">data_item_count</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>first_item</code></td>
+<td><code>uint32_t</code></td>
+<td>first element in the array to be overwritten</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of items to write</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data_item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements in <code>data</code></td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>the buffer containing the data to copy</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>There will be <code>item_count</code> values copied between <code>first_item</code> and <code>first_item + item_count</code> in
+  the array.</li>
+<li>There are <code>data_item_count</code> values in the passed buffer.</li>
+<li>If <code>item_count &gt; data_item_count</code>, the last value of <code>data</code> will be repeated until the last
+value.</li>
+</ul>
+<p>Example:</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">C</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Create an array of 10 double numbers, initialize all elements with 1.23.</span>
+<span class="n">DvzArray</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">dvz_array</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">DVZ_DTYPE_DOUBLE</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">item</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">;</span>
+<span class="n">dvz_array_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
 <h3 id="dvz_array_item"><code>dvz_array_item()</code><a class="headerlink" href="#dvz_array_item" title="Permanent link">&para;</a></h3>
+<p>Retrieve a single element from an array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_array_item</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>uint32_t</code></td>
+<td>the index of the element to retrieve</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>void*</code></td>
+<td>pointer to the requested element</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_column"><code>dvz_array_column()</code><a class="headerlink" href="#dvz_array_column" title="Permanent link">&para;</a></h3>
+<p>Copy data into the column of a record array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_column</span><span class="p">(</span>
+    <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">col_size</span><span class="p">,</span>
+    <span class="kt">uint32_t</span> <span class="n">first_item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">data_item_count</span><span class="p">,</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">source_dtype</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">target_dtype</span><span class="p">,</span>
+    <span class="n">DvzArrayCopyType</span> <span class="n">copy_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">reps</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the offset within the array, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>col_size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>stride in the source array, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>first_item</code></td>
+<td><code>uint32_t</code></td>
+<td>first element in the array to be overwritten</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements to write</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data_item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of elements in <code>data</code></td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>the buffer containing the data to copy</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>source_dtype</code></td>
+<td><code>DvzDataType</code></td>
+<td>the source dtype (only used when casting)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>target_dtype</code></td>
+<td><code>DvzDataType</code></td>
+<td>the target dtype (only used when casting)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>copy_type</code></td>
+<td><code>DvzArrayCopyType</code></td>
+<td>the type of copy</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>reps</code></td>
+<td><code>uint32_t</code></td>
+<td>the number of repeats for each copied element</td>
+</tr>
+</tbody>
+</table>
+<p>This function is used by the default visual baking function, which copies to the vertex buffer
+(corresponding to a record array with as many fields as GLSL attributes in the vertex shader)
+the user-specified visual props (data for the individual elements).</p>
 <h3 id="dvz_array_insert"><code>dvz_array_insert()</code><a class="headerlink" href="#dvz_array_insert" title="Permanent link">&para;</a></h3>
+<p>Insert data in an array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_insert</span><span class="p">(</span>
+    <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">offset</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">insert</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>uint32_t</code></td>
+<td>the index of the first element of the inserted data in the new array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>uint32_t</code></td>
+<td>the number of elements to insert</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>insert</code></td>
+<td><code>void*</code></td>
+<td>the data to insert</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_copy_region"><code>dvz_array_copy_region()</code><a class="headerlink" href="#dvz_array_copy_region" title="Permanent link">&para;</a></h3>
+<p>Copy a region of an array into another.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_copy_region</span><span class="p">(</span>
+    <span class="n">DvzArray</span><span class="o">*</span> <span class="n">src_arr</span><span class="p">,</span> <span class="n">DvzArray</span><span class="o">*</span> <span class="n">dst_arr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_offset</span><span class="p">,</span>
+    <span class="kt">uint32_t</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src_arr</code></td>
+<td><code>DvzArray*</code></td>
+<td>the source array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst_arr</code></td>
+<td><code>DvzArray*</code></td>
+<td>the destination array</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src_offset</code></td>
+<td><code>uint32_t</code></td>
+<td>the index, in the source array, of the first item to copy</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst_offset</code></td>
+<td><code>uint32_t</code></td>
+<td>the destination index</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_count</code></td>
+<td><code>uint32_t</code></td>
+<td>the number of items to copy</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_array_destroy"><code>dvz_array_destroy()</code><a class="headerlink" href="#dvz_array_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy an array.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_destroy</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>array</code></td>
+<td><code>DvzArray*</code></td>
+<td>the array to destroy</td>
+</tr>
+</tbody>
+</table>
+<p>This function frees the allocated underlying data buffer.</p>
 <h2 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_obj_init"><code>dvz_obj_init()</code><a class="headerlink" href="#dvz_obj_init" title="Permanent link">&para;</a></h3>
+<p>Initialize an object.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_init</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>obj</code></td>
+<td><code>DvzObject*</code></td>
+<td>the object</td>
+</tr>
+</tbody>
+</table>
+<p>Memory for the object has been allocated and its fields properly initialized.</p>
 <h3 id="dvz_obj_created"><code>dvz_obj_created()</code><a class="headerlink" href="#dvz_obj_created" title="Permanent link">&para;</a></h3>
+<p>Mark an object as successfully created on the GPU.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_created</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>obj</code></td>
+<td><code>DvzObject*</code></td>
+<td>the object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_obj_destroyed"><code>dvz_obj_destroyed()</code><a class="headerlink" href="#dvz_obj_destroyed" title="Permanent link">&para;</a></h3>
+<p>Mark an object as destroyed.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_destroyed</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>obj</code></td>
+<td><code>DvzObject*</code></td>
+<td>the object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_obj_is_created"><code>dvz_obj_is_created()</code><a class="headerlink" href="#dvz_obj_is_created" title="Permanent link">&para;</a></h3>
+<p>Whether an object has been successfully created.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">dvz_obj_is_created</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>obj</code></td>
+<td><code>DvzObject*</code></td>
+<td>the object</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>bool</code></td>
+<td>boolean indicated whether the object has been successfully created</td>
+</tr>
+</tbody>
+</table>
 <h2 id="container">Container<a class="headerlink" href="#container" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_container"><code>dvz_container()</code><a class="headerlink" href="#dvz_container" title="Permanent link">&para;</a></h3>
+<p>Create a container that will contain an arbitrary number of objects of the same type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzContainer</span> <span class="nf">dvz_container</span><span class="p">(</span>
+    <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">item_size</span><span class="p">,</span> <span class="n">DvzObjectType</span> <span class="n">type</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>count</code></td>
+<td><code>uint32_t</code></td>
+<td>initial number of objects in the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item_size</code></td>
+<td><code>size_t</code></td>
+<td>size of each object, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>type</code></td>
+<td><code>DvzObjectType</code></td>
+<td>object type</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_container_delete_if_destroyed"><code>dvz_container_delete_if_destroyed()</code><a class="headerlink" href="#dvz_container_delete_if_destroyed" title="Permanent link">&para;</a></h3>
+<p>Free a given object in the constainer if it was previously destroyed.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_delete_if_destroyed</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>uint32_t</code></td>
+<td>the index of the object within the container</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_container_alloc"><code>dvz_container_alloc()</code><a class="headerlink" href="#dvz_container_alloc" title="Permanent link">&para;</a></h3>
+<p>Get a pointer to a new object in the container.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_container_alloc</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>void*</code></td>
+<td>pointer to an allocated object</td>
+</tr>
+</tbody>
+</table>
+<p>If the container is full, it will be automatically resized.</p>
 <h3 id="dvz_container_get"><code>dvz_container_get()</code><a class="headerlink" href="#dvz_container_get" title="Permanent link">&para;</a></h3>
+<p>Return the object at a given index.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_container_get</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>uint32_t</code></td>
+<td>the index of the object within the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>returns</code></td>
+<td><code>None</code></td>
+<td>a pointer to the object at the specified index</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_container_iterator"><code>dvz_container_iterator()</code><a class="headerlink" href="#dvz_container_iterator" title="Permanent link">&para;</a></h3>
+<p>Start a loop iteration over all valid objects within the container.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzContainerIterator</span> <span class="nf">dvz_container_iterator</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzContainerIterator</code></td>
+<td>pointer to the first object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_container_iter"><code>dvz_container_iter()</code><a class="headerlink" href="#dvz_container_iter" title="Permanent link">&para;</a></h3>
+<p>Continue an already-started loop iteration on a container.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_iter</span><span class="p">(</span><span class="n">DvzContainerIterator</span><span class="o">*</span> <span class="n">iterator</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>None</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>void</code></td>
+<td>pointer to the next object in the container, or NULL at the end</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_container_destroy"><code>dvz_container_destroy()</code><a class="headerlink" href="#dvz_container_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy a container.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_destroy</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>container</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>None</code></td>
+<td>the index of the object within the container</td>
+</tr>
+</tbody>
+</table>
+<p>Free all remaining objects, as well as the container itself.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All objects in the container must have been destroyed beforehand, since the generic
+container does not know how to properly destroy objects that were created with Vulkan.</p>
+</div>
 <h2 id="io">I/O<a class="headerlink" href="#io" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_write_png"><code>dvz_write_png()</code><a class="headerlink" href="#dvz_write_png" title="Permanent link">&para;</a></h3>
+<p>Save an image to a PNG file</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_write_png</span><span class="p">(</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filename</code></td>
+<td><code>char*</code></td>
+<td>path to the PNG file to create</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
+<td><code>uint32_t</code></td>
+<td>width of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
+<td><code>uint32_t</code></td>
+<td>height of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>image</code></td>
+<td><code>uint8_t*</code></td>
+<td>pointer to an array of 32-bit RGBA values</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_write_ppm"><code>dvz_write_ppm()</code><a class="headerlink" href="#dvz_write_ppm" title="Permanent link">&para;</a></h3>
+<p>Save an image to a PPM file (short ASCII header and flat binary RGBA values).</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_write_ppm</span><span class="p">(</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filename</code></td>
+<td><code>char*</code></td>
+<td>path to the PPM file to create</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
+<td><code>uint32_t</code></td>
+<td>width of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
+<td><code>uint32_t</code></td>
+<td>height of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>image</code></td>
+<td><code>uint8_t*</code></td>
+<td>pointer to an array of 32-bit RGBA values</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_read_file"><code>dvz_read_file()</code><a class="headerlink" href="#dvz_read_file" title="Permanent link">&para;</a></h3>
+<p>Read a binary file.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">uint32_t</span><span class="o">*</span> <span class="nf">dvz_read_file</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filename</code></td>
+<td><code>char*</code></td>
+<td>path of the file to open</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>size</code></td>
+<td><code>size_t*</code></td>
+<td>of the file</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>uint32_t*</code></td>
+<td>to a byte buffer with the file contents</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_read_npy"><code>dvz_read_npy()</code><a class="headerlink" href="#dvz_read_npy" title="Permanent link">&para;</a></h3>
+<p>Read a NumPy NPY file.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="o">*</span> <span class="nf">dvz_read_npy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filename</code></td>
+<td><code>char*</code></td>
+<td>path of the file to open</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>size</code></td>
+<td><code>size_t*</code></td>
+<td>of the file</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>char*</code></td>
+<td>to a buffer containing the array elements</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_read_ppm"><code>dvz_read_ppm()</code><a class="headerlink" href="#dvz_read_ppm" title="Permanent link">&para;</a></h3>
+<p>Read a PPM image file.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">dvz_read_ppm</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">width</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">height</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filename</code></td>
+<td><code>char*</code></td>
+<td>path of the file to open</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>width</code></td>
+<td><code>int*</code></td>
+<td>width of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>height</code></td>
+<td><code>int*</code></td>
+<td>of the image</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>uint8_t*</code></td>
+<td>to a buffer with the loaded RGBA pixel colors</td>
+</tr>
+</tbody>
+</table>
 <h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_thread"><code>dvz_thread()</code><a class="headerlink" href="#dvz_thread" title="Permanent link">&para;</a></h3>
+<p>Create a thread.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzThread</span> <span class="nf">dvz_thread</span><span class="p">(</span><span class="n">DvzThreadCallback</span> <span class="n">callback</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>callback</code></td>
+<td><code>DvzThreadCallback</code></td>
+<td>the function that will run in a background thread</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>user_data</code></td>
+<td><code>void*</code></td>
+<td>a pointer to arbitrary user data</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzThread</code></td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<p>Callback function signature: <code>void*(void*)</code></p>
 <h3 id="dvz_thread_lock"><code>dvz_thread_lock()</code><a class="headerlink" href="#dvz_thread_lock" title="Permanent link">&para;</a></h3>
+<p>Acquire a mutex lock associated to the thread.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_lock</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>thread</code></td>
+<td><code>DvzThread*</code></td>
+<td>the thread</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_thread_unlock"><code>dvz_thread_unlock()</code><a class="headerlink" href="#dvz_thread_unlock" title="Permanent link">&para;</a></h3>
+<p>Release a mutex lock associated to the thread.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_unlock</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>thread</code></td>
+<td><code>DvzThread*</code></td>
+<td>the thread</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_thread_join"><code>dvz_thread_join()</code><a class="headerlink" href="#dvz_thread_join" title="Permanent link">&para;</a></h3>
+<p>Destroy a thread after the thread function has finished running.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_join</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>thread</code></td>
+<td><code>DvzThread*</code></td>
+<td>the thread</td>
+</tr>
+</tbody>
+</table>
 <h2 id="fifo-queue">FIFO queue<a class="headerlink" href="#fifo-queue" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_fifo"><code>dvz_fifo()</code><a class="headerlink" href="#dvz_fifo" title="Permanent link">&para;</a></h3>
+<p>Create a FIFO queue.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzFifo</span> <span class="nf">dvz_fifo</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">capacity</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>capacity</code></td>
+<td><code>int32_t</code></td>
+<td>the maximum size</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzFifo</code></td>
+<td>FIFO queue</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_fifo_enqueue"><code>dvz_fifo_enqueue()</code><a class="headerlink" href="#dvz_fifo_enqueue" title="Permanent link">&para;</a></h3>
+<p>Enqueue an object in a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_enqueue</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">item</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>item</code></td>
+<td><code>void*</code></td>
+<td>the pointer to the object to enqueue</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_fifo_dequeue"><code>dvz_fifo_dequeue()</code><a class="headerlink" href="#dvz_fifo_dequeue" title="Permanent link">&para;</a></h3>
+<p>Dequeue an object from a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_fifo_dequeue</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">wait</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>wait</code></td>
+<td><code>bool</code></td>
+<td>whether to return immediately, or wait until the queue is non-empty</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>void*</code></td>
+<td>pointer to the dequeued object, or NULL if the queue is empty</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_fifo_size"><code>dvz_fifo_size()</code><a class="headerlink" href="#dvz_fifo_size" title="Permanent link">&para;</a></h3>
+<p>Get the number of items in a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_fifo_size</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>int</code></td>
+<td>number of elements in the queue</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_fifo_discard"><code>dvz_fifo_discard()</code><a class="headerlink" href="#dvz_fifo_discard" title="Permanent link">&para;</a></h3>
+<p>Discard old items in a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_discard</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max_size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>max_size</code></td>
+<td><code>int</code></td>
+<td>the number of items to keep in the queue.</td>
+</tr>
+</tbody>
+</table>
+<p>This function will suppress all items in the queue except the <code>max_size</code> most recent ones.</p>
 <h3 id="dvz_fifo_reset"><code>dvz_fifo_reset()</code><a class="headerlink" href="#dvz_fifo_reset" title="Permanent link">&para;</a></h3>
+<p>Delete all items in a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_reset</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_fifo_destroy"><code>dvz_fifo_destroy()</code><a class="headerlink" href="#dvz_fifo_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy a queue.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_destroy</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>fifo</code></td>
+<td><code>DvzFifo*</code></td>
+<td>the FIFO queue</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_mesh"><code>dvz_mesh()</code><a class="headerlink" href="#dvz_mesh" title="Permanent link">&para;</a></h3>
+<p>Create a new mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
+<p>A mesh is represented by an array of vertices of type <code>DvzGraphicsMeshVertex</code> and indices, where
+every triplet of vertex indices represents a triangular face of the mesh.</p>
 <h3 id="dvz_mesh_obj"><code>dvz_mesh_obj()</code><a class="headerlink" href="#dvz_mesh_obj" title="Permanent link">&para;</a></h3>
+<p>Load an OBJ mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_obj</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">file_path</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>file_path</code></td>
+<td><code>char*</code></td>
+<td>the path to the .obj file</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_grid"><code>dvz_mesh_grid()</code><a class="headerlink" href="#dvz_mesh_grid" title="Permanent link">&para;</a></h3>
+<p>Create a grid mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_grid</span><span class="p">(</span>
+    <span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">,</span> <span class="n">vec3</span><span class="o">*</span> <span class="n">positions</span><span class="p">,</span>
+    <span class="n">vec2</span><span class="o">*</span> <span class="n">texcoords</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>row_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of rows</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>col_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of columns</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>positions</code></td>
+<td><code>vec3*</code></td>
+<td>the 3D position of each vertex in the grid</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texcoords</code></td>
+<td><code>vec2*</code></td>
+<td>the texture coordinates of each vertex</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>positions</code> buffer should contain row_count * col_count vec3 positions (C order).</p>
 <h3 id="dvz_mesh_surface"><code>dvz_mesh_surface()</code><a class="headerlink" href="#dvz_mesh_surface" title="Permanent link">&para;</a></h3>
+<p>Create a surface mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_surface</span><span class="p">(</span>
+    <span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">heights</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>row_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of rows</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>col_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of columns</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>heights</code></td>
+<td><code>float*</code></td>
+<td>the height of each vertex in the grid</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>heights</code> buffer should contain row_count * col_count float positions (C order).</p>
 <h3 id="dvz_mesh_cube"><code>dvz_mesh_cube()</code><a class="headerlink" href="#dvz_mesh_cube" title="Permanent link">&para;</a></h3>
+<p>Create a unit cube mesh (ranging [-0.5, +0.5]).</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cube</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
 <h3 id="dvz_mesh_sphere"><code>dvz_mesh_sphere()</code><a class="headerlink" href="#dvz_mesh_sphere" title="Permanent link">&para;</a></h3>
+<p>Create a sphere mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_sphere</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>row_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of rows</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>col_count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of columns</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_cylinder"><code>dvz_mesh_cylinder()</code><a class="headerlink" href="#dvz_mesh_cylinder" title="Permanent link">&para;</a></h3>
+<p>Create a cylinder mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cylinder</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of sides</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_cone"><code>dvz_mesh_cone()</code><a class="headerlink" href="#dvz_mesh_cone" title="Permanent link">&para;</a></h3>
+<p>Create a cone mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cone</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of sides</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_square"><code>dvz_mesh_square()</code><a class="headerlink" href="#dvz_mesh_square" title="Permanent link">&para;</a></h3>
+<p>Create a square mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_square</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
 <h3 id="dvz_mesh_disc"><code>dvz_mesh_disc()</code><a class="headerlink" href="#dvz_mesh_disc" title="Permanent link">&para;</a></h3>
+<p>Create a disc mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_disc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of sides</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzMesh</code></td>
+<td>mesh object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_normalize"><code>dvz_mesh_normalize()</code><a class="headerlink" href="#dvz_mesh_normalize" title="Permanent link">&para;</a></h3>
+<p>Normalize a mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_normalize</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_destroy"><code>dvz_mesh_destroy()</code><a class="headerlink" href="#dvz_mesh_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy a mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_destroy</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mesh-transform">Mesh transform<a class="headerlink" href="#mesh-transform" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_mesh_transform_reset"><code>dvz_mesh_transform_reset()</code><a class="headerlink" href="#dvz_mesh_transform_reset" title="Permanent link">&para;</a></h3>
+<p>Reset the mesh transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform_reset</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_transform_add"><code>dvz_mesh_transform_add()</code><a class="headerlink" href="#dvz_mesh_transform_add" title="Permanent link">&para;</a></h3>
+<p>Append a mesh transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform_add</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">mat4</span> <span class="n">transform</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>transform</code></td>
+<td><code>mat4</code></td>
+<td>the transform matrix</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_translate"><code>dvz_mesh_translate()</code><a class="headerlink" href="#dvz_mesh_translate" title="Permanent link">&para;</a></h3>
+<p>Append a translation transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_translate</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">translate</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>translate</code></td>
+<td><code>vec3</code></td>
+<td>the translation vector</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_scale"><code>dvz_mesh_scale()</code><a class="headerlink" href="#dvz_mesh_scale" title="Permanent link">&para;</a></h3>
+<p>Append a scaling transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_scale</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">scale</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>scale</code></td>
+<td><code>vec3</code></td>
+<td>the scaling coefficients</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_rotate"><code>dvz_mesh_rotate()</code><a class="headerlink" href="#dvz_mesh_rotate" title="Permanent link">&para;</a></h3>
+<p>Append a rotation transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_rotate</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="kt">float</span> <span class="n">angle</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">axis</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>angle</code></td>
+<td><code>float</code></td>
+<td>the rotation angle</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>axis</code></td>
+<td><code>vec3</code></td>
+<td>the rotation axis</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mesh_transform"><code>dvz_mesh_transform()</code><a class="headerlink" href="#dvz_mesh_transform" title="Permanent link">&para;</a></h3>
+<p>Apply the transformation matrix to a mesh.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mesh</code></td>
+<td><code>DvzMesh*</code></td>
+<td>the mesh</td>
+</tr>
+</tbody>
+</table>
 <h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_rand_byte"><code>dvz_rand_byte()</code><a class="headerlink" href="#dvz_rand_byte" title="Permanent link">&para;</a></h3>
+<p>Return a random integer number between 0 and 255.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span> <span class="nf">dvz_rand_byte</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>uint8_t</code> | number |</p>
 <h3 id="dvz_rand_float"><code>dvz_rand_float()</code><a class="headerlink" href="#dvz_rand_float" title="Permanent link">&para;</a></h3>
+<p>Return a random floating-point number between 0 and 1.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="nf">dvz_rand_float</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>float</code> | number |</p>
 <h3 id="dvz_rand_normal"><code>dvz_rand_normal()</code><a class="headerlink" href="#dvz_rand_normal" title="Permanent link">&para;</a></h3>
+<p>Return a random normal floating-point number.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="nf">dvz_rand_normal</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>float</code> | number |</p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_sleep"><code>dvz_sleep()</code><a class="headerlink" href="#dvz_sleep" title="Permanent link">&para;</a></h3>
+<p>Wait a given number of milliseconds.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sleep</span><span class="p">(</span><span class="kt">int</span> <span class="n">milliseconds</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>milliseconds</code></td>
+<td><code>int</code></td>
+<td>sleep duration</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_next_pow2"><code>dvz_next_pow2()</code><a class="headerlink" href="#dvz_next_pow2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">uint64_t</span> <span class="nf">dvz_next_pow2</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">x</span><span class="p">);</span>
+</code></pre></div>
                 
               
               

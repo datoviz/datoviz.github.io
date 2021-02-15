@@ -1273,30 +1273,777 @@
                 <h1 id="gpu-context-and-objects">GPU context and objects<a class="headerlink" href="#gpu-context-and-objects" title="Permanent link">&para;</a></h1>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_context"><code>dvz_context()</code><a class="headerlink" href="#dvz_context" title="Permanent link">&para;</a></h3>
+<p>Create a context associated to a GPU.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzContext</span><span class="o">*</span> <span class="nf">dvz_context</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>gpu</code></td>
+<td><code>DvzGpu*</code></td>
+<td>the GPU</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>window</code></td>
+<td><code>DvzWindow*</code></td>
+<td>the window with the surface attached to the GPU</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_context_reset"><code>dvz_context_reset()</code><a class="headerlink" href="#dvz_context_reset" title="Permanent link">&para;</a></h3>
+<p>Destroy all GPU resources in a GPU context.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_context_reset</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_context_destroy"><code>dvz_context_destroy()</code><a class="headerlink" href="#dvz_context_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy a context.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_context_destroy</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+</tbody>
+</table>
 <h2 id="buffers">Buffers<a class="headerlink" href="#buffers" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_ctx_buffers"><code>dvz_ctx_buffers()</code><a class="headerlink" href="#dvz_ctx_buffers" title="Permanent link">&para;</a></h3>
+<p>Allocate one of several buffer regions on the GPU.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzBufferRegions</span> <span class="nf">dvz_ctx_buffers</span><span class="p">(</span>
+    <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="n">DvzBufferType</span> <span class="n">buffer_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">buffer_count</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>buffer_type</code></td>
+<td><code>DvzBufferType</code></td>
+<td>the type of buffer to allocate the regions on</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>buffer_count</code></td>
+<td><code>uint32_t</code></td>
+<td>the number of buffer regions to allocate</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of each region to allocate, in bytes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_ctx_buffers_resize"><code>dvz_ctx_buffers_resize()</code><a class="headerlink" href="#dvz_ctx_buffers_resize" title="Permanent link">&para;</a></h3>
+<p>Resize a set of buffer regions.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_ctx_buffers_resize</span><span class="p">(</span>
+    <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="n">DvzBufferRegions</span><span class="o">*</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">new_size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>br</code></td>
+<td><code>DvzBufferRegions*</code></td>
+<td>the buffer regions to resize</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>new_size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the new size of each buffer region, in bytes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="textures">Textures<a class="headerlink" href="#textures" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_ctx_texture"><code>dvz_ctx_texture()</code><a class="headerlink" href="#dvz_ctx_texture" title="Permanent link">&para;</a></h3>
+<p>Create a new GPU texture.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzTexture</span><span class="o">*</span> <span class="nf">dvz_ctx_texture</span><span class="p">(</span>
+    <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dims</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">size</span><span class="p">,</span> <span class="n">VkFormat</span> <span class="n">format</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dims</code></td>
+<td><code>uint32_t</code></td>
+<td>the number of dimensions of the texture (1, 2, or 3)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>uvec3</code></td>
+<td>the width, height, and depth</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>format</code></td>
+<td><code>VkFormat</code></td>
+<td>the format of each pixel</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_texture_resize"><code>dvz_texture_resize()</code><a class="headerlink" href="#dvz_texture_resize" title="Permanent link">&para;</a></h3>
+<p>Resize a texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_resize</span><span class="p">(</span><span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>uvec3</code></td>
+<td>the new size (width, height, depth)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function will delete the texture data.</p>
+</div>
 <h3 id="dvz_texture_filter"><code>dvz_texture_filter()</code><a class="headerlink" href="#dvz_texture_filter" title="Permanent link">&para;</a></h3>
+<p>Set the texture filter.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_filter</span><span class="p">(</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">DvzFilterType</span> <span class="n">type</span><span class="p">,</span> <span class="n">VkFilter</span> <span class="n">filter</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>type</code></td>
+<td><code>DvzFilterType</code></td>
+<td>the filter type</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>filter</code></td>
+<td><code>VkFilter</code></td>
+<td>the filter</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_texture_address_mode"><code>dvz_texture_address_mode()</code><a class="headerlink" href="#dvz_texture_address_mode" title="Permanent link">&para;</a></h3>
+<p>Set the texture address mode.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_address_mode</span><span class="p">(</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">DvzTextureAxis</span> <span class="n">axis</span><span class="p">,</span> <span class="n">VkSamplerAddressMode</span> <span class="n">address_mode</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>axis</code></td>
+<td><code>DvzTextureAxis</code></td>
+<td>the axis</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>address_mode</code></td>
+<td><code>VkSamplerAddressMode</code></td>
+<td>the address mode</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_texture_upload"><code>dvz_texture_upload()</code><a class="headerlink" href="#dvz_texture_upload" title="Permanent link">&para;</a></h3>
+<p>Upload data to a GPU texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_upload</span><span class="p">(</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>uvec3</code></td>
+<td>offset within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>shape of the part of the texture to update</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>size of the data to upload, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to the data to upload</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function should not be used to update a texture that is being used for rendering in the
+main event loop, otherwise full GPU synchronization needs to be done. Look at the Transfers
+API instead.</p>
+</div>
 <h3 id="dvz_texture_download"><code>dvz_texture_download()</code><a class="headerlink" href="#dvz_texture_download" title="Permanent link">&para;</a></h3>
+<p>Download a texture from the GPU to the CPU.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_download</span><span class="p">(</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>uvec3</code></td>
+<td>offset within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>shape of the part of the texture to download</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>size of the data to download, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to the buffer to download to (should be already allocated)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function should not be used to download from a texture that is being used for rendering
+in the main event loop, otherwise full GPU synchronization needs to be done. Look at the
+Transfers API instead.</p>
+</div>
 <h3 id="dvz_texture_copy"><code>dvz_texture_copy()</code><a class="headerlink" href="#dvz_texture_copy" title="Permanent link">&para;</a></h3>
+<p>Copy part of a texture to another texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_copy</span><span class="p">(</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">src_offset</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">dst</span><span class="p">,</span>
+    <span class="n">uvec3</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the source texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src_offset</code></td>
+<td><code>uvec3</code></td>
+<td>offset within the source texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the target texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst_offset</code></td>
+<td><code>uvec3</code></td>
+<td>offset within the target texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>shape of the part of the texture to copy</td>
+</tr>
+</tbody>
+</table>
+<p>This function does not involve CPU-GPU data transfers.</p>
 <h3 id="dvz_texture_destroy"><code>dvz_texture_destroy()</code><a class="headerlink" href="#dvz_texture_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy a texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_destroy</span><span class="p">(</span><span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture</td>
+</tr>
+</tbody>
+</table>
 <h2 id="compute-pipeline">Compute pipeline<a class="headerlink" href="#compute-pipeline" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_ctx_compute"><code>dvz_ctx_compute()</code><a class="headerlink" href="#dvz_ctx_compute" title="Permanent link">&para;</a></h3>
+<p>Create a new compute pipeline.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzCompute</span><span class="o">*</span> <span class="nf">dvz_ctx_compute</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader_path</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>context</code></td>
+<td><code>DvzContext*</code></td>
+<td>the context</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shader_path</code></td>
+<td><code>char*</code></td>
+<td>path to the <code>.spirv</code> file containing the compute shader</td>
+</tr>
+</tbody>
+</table>
 <h2 id="data-transfers">Data transfers<a class="headerlink" href="#data-transfers" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_upload_buffers"><code>dvz_upload_buffers()</code><a class="headerlink" href="#dvz_upload_buffers" title="Permanent link">&para;</a></h3>
+<p>Upload data to 1 or N buffer regions on the GPU while the app event loop is running.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_upload_buffers</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>br</code></td>
+<td><code>DvzBufferRegions</code></td>
+<td>the buffer regions to update</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the offset within the buffer regions, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of the data to upload, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to the data to upload to the GPU</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_download_buffers"><code>dvz_download_buffers()</code><a class="headerlink" href="#dvz_download_buffers" title="Permanent link">&para;</a></h3>
+<p>Download data from a buffer region to the CPU while the app event loop is running.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_download_buffers</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>br</code></td>
+<td><code>DvzBufferRegions</code></td>
+<td>the buffer regions to update</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the offset within the buffer regions, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of the data to upload, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to a buffer already allocated to contain <code>size</code> bytes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_copy_buffers"><code>dvz_copy_buffers()</code><a class="headerlink" href="#dvz_copy_buffers" title="Permanent link">&para;</a></h3>
+<p>Copy data between two GPU buffer regions.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_copy_buffers</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">src</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">src_offset</span><span class="p">,</span>
+    <span class="n">DvzBufferRegions</span> <span class="n">dst</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src</code></td>
+<td><code>DvzBufferRegions</code></td>
+<td>the buffer region to copy from</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src_offset</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the offset within the source buffer region</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst</code></td>
+<td><code>DvzBufferRegions</code></td>
+<td>the buffer region to copy to</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst_offset</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the offset within the target buffer region</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of the data to copy</td>
+</tr>
+</tbody>
+</table>
+<p>This function does not involve GPU-CPU data transfers.</p>
 <h3 id="dvz_upload_texture"><code>dvz_upload_texture()</code><a class="headerlink" href="#dvz_upload_texture" title="Permanent link">&para;</a></h3>
+<p>Upload data to a texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_upload_texture</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span>
+    <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture to update</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>uvec3</code></td>
+<td>the offset within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>the shape of the region to update within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of the uploaded data, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to the data to upload to the GPU</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_download_texture"><code>dvz_download_texture()</code><a class="headerlink" href="#dvz_download_texture" title="Permanent link">&para;</a></h3>
+<p>Download data from a texture.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_download_texture</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span>
+    <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>texture</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the texture to download from</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>uvec3</code></td>
+<td>the offset within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>the shape of the region to update within the texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the size of the downloaded data, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>data</code></td>
+<td><code>void*</code></td>
+<td>pointer to the buffer that will hold the downloaded data</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_copy_texture"><code>dvz_copy_texture()</code><a class="headerlink" href="#dvz_copy_texture" title="Permanent link">&para;</a></h3>
+<p>Copy part of a texture to another.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_copy_texture</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">src_offset</span><span class="p">,</span>
+    <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">dst</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the source texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>src_offset</code></td>
+<td><code>uvec3</code></td>
+<td>the offset within the source texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst</code></td>
+<td><code>DvzTexture*</code></td>
+<td>the target texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dst_offset</code></td>
+<td><code>uvec3</code></td>
+<td>the offset within the target texture</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>shape</code></td>
+<td><code>uvec3</code></td>
+<td>the shape of the part of the texture to copy</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>VkDeviceSize</code></td>
+<td>the corresponding size of that part, in bytes</td>
+</tr>
+</tbody>
+</table>
+<p>This function does not involve GPU-CPU data transfers.</p>
 <h3 id="dvz_process_transfers"><code>dvz_process_transfers()</code><a class="headerlink" href="#dvz_process_transfers" title="Permanent link">&para;</a></h3>
+<p>Process the pending transfers.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_process_transfers</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>br</code></td>
+<td><code>None</code></td>
+<td>the buffer regions to update</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>offset</code></td>
+<td><code>None</code></td>
+<td>the offset within the buffer regions, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>size</code></td>
+<td><code>None</code></td>
+<td>the size of the data to upload, in bytes</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>data</code></td>
+<td><code>None</code></td>
+<td>pointer to the data to upload to the GPU</td>
+</tr>
+</tbody>
+</table>
+<p>When the event loop is running, all transfers are enqueued in a queue rather than executed
+directly. The reason is that proper synchronization is required in order to avoid modifying GPU
+objects while they are being used for rendering. The transfer processing function is called at a
+deterministic time within the main event loop.</p>
                 
               
               

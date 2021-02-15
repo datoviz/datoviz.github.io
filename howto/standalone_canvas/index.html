@@ -1043,9 +1043,156 @@
 <li>Creating a function callback for command buffer refill,</li>
 <li>Creating a vertex buffer manually.</li>
 </ul>
-<!-- IMAGE ../images/screenshots/standalone_canvas.png -->
+<p><img alt="" src="../../images/screenshots/standalone_canvas.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// code from `examples/standalone_canvas.c`:</span>
 
-<!-- CODE_C examples/standalone_canvas.c -->
+<span class="cm">/*************************************************************************************************/</span>
+<span class="cm">/*  Example of a standalone application using the vklite API in a canvas.                        */</span>
+<span class="cm">/*************************************************************************************************/</span>
+
+<span class="c1">/// Import the library public header.</span>
+<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Objects we&#39;ll need in the refill callback. Using static global variables is not a good practice</span>
+<span class="c1">// in real-world applications...</span>
+<span class="k">static</span> <span class="n">DvzBufferRegions</span> <span class="n">vertex_buffer</span><span class="p">;</span>
+<span class="k">static</span> <span class="n">DvzGraphics</span> <span class="n">graphics</span><span class="p">;</span>
+<span class="k">static</span> <span class="n">DvzBindings</span> <span class="n">bindings</span><span class="p">;</span>
+
+<span class="c1">// Refill callback. This function is called by the canvas whenever it needs to recreate its command</span>
+<span class="c1">// buffers, for example when initializing the canvas, and when resizing it.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">_triangle_refill</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ASSERT</span><span class="p">(</span><span class="n">canvas</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="c1">// The callback is passed an event object with a list of command buffers to recreate. In</span>
+    <span class="c1">// this particular example, we just use a single command buffer.</span>
+    <span class="n">ASSERT</span><span class="p">(</span><span class="n">ev</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">rf</span><span class="p">.</span><span class="n">cmd_count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">ev</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">rf</span><span class="p">.</span><span class="n">cmds</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="c1">// There is by default just one command buffer, linked to the render queue.</span>
+    <span class="n">ASSERT</span><span class="p">(</span><span class="n">cmds</span><span class="o">-&gt;</span><span class="n">queue_idx</span> <span class="o">==</span> <span class="n">DVZ_DEFAULT_QUEUE_RENDER</span><span class="p">);</span>
+
+    <span class="c1">// This is the current swapchain image index for which we need to refill the command buffer.</span>
+    <span class="c1">// There is one command buffer per swapchain image, so whenever a command buffer refill is</span>
+    <span class="c1">// needed, this callback function is called three times for example, if using triple buffering.</span>
+    <span class="kt">uint32_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">ev</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">rf</span><span class="p">.</span><span class="n">img_idx</span><span class="p">;</span>
+
+    <span class="c1">// We begin recording the command buffer here.</span>
+    <span class="n">dvz_cmd_begin</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">);</span>
+
+    <span class="c1">// We begin the default render pass.</span>
+    <span class="n">dvz_cmd_begin_renderpass</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">canvas</span><span class="o">-&gt;</span><span class="n">renderpass</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">canvas</span><span class="o">-&gt;</span><span class="n">framebuffers</span><span class="p">);</span>
+
+    <span class="c1">// We set the viewport to the entire framebuffer size.</span>
+    <span class="n">dvz_cmd_viewport</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">canvas</span><span class="o">-&gt;</span><span class="n">viewport</span><span class="p">.</span><span class="n">viewport</span><span class="p">);</span>
+
+    <span class="c1">// We bind the vertex buffer for the upcoming drawing command.</span>
+    <span class="n">dvz_cmd_bind_vertex_buffer</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vertex_buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We bind the graphics pipeline.</span>
+    <span class="n">dvz_cmd_bind_graphics</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bindings</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We render 3 vertices (1 triangle).</span>
+    <span class="n">dvz_cmd_draw</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="c1">// End of the render pass and command buffer.</span>
+    <span class="n">dvz_cmd_end_renderpass</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">);</span>
+    <span class="n">dvz_cmd_end</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">idx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// We create a singleton application with a GLFW backend.</span>
+    <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
+
+    <span class="c1">// We use the first detected GPU. The last argument is the GPU index.</span>
+    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">dvz_gpu</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We create a new canvas with the size specified. The last argument is for optional flags.</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">dvz_canvas</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We create a new graphics pipeline.</span>
+    <span class="n">graphics</span> <span class="o">=</span> <span class="n">dvz_graphics</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+
+    <span class="c1">// We set the renderpass.</span>
+    <span class="n">dvz_graphics_renderpass</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">canvas</span><span class="o">-&gt;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We specify the primitive.</span>
+    <span class="n">dvz_graphics_topology</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</span><span class="p">);</span>
+
+    <span class="c1">// We set the shaders.</span>
+    <span class="n">dvz_graphics_shader</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_SHADER_STAGE_VERTEX_BIT</span><span class="p">,</span> <span class="s">&quot;triangle.vert.spv&quot;</span><span class="p">);</span>
+    <span class="n">dvz_graphics_shader</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_SHADER_STAGE_FRAGMENT_BIT</span><span class="p">,</span> <span class="s">&quot;triangle.frag.spv&quot;</span><span class="p">);</span>
+
+    <span class="c1">// We specify the vertex structure size.</span>
+    <span class="n">dvz_graphics_vertex_binding</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">));</span>
+
+    <span class="c1">// We specify the two vertex attributes.</span>
+    <span class="n">dvz_graphics_vertex_attr</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_FORMAT_R32G32B32_SFLOAT</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">,</span> <span class="n">pos</span><span class="p">));</span>
+    <span class="n">dvz_graphics_vertex_attr</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">VK_FORMAT_R8G8B8A8_UNORM</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">,</span> <span class="n">color</span><span class="p">));</span>
+
+    <span class="c1">// Once we&#39;ve set up the graphics pipeline, we create it.</span>
+    <span class="n">dvz_graphics_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">);</span>
+
+    <span class="c1">// We create the (empty) bindings: the shaders do not necessitate any uniform or</span>
+    <span class="c1">// texture in this example.</span>
+    <span class="n">bindings</span> <span class="o">=</span> <span class="n">dvz_bindings</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">.</span><span class="n">slots</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dvz_bindings_update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bindings</span><span class="p">);</span>
+
+    <span class="c1">// We create the GPU buffer holding the vertex data.</span>
+    <span class="c1">// NOTE: in real applications, once should use few, even a single large vertex buffer for all</span>
+    <span class="c1">// graphics pipelines in the application. Defining many small GPU buffers is bad practice.</span>
+    <span class="n">DvzBuffer</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">dvz_buffer</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+
+    <span class="c1">// There will be three vertices for 1 triangle.</span>
+    <span class="n">VkDeviceSize</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">);</span>
+    <span class="n">dvz_buffer_size</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// We declare that the buffer will be used as a vertex buffer.</span>
+    <span class="n">dvz_buffer_usage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">VK_BUFFER_USAGE_VERTEX_BUFFER_BIT</span><span class="p">);</span>
+
+    <span class="c1">// The buffer should be accessible directly from the CPU in this example (bad practice in real</span>
+    <span class="c1">// applications).</span>
+    <span class="n">dvz_buffer_memory</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</span> <span class="o">|</span> <span class="n">VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</span><span class="p">);</span>
+
+    <span class="c1">// Once set up, we create the GPU buffer.</span>
+    <span class="n">dvz_buffer_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+
+    <span class="c1">// We define a view (buffer region) on the entire buffer.</span>
+    <span class="n">vertex_buffer</span> <span class="o">=</span> <span class="n">dvz_buffer_regions</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Define the vertex data.</span>
+    <span class="c1">// NOTE: in this example, we don&#39;t include the common.glsl shader and we use raw Vulkan</span>
+    <span class="c1">// shaders. So the Vulkan coordinate system is used, with the y axis going down.</span>
+    <span class="n">DvzVertex</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom left, red</span>
+        <span class="p">{{</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom right, green</span>
+        <span class="p">{{</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// top, blue</span>
+    <span class="p">};</span>
+
+    <span class="c1">// We upload the data to the GPU vertex buffer.</span>
+    <span class="n">dvz_buffer_regions_upload</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vertex_buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+
+    <span class="c1">// We set the command buffer refill callback, the function that will be called whenever the</span>
+    <span class="c1">// canvas needs to refill its command buffers. The callback generates the GPU commands to draw</span>
+    <span class="c1">// the triangle.</span>
+    <span class="n">dvz_event_callback</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">DVZ_EVENT_REFILL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_EVENT_MODE_SYNC</span><span class="p">,</span> <span class="n">_triangle_refill</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="c1">// dvz_app_run(app, 5);</span>
+    <span class="c1">// dvz_screenshot_file(canvas, &quot;../docs/images/screenshots/standalone_canvas.png&quot;);</span>
+    <span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We need to clean up all objects handled by Datoviz at the end.</span>
+    <span class="n">dvz_graphics_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">);</span>
+    <span class="n">dvz_buffer_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+    <span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               

@@ -1426,51 +1426,1168 @@
                 <h1 id="canvas-api">Canvas API<a class="headerlink" href="#canvas-api" title="Permanent link">&para;</a></h1>
 <h2 id="canvas">Canvas<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_canvas_commands"><code>dvz_canvas_commands()</code><a class="headerlink" href="#dvz_canvas_commands" title="Permanent link">&para;</a></h3>
+<p>Create a set of Vulkan command buffers on a given GPU queue.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzCommands</span><span class="o">*</span> <span class="nf">dvz_canvas_commands</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>queue_idx</code></td>
+<td><code>uint32_t</code></td>
+<td>the index of the GPU queue within the GPU context</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>count</code></td>
+<td><code>uint32_t</code></td>
+<td>number of command buffers to create</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzCommands*</code></td>
+<td>set of created command buffers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_clear_color"><code>dvz_canvas_clear_color()</code><a class="headerlink" href="#dvz_canvas_clear_color" title="Permanent link">&para;</a></h3>
+<p>Change the background color of a canvas.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_clear_color</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">float</span> <span class="n">red</span><span class="p">,</span> <span class="kt">float</span> <span class="n">green</span><span class="p">,</span> <span class="kt">float</span> <span class="n">blue</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>red</code></td>
+<td><code>float</code></td>
+<td>the red component, between 0 and 1</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>green</code></td>
+<td><code>float</code></td>
+<td>the green component, between 0 and 1</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>blue</code></td>
+<td><code>float</code></td>
+<td>the blue component, between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A command buffer refill will be triggered so as to record them again with the updated clear
+color value.</p>
+</div>
 <h3 id="dvz_canvas_size"><code>dvz_canvas_size()</code><a class="headerlink" href="#dvz_canvas_size" title="Permanent link">&para;</a></h3>
+<p>Get the canvas size.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_size</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzCanvasSizeType</span> <span class="n">type</span><span class="p">,</span> <span class="n">uvec2</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>type</code></td>
+<td><code>DvzCanvasSizeType</code></td>
+<td>the unit of the requested screen size</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>size</code></td>
+<td><code>uvec2</code></td>
+<td>the size vector filled by this function</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_close_on_esc"><code>dvz_canvas_close_on_esc()</code><a class="headerlink" href="#dvz_canvas_close_on_esc" title="Permanent link">&para;</a></h3>
+<p>Whether the canvas should close when Escape is pressed.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_close_on_esc</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">value</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>value</code></td>
+<td><code>bool</code></td>
+<td>the boolean value</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_recreate"><code>dvz_canvas_recreate()</code><a class="headerlink" href="#dvz_canvas_recreate" title="Permanent link">&para;</a></h3>
+<p>Recreate the canvas GPU resources and swapchain.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_recreate</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas to recreate</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_to_refill"><code>dvz_canvas_to_refill()</code><a class="headerlink" href="#dvz_canvas_to_refill" title="Permanent link">&para;</a></h3>
+<p>Trigger a canvas refill at the next frame.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_to_refill</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_to_close"><code>dvz_canvas_to_close()</code><a class="headerlink" href="#dvz_canvas_to_close" title="Permanent link">&para;</a></h3>
+<p>Close the canvas at the next frame.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_to_close</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvases_destroy"><code>dvz_canvases_destroy()</code><a class="headerlink" href="#dvz_canvases_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy all canvases.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvases_destroy</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">canvases</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvases</code></td>
+<td><code>DvzContainer*</code></td>
+<td>the container with the canvases.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_viewport_full"><code>dvz_viewport_full()</code><a class="headerlink" href="#dvz_viewport_full" title="Permanent link">&para;</a></h3>
+<p>Get the viewport corresponding to the full canvas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzViewport</span> <span class="nf">dvz_viewport_full</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzViewport</code></td>
+<td>viewport</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_viewport_default"><code>dvz_viewport_default()</code><a class="headerlink" href="#dvz_viewport_default" title="Permanent link">&para;</a></h3>
+<p>Create a default viewport.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzViewport</span> <span class="nf">dvz_viewport_default</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
+<td><code>uint32_t</code></td>
+<td>the framebuffer width</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
+<td><code>uint32_t</code></td>
+<td>the framebuffer height</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzViewport</code></td>
+<td>viewport</td>
+</tr>
+</tbody>
+</table>
 <h2 id="event-emitting">Event emitting<a class="headerlink" href="#event-emitting" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_event_mouse_press"><code>dvz_event_mouse_press()</code><a class="headerlink" href="#dvz_event_mouse_press" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse press event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_press</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_release"><code>dvz_event_mouse_release()</code><a class="headerlink" href="#dvz_event_mouse_release" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse release event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_release</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_move"><code>dvz_event_mouse_move()</code><a class="headerlink" href="#dvz_event_mouse_move" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse move event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_move</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the current mouse position, in pixels</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_wheel"><code>dvz_event_mouse_wheel()</code><a class="headerlink" href="#dvz_event_mouse_wheel" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse wheel event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_wheel</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">dir</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dir</code></td>
+<td><code>vec2</code></td>
+<td>the mouse wheel direction</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_click"><code>dvz_event_mouse_click()</code><a class="headerlink" href="#dvz_event_mouse_click" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse click event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_click</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the click position</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_double_click"><code>dvz_event_mouse_double_click()</code><a class="headerlink" href="#dvz_event_mouse_double_click" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse double-click event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_double_click</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the double-click position</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_drag"><code>dvz_event_mouse_drag()</code><a class="headerlink" href="#dvz_event_mouse_drag" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse drag event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_drag</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the drag start position</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_mouse_drag_end"><code>dvz_event_mouse_drag_end()</code><a class="headerlink" href="#dvz_event_mouse_drag_end" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse drag end event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_drag_end</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the drag end position</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>button</code></td>
+<td><code>DvzMouseButton</code></td>
+<td>the mouse button</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_key_press"><code>dvz_event_key_press()</code><a class="headerlink" href="#dvz_event_key_press" title="Permanent link">&para;</a></h3>
+<p>Emit a key press event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_key_press</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzKeyCode</span> <span class="n">key_code</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>key_code</code></td>
+<td><code>DvzKeyCode</code></td>
+<td>the key</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_key_release"><code>dvz_event_key_release()</code><a class="headerlink" href="#dvz_event_key_release" title="Permanent link">&para;</a></h3>
+<p>Emit a key release event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_key_release</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzKeyCode</span> <span class="n">key_code</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>key_code</code></td>
+<td><code>DvzKeyCode</code></td>
+<td>the key</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>modifiers</code></td>
+<td><code>int</code></td>
+<td>flags with the active keyboard modifiers</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_event_frame"><code>dvz_event_frame()</code><a class="headerlink" href="#dvz_event_frame" title="Permanent link">&para;</a></h3>
+<p>Emit a frame event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_frame</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>uint64_t</code></td>
+<td>the frame index</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>time</code></td>
+<td><code>double</code></td>
+<td>the current time</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>interval</code></td>
+<td><code>double</code></td>
+<td>the interval since the last frame event</td>
+</tr>
+</tbody>
+</table>
+<p>Typically raised at every canvas frame.</p>
 <h3 id="dvz_event_timer"><code>dvz_event_timer()</code><a class="headerlink" href="#dvz_event_timer" title="Permanent link">&para;</a></h3>
+<p>Emit a timer event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_timer</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>idx</code></td>
+<td><code>uint64_t</code></td>
+<td>the timer event index</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>time</code></td>
+<td><code>double</code></td>
+<td>the current time</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>interval</code></td>
+<td><code>double</code></td>
+<td>the interval since the last timer event</td>
+</tr>
+</tbody>
+</table>
 <h2 id="screencast">Screencast<a class="headerlink" href="#screencast" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_screencast"><code>dvz_screencast()</code><a class="headerlink" href="#dvz_screencast" title="Permanent link">&para;</a></h3>
+<p>Prepare the canvas for a screencast.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screencast</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">has_alpha</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>interval</code></td>
+<td><code>double</code></td>
+<td>screencast events interval</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>has_alpha</code></td>
+<td><code>bool</code></td>
+<td>whether the screencast array is RGB or RGBA</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>screencast</strong> is a live record of one or several frames of the canvas during the interactive
+execution of the app. Creating a screencast is required for:
+- screenshots,
+- video records (requires ffmpeg)</p>
+<p>This command creates a host-coherent GPU image with the same size as the current framebuffer
+size.</p>
+<p>If the interval is non-zero, the canvas will raise periodic SCREENCAST events every  <code>interval</code>
+seconds. The event payload will contain a pointer to the grabbed framebuffer image.</p>
 <h3 id="dvz_screencast_destroy"><code>dvz_screencast_destroy()</code><a class="headerlink" href="#dvz_screencast_destroy" title="Permanent link">&para;</a></h3>
+<p>Destroy the screencast.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screencast_destroy</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_screenshot"><code>dvz_screenshot()</code><a class="headerlink" href="#dvz_screenshot" title="Permanent link">&para;</a></h3>
+<p>Make a screenshot.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">dvz_screenshot</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">has_alpha</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>uint8_t*</code></td>
+<td>pointer to the 24-bit RGB framebuffer.</td>
+</tr>
+</tbody>
+</table>
+<p>This function creates a screencast if there isn't one already. It is implemented with hard
+synchronization commands so this command should <em>not</em> be used for creating many successive
+screenshots. For that, one should register a SCREENCAST event callback.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The caller MUST free the output pointer.</p>
+</div>
 <h3 id="dvz_screenshot_file"><code>dvz_screenshot_file()</code><a class="headerlink" href="#dvz_screenshot_file" title="Permanent link">&para;</a></h3>
+<p>Make a screenshot and save it to a PNG file.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screenshot_file</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">png_path</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>png_path</code></td>
+<td><code>char*</code></td>
+<td>the path to the PNG file to create</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function uses full GPU synchronization methods so it is relatively inefficient. More
+ efficient methods are not yet implemented.</p>
+</div>
 <h3 id="dvz_canvas_video"><code>dvz_canvas_video()</code><a class="headerlink" href="#dvz_canvas_video" title="Permanent link">&para;</a></h3>
+<p>Record a live screencast video of the canvas.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_video</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">int</span> <span class="n">framerate</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bitrate</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">path</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">record</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>framerate</code></td>
+<td><code>int</code></td>
+<td>the framerate in images per second (30 recommended)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>bitrate</code></td>
+<td><code>int</code></td>
+<td>the bitrate, in  bytes (10000000 for high quality)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>path</code></td>
+<td><code>char*</code></td>
+<td>path to the file (.mp4 extension recommended)</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>record</code></td>
+<td><code>bool</code></td>
+<td>whether to start recording immediately or not</td>
+</tr>
+</tbody>
+</table>
+<p>This function should be run <em>before</em> calling <code>dvz_app_run()</code>.</p>
 <h3 id="dvz_canvas_pause"><code>dvz_canvas_pause()</code><a class="headerlink" href="#dvz_canvas_pause" title="Permanent link">&para;</a></h3>
+<p>Pause the live video screencast.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_pause</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">record</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>record</code></td>
+<td><code>bool</code></td>
+<td>whether to pause or continue the recording</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_canvas_stop"><code>dvz_canvas_stop()</code><a class="headerlink" href="#dvz_canvas_stop" title="Permanent link">&para;</a></h3>
+<p>Stop the live video screencast and save the file.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_stop</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
 <h2 id="internal-event-loop">Internal event loop<a class="headerlink" href="#internal-event-loop" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_canvas_frame"><code>dvz_canvas_frame()</code><a class="headerlink" href="#dvz_canvas_frame" title="Permanent link">&para;</a></h3>
+<p>Process a single frame in the event loop.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_frame</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
+<p>This function probably never needs to be called directly, unless writing a custom backend.</p>
 <h3 id="dvz_canvas_frame_submit"><code>dvz_canvas_frame_submit()</code><a class="headerlink" href="#dvz_canvas_frame_submit" title="Permanent link">&para;</a></h3>
+<p>Submit the rendered frame to the swapchain system.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_frame_submit</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
 <h2 id="internal-event-system">Internal event system<a class="headerlink" href="#internal-event-system" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_event_callback"><code>dvz_event_callback()</code><a class="headerlink" href="#dvz_event_callback" title="Permanent link">&para;</a></h3>
+<p>Register a callback for canvas events.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_callback</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEventType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">double</span> <span class="n">param</span><span class="p">,</span>
+    <span class="n">DvzEventMode</span> <span class="n">mode</span><span class="p">,</span> <span class="n">DvzEventCallback</span> <span class="n">callback</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>type</code></td>
+<td><code>DvzEventType</code></td>
+<td>the event type</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>param</code></td>
+<td><code>double</code></td>
+<td>time interval for TIMER events, in seconds</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mode</code></td>
+<td><code>DvzEventMode</code></td>
+<td>whether the callback is sync or async</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>callback</code></td>
+<td><code>DvzEventCallback</code></td>
+<td>the callback function</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>user_data</code></td>
+<td><code>void*</code></td>
+<td>a pointer to arbitrary user data</td>
+</tr>
+</tbody>
+</table>
+<p>These user callbacks run either in the main thread (<em>sync</em> callbacks) or in the background
+thread * (<em>async</em> callbacks). Callbacks can access the <code>DvzMouse</code> and <code>DvzKeyboard</code> structures
+with the current state of the mouse and keyboard.</p>
+<p>Callback function signature: <code>void(DvzCanvas*, DvzEvent)</code></p>
+<p>The event object has a field with the user-specified pointer <code>user_data</code>.</p>
 <h3 id="dvz_event_pending"><code>dvz_event_pending()</code><a class="headerlink" href="#dvz_event_pending" title="Permanent link">&para;</a></h3>
+<p>Return the number of pending events.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_event_pending</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEventType</span> <span class="n">type</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>type</code></td>
+<td><code>DvzEventType</code></td>
+<td>the event type</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>int</code></td>
+<td>number of pending events</td>
+</tr>
+</tbody>
+</table>
+<p>This is the number of events of the given type that are still being processed or pending in the
+queue.</p>
 <h3 id="dvz_event_stop"><code>dvz_event_stop()</code><a class="headerlink" href="#dvz_event_stop" title="Permanent link">&para;</a></h3>
+<p>Stop the background event loop.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_stop</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+</tbody>
+</table>
+<p>This function sends a special "closing" event to the event loop, causing it to stop.</p>
 <h3 id="dvz_mouse"><code>dvz_mouse()</code><a class="headerlink" href="#dvz_mouse" title="Permanent link">&para;</a></h3>
+<p>Create the mouse object holding the current mouse state.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzMouse</span> <span class="nf">dvz_mouse</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMouse</code> | object |</p>
 <h3 id="dvz_mouse_reset"><code>dvz_mouse_reset()</code><a class="headerlink" href="#dvz_mouse_reset" title="Permanent link">&para;</a></h3>
+<p>Reset the mouse state.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_reset</span><span class="p">(</span><span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mouse</code></td>
+<td><code>DvzMouse*</code></td>
+<td>the mouse object</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mouse_event"><code>dvz_mouse_event()</code><a class="headerlink" href="#dvz_mouse_event" title="Permanent link">&para;</a></h3>
+<p>Emit a mouse event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_event</span><span class="p">(</span><span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mouse</code></td>
+<td><code>DvzMouse*</code></td>
+<td>the mouse object</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>ev</code></td>
+<td><code>DvzEvent</code></td>
+<td>the mouse event</td>
+</tr>
+</tbody>
+</table>
 <h3 id="dvz_mouse_local"><code>dvz_mouse_local()</code><a class="headerlink" href="#dvz_mouse_local" title="Permanent link">&para;</a></h3>
+<p>Convert mouse coordinates from global to local.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_local</span><span class="p">(</span>
+    <span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">,</span> <span class="n">DvzMouseLocal</span><span class="o">*</span> <span class="n">mouse_local</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span>
+    <span class="n">DvzViewport</span> <span class="n">viewport</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mouse</code></td>
+<td><code>DvzMouse*</code></td>
+<td>the mouse object</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>mouse_local</code></td>
+<td><code>DvzMouseLocal*</code></td>
+<td>the mouse local object</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>viewport</code></td>
+<td><code>DvzViewport</code></td>
+<td>the viewport defining the local coordinates</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Global coordinates: in pixels, origin at the top-left corner of the window.</li>
+<li>Local coordinates: in normalize coordinates [-1, 1], origin at the center of a given viewport,
+  taking viewport margins into account</li>
+</ul>
 <h3 id="dvz_keyboard"><code>dvz_keyboard()</code><a class="headerlink" href="#dvz_keyboard" title="Permanent link">&para;</a></h3>
+<p>Create the keyboard object holding the current keyboard state.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DvzKeyboard</span> <span class="nf">dvz_keyboard</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzKeyboard</code> | object |</p>
 <h3 id="dvz_keyboard_reset"><code>dvz_keyboard_reset()</code><a class="headerlink" href="#dvz_keyboard_reset" title="Permanent link">&para;</a></h3>
+<p>Reset the keyboard state</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_keyboard_reset</span><span class="p">(</span><span class="n">DvzKeyboard</span><span class="o">*</span> <span class="n">keyboard</span><span class="p">);</span>
+</code></pre></div>
+<p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>void</code> | object |</p>
 <h3 id="dvz_keyboard_event"><code>dvz_keyboard_event()</code><a class="headerlink" href="#dvz_keyboard_event" title="Permanent link">&para;</a></h3>
+<p>Emit a keyboard event.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_keyboard_event</span><span class="p">(</span><span class="n">DvzKeyboard</span><span class="o">*</span> <span class="n">keyboard</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>keyboard</code></td>
+<td><code>DvzKeyboard*</code></td>
+<td>the keyboard object</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
+<td><code>DvzCanvas*</code></td>
+<td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>ev</code></td>
+<td><code>DvzEvent</code></td>
+<td>the keyboard event</td>
+</tr>
+</tbody>
+</table>
                 
               
               

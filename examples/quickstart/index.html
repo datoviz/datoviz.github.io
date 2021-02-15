@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simple-test-with-python" class="md-skip">
+        <a href="#quickstart-tutorial-with-python" class="md-skip">
           Skip to content
         </a>
       
@@ -1036,7 +1036,7 @@
                   </a>
                 
                 
-                <h1 id="simple-test-with-python">Simple test with Python<a class="headerlink" href="#simple-test-with-python" title="Permanent link">&para;</a></h1>
+                <h1 id="quickstart-tutorial-with-python">Quickstart tutorial with Python<a class="headerlink" href="#quickstart-tutorial-with-python" title="Permanent link">&para;</a></h1>
 <p><img alt="" src="../../images/screenshots/quickstart.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># from `bindings/python/examples/quickstart.py`</span>
 
@@ -1073,44 +1073,53 @@
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
 
+<span class="c1"># We define an event callback to implement mouse picking</span>
 <span class="nd">@c</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span> <span class="nf">on_mouse_click</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">modifiers</span><span class="o">=</span><span class="p">()):</span>
     <span class="c1"># x, y are in pixel coordinates</span>
     <span class="c1"># First, we find the picked panel</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
-        <span class="c1"># Then, we transform into the data coordinate system</span>
-        <span class="c1"># Supported coordinate systems</span>
-        <span class="c1"># target_cds=&#39;data&#39; / &#39;scene&#39; / &#39;vulkan&#39; / &#39;framebuffer&#39; / &#39;window&#39;</span>
-        <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), modifiers=</span><span class="si">{</span><span class="n">modifiers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># Then, we transform into the data coordinate system</span>
+    <span class="c1"># Supported coordinate systems:</span>
+    <span class="c1">#   target_cds=&#39;data&#39; / &#39;scene&#39; / &#39;vulkan&#39; / &#39;framebuffer&#39; / &#39;window&#39;</span>
+    <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), modifiers=</span><span class="si">{</span><span class="n">modifiers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># We create a GUI dialog.</span>
-<span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;Test GUI&quot;</span><span class="p">)</span>
 
-<span class="c1"># We add a control, a slider controlling a float between 0 and 1 (by default)</span>
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;my float slider&quot;</span><span class="p">)</span>
+<span class="c1"># We add a control, a slider controlling a float</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;marker size&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="c1"># Every time the slider value changes, we update the marker size</span>
+    <span class="c1"># Every time the slider value changes, we update the visual&#39;s marker size</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">*</span> <span class="n">value</span><span class="p">)</span>
+    <span class="c1"># NOTE: an upcoming version will support partial updates</span>
 
-<span class="c1"># We add another control, a slider controlling an int between 1 and 4</span>
+<span class="c1"># We add another control, a slider controlling an int between 1 and 4, to change the colormap.</span>
+<span class="c1"># NOTE: an upcoming version will provide a dropdown menu control</span>
 <span class="n">cmaps</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;cividis&#39;</span><span class="p">,</span> <span class="s1">&#39;autumn&#39;</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">]</span>
 
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_int&quot;</span><span class="p">,</span> <span class="s2">&quot;my int slider&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_int&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Recompute the colors.</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span>
         <span class="n">color_values</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmaps</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
+    <span class="c1"># Update the color visual</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 
 <span class="c1"># We add a button to regenerate the marker positions</span>
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;regenerate&quot;</span><span class="p">)</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;new positions&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 
 <span class="c1"># We run the main event loop, which will display the canvas until Escape is pressed or the</span>
 <span class="c1"># window is closed.</span>
+<span class="c1"># We start a screencast. This will add playback buttons at the bottom right corner.</span>
+<span class="c1"># NOTE: the video DOESN&#39;T START until you press the play button.</span>
+<span class="c1"># run(video=&quot;screencast.mp4&quot;)</span>
 <span class="n">run</span><span class="p">()</span>
 </code></pre></div>
                 

@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datoviz-scientific-visualization-with-vulkan" class="md-skip">
+        <a href="#datoviz-gpu-interactive-scientific-data-visualization-with-vulkan" class="md-skip">
           Skip to content
         </a>
       
@@ -331,9 +331,100 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         Home
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    Screenshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preliminary-performance-results" class="md-nav__link">
+    Preliminary performance results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits-and-related-projects" class="md-nav__link">
+    Credits and related projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Credits and related projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vispy" class="md-nav__link">
+    VisPy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glumpy" class="md-nav__link">
+    Glumpy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-and-algorithms" class="md-nav__link">
+    Dependencies and algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-projects" class="md-nav__link">
+    Related projects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1034,8 +1125,107 @@
                   </a>
                 
                 
-                <h1 id="datoviz-scientific-visualization-with-vulkan">Datoviz: scientific visualization with Vulkan<a class="headerlink" href="#datoviz-scientific-visualization-with-vulkan" title="Permanent link">&para;</a></h1>
-<p>Note: this file is unused, the mkdocs build process loads the README.md file at the root instead.</p>
+                <h1 id="datoviz-gpu-interactive-scientific-data-visualization-with-vulkan">Datoviz: GPU interactive scientific data visualization with <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr><a class="headerlink" href="#datoviz-gpu-interactive-scientific-data-visualization-with-vulkan" title="Permanent link">&para;</a></h1>
+<p><strong>Datoviz</strong> is an open-source <strong>high-performance interactive scientific data visualization library</strong> leveraging the graphics processing unit (<strong>GPU</strong>) for speed, visual quality, and scalability. It supports both 2D and 3D rendering, as well as minimal graphical user interfaces (using the <a href="https://github.com/ocornut/imgui">Dear ImGUI library</a>).</p>
+<p><strong>Written in C</strong>, Datoviz has been designed from the group up for <strong>performance</strong>. It provides native <strong>Python bindings</strong> (based on Cython). Bindings to other languages could be developed thanks to community efforts (Julia, R, MATLAB, Rust, C#, and so on). Datoviz uses the <a href="https://www.khronos.org/vulkan/"><strong><abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> graphics API</strong></a> created by the Khronos consortium, successor of OpenGL. Supporting other modern graphics API, such as WebGPU, would constitute interesting developments.</p>
+<p>Datoviz is currently being developed mostly by <a href="https://cyrille.rossant.net">Cyrille Rossant</a> at the <a href="http://internationalbrainlab.org/">International Brain Laboratory</a>, a consortium of neuroscience research labs around the world.</p>
+<p>Datoviz is at an early stage of development. The library is quite usable but evolves quickly. Datoviz has been tested on Linux, macOS (Intel), and to a lesser extent, Windows. It should work on most computers, with or without a discrete GPU (but with up-to-date graphics drivers). Many more features will come later and the documentation will be improved. Contributions are highly welcome!</p>
+<h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/screenshots/datoviz.jpg" />
+<em>Credits: mouse brain volume: <a href="https://alleninstitute.github.io/AllenSDK/">Allen SDK</a>. France: <a href="https://www.naturalearthdata.com/">Natural Earth</a>. Molecule: <a href="https://www.rcsb.org/structure/4cmp">Crystal structure of S. pyogenes Cas9 from PDB</a> (thanks to Eric for conversion to OBJ mesh). Earth: <a href="https://pixabay.com/fr/illustrations/terre-planet-monde-globe-espace-1617121/">Pixabay</a>. Raster plot: IBL. 3D human brain: <a href="https://www.frontiersin.org/articles/10.3389/fnana.2020.536838/full">Anneke Alkemade et al. 2020</a>, thanks to Pierre-Louis Bazin and Julia Huntenburg.</em></p>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>The documentation is divided into:</p>
+<ul>
+<li><strong><a href="tutorials/">Tutorials</a></strong>: install guide and first introduction to making scientific plots in Python,</li>
+<li><strong><a href="examples/">Examples</a></strong>: gallery of screenshots and associated Python code,</li>
+<li><strong><a href="howto/">How to guides</a></strong>: advanced topics for expert users, explaining how to use C and <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> for making custom visuals and applications,</li>
+<li><strong><a href="reference/">Reference</a></strong>: comprehensive list of included colormaps, visuals, and graphics,</li>
+<li><strong><a href="api/">C API reference</a></strong>: list of all publicly available C functions,</li>
+<li><strong><a href="discussions/">Discussions</a></strong>: explanations, <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> crash course, and notes.</li>
+</ul>
+<h2 id="preliminary-performance-results">Preliminary performance results<a class="headerlink" href="#preliminary-performance-results" title="Permanent link">&para;</a></h2>
+<ul>
+<li>scatter plot with 10M points: <strong>250 FPS</strong> (<code>point</code> visual)</li>
+<li>high-resolution 3D mesh with 10M triangles and 5M vertices: <strong>400 FPS</strong></li>
+<li>1000 signals with 30K points each (30M vertices): <strong>200 FPS</strong></li>
+</ul>
+<p><em>GPU: 2019 NVIDIA GeForce RTX 2070 SUPER. Window size: 1024x768.</em></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>High-quality antialiased 2D visuals</strong>: markers, paths, lines, text, polygons, and more (visuals originally implemented in <a href="https://glumpy.github.io/">Glumpy</a>)</li>
+<li><strong>3D visuals</strong>: meshes, surfaces, volumes</li>
+<li><strong>Mixing 2D and 3D</strong> plots seamlessly in the same window</li>
+<li><strong>~150 colormaps</strong> included (from matplotlib, colorcet, MATLAB)</li>
+<li><strong>High-level interactivity</strong>: pan &amp; zoom, mouse arcball, first-person cameras</li>
+<li><strong>Axes</strong>: ticks, grids, labels</li>
+<li><strong>Subplots</strong> organized in a grid layout</li>
+<li><strong>DPI-aware</strong>: partial support for high-resolution monitors</li>
+<li><strong>GUIs</strong> integrated via the <strong>Dear ImGUI</strong> C++ library (Qt or other backends not required)</li>
+<li><strong>Custom visuals</strong>, with custom <abbr title="code written in GLSL and executed on the GPU to customize the graphics pipeline">shaders</abbr> and/or custom data transformations</li>
+<li>Mouse picking</li>
+<li>Initial support for multiple canvases</li>
+<li>Initial builtin support for screencasts and video recording with ffmpeg (optional dependency)</li>
+<li>Initial support for offscreen rendering and CPU emulation via swiftshader</li>
+</ul>
+<p>Upcoming features:</p>
+<ul>
+<li>More visuals: arrows, triangulations, planar straight-line graphs (PSLG), histograms, areas, graphs...</li>
+<li>Further data transformations: logarithmic, polar, basic Earth coordinate systems for geographical data</li>
+<li>Colorbars</li>
+<li>3D axes</li>
+<li>Better support of multiple GPUs</li>
+<li>Qt integration</li>
+<li>Continuous integration, more robust testing</li>
+</ul>
+<p>Long-term future (or shorter if there are community contributions):</p>
+<ul>
+<li>Support for other languages (Julia, R, MATLAB, Rust...)</li>
+<li>Jupyter notebook integration</li>
+<li>Web integration via WebGPU?</li>
+<li>Remote desktop integration?</li>
+</ul>
+<h2 id="credits-and-related-projects">Credits and related projects<a class="headerlink" href="#credits-and-related-projects" title="Permanent link">&para;</a></h2>
+<p>Datoviz is developed primarily by <a href="https://cyrille.rossant.net/">Cyrille Rossant</a> at the <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a>. The logo was graciously created by <a href="https://www.linkedin.com/in/czini/">Chiara Zini</a>.</p>
+<p>Datoviz borrows heavily ideas and code from other projects.</p>
+<h3 id="vispy">VisPy<a class="headerlink" href="#vispy" title="Permanent link">&para;</a></h3>
+<p><a href="https://vispy.org/"><strong>VisPy</strong></a> is a Python scientific visualization library created in 2013 by Luke Campagnola (developer of <a href="http://www.pyqtgraph.org/"><strong>pyqtgraph</strong></a>), Almar Klein (developer of <a href="https://github.com/almarklein/visvis"><strong>visvis</strong></a>), Nicolas Rougier (developer of <a href="https://glumpy.github.io/"><strong>glumpy</strong></a>), and myself (Cyrille Rossant, developer of <strong>galry</strong>). We joined forces to create a single library unifying all of our approaches, which proved to be challenging. There is today a community of users and projects based on VisPy (<a href="https://napari.org/">napari</a>), and the library is currently being maintained by David Hoese, Eric Larson, and others. VisPy recently received <a href="https://chanzuckerberg.com/eoss/proposals/rebuilding-the-community-behind-vispys-fast-interactive-visualizations/">funding from the <strong>Chan Zuckerberg Initiative</strong></a> to improve the documentation and knowledge base.</p>
+<p>VisPy is written entirely in Python and it is based on OpenGL, an almost 30 year old technology. <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> was first released in 2016 by the Khronos consortium and it can be seen, to some extent, as a successor to OpenGL. However, <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> is a lower-level library and it is harder to use. This is the price to pay to reach better GPU performance.</p>
+<p>Datoviz may be seen as a ground-up reincarnation of VisPy, with two fundamental differences: it is written in <strong>C</strong> rather than Python, and it uses <strong><abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr></strong> rather than OpenGL.</p>
+<ul>
+<li>The main advantages of C compared to Python are: ability to bind to any other language beyond Python; performance; possibility to use the <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> C API directly rather than via a wrapper.</li>
+<li>The main advantages of <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> compared to OpenGL are: modern API, more adapted to today's hardware; performance. However, it is more complex and less user-friendly. Datoviz abstracts a lot of that complexity away.</li>
+</ul>
+<h3 id="glumpy">Glumpy<a class="headerlink" href="#glumpy" title="Permanent link">&para;</a></h3>
+<p>Glumpy, developed by Nicolas Rougier, provides <a href="https://www.labri.fr/perso/nrougier/python-opengl/">efficient implementations of high-quality 2D visuals on the GPU</a>, using algorithms from the antigrain geometry library. The GPU code of most 2D visuals in Datoviz comes directly from Glumpy.</p>
+<h3 id="dependencies-and-algorithms">Dependencies and algorithms<a class="headerlink" href="#dependencies-and-algorithms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.lunarg.com/vulkan-sdk/">LunarG <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> SDK</a> <strong>(mandatory)</strong></li>
+<li><a href="https://www.glfw.org/">GLFW</a> <strong>(mandatory)</strong></li>
+<li><a href="https://ffmpeg.org/">ffmpeg</a> (optional), for making live screencasts</li>
+<li><a href="http://www.libpng.org/pub/png/libpng.html">libpng</a> (optional), for making PNG screenshots</li>
+<li><a href="https://github.com/KhronosGroup/glslang">glslang</a> (optional), for compiling <abbr title="OpenGL shading language, the C-like language used to write shaders">GLSL</abbr> <abbr title="code written in GLSL and executed on the GPU to customize the graphics pipeline">shaders</abbr> to SPIR-V on the fly</li>
+<li><a href="https://github.com/mapbox/earcut">earcut</a> (included), developed by Mapbox, for polygon triangulations</li>
+<li><a href="https://www.cs.cmu.edu/~quake/triangle.html">triangle</a> (included), developed by Jonathan Richard Shewchuk, for Delaunay triangulations</li>
+<li><a href="http://vis.stanford.edu/papers/tick-labels">extended Wilkinson algorithm</a> (included) for tick placement</li>
+<li><a href="https://github.com/ocornut/imgui">Dear ImGUI</a> (included)</li>
+<li><a href="https://en.wikipedia.org/wiki/Anti-Grain_Geometry">antigrain geometry</a> (<abbr title="OpenGL shading language, the C-like language used to write shaders">GLSL</abbr> implementation included)</li>
+<li><a href="https://github.com/Chlumsky/msdfgen">msdfgen</a>: multi-channel signed distance field (to do: bundle as submodule?)</li>
+</ul>
+<p>An upcoming version will also have the following dependencies:</p>
+<ul>
+<li><a href="https://www.freetype.org/">freetype</a> (optional)</li>
+</ul>
+<h3 id="related-projects">Related projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a></li>
+<li><a href="https://vtk.org/">VTK</a></li>
+<li><a href="https://napari.org/">napari</a></li>
+<li><a href="https://github.com/marcomusy/vedo">vedo</a></li>
+<li><a href="https://ipygany.readthedocs.io/en/latest/">ipygany</a></li>
+<li><a href="https://github.com/maartenbreddels/ipyvolume">ipyvolume</a></li>
+<li><a href="http://makie.juliaplots.org/stable/">Makie.jl</a></li>
+</ul>
+<p>Glossary:</p>
                 
               
               

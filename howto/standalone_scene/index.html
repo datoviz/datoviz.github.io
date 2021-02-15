@@ -1071,10 +1071,86 @@
 <p class="admonition-title">Note</p>
 <p>A basic build script is provided in the <code>examples/</code> folder. A better practice would probably be to use cmake but this is not documented yet. Help appreciated!</p>
 </div>
-<!-- IMAGE ../images/screenshots/standalone_scene.png -->
-
+<p><img alt="" src="../../images/screenshots/standalone_scene.png" /></p>
 <h2 id="full-source-code">Full source code<a class="headerlink" href="#full-source-code" title="Permanent link">&para;</a></h2>
-<!-- CODE_C examples/standalone_scene.c -->
+<div class="highlight"><pre><span></span><code><span class="c1">// code from `examples/standalone_scene.c`:</span>
+
+<span class="cm">/*************************************************************************************************/</span>
+<span class="cm">/*  Example of a standalone application using the library.                                       */</span>
+<span class="cm">/*************************************************************************************************/</span>
+
+<span class="c1">/// Import the library public header. The compiler needs to be passed the path to the headers and</span>
+<span class="c1">/// shared library, see build.sh.</span>
+<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Create a singleton application with a GLFW backend.</span>
+    <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
+
+    <span class="c1">// Use the first detected GPU. The last argument is the GPU index.</span>
+    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">dvz_gpu</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Create a new canvas with the size specified. The last argument is for optional flags.</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">dvz_canvas</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Create a new scene, which allows to define several subplots (panels) organized within a</span>
+    <span class="c1">// grid. Here we just use a single panel spanning the entire canvas.</span>
+    <span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">dvz_scene</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// Get the panel at row 0, column 0, and initialize it with an axes 2D controller.</span>
+    <span class="c1">// The last argument is for optional flags.</span>
+    <span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span> <span class="o">=</span> <span class="n">dvz_scene_panel</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_CONTROLLER_AXES_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Create a new &quot;marker&quot; visual within the panel.</span>
+    <span class="c1">// The last argument is for optional flags.</span>
+    <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span> <span class="o">=</span> <span class="n">dvz_scene_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">DVZ_VISUAL_MARKER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Prepare the data for the marker visual:</span>
+    <span class="c1">// - positions (three double-precision floating point numbers for x, y, z)</span>
+    <span class="c1">// - color (four bytes for r, g, b, a)</span>
+    <span class="c1">// - size (a single precision floating point number with the marker size, in pixels)</span>
+    <span class="c1">// There are many other settable visual properties, refer to the visual reference guide.</span>
+    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">;</span>
+    <span class="n">dvec3</span><span class="o">*</span> <span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">dvec3</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dvec3</span><span class="p">));</span>
+    <span class="n">cvec4</span><span class="o">*</span> <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">cvec4</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">cvec4</span><span class="p">));</span>
+    <span class="kt">float</span><span class="o">*</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Random gaussian position.</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">dvz_rand_normal</span><span class="p">();</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dvz_rand_normal</span><span class="p">();</span>
+        <span class="c1">// Color: random value with a colormap.</span>
+        <span class="n">dvz_colormap_scale</span><span class="p">(</span><span class="n">DVZ_CMAP_VIRIDIS</span><span class="p">,</span> <span class="n">dvz_rand_float</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="c1">// A bit of transparency via the alpha channel.</span>
+        <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">196</span><span class="p">;</span>
+        <span class="c1">// Random marker size.</span>
+        <span class="n">size</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">38</span> <span class="o">*</span> <span class="n">dvz_rand_float</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We link our data to the visual properties.</span>
+    <span class="n">dvz_visual_data</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_POS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">pos</span><span class="p">);</span>
+    <span class="n">dvz_visual_data</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_COLOR</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span>
+    <span class="n">dvz_visual_data</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_MARKER_SIZE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// dvz_app_run(app, 5);</span>
+    <span class="c1">// dvz_screenshot_file(canvas, &quot;../docs/images/screenshots/standalone_scene.png&quot;);</span>
+
+    <span class="c1">// We run the application. The last argument is the number of frames to run, or 0 for infinite</span>
+    <span class="c1">// loop (stop when escape is pressed or when the window is closed).</span>
+    <span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We need to clean up all objects handled by Datoviz at the end.</span>
+    <span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+
+    <span class="c1">// We free the memory of the arrays we&#39;ve created.</span>
+    <span class="n">FREE</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+    <span class="n">FREE</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+    <span class="n">FREE</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               

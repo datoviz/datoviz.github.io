@@ -1053,9 +1053,302 @@
 <li>Making a screenshot by creating a staging GPU image, and submitting a command buffer with transition barriers and a GPU image copy.</li>
 </ul>
 <p>This "hello world" script is about 250 lines long (without comments), about 4x smaller than by using the raw Vulkan C API.</p>
-<!-- IMAGE ../images/screenshots/standalone_vklite.png -->
+<p><img alt="" src="../../images/screenshots/standalone_vklite.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// code from `examples/standalone_vklite.c`:</span>
 
-<!-- CODE_C examples/standalone_vklite.c -->
+<span class="cm">/*************************************************************************************************/</span>
+<span class="cm">/*  Example of a standalone application using the vklite API in a canvas.                        */</span>
+<span class="cm">/*************************************************************************************************/</span>
+
+<span class="c1">/// Import the library public header.</span>
+<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// This function downloads the contents of the GPU image on which we have rendered to.</span>
+<span class="k">static</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">screenshot</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">image</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">gpu</span><span class="p">;</span>
+
+    <span class="c1">// We create a staging image that is accessible from the CPU.</span>
+    <span class="n">DvzImages</span> <span class="n">staging</span> <span class="o">=</span> <span class="n">dvz_images</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="n">VK_IMAGE_TYPE_2D</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dvz_images_format</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">);</span>
+    <span class="n">dvz_images_size</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">depth</span><span class="p">);</span>
+    <span class="n">dvz_images_tiling</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">VK_IMAGE_TILING_LINEAR</span><span class="p">);</span>
+    <span class="n">dvz_images_usage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">VK_IMAGE_USAGE_TRANSFER_DST_BIT</span><span class="p">);</span>
+    <span class="n">dvz_images_layout</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</span><span class="p">);</span>
+    <span class="n">dvz_images_memory</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="n">VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</span> <span class="o">|</span> <span class="n">VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</span><span class="p">);</span>
+    <span class="n">dvz_images_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">);</span>
+
+    <span class="c1">// We start the image transition command buffers.</span>
+    <span class="n">DvzCommands</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">dvz_commands</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dvz_cmd_begin</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We use a barrier to transition the staging image.</span>
+    <span class="n">DvzBarrier</span> <span class="n">barrier</span> <span class="o">=</span> <span class="n">dvz_barrier</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+    <span class="n">dvz_barrier_stages</span><span class="p">(</span><span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="n">VK_PIPELINE_STAGE_TRANSFER_BIT</span><span class="p">,</span> <span class="n">VK_PIPELINE_STAGE_TRANSFER_BIT</span><span class="p">);</span>
+    <span class="n">dvz_barrier_images</span><span class="p">(</span><span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">staging</span><span class="p">);</span>
+    <span class="n">dvz_barrier_images_layout</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_UNDEFINED</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</span><span class="p">);</span>
+    <span class="n">dvz_barrier_images_access</span><span class="p">(</span><span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_ACCESS_TRANSFER_WRITE_BIT</span><span class="p">);</span>
+    <span class="n">dvz_cmd_barrier</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">barrier</span><span class="p">);</span>
+
+    <span class="c1">// We copy the original image to the staging image.</span>
+    <span class="n">dvz_cmd_copy_image</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">staging</span><span class="p">);</span>
+
+    <span class="c1">// We transition the staging image again.</span>
+    <span class="n">dvz_barrier_images_layout</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_GENERAL</span><span class="p">);</span>
+    <span class="n">dvz_barrier_images_access</span><span class="p">(</span><span class="o">&amp;</span><span class="n">barrier</span><span class="p">,</span> <span class="n">VK_ACCESS_TRANSFER_WRITE_BIT</span><span class="p">,</span> <span class="n">VK_ACCESS_MEMORY_READ_BIT</span><span class="p">);</span>
+    <span class="n">dvz_cmd_barrier</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">barrier</span><span class="p">);</span>
+
+    <span class="c1">// We end the command buffer, we submit it to the GPU, and we wait until the GPU has completed</span>
+    <span class="c1">// it.</span>
+    <span class="n">dvz_cmd_end</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">dvz_cmd_submit_sync</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Now, we copy the staging image back onto the host.</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">image</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">*</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">dvz_images_download</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="n">rgb</span><span class="p">);</span>
+
+    <span class="c1">// We can destroy the staging image.</span>
+    <span class="n">dvz_images_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">staging</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">rgb</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// We create a singleton application with a GLFW backend.</span>
+    <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
+
+    <span class="c1">// We use the first detected GPU. The last argument is the GPU index.</span>
+    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">dvz_gpu</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// GPU creation.</span>
+    <span class="p">{</span>
+        <span class="c1">// We specify the queues we need. Here we just need a single queue that will do the</span>
+        <span class="c1">// rendering.</span>
+        <span class="n">dvz_gpu_queue</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_QUEUE_RENDER</span><span class="p">);</span>
+
+        <span class="c1">// Once the queues have been set up, we create the GPU.</span>
+        <span class="n">dvz_gpu_create</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Framebuffer size.</span>
+    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+
+    <span class="c1">// Viewport.</span>
+    <span class="n">DvzViewport</span> <span class="n">viewport</span> <span class="o">=</span> <span class="n">dvz_viewport_default</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+    <span class="c1">// We are going to create a renderpass.</span>
+    <span class="n">DvzRenderpass</span> <span class="n">renderpass</span> <span class="o">=</span> <span class="n">dvz_renderpass</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+    <span class="n">VkClearValue</span> <span class="n">clear_color</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">VkClearValue</span> <span class="n">clear_depth</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+    <span class="c1">// We create a GPU image that we will render onto.</span>
+    <span class="n">DvzImages</span> <span class="n">image</span> <span class="o">=</span> <span class="n">dvz_images</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="n">VK_IMAGE_TYPE_2D</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// We also create a GPU image for the depth buffer.</span>
+    <span class="n">DvzImages</span> <span class="n">depth</span> <span class="o">=</span> <span class="n">dvz_images</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="n">VK_IMAGE_TYPE_2D</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// We will create the framebuffers to link these GPU images with the renderpass.</span>
+    <span class="n">DvzFramebuffers</span> <span class="n">framebuffers</span> <span class="o">=</span> <span class="n">dvz_framebuffers</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+
+    <span class="c1">// Renderpass creation.</span>
+    <span class="p">{</span>
+        <span class="c1">// Clear colors.</span>
+        <span class="n">clear_color</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">float32</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">clear_depth</span><span class="p">.</span><span class="n">depthStencil</span><span class="p">.</span><span class="n">depth</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="p">;</span>
+        <span class="n">dvz_renderpass_clear</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="n">clear_color</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_clear</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="n">clear_depth</span><span class="p">);</span>
+
+        <span class="c1">// Color attachment.</span>
+        <span class="n">dvz_renderpass_attachment</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">//</span>
+            <span class="n">DVZ_RENDERPASS_ATTACHMENT_COLOR</span><span class="p">,</span> <span class="n">VK_FORMAT_B8G8R8A8_UNORM</span><span class="p">,</span>
+            <span class="n">VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_attachment_layout</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_UNDEFINED</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_attachment_ops</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_ATTACHMENT_LOAD_OP_CLEAR</span><span class="p">,</span> <span class="n">VK_ATTACHMENT_STORE_OP_STORE</span><span class="p">);</span>
+
+        <span class="c1">// Depth attachment.</span>
+        <span class="n">dvz_renderpass_attachment</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">//</span>
+            <span class="n">DVZ_RENDERPASS_ATTACHMENT_DEPTH</span><span class="p">,</span> <span class="n">VK_FORMAT_D32_SFLOAT</span><span class="p">,</span>
+            <span class="n">VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_attachment_layout</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_UNDEFINED</span><span class="p">,</span>
+            <span class="n">VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_attachment_ops</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">VK_ATTACHMENT_LOAD_OP_CLEAR</span><span class="p">,</span> <span class="n">VK_ATTACHMENT_STORE_OP_DONT_CARE</span><span class="p">);</span>
+
+        <span class="c1">// Subpass.</span>
+        <span class="n">dvz_renderpass_subpass_attachment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_subpass_attachment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_subpass_dependency</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_SUBPASS_EXTERNAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_subpass_dependency_stage</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">//</span>
+            <span class="n">VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT</span><span class="p">,</span>
+            <span class="n">VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_subpass_dependency_access</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">VK_ACCESS_COLOR_ATTACHMENT_READ_BIT</span> <span class="o">|</span> <span class="n">VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT</span><span class="p">);</span>
+
+        <span class="c1">// Color attachment</span>
+        <span class="n">dvz_images_format</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">renderpass</span><span class="p">.</span><span class="n">attachments</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">format</span><span class="p">);</span>
+        <span class="n">dvz_images_size</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">dvz_images_tiling</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">VK_IMAGE_TILING_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_images_usage</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT</span> <span class="o">|</span> <span class="n">VK_IMAGE_USAGE_TRANSFER_SRC_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_memory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_aspect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">VK_IMAGE_ASPECT_COLOR_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_layout</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_images_queue_access</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dvz_images_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">);</span>
+
+        <span class="c1">// Depth attachment.</span>
+        <span class="n">dvz_images_format</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">renderpass</span><span class="p">.</span><span class="n">attachments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">format</span><span class="p">);</span>
+        <span class="n">dvz_images_size</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">dvz_images_tiling</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">VK_IMAGE_TILING_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_images_usage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_memory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_layout</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</span><span class="p">);</span>
+        <span class="n">dvz_images_aspect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="n">VK_IMAGE_ASPECT_DEPTH_BIT</span><span class="p">);</span>
+        <span class="n">dvz_images_queue_access</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dvz_images_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">);</span>
+
+        <span class="c1">// Create renderpass.</span>
+        <span class="n">dvz_renderpass_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">);</span>
+
+        <span class="c1">// Create framebuffers.</span>
+        <span class="n">dvz_framebuffers_attachment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">framebuffers</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">image</span><span class="p">);</span>
+        <span class="n">dvz_framebuffers_attachment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">framebuffers</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">depth</span><span class="p">);</span>
+        <span class="n">dvz_framebuffers_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">framebuffers</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We create a new graphics pipeline.</span>
+    <span class="n">DvzGraphics</span> <span class="n">graphics</span> <span class="o">=</span> <span class="n">dvz_graphics</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+
+    <span class="c1">// Graphics pipeline.</span>
+    <span class="p">{</span>
+        <span class="c1">// We set the renderpass.</span>
+        <span class="n">dvz_graphics_renderpass</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// We specify the primitive.</span>
+        <span class="n">dvz_graphics_topology</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</span><span class="p">);</span>
+
+        <span class="c1">// We set the shaders.</span>
+        <span class="n">dvz_graphics_shader</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_SHADER_STAGE_VERTEX_BIT</span><span class="p">,</span> <span class="s">&quot;triangle.vert.spv&quot;</span><span class="p">);</span>
+        <span class="n">dvz_graphics_shader</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="n">VK_SHADER_STAGE_FRAGMENT_BIT</span><span class="p">,</span> <span class="s">&quot;triangle.frag.spv&quot;</span><span class="p">);</span>
+
+        <span class="c1">// We specify the vertex structure size.</span>
+        <span class="n">dvz_graphics_vertex_binding</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">));</span>
+
+        <span class="c1">// We specify the two vertex attributes.</span>
+        <span class="n">dvz_graphics_vertex_attr</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VK_FORMAT_R32G32B32_SFLOAT</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">,</span> <span class="n">pos</span><span class="p">));</span>
+        <span class="n">dvz_graphics_vertex_attr</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">VK_FORMAT_R8G8B8A8_UNORM</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">,</span> <span class="n">color</span><span class="p">));</span>
+
+        <span class="c1">// Once we&#39;ve set up the graphics pipeline, we create it.</span>
+        <span class="n">dvz_graphics_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We create the (empty) bindings: the shaders do not necessitate any uniform or</span>
+    <span class="c1">// texture in this example.</span>
+    <span class="n">DvzBindings</span> <span class="n">bindings</span> <span class="o">=</span> <span class="n">dvz_bindings</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">.</span><span class="n">slots</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dvz_bindings_update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bindings</span><span class="p">);</span>
+
+    <span class="c1">// We create the GPU buffer holding the vertex data.</span>
+    <span class="c1">// NOTE: in real applications, once should use few, even a single large vertex buffer for all</span>
+    <span class="c1">// graphics pipelines in the application. Defining many small GPU buffers is bad practice.</span>
+    <span class="n">DvzBuffer</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">dvz_buffer</span><span class="p">(</span><span class="n">gpu</span><span class="p">);</span>
+    <span class="n">DvzBufferRegions</span> <span class="n">vertex_buffer</span><span class="p">;</span>
+
+    <span class="p">{</span>
+        <span class="c1">// There will be three vertices for 1 triangle.</span>
+        <span class="n">VkDeviceSize</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DvzVertex</span><span class="p">);</span>
+        <span class="n">dvz_buffer_size</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+
+        <span class="c1">// We declare that the buffer will be used as a vertex buffer.</span>
+        <span class="n">dvz_buffer_usage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">VK_BUFFER_USAGE_VERTEX_BUFFER_BIT</span><span class="p">);</span>
+
+        <span class="c1">// The buffer should be accessible directly from the CPU in this example (bad practice in</span>
+        <span class="c1">// real applications).</span>
+        <span class="n">dvz_buffer_memory</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</span> <span class="o">|</span> <span class="n">VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</span><span class="p">);</span>
+
+        <span class="c1">// Once set up, we create the GPU buffer.</span>
+        <span class="n">dvz_buffer_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+
+        <span class="c1">// We define a view (buffer region) on the entire buffer.</span>
+        <span class="n">vertex_buffer</span> <span class="o">=</span> <span class="n">dvz_buffer_regions</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// Define the vertex data.</span>
+        <span class="c1">// NOTE: in this example, we don&#39;t include the common.glsl shader and we use raw Vulkan</span>
+        <span class="c1">// shaders. So the Vulkan coordinate system is used, with the y axis going down.</span>
+        <span class="n">DvzVertex</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">{{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom left, red</span>
+            <span class="p">{{</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom right, green</span>
+            <span class="p">{{</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// top, blue</span>
+        <span class="p">};</span>
+
+        <span class="c1">// We upload the data to the GPU vertex buffer.</span>
+        <span class="n">dvz_buffer_regions_upload</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vertex_buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We create a command buffer.</span>
+    <span class="n">DvzCommands</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">dvz_commands</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// Command buffer recording.</span>
+    <span class="p">{</span>
+        <span class="c1">// We begin recording the command buffer here.</span>
+        <span class="n">dvz_cmd_begin</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// We begin the default render pass.</span>
+        <span class="n">dvz_cmd_begin_renderpass</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">renderpass</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">framebuffers</span><span class="p">);</span>
+
+        <span class="c1">// We set the viewport to the entire framebuffer size.</span>
+        <span class="n">dvz_cmd_viewport</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">viewport</span><span class="p">.</span><span class="n">viewport</span><span class="p">);</span>
+
+        <span class="c1">// We bind the vertex buffer for the upcoming drawing command.</span>
+        <span class="n">dvz_cmd_bind_vertex_buffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vertex_buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// We bind the graphics pipeline.</span>
+        <span class="n">dvz_cmd_bind_graphics</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">graphics</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bindings</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">// We render 3 vertices (1 triangle).</span>
+        <span class="n">dvz_cmd_draw</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+        <span class="c1">// End of the render pass and command buffer.</span>
+        <span class="n">dvz_cmd_end_renderpass</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dvz_cmd_end</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We submit the command buffer to the GPU and we *wait* until the GPU has finished completing</span>
+    <span class="c1">// it. This uses a hard synchronization primitive so this is not efficient.</span>
+    <span class="n">dvz_cmd_submit_sync</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cmds</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// We make a screenshot and save it to a file.</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">rgb</span> <span class="o">=</span> <span class="n">screenshot</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">);</span>
+    <span class="n">dvz_write_png</span><span class="p">(</span><span class="s">&quot;triangle.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">rgb</span><span class="p">);</span>
+    <span class="n">log_info</span><span class="p">(</span><span class="s">&quot;offscreen rendered image written to: `triangle.png`&quot;</span><span class="p">);</span>
+
+    <span class="c1">// We need to clean up all objects handled by Datoviz at the end.</span>
+    <span class="p">{</span>
+        <span class="n">dvz_graphics_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">graphics</span><span class="p">);</span>
+        <span class="n">dvz_buffer_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+        <span class="n">dvz_renderpass_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">renderpass</span><span class="p">);</span>
+        <span class="n">dvz_images_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">image</span><span class="p">);</span>
+        <span class="n">dvz_images_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">depth</span><span class="p">);</span>
+        <span class="n">dvz_framebuffers_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">framebuffers</span><span class="p">);</span>
+        <span class="n">dvz_bindings_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bindings</span><span class="p">);</span>
+        <span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               
