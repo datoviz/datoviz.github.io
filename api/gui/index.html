@@ -602,6 +602,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../howto/standalone_imgui/" class="md-nav__link">
+        How to use Dear ImGui directly
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../howto/visual/" class="md-nav__link">
         How to write a custom visual
       </a>
@@ -932,6 +944,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-a-new-control" class="md-nav__link">
+    Implementing a new control
+  </a>
   
 </li>
       
@@ -1445,6 +1464,13 @@
 </tr>
 </tbody>
 </table>
+<h2 id="implementing-a-new-control">Implementing a new control<a class="headerlink" href="#implementing-a-new-control" title="Permanent link">&para;</a></h2>
+<p>Dear ImGui provides an impressive number of controls. Using it directly requires to write custom C++ callback functions. To simplify the creation of simple GUIs, Datoviz provides a simple declarative API that allows to specify in advance basic GUI dialogs. This is particularly convenient when using the Python bindings, since there is no need to wrap C++ code nor to call Python code at every frame.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can still use Dear ImGui directly, <a href="../../howto/standalone_imgui/">there is an example in the How to guides</a>.</p>
+</div>
+<p>Here is a short checklist for Datoviz contributors who'd like to implement a new control in the Dear ImGui wrapper.</p>
                 
               
               

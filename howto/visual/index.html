@@ -602,6 +602,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../standalone_imgui/" class="md-nav__link">
+        How to use Dear ImGui directly
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1397,12 +1409,16 @@
 <li>Add a length prop if there are multiple objects</li>
 <li>Add the common props</li>
 <li>Add the param props</li>
+<li>Specify the props that need DPI scaling</li>
 </ul>
 </li>
 <li>Specify the baking callback function (optional)</li>
 </ul>
 </li>
-<li>Write the baking callback function</li>
+<li>Write the baking callback function<ul>
+<li>Take DPI scaling into account for props that require it</li>
+</ul>
+</li>
 <li>Add a new switch case in <code>dvz_visual_builtin()</code></li>
 </ul>
 </li>
@@ -1439,7 +1455,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../standalone_scene/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../standalone_imgui/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1448,7 +1464,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                How to write a standalone C app
+                How to use Dear ImGui directly
               </div>
             </div>
           </a>

@@ -778,6 +778,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../howto/standalone_imgui/" class="md-nav__link">
+        How to use Dear ImGui directly
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../howto/visual/" class="md-nav__link">
         How to write a custom visual
       </a>
@@ -1417,6 +1429,10 @@
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="https://user-images.githubusercontent.com/1942359/107958095-d17d4e00-6fa1-11eb-9a90-b1b6ba07785d.png" /></p>
+<div class="admonition note async callbacks">
+<p class="admonition-title">Note</p>
+<p>For now, the callbacks are synchronous by default: they run in the main thread. Any long-lasting callback will block the UI. In <code>gui.control()</code>, the keyword argument <code>async=True</code> allows to declare a callback as asynchronous. It will run in a background thread. <strong>This feature is still experimental.</strong> Currently, the only functionality available in async callbacks is doing data transfers with <code>visual.data()</code>. More async features will be implemented later.</p>
+</div>
                 
               
               

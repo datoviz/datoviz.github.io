@@ -602,6 +602,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../howto/standalone_imgui/" class="md-nav__link">
+        How to use Dear ImGui directly
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../howto/visual/" class="md-nav__link">
         How to write a custom visual
       </a>
@@ -984,6 +996,40 @@
           <li class="md-nav__item">
   <a href="#dvzdatatype" class="md-nav__link">
     DvzDataType
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    Flags
+  </a>
+  
+    <nav class="md-nav" aria-label="Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#panel-flags" class="md-nav__link">
+    Panel flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-flags" class="md-nav__link">
+    Visual flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axes" class="md-nav__link">
+    Axes
   </a>
   
 </li>
@@ -1493,6 +1539,26 @@
 </tr>
 </tbody>
 </table>
+<h2 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Flags specification for the canvas, scene, visuals, controllers are still being improved and may change at any time.</p>
+</div>
+<h3 id="panel-flags">Panel flags<a class="headerlink" href="#panel-flags" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>0x00XX: transform
+0xXX00: controller-specific flags
+</code></pre></div>
+<h3 id="visual-flags">Visual flags<a class="headerlink" href="#visual-flags" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>0x000X: visual-specific flags
+0x00X0: POS prop transformation flags
+0x0X00: graphics depth test
+0xX000: interact axes
+</code></pre></div>
+<h3 id="axes">Axes<a class="headerlink" href="#axes" title="Permanent link">&para;</a></h3>
+<p>Axes visual flags:</p>
+<div class="highlight"><pre><span></span><code>0x000X`, X=0 (x axis) or  X=1 (y axis).
+</code></pre></div>
+<p>When using an axes controller, the controller-specific flags in <code>0x0X00</code> (to hide minor/grid level) are passed to the axes visual flags as <code>0x000X</code> (bit shift). Note that the first bit must be reserved to the axis coordinate (0/1), so we use higher bits for the axes flags (4 and 8).</p>
                 
               
               
