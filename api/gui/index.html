@@ -1471,6 +1471,49 @@
 <p>You can still use Dear ImGui directly, <a href="../../howto/standalone_imgui/">there is an example in the How to guides</a>.</p>
 </div>
 <p>Here is a short checklist for Datoviz contributors who'd like to implement a new control in the Dear ImGui wrapper.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This procedure is subject to change in an upcoming version.</p>
+</div>
+<ul>
+<li><code>controls.h</code>:<ul>
+<li>Add the <code>DvzGuiControlType</code> enum</li>
+<li>If there are control parameters:<ul>
+<li>Create a <code>DvzGuiControlXXX</code> typedef struct</li>
+<li>Declare the struct</li>
+<li>Add it to the <code>DvzGuiControlUnion</code> union</li>
+</ul>
+</li>
+<li>Declare the new <code>dvz_gui_xxx()</code> function, and write the docstring</li>
+</ul>
+</li>
+<li><code>controls.c</code>:<ul>
+<li>Write the body of the <code>dvz_gui_xxx()</code> function</li>
+</ul>
+</li>
+<li><code>gui.cpp</code>:<ul>
+<li>In <code>show_control()</code>, add a new switch case and call <code>_show_xxx()</code></li>
+<li>Implement <code>_show_xxx()</code></li>
+</ul>
+</li>
+<li><code>test_canvas.c</code>:<ul>
+<li>In <code>test_canvas_gui_1()</code>, add the new control with a call to <code>dvz_gui_xxx()</code></li>
+<li>Try the next test with <code>DVZ_INTERACT=1 ./manage.sh test test_canvas_gui_1</code></li>
+</ul>
+</li>
+<li><code>cydatoviz.pxd</code>:<ul>
+<li>After <code># FUNCTION START</code>, add <code>void dvz_gui_xxx()</code> (no need to put the arguments, the Cython bindings generator will do it automatically)</li>
+</ul>
+</li>
+<li><code>pydatoviz.pyx</code>:<ul>
+<li>Update the <code>_CONTROLS</code> dictionary</li>
+<li>In <code>Gui.control()</code>, add a new if statement and make the binding</li>
+<li>In <code>_get_ev_args()</code>, add a new if statement and make the callback argument binding</li>
+</ul>
+</li>
+<li>Run <code>./manage.sh cython</code></li>
+<li>Test in a Python example <code>gui.control('xxx', 'name', ...)</code></li>
+</ul>
                 
               
               
