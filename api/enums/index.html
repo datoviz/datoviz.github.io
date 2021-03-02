@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -986,6 +998,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#colormaps" class="md-nav__link">
+    Colormaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#miscellaneous" class="md-nav__link">
     Miscellaneous
   </a>
@@ -1145,6 +1164,18 @@
     <li class="md-nav__item">
       <a href="../../discussions/developer/" class="md-nav__link">
         Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
       </a>
     </li>
   
@@ -1388,6 +1419,63 @@
 <tr>
 <td><code>DVZ_PATH_CLOSED</code></td>
 <td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="colormaps">Colormaps<a class="headerlink" href="#colormaps" title="Permanent link">&para;</a></h2>
+<p>The following colormaps, in addition to being stored in the colormap texture, are also implemented directly in GLSL. They may thereby be used directly from shaders without using the colormap texture. Avoiding texture lookup is sometimes faster.</p>
+<p>This is implemented in the function <code>vec4 colormap(int cmap, float x)</code> in <code>colormaps.glsl</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Colormap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DVZ_CMAP_HSV</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_CIVIDIS</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_INFERNO</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_MAGMA</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_PLASMA</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_VIRIDIS</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_AUTUMN</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_BONE</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_COOL</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_COPPER</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_HOT</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_SPRING</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_SUMMER</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_WINTER</code></td>
+</tr>
+<tr>
+<td><code>DVZ_CMAP_JET</code></td>
 </tr>
 </tbody>
 </table>

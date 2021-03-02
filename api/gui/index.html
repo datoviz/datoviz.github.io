@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -947,13 +959,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#implementing-a-new-control" class="md-nav__link">
-    Implementing a new control
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1130,6 +1135,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../discussions/faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1199,7 +1216,7 @@
 </table>
 <h3 id="dvz_gui_checkbox"><code>dvz_gui_checkbox()</code><a class="headerlink" href="#dvz_gui_checkbox" title="Permanent link">&para;</a></h3>
 <p>Add a checkbox control.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_checkbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">value</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_checkbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1225,11 +1242,16 @@
 <td><code>bool</code></td>
 <td>whether the checkbox is initially checked</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_slider_float"><code>dvz_gui_slider_float()</code><a class="headerlink" href="#dvz_gui_slider_float" title="Permanent link">&para;</a></h3>
 <p>Add a slider for float number input.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_slider_float</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_slider_float</span><span class="p">(</span>
     <span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vmax</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
 <table>
@@ -1266,11 +1288,16 @@
 <td><code>float</code></td>
 <td>the initial value</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_slider_int"><code>dvz_gui_slider_int()</code><a class="headerlink" href="#dvz_gui_slider_int" title="Permanent link">&para;</a></h3>
 <p>Add a slider for integer input.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_slider_int</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_slider_int</span><span class="p">(</span>
     <span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vmax</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
 <table>
@@ -1307,11 +1334,16 @@
 <td><code>int</code></td>
 <td>the initial value</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_label"><code>dvz_gui_label()</code><a class="headerlink" href="#dvz_gui_label" title="Permanent link">&para;</a></h3>
 <p>Add a static, non-modifiable label.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_label</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_label</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1337,11 +1369,16 @@
 <td><code>char*</code></td>
 <td>the control text</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_textbox"><code>dvz_gui_textbox()</code><a class="headerlink" href="#dvz_gui_textbox" title="Permanent link">&para;</a></h3>
 <p>Add a textbox control for text input.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_textbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">value</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_textbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1367,11 +1404,16 @@
 <td><code>char*</code></td>
 <td>the initial text</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_button"><code>dvz_gui_button()</code><a class="headerlink" href="#dvz_gui_button" title="Permanent link">&para;</a></h3>
 <p>Add a button.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_button</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_button</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1397,11 +1439,16 @@
 <td><code>int</code></td>
 <td>optional flags</td>
 </tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
+</tr>
 </tbody>
 </table>
 <h3 id="dvz_gui_colormap"><code>dvz_gui_colormap()</code><a class="headerlink" href="#dvz_gui_colormap" title="Permanent link">&para;</a></h3>
 <p>Add a colormap image.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_colormap</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_colormap</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1421,6 +1468,11 @@
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>cmap</code></td>
 <td><code>DvzColormap</code></td>
 <td>the colormap</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
+<td><code>DvzGuiControl*</code></td>
+<td>control</td>
 </tr>
 </tbody>
 </table>
@@ -1464,56 +1516,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="implementing-a-new-control">Implementing a new control<a class="headerlink" href="#implementing-a-new-control" title="Permanent link">&para;</a></h2>
-<p>Dear ImGui provides an impressive number of controls. Using it directly requires to write custom C++ callback functions. To simplify the creation of simple GUIs, Datoviz provides a simple declarative API that allows to specify in advance basic GUI dialogs. This is particularly convenient when using the Python bindings, since there is no need to wrap C++ code nor to call Python code at every frame.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can still use Dear ImGui directly, <a href="../../howto/standalone_imgui/">there is an example in the How to guides</a>.</p>
-</div>
-<p>Here is a short checklist for Datoviz contributors who'd like to implement a new control in the Dear ImGui wrapper.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This procedure is subject to change in an upcoming version.</p>
-</div>
-<ul>
-<li><code>controls.h</code>:<ul>
-<li>Add the <code>DvzGuiControlType</code> enum</li>
-<li>If there are control parameters:<ul>
-<li>Create a <code>DvzGuiControlXXX</code> typedef struct</li>
-<li>Declare the struct</li>
-<li>Add it to the <code>DvzGuiControlUnion</code> union</li>
-</ul>
-</li>
-<li>Declare the new <code>dvz_gui_xxx()</code> function, and write the docstring</li>
-</ul>
-</li>
-<li><code>controls.c</code>:<ul>
-<li>Write the body of the <code>dvz_gui_xxx()</code> function</li>
-</ul>
-</li>
-<li><code>gui.cpp</code>:<ul>
-<li>In <code>show_control()</code>, add a new switch case and call <code>_show_xxx()</code></li>
-<li>Implement <code>_show_xxx()</code></li>
-</ul>
-</li>
-<li><code>test_canvas.c</code>:<ul>
-<li>In <code>test_canvas_gui_1()</code>, add the new control with a call to <code>dvz_gui_xxx()</code></li>
-<li>Try the next test with <code>DVZ_INTERACT=1 ./manage.sh test test_canvas_gui_1</code></li>
-</ul>
-</li>
-<li><code>cydatoviz.pxd</code>:<ul>
-<li>After <code># FUNCTION START</code>, add <code>void dvz_gui_xxx()</code> (no need to put the arguments, the Cython bindings generator will do it automatically)</li>
-</ul>
-</li>
-<li><code>pydatoviz.pyx</code>:<ul>
-<li>Update the <code>_CONTROLS</code> dictionary</li>
-<li>In <code>Gui.control()</code>, add a new if statement and make the binding</li>
-<li>In <code>_get_ev_args()</code>, add a new if statement and make the callback argument binding</li>
-</ul>
-</li>
-<li>Run <code>./manage.sh cython</code></li>
-<li>Test in a Python example <code>gui.control('xxx', 'name', ...)</code></li>
-</ul>
                 
               
               

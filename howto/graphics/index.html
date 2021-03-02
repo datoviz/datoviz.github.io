@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -791,13 +803,6 @@
         <li class="md-nav__item">
   <a href="#other-topics" class="md-nav__link">
     Other topics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist-for-datoviz-contributors" class="md-nav__link">
-    Checklist for Datoviz contributors
   </a>
   
 </li>
@@ -1174,6 +1179,18 @@
     <li class="md-nav__item">
       <a href="../../discussions/developer/" class="md-nav__link">
         Developer notes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
       </a>
     </li>
   
@@ -1663,63 +1680,6 @@ glslc custom_point.frag -o custom_point.frag.spv
 <li>Custom command buffers,</li>
 <li>Interaction with compute shaders,</li>
 <li>And many other topics...</li>
-</ul>
-<h2 id="checklist-for-datoviz-contributors">Checklist for Datoviz contributors<a class="headerlink" href="#checklist-for-datoviz-contributors" title="Permanent link">&para;</a></h2>
-<p>This is a handy checklist for developers when adding new graphics to the library (via a pull request).</p>
-<ul>
-<li><code>graphics.h</code>:<ul>
-<li>Add the typedef of the vertex, item, params structures</li>
-<li>Add new section and structs for vertex, item, params structures<ul>
-<li>Make sure all fields in the params struct have a byte size that is not 3 or divisible by 3</li>
-</ul>
-</li>
-<li>Put comments after each struct field (used by automatic documentation generator)</li>
-</ul>
-</li>
-<li><code>vklite.h</code>:<ul>
-<li>Make sure the <code>DvzGraphicsType</code> enum exists, or create a new one</li>
-</ul>
-</li>
-<li>Shaders: <code>graphics_xxx.vert|frag</code>:<ul>
-<li>Don't forget to import <code>common.glsl</code> in all shaders</li>
-<li>The first user binding should be params, should match exactly the struct</li>
-<li>The next bindings should be numbered with USER_BINDING+1 etc</li>
-<li>The body of the main fragment shader function should always begin with <code>CLIP</code></li>
-</ul>
-</li>
-<li><code>graphics.c</code>:<ul>
-<li>Add new section, with <code>_graphics_xxx()</code> and <code>_graphics_xxx_callback()</code> if there is a non-default graphics callback function</li>
-<li>Write the main graphics function<ul>
-<li>Specify the shaders</li>
-<li>Specify the primitive type</li>
-<li>Specify the vertex attributes, should match the vertex shader</li>
-<li>Add the common slots</li>
-<li>Add slots for params/textures</li>
-<li>Specify the graphics callback function</li>
-</ul>
-</li>
-<li>(optional) Write the graphics callback function<ul>
-<li>This function is called when a new item is added to the graphics. What an "item" is is up to the create of a graphics. It's typically the smallest bit of data that has a meaning in the context of the graphics. The graphics callback is mostly used for pre-upload CPU-side "triangulation" of the data, so that the visuals that reuse this graphics don't have to know the details of the triangulation.</li>
-</ul>
-</li>
-<li>Add the switch case in <code>dvz_graphics_builtin()</code></li>
-</ul>
-</li>
-<li><code>test_graphics.h</code>:<ul>
-<li>Add the new graphics test declaration</li>
-</ul>
-</li>
-<li><code>test_graphics.c</code>:<ul>
-<li>Write the body of the test function</li>
-<li>Set to save the screenshot with the graphics name</li>
-</ul>
-</li>
-<li><code>main.c</code>:<ul>
-<li>Add the new test to the list of test functions</li>
-</ul>
-</li>
-<li>Test the graphics without interactivity and save the graphics screenshot</li>
-<li>Add graphics section in <code>docs/reference/graphics.md</code></li>
 </ul>
                 
               

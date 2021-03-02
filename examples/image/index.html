@@ -453,6 +453,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -1018,6 +1030,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../discussions/faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1049,6 +1073,9 @@
                 
                 
                 <h1 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h1>
+<p>This example shows how to display two superimposed images of different sizes
+(but automatically rescaled), with simple blending done on the GPU, with a slider
+controlling the blending parameter.</p>
 <p><img alt="" src="../../images/screenshots/image.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># from `bindings/python/examples/image.py`</span>
 
@@ -1081,7 +1108,8 @@
 <span class="n">img</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data/textures/earth.jpg&#39;</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">img</span><span class="p">,</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">])))</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="n">visual</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filtering</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">tex</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filtering</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Second texture.</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
@@ -1090,18 +1118,18 @@
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">z</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="n">visual</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filtering</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">tex2</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filtering</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">tex2</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;texcoefs&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
 
 <span class="c1"># Control the blending via a GUI.</span>
 <span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
 
-
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;blending&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;blending&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Convex combination of the two images.</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;texcoefs&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">-</span> <span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-
 
 <span class="n">run</span><span class="p">()</span>
 </code></pre></div>

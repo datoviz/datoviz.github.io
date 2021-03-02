@@ -451,6 +451,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1018,6 +1030,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../discussions/faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1060,18 +1084,19 @@
 <span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">panel</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s1">&#39;panzoom&#39;</span><span class="p">)</span>
-<span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;line_strip&#39;</span><span class="p">)</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;line_strip&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="n">n_signals</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">n_points</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_signals</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_points</span> <span class="o">=</span> <span class="mi">2_000</span>
 <span class="n">n_vert</span> <span class="o">=</span> <span class="n">n_signals</span> <span class="o">*</span> <span class="n">n_points</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">n_signals</span><span class="p">,))</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span>
 
-<span class="n">y</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span> <span class="o">*</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
-<span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_signals</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_points</span><span class="p">))</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="o">/</span> <span class="n">n_signals</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+<span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_signals</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_points</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">+=</span> <span class="n">offsets</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_vert</span><span class="p">)]</span>
 
@@ -1090,8 +1115,8 @@
 <span class="n">k</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">i</span>
-    <span class="n">yk</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span> <span class="o">*</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_signals</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+    <span class="n">yk</span> <span class="o">=</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_signals</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
     <span class="n">yk</span> <span class="o">+=</span> <span class="n">offsets</span>
     <span class="n">y</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">k</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">yk</span>
     <span class="n">pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
@@ -1121,7 +1146,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../quickstart/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../colormap/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1130,7 +1155,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Simple test with Python
+                Custom colormap
               </div>
             </div>
           </a>

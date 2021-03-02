@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -1405,6 +1417,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../discussions/faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1800,7 +1824,8 @@ color value.</p>
 </table>
 <h3 id="dvz_event_mouse_wheel"><code>dvz_event_mouse_wheel()</code><a class="headerlink" href="#dvz_event_mouse_wheel" title="Permanent link">&para;</a></h3>
 <p>Emit a mouse wheel event.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_wheel</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">dir</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_wheel</span><span class="p">(</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">dir</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1815,6 +1840,11 @@ color value.</p>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>canvas</code></td>
 <td><code>DvzCanvas*</code></td>
 <td>the canvas</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><code>vec2</code></td>
+<td>the current mouse position, in pixels</td>
 </tr>
 <tr>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>dir</code></td>

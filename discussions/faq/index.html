@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -1007,6 +1019,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -1042,6 +1066,13 @@
         <li class="md-nav__item">
   <a href="#what-is-the-distinction-between-the-scene-the-canvas-and-the-window" class="md-nav__link">
     What is the distinction between the scene, the canvas, and the window?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-the-fps-and-efps" class="md-nav__link">
+    What is the difference between the FPS and eFPS?
   </a>
   
 </li>
@@ -1093,6 +1124,12 @@
 <p>With the Python bindings, a scene is automatically created when creating a canvas.</p>
 </div>
 <p><strong>Most users will only work at the scene level.</strong> Advanced users will use the canvas to create custom applications, interactive animations, or even small video games. Finally, the window is only used internally and will probably never be used directly.</p>
+<h2 id="what-is-the-difference-between-the-fps-and-efps">What is the difference between the FPS and eFPS?<a class="headerlink" href="#what-is-the-difference-between-the-fps-and-efps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The <strong>FPS</strong> is the <strong>number of Frames Per Second</strong>. It is used to evaluate the raw rendering performance.</li>
+<li>The <strong>eFPS</strong> is the <strong>effective Frames Per Second</strong>. It indicates the rendering smoothness as <em>perceived</em> by the user.</li>
+</ul>
+<p>The eFPS is computed from the average maximum delay between two consecutive frames. If every second, five frames take 100 ms to render, but all other frames render in 1 ms, the rendering will be perceived as slow as an application at ~10 FPS, even though the total frame count would be close to 1000 FPS.</p>
                 
               
               
@@ -1111,7 +1148,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../developer/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../checklists/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1120,7 +1157,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Developer notes
+                Developer checklists
               </div>
             </div>
           </a>

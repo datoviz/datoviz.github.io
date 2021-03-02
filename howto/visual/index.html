@@ -451,6 +451,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/signals/" class="md-nav__link">
         Digital signals
       </a>
@@ -705,13 +717,6 @@
         <li class="md-nav__item">
   <a href="#other-topics" class="md-nav__link">
     Other topics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist-for-datoviz-contributors" class="md-nav__link">
-    Checklist for Datoviz contributors
   </a>
   
 </li>
@@ -1110,6 +1115,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../discussions/checklists/" class="md-nav__link">
+        Developer checklists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../discussions/faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1379,63 +1396,6 @@
 <li>Position data transformation,</li>
 <li>Visual parameters stored in the uniform buffer,</li>
 <li>Visual flags.</li>
-</ul>
-<h2 id="checklist-for-datoviz-contributors">Checklist for Datoviz contributors<a class="headerlink" href="#checklist-for-datoviz-contributors" title="Permanent link">&para;</a></h2>
-<p>This is a handy checklist for developers when adding new visuals to the library (via a pull request).</p>
-<ul>
-<li>Determine the graphics you'll be using, and the list of source and props</li>
-<li><code>builtin_visuals.h</code>:<ul>
-<li>Make sure the <code>DvzVisualType</code> enum exists, or create a new one</li>
-</ul>
-</li>
-<li><code>visuals.h</code>:<ul>
-<li>Check that all prop types exist, otherwise add them</li>
-</ul>
-</li>
-<li><code>builtin_visuals.c</code>:<ul>
-<li>Make a new section for the visual code</li>
-<li>Write the main visual function<ul>
-<li>Specify the graphics pipeline(s)</li>
-<li>Specify the sources:<ul>
-<li>Vertex buffer</li>
-<li>Index buffer (optional)</li>
-<li>Param buffer (optional)</li>
-<li>Textures (optional)</li>
-</ul>
-</li>
-<li>Specify the props<ul>
-<li>The cast and copy spec are not mandatory if there is a custom baking callback function</li>
-<li>Note that the special POS prop is DVEC3 and is typically cast to VEC3, but only <em>after</em> baking and panel transform</li>
-<li>Add a length prop if there are multiple objects</li>
-<li>Add the common props</li>
-<li>Add the param props</li>
-<li>Specify the props that need DPI scaling</li>
-</ul>
-</li>
-<li>Specify the baking callback function (optional)</li>
-</ul>
-</li>
-<li>Write the baking callback function<ul>
-<li>Take DPI scaling into account for props that require it</li>
-</ul>
-</li>
-<li>Add a new switch case in <code>dvz_visual_builtin()</code></li>
-</ul>
-</li>
-<li><code>test_builtin_visuals.h</code>:<ul>
-<li>Add a new visual test declaration</li>
-</ul>
-</li>
-<li><code>test_builtin_visuals.c</code>:<ul>
-<li>Write the body of the test function</li>
-</ul>
-</li>
-<li><code>main.c</code>:<ul>
-<li>Add the new test to the list of test functions</li>
-</ul>
-</li>
-<li>Test the new visual without interactivity and save a visual screenshot</li>
-<li>Add a section in the visual reference <code>docs/reference/visuals.md</code>, document the props, sources, etc.</li>
 </ul>
                 
               
