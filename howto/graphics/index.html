@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1299,10 +1299,12 @@ You also need to go through the <a href="../visual/"><strong>how to write a cust
     <span class="kt">uint8_t</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// point size, in pixels, between 0 and 255.</span>
 <span class="p">}</span> <span class="n">PointVertex</span><span class="p">;</span>
 </code></pre></div>
+
 <p>We also need to define the attributes in GLSL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mo">0</span><span class="p">)</span> <span class="k">in</span> <span class="kt">vec3</span> <span class="n">pos</span><span class="p">;</span>   <span class="c1">// x, y, z positions</span>
 <span class="k">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span> <span class="kt">float</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// point size, between 0.0 and 255.0</span>
 </code></pre></div>
+
 <h3 id="attribute-format">Attribute format<a class="headerlink" href="#attribute-format" title="Permanent link">&para;</a></h3>
 <p>In this example, we use a <code>uint8_t</code> (byte) on the CPU, but a <code>float</code> on the GPU. Vulkan provides a way to specify the way we want to do the <strong>casting</strong>. This is done when creating the graphics pipeline below. We can just say here that we'll use the Vulkan format <code>VK_FORMAT_R8_USCALED</code>. This format means that:</p>
 <ul>
@@ -1410,12 +1412,14 @@ You also need to go through the <a href="../visual/"><strong>how to write a cust
     <span class="n">out_color</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mf">.25</span><span class="p">;</span> <span class="c1">// alpha component for some transparency</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <p>A few comments can be found below.</p>
 <h3 id="common-shader-resources">Common shader resources<a class="headerlink" href="#common-shader-resources" title="Permanent link">&para;</a></h3>
 <p>The <code>#include</code> directive is provided for convenience by the GLSL to SPIR-V compiler <code>glslc</code>. It is used extensively in Datoviz. It provides a simple way of making all graphics shaders share some functions and resources. In particular, we make the convention that, in order to be compatible with the scene API, <strong>all graphics pipelines in Datoviz must have the following common slots</strong>:</p>
 <div class="highlight"><pre><span></span><code>layout (std140, binding = 0) uniform MVP {...};
 layout (std140, binding = 1) uniform Viewport {...};
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1455,7 +1459,7 @@ layout (std140, binding = 1) uniform Viewport {...};
 </ul>
 <h3 id="position-transformation">Position transformation<a class="headerlink" href="#position-transformation" title="Permanent link">&para;</a></h3>
 <p>The <code>common.glsl</code> file defines (several overloaded versions of) the function <code>transform()</code>, which applies the model-view-proj matrices stored in the first bound resource, the <code>MVP</code> uniform. The associated C structure is <code>DvzMVP</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">DvzMVP</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">DvzMVP</span>
 <span class="p">{</span>
     <span class="n">mat4</span> <span class="n">model</span><span class="p">;</span> <span class="c1">// model 4x4 matrix</span>
     <span class="n">mat4</span> <span class="n">view</span><span class="p">;</span>  <span class="c1">// view 4x4 matrix</span>
@@ -1463,6 +1467,7 @@ layout (std140, binding = 1) uniform Viewport {...};
     <span class="kt">float</span> <span class="n">time</span><span class="p">;</span> <span class="c1">// elapsed time since the start of the application, in seconds</span>
 <span class="p">};</span>
 </code></pre></div>
+
 <p>The transformation is basically <code>gl_Position = to_vulkan(proj * view * model * position)</code>.</p>
 <p>The <code>to_vulkan()</code> internal function transforms the position from the OpenGL/Datoviz 3D coordinate system (y up, z toward the user) to the Vulkan coordinate system (y down, z toward the inside of the screen).</p>
 <h3 id="special-glsl-variables">Special GLSL variables<a class="headerlink" href="#special-glsl-variables" title="Permanent link">&para;</a></h3>
@@ -1524,6 +1529,7 @@ layout (std140, binding = 1) uniform Viewport {...};
     <span class="n">out_color</span> <span class="o">=</span> <span class="n">in_color</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <p>Here are a few comments.</p>
 <h3 id="clipping">Clipping<a class="headerlink" href="#clipping" title="Permanent link">&para;</a></h3>
 <p>Datoviz panels may have margins around them. We make the distinction between:</p>
@@ -1576,6 +1582,7 @@ layout (std140, binding = 1) uniform Viewport {...};
 <div class="highlight"><pre><span></span><code>glslc custom_point.vert -o custom_point.vert.spv
 glslc custom_point.frag -o custom_point.frag.spv
 </code></pre></div>
+
 <p>The <code>glslc</code> command is provided by the Vulkan SDK.</p>
 <h2 id="writing-the-custom-graphics">Writing the custom graphics<a class="headerlink" href="#writing-the-custom-graphics" title="Permanent link">&para;</a></h2>
 <p>Here is the code to create a custom graphics compatible with the scene API, and to add it to a custom visual:</p>
@@ -1615,6 +1622,7 @@ glslc custom_point.frag -o custom_point.frag.spv
 <span class="c1">// We add our custom graphics to a custom visual.</span>
 <span class="n">dvz_custom_graphics</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
+
 <p>As shown here, the creation of a custom graphics involves the following steps:</p>
 <ul>
 <li>Defining the shaders,</li>
@@ -1632,6 +1640,7 @@ glslc custom_point.frag -o custom_point.frag.spv
 <span class="c1">// We add our custom graphics to a custom visual.</span>
 <span class="n">dvz_custom_graphics</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
+
 <p>At this point, the custom visual contains common sources (vertex, MVP, viewport) and props. One could then define more sources and props.</p>
 <h2 id="writing-a-simple-test">Writing a simple test<a class="headerlink" href="#writing-a-simple-test" title="Permanent link">&para;</a></h2>
 <p>Finally, here is how to use our custom visual with a custom graphics:</p>
@@ -1650,7 +1659,7 @@ glslc custom_point.frag -o custom_point.frag.spv
 <span class="p">{</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
     <span class="c1">// vertex position</span>
-    <span class="n">vertices</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">.75</span> <span class="o">+</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">vertices</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">-.75</span> <span class="o">+</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">;</span>
     <span class="n">vertices</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">+</span><span class="mf">.75</span> <span class="o">-</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="n">t</span><span class="p">;</span>
     <span class="c1">// vertex size, in byte, between 0 and 255.</span>
     <span class="n">vertices</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
@@ -1660,6 +1669,7 @@ glslc custom_point.frag -o custom_point.frag.spv
 <span class="n">dvz_visual_data_source</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_SOURCE_TYPE_VERTEX</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">vertices</span><span class="p">);</span>
 <span class="n">FREE</span><span class="p">(</span><span class="n">vertices</span><span class="p">);</span>
 </code></pre></div>
+
 <p>Here are a few comments:</p>
 <ul>
 <li>Instead of using visual props, we have defined the vertex structure directly. The whole point of the visual props is to avoid doing this, which may not be particularly easy with complex vertex shaders with many attributes. Also, setting the vertex buffer directly requires to understand how the graphics is implemented on the GPU. If some form of triangulation is required, it is up to the user to do it. In this particular example, there is no triangulation as we have a one-to-one correspondance between the squares and the vertices.</li>

@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1197,10 +1197,10 @@
 <ul>
 <li><strong>LunarG Vulkan SDK</strong></li>
 <li><strong>cmake 3.16+</strong> (build)</li>
-<li><strong>ninja</strong> (build)</li>
 </ul>
 <p><strong>Optional dependencies</strong> are:</p>
 <ul>
+<li><strong>ninja</strong> (build)</li>
 <li><strong>freetype</strong> (optional)</li>
 <li><strong>libpng</strong> (optional)</li>
 <li><strong>ffmpeg</strong> (optional)</li>
@@ -1309,6 +1309,7 @@ cmake .. -G &quot;MinGW Makefiles&quot;
 mingw32-make
 cd ..
 </code></pre></div>
+
 </li>
 <li>
 <p>To run an example (the batch script will only work in cmd.exe, not Powershell):</p>
@@ -1316,6 +1317,7 @@ cd ..
 set DVZ_INTERACT=1
 build\datoviz.exe test test_scene_ax
 </code></pre></div>
+
 </li>
 <li>
 <p>To build the Cython package:</p>
@@ -1325,6 +1327,7 @@ pip install -r requirements.txt
 python setup.py build_ext -i -c mingw32
 python setup.py develop
 </code></pre></div>
+
 </li>
 <li>
 <p>Copy <code>build\libdatoviz.dll</code> to <code>bindings\cython\datoviz\</code> (there has to be a better way)</p>

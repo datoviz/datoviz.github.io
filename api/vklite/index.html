@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -2425,6 +2425,7 @@
 <p>Initialize a GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGpu</span><span class="o">*</span> <span class="nf">dvz_gpu</span><span class="p">(</span><span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2457,6 +2458,7 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gpu_request_features</span><span class="p">(</span>
     <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">VkPhysicalDeviceFeatures</span> <span class="n">requested_features</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2483,6 +2485,7 @@
 <p>Request a new Vulkan queue before creating the GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gpu_queue</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzQueueType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2513,6 +2516,7 @@
 <p>Create a GPU once the features and queues have been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gpu_create</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">VkSurfaceKHR</span> <span class="n">surface</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2538,6 +2542,7 @@
 <p>Destroy the resources associated to a GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gpu_destroy</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2559,6 +2564,7 @@
 <p>Wait for a queue to be idle.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_queue_wait</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2586,6 +2592,7 @@ the queue is idle.</p>
 <p>Full synchronization on all GPUs.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_app_wait</span><span class="p">(</span><span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2608,6 +2615,7 @@ synchronization methods.</p>
 <p>Full synchronization on a given GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gpu_wait</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2630,6 +2638,7 @@ synchronization methods.</p>
 <p>Create a blank window.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzWindow</span><span class="o">*</span> <span class="nf">dvz_window</span><span class="p">(</span><span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2669,6 +2678,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_window_get_size</span><span class="p">(</span>
     <span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">,</span> <span class="kt">uint32_t</span><span class="o">*</span> <span class="n">framebuffer_width</span><span class="p">,</span> <span class="kt">uint32_t</span><span class="o">*</span> <span class="n">framebuffer_height</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2699,6 +2709,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Process the pending windowing events by the backend (glfw by default).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_window_poll_events</span><span class="p">(</span><span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2719,6 +2730,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Destroy a window.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_window_destroy</span><span class="p">(</span><span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2745,6 +2757,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSwapchain</span> <span class="nf">dvz_swapchain</span><span class="p">(</span>
     <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">min_img_count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2780,6 +2793,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the swapchain image format.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_format</span><span class="p">(</span><span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">,</span> <span class="n">VkFormat</span> <span class="n">format</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2806,6 +2820,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_present_mode</span><span class="p">(</span>
     <span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">,</span> <span class="n">VkPresentModeKHR</span> <span class="n">present_mode</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2832,6 +2847,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_requested_size</span><span class="p">(</span>
     <span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2862,6 +2878,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Create the swapchain once it has been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_create</span><span class="p">(</span><span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2882,6 +2899,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Recreate a swapchain (for example after a window resize).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_recreate</span><span class="p">(</span><span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2904,6 +2922,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
     <span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">,</span> <span class="n">DvzSemaphores</span><span class="o">*</span> <span class="n">semaphores</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">semaphore_idx</span><span class="p">,</span>
     <span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">fence_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2946,6 +2965,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
     <span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">,</span> <span class="n">DvzSemaphores</span><span class="o">*</span> <span class="n">semaphores</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">semaphore_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2981,6 +3001,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Destroy a swapchain</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_swapchain_destroy</span><span class="p">(</span><span class="n">DvzSwapchain</span><span class="o">*</span> <span class="n">swapchain</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3006,6 +3027,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Create a set of command buffers.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzCommands</span> <span class="nf">dvz_commands</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3041,6 +3063,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Start recording a command buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_begin</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3066,6 +3089,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Stop recording a command buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_end</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3091,6 +3115,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Reset a command buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_reset</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3116,6 +3141,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Free a set of command buffers.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_free</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3136,6 +3162,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Submit a command buffer on its queue with inefficient full synchronization.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_submit_sync</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3162,6 +3189,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Destroy a set of command buffers.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_commands_destroy</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3183,6 +3211,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Initialize a GPU buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzBuffer</span> <span class="nf">dvz_buffer</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3208,6 +3237,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the buffer size.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_size</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3233,6 +3263,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the buffer type.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_type</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">DvzBufferType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3258,6 +3289,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the buffer usage.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_usage</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkBufferUsageFlags</span> <span class="n">usage</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3283,6 +3315,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the buffer memory properties.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_memory</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkMemoryPropertyFlags</span> <span class="n">memory</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3308,6 +3341,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the buffer queue access.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_queue_access</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3333,6 +3367,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Create the buffer after it has been set.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_create</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3354,6 +3389,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_resize</span><span class="p">(</span>
     <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3385,6 +3421,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_buffer_map</span><span class="p">(</span>
     <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3415,6 +3452,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Unmap a buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_unmap</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3436,6 +3474,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_download</span><span class="p">(</span>
     <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3472,6 +3511,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_upload</span><span class="p">(</span>
     <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3507,6 +3547,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Destroy a buffer</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_destroy</span><span class="p">(</span><span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3529,6 +3570,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
     <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">alignment</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3569,6 +3611,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Map a buffer region.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_buffer_regions_map</span><span class="p">(</span><span class="n">DvzBufferRegions</span><span class="o">*</span> <span class="n">br</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3594,6 +3637,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Unmap a set of buffer regions.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_regions_unmap</span><span class="p">(</span><span class="n">DvzBufferRegions</span><span class="o">*</span> <span class="n">br</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3614,6 +3658,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Upload data to a buffer region.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_buffer_regions_upload</span><span class="p">(</span><span class="n">DvzBufferRegions</span><span class="o">*</span> <span class="n">br</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3645,6 +3690,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Initialize a set of GPU images.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzImages</span> <span class="nf">dvz_images</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">VkImageType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3680,6 +3726,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images format.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_format</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkFormat</span> <span class="n">format</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3705,6 +3752,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images layout.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_layout</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkImageLayout</span> <span class="n">layout</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3731,6 +3779,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_size</span><span class="p">(</span>
     <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3766,6 +3815,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images tiling.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_tiling</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkImageTiling</span> <span class="n">tiling</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3791,6 +3841,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images usage.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_usage</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkImageUsageFlags</span> <span class="n">usage</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3816,6 +3867,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images memory properties.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_memory</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkMemoryPropertyFlags</span> <span class="n">memory</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3841,6 +3893,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images aspect.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_aspect</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">VkImageAspectFlags</span> <span class="n">aspect</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3866,6 +3919,7 @@ loop, and so on, which are provided instead at the level of the Canvas.</p>
 <p>Set the images queue access.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_queue_access</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3893,6 +3947,7 @@ them.</p>
 <p>Create the images after they have been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_create</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3914,6 +3969,7 @@ them.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_resize</span><span class="p">(</span>
     <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3953,6 +4009,7 @@ them.</p>
 <p>Transition the images to their layout after creation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_transition</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -3977,6 +4034,7 @@ image transition.</p>
     <span class="n">DvzImages</span><span class="o">*</span> <span class="n">staging</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">swizzle</span><span class="p">,</span>
     <span class="kt">bool</span> <span class="n">has_alpha</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">out</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4017,6 +4075,7 @@ image transition.</p>
 <p>Destroy images.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_images_destroy</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4038,6 +4097,7 @@ image transition.</p>
 <p>Initialize a texture sampler.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSampler</span> <span class="nf">dvz_sampler</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4063,6 +4123,7 @@ image transition.</p>
 <p>Set the sampler min filter.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sampler_min_filter</span><span class="p">(</span><span class="n">DvzSampler</span><span class="o">*</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">VkFilter</span> <span class="n">filter</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4088,6 +4149,7 @@ image transition.</p>
 <p>Set the sampler mag filter.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sampler_mag_filter</span><span class="p">(</span><span class="n">DvzSampler</span><span class="o">*</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">VkFilter</span> <span class="n">filter</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4114,6 +4176,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sampler_address_mode</span><span class="p">(</span>
     <span class="n">DvzSampler</span><span class="o">*</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">DvzTextureAxis</span> <span class="n">axis</span><span class="p">,</span> <span class="n">VkSamplerAddressMode</span> <span class="n">address_mode</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4144,6 +4207,7 @@ image transition.</p>
 <p>Create the sampler after it has been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sampler_create</span><span class="p">(</span><span class="n">DvzSampler</span><span class="o">*</span> <span class="n">sampler</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4164,6 +4228,7 @@ image transition.</p>
 <p>Destroy a sampler</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sampler_destroy</span><span class="p">(</span><span class="n">DvzSampler</span><span class="o">*</span> <span class="n">sampler</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4186,6 +4251,7 @@ image transition.</p>
 <p>Initialize pipeline slots (aka Vulkan descriptor set layout).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSlots</span> <span class="nf">dvz_slots</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4211,6 +4277,7 @@ image transition.</p>
 <p>Set the slots binding.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_slots_binding</span><span class="p">(</span><span class="n">DvzSlots</span><span class="o">*</span> <span class="n">slots</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkDescriptorType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4243,6 +4310,7 @@ image transition.</p>
     <span class="n">DvzSlots</span><span class="o">*</span> <span class="n">slots</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span>
     <span class="n">VkShaderStageFlags</span> <span class="n">shaders</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4278,6 +4346,7 @@ image transition.</p>
 <p>Create the slots after they have been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_slots_create</span><span class="p">(</span><span class="n">DvzSlots</span><span class="o">*</span> <span class="n">slots</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4298,6 +4367,7 @@ image transition.</p>
 <p>Destroy the slots</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_slots_destroy</span><span class="p">(</span><span class="n">DvzSlots</span><span class="o">*</span> <span class="n">slots</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4320,6 +4390,7 @@ image transition.</p>
 <p>Initialize bindings corresponding to slots.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzBindings</span> <span class="nf">dvz_bindings</span><span class="p">(</span><span class="n">DvzSlots</span><span class="o">*</span> <span class="n">slots</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dset_count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4346,6 +4417,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_bindings_buffer</span><span class="p">(</span>
     <span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4377,6 +4449,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_bindings_texture</span><span class="p">(</span>
     <span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4407,6 +4480,7 @@ image transition.</p>
 <p>Update the bindings after the buffers/textures have been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_bindings_update</span><span class="p">(</span><span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4427,6 +4501,7 @@ image transition.</p>
 <p>Destroy bindings.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_bindings_destroy</span><span class="p">(</span><span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4448,6 +4523,7 @@ image transition.</p>
 <p>Initialize a graphics pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGraphics</span> <span class="nf">dvz_graphics</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4474,6 +4550,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_renderpass</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">subpass</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4505,6 +4582,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_topology</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkPrimitiveTopology</span> <span class="n">topology</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4531,6 +4609,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_shader_glsl</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkShaderStageFlagBits</span> <span class="n">stage</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">code</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4563,6 +4642,7 @@ image transition.</p>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkShaderStageFlagBits</span> <span class="n">stage</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span>
     <span class="kt">uint32_t</span><span class="o">*</span> <span class="n">buffer</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4599,6 +4679,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_shader</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkShaderStageFlagBits</span> <span class="n">stage</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader_path</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4630,6 +4711,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_vertex_binding</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">binding</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">stride</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4662,6 +4744,7 @@ image transition.</p>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">binding</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">location</span><span class="p">,</span>
     <span class="n">VkFormat</span> <span class="n">format</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4702,6 +4785,7 @@ image transition.</p>
 <p>Set the graphics blend type.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_blend</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">DvzBlendType</span> <span class="n">blend_type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4727,6 +4811,7 @@ image transition.</p>
 <p>Set the graphics depth test.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_depth_test</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">DvzDepthTest</span> <span class="n">depth_test</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4753,6 +4838,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_polygon_mode</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkPolygonMode</span> <span class="n">polygon_mode</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4778,6 +4864,7 @@ image transition.</p>
 <p>Set the graphics cull mode.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_cull_mode</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkCullModeFlags</span> <span class="n">cull_mode</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4803,6 +4890,7 @@ image transition.</p>
 <p>Set the graphics front face.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_front_face</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkFrontFace</span> <span class="n">front_face</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4828,6 +4916,7 @@ image transition.</p>
 <p>Create a graphics pipeline after it has been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_create</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4849,6 +4938,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_slot</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkDescriptorType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4881,6 +4971,7 @@ image transition.</p>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span>
     <span class="n">VkShaderStageFlags</span> <span class="n">shaders</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4916,6 +5007,7 @@ image transition.</p>
 <p>Destroy a graphics pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_destroy</span><span class="p">(</span><span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4937,6 +5029,7 @@ image transition.</p>
 <p>Initialize a compute pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzCompute</span> <span class="nf">dvz_compute</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader_path</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4967,6 +5060,7 @@ image transition.</p>
 <p>Create a compute pipeline after it has been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_compute_create</span><span class="p">(</span><span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -4987,6 +5081,7 @@ image transition.</p>
 <p>Set the GLSL code directly (the library will compile it automatically to SPIRV).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_compute_code</span><span class="p">(</span><span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">code</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5013,6 +5108,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_compute_slot</span><span class="p">(</span>
     <span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkDescriptorType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5045,6 +5141,7 @@ image transition.</p>
     <span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span>
     <span class="n">VkShaderStageFlags</span> <span class="n">shaders</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5080,6 +5177,7 @@ image transition.</p>
 <p>Associate a bindings object to a compute pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_compute_bindings</span><span class="p">(</span><span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">,</span> <span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5105,6 +5203,7 @@ image transition.</p>
 <p>Destroy a compute pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_compute_destroy</span><span class="p">(</span><span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5126,6 +5225,7 @@ image transition.</p>
 <p>Initialize a synchronization barrier (usedwithin a command buffer).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzBarrier</span> <span class="nf">dvz_barrier</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5152,6 +5252,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_stages</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">VkPipelineStageFlags</span> <span class="n">src_stage</span><span class="p">,</span> <span class="n">VkPipelineStageFlags</span> <span class="n">dst_stage</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5182,6 +5283,7 @@ image transition.</p>
 <p>Set the barrier buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_buffer</span><span class="p">(</span><span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5208,6 +5310,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_buffer_queue</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_queue</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dst_queue</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5239,6 +5342,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_buffer_access</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">VkAccessFlags</span> <span class="n">src_access</span><span class="p">,</span> <span class="n">VkAccessFlags</span> <span class="n">dst_access</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5269,6 +5373,7 @@ image transition.</p>
 <p>Set the barrier images.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_images</span><span class="p">(</span><span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5295,6 +5400,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_images_layout</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">VkImageLayout</span> <span class="n">src_layout</span><span class="p">,</span> <span class="n">VkImageLayout</span> <span class="n">dst_layout</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5326,6 +5432,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_images_queue</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_queue</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dst_queue</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5357,6 +5464,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_barrier_images_access</span><span class="p">(</span>
     <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">VkAccessFlags</span> <span class="n">src_access</span><span class="p">,</span> <span class="n">VkAccessFlags</span> <span class="n">dst_access</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5388,6 +5496,7 @@ image transition.</p>
 <p>Initialize a set of semaphores (GPU-GPU synchronization).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSemaphores</span> <span class="nf">dvz_semaphores</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5418,6 +5527,7 @@ image transition.</p>
 <p>Destroy semaphores.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_semaphores_destroy</span><span class="p">(</span><span class="n">DvzSemaphores</span><span class="o">*</span> <span class="n">semaphores</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5439,6 +5549,7 @@ image transition.</p>
 <p>Initialize a set of fences (CPU-GPU synchronization).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzFences</span> <span class="nf">dvz_fences</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">signaled</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5476,6 +5587,7 @@ image transition.</p>
     <span class="n">DvzFences</span><span class="o">*</span> <span class="n">src_fences</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_idx</span><span class="p">,</span> <span class="n">DvzFences</span><span class="o">*</span> <span class="n">dst_fences</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">dst_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5511,6 +5623,7 @@ image transition.</p>
 <p>Wait on the GPU until a fence is signaled.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fences_wait</span><span class="p">(</span><span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5536,6 +5649,7 @@ image transition.</p>
 <p>Return whether a fence is ready.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">dvz_fences_ready</span><span class="p">(</span><span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5561,6 +5675,7 @@ image transition.</p>
 <p>Rset the state of a fence.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fences_reset</span><span class="p">(</span><span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5586,6 +5701,7 @@ image transition.</p>
 <p>Destroy fences.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fences_destroy</span><span class="p">(</span><span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5607,6 +5723,7 @@ image transition.</p>
 <p>Initialize a render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzRenderpass</span> <span class="nf">dvz_renderpass</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5632,6 +5749,7 @@ image transition.</p>
 <p>Set the clear value of a render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_renderpass_clear</span><span class="p">(</span><span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="n">VkClearValue</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5659,6 +5777,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzRenderpassAttachmentType</span> <span class="n">type</span><span class="p">,</span>
     <span class="n">VkFormat</span> <span class="n">format</span><span class="p">,</span> <span class="n">VkImageLayout</span> <span class="n">ref_layout</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5701,6 +5820,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkImageLayout</span> <span class="n">src_layout</span><span class="p">,</span>
     <span class="n">VkImageLayout</span> <span class="n">dst_layout</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5738,6 +5858,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkAttachmentLoadOp</span> <span class="n">load_op</span><span class="p">,</span>
     <span class="n">VkAttachmentStoreOp</span> <span class="n">store_op</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5774,6 +5895,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_renderpass_subpass_attachment</span><span class="p">(</span>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">subpass_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">attachment_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5806,6 +5928,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dependency_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_subpass</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">dst_subpass</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5843,6 +5966,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dependency_idx</span><span class="p">,</span> <span class="n">VkAccessFlags</span> <span class="n">src_access</span><span class="p">,</span>
     <span class="n">VkAccessFlags</span> <span class="n">dst_access</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5880,6 +6004,7 @@ image transition.</p>
     <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dependency_idx</span><span class="p">,</span> <span class="n">VkPipelineStageFlags</span> <span class="n">src_stage</span><span class="p">,</span>
     <span class="n">VkPipelineStageFlags</span> <span class="n">dst_stage</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5915,6 +6040,7 @@ image transition.</p>
 <p>Create a render pass after it has been set up.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_renderpass_create</span><span class="p">(</span><span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5935,6 +6061,7 @@ image transition.</p>
 <p>Destroy a render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_renderpass_destroy</span><span class="p">(</span><span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5956,6 +6083,7 @@ image transition.</p>
 <p>Initialize a set of framebuffers.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzFramebuffers</span> <span class="nf">dvz_framebuffers</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -5982,6 +6110,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_framebuffers_attachment</span><span class="p">(</span>
     <span class="n">DvzFramebuffers</span><span class="o">*</span> <span class="n">framebuffers</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">attachment_idx</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6013,6 +6142,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_framebuffers_create</span><span class="p">(</span>
     <span class="n">DvzFramebuffers</span><span class="o">*</span> <span class="n">framebuffers</span><span class="p">,</span> <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6038,6 +6168,7 @@ image transition.</p>
 <p>Destroy a set of framebuffers.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_framebuffers_destroy</span><span class="p">(</span><span class="n">DvzFramebuffers</span><span class="o">*</span> <span class="n">framebuffers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6059,6 +6190,7 @@ image transition.</p>
 <p>Create a submit object, used to submit command buffers to a GPU queue.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSubmit</span> <span class="nf">dvz_submit</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6084,6 +6216,7 @@ image transition.</p>
 <p>Set the command buffers to submit.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_submit_commands</span><span class="p">(</span><span class="n">DvzSubmit</span><span class="o">*</span> <span class="n">submit</span><span class="p">,</span> <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">commands</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6111,6 +6244,7 @@ image transition.</p>
     <span class="n">DvzSubmit</span><span class="o">*</span> <span class="n">submit</span><span class="p">,</span> <span class="n">VkPipelineStageFlags</span> <span class="n">stage</span><span class="p">,</span> <span class="n">DvzSemaphores</span><span class="o">*</span> <span class="n">semaphores</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6147,6 +6281,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_submit_signal_semaphores</span><span class="p">(</span>
     <span class="n">DvzSubmit</span><span class="o">*</span> <span class="n">submit</span><span class="p">,</span> <span class="n">DvzSemaphores</span><span class="o">*</span> <span class="n">semaphores</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6179,6 +6314,7 @@ image transition.</p>
     <span class="n">DvzSubmit</span><span class="o">*</span> <span class="n">submit</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">cmd_idx</span><span class="p">,</span> <span class="n">DvzFences</span><span class="o">*</span> <span class="n">fences</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">fence_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6214,6 +6350,7 @@ image transition.</p>
 <p>Reset a submit object.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_submit_reset</span><span class="p">(</span><span class="n">DvzSubmit</span><span class="o">*</span> <span class="n">submit</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6237,6 +6374,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">,</span>
     <span class="n">DvzFramebuffers</span><span class="o">*</span> <span class="n">framebuffers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6272,6 +6410,7 @@ image transition.</p>
 <p>End a render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_end_renderpass</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6298,6 +6437,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_compute</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6333,6 +6473,7 @@ image transition.</p>
 <p>Register a barrier.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_barrier</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBarrier</span><span class="o">*</span> <span class="n">barrier</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6364,6 +6505,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_copy_buffer_to_image</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6400,6 +6542,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_copy_image_to_buffer</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">images</span><span class="p">,</span> <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">buffer</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6436,6 +6579,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_copy_image</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">src_img</span><span class="p">,</span> <span class="n">DvzImages</span><span class="o">*</span> <span class="n">dst_img</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6471,6 +6615,7 @@ image transition.</p>
 <p>Set the viewport.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_viewport</span><span class="p">(</span><span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">VkViewport</span> <span class="n">viewport</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6503,6 +6648,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span>
     <span class="n">DvzBindings</span><span class="o">*</span> <span class="n">bindings</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dynamic_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6545,6 +6691,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6582,6 +6729,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6619,6 +6767,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">first_vertex</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">vertex_count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6656,6 +6805,7 @@ image transition.</p>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">first_index</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">vertex_offset</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">index_count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6697,6 +6847,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_draw_indirect</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">indirect</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6728,6 +6879,7 @@ image transition.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_cmd_draw_indexed_indirect</span><span class="p">(</span>
     <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">indirect</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6761,6 +6913,7 @@ image transition.</p>
     <span class="n">VkDeviceSize</span> <span class="n">src_offset</span><span class="p">,</span> <span class="n">DvzBuffer</span><span class="o">*</span> <span class="n">dst_buf</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">dst_offset</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -6814,6 +6967,7 @@ image transition.</p>
     <span class="n">VkShaderStageFlagBits</span> <span class="n">shaders</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span>
     <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
