@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1678,7 +1678,6 @@
 <p>Create a new 1D array.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">dtype</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1709,7 +1708,6 @@
 <p>Create an array with a single dvec3 position.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_point</span><span class="p">(</span><span class="n">dvec3</span> <span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1735,7 +1733,6 @@
 <p>Create a 1D array from an existing compatible memory buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_wrap</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">dtype</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1771,7 +1768,6 @@
 <p>Create a 1D record array with heterogeneous data type.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzArray</span> <span class="nf">dvz_array_struct</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">item_size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1804,7 +1800,6 @@
     <span class="kt">uint32_t</span> <span class="n">ndims</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">item_size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1850,7 +1845,6 @@
 <p>Resize an existing array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_resize</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1881,7 +1875,6 @@
 <p>Reset to 0 the contents of an existing array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_clear</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1903,7 +1896,6 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_reshape</span><span class="p">(</span>
     <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">depth</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1946,7 +1938,6 @@ and is not necessary at the moment.</p>
     <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">first_item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">data_item_count</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1997,14 +1988,12 @@ value.</li>
 <span class="kt">double</span> <span class="n">item</span> <span class="o">=</span> <span class="mf">1.23</span><span class="p">;</span>
 <span class="n">dvz_array_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">);</span>
 </code></pre></div>
-
 </div>
 </div>
 <h3 id="dvz_array_item"><code>dvz_array_item()</code><a class="headerlink" href="#dvz_array_item" title="Permanent link">&para;</a></h3>
 <p>Retrieve a single element from an array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_array_item</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2039,7 +2028,6 @@ value.</li>
     <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">source_dtype</span><span class="p">,</span> <span class="n">DvzDataType</span> <span class="n">target_dtype</span><span class="p">,</span>
     <span class="n">DvzArrayCopyType</span> <span class="n">copy_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">reps</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2114,7 +2102,6 @@ the user-specified visual props (data for the individual elements).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_insert</span><span class="p">(</span>
     <span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">offset</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">insert</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2152,7 +2139,6 @@ the user-specified visual props (data for the individual elements).</p>
     <span class="n">DvzArray</span><span class="o">*</span> <span class="n">src_arr</span><span class="p">,</span> <span class="n">DvzArray</span><span class="o">*</span> <span class="n">dst_arr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">src_offset</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2193,7 +2179,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Destroy an array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_array_destroy</span><span class="p">(</span><span class="n">DvzArray</span><span class="o">*</span> <span class="n">array</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2216,7 +2201,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Initialize an object.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_init</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2238,7 +2222,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Mark an object as successfully created on the GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_created</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2259,7 +2242,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Mark an object as destroyed.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_obj_destroyed</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2280,7 +2262,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Whether an object has been successfully created.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">dvz_obj_is_created</span><span class="p">(</span><span class="n">DvzObject</span><span class="o">*</span> <span class="n">obj</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2308,7 +2289,6 @@ the user-specified visual props (data for the individual elements).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzContainer</span> <span class="nf">dvz_container</span><span class="p">(</span>
     <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">item_size</span><span class="p">,</span> <span class="n">DvzObjectType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2339,7 +2319,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Free a given object in the constainer if it was previously destroyed.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_delete_if_destroyed</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2365,7 +2344,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Get a pointer to a new object in the container.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_container_alloc</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2392,7 +2370,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Return the object at a given index.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_container_get</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2423,7 +2400,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Start a loop iteration over all valid objects within the container.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzContainerIterator</span> <span class="nf">dvz_container_iterator</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2449,7 +2425,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Continue an already-started loop iteration on a container.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_iter</span><span class="p">(</span><span class="n">DvzContainerIterator</span><span class="o">*</span> <span class="n">iterator</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2475,7 +2450,6 @@ the user-specified visual props (data for the individual elements).</p>
 <p>Destroy a container.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_container_destroy</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">container</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2509,7 +2483,6 @@ container does not know how to properly destroy objects that were created with V
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_write_png</span><span class="p">(</span>
     <span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2546,7 +2519,6 @@ container does not know how to properly destroy objects that were created with V
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_write_ppm</span><span class="p">(</span>
     <span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2582,7 +2554,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Read a binary file.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint32_t</span><span class="o">*</span> <span class="nf">dvz_read_file</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">*</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2613,7 +2584,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Read a NumPy NPY file.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="o">*</span> <span class="nf">dvz_read_npy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">*</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2644,7 +2614,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Read a PPM image file.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">dvz_read_ppm</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">width</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">height</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2681,7 +2650,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Create a thread.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzThread</span> <span class="nf">dvz_thread</span><span class="p">(</span><span class="n">DvzThreadCallback</span> <span class="n">callback</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2713,7 +2681,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Acquire a mutex lock associated to the thread.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_lock</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2734,7 +2701,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Release a mutex lock associated to the thread.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_unlock</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2755,7 +2721,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Destroy a thread after the thread function has finished running.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_thread_join</span><span class="p">(</span><span class="n">DvzThread</span><span class="o">*</span> <span class="kr">thread</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2777,7 +2742,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Create a FIFO queue.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzFifo</span> <span class="nf">dvz_fifo</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">capacity</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2803,7 +2767,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Enqueue an object in a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_enqueue</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">item</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2829,7 +2792,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Dequeue an object from a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_fifo_dequeue</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">wait</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2860,7 +2822,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Get the number of items in a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_fifo_size</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2886,7 +2847,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Discard old items in a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_discard</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max_size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2913,7 +2873,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Delete all items in a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_reset</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2934,7 +2893,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Destroy a queue.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_fifo_destroy</span><span class="p">(</span><span class="n">DvzFifo</span><span class="o">*</span> <span class="n">fifo</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2956,7 +2914,6 @@ container does not know how to properly destroy objects that were created with V
 <p>Create a new mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
 <p>A mesh is represented by an array of vertices of type <code>DvzGraphicsMeshVertex</code> and indices, where
 every triplet of vertex indices represents a triangular face of the mesh.</p>
@@ -2964,7 +2921,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Load an OBJ mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_obj</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">file_path</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2992,7 +2948,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
     <span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">,</span> <span class="n">vec3</span><span class="o">*</span> <span class="n">positions</span><span class="p">,</span>
     <span class="n">vec2</span><span class="o">*</span> <span class="n">texcoords</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3035,7 +2990,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_surface</span><span class="p">(</span>
     <span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">heights</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3072,13 +3026,11 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Create a unit cube mesh (ranging [-0.5, +0.5]).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cube</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
 <h3 id="dvz_mesh_sphere"><code>dvz_mesh_sphere()</code><a class="headerlink" href="#dvz_mesh_sphere" title="Permanent link">&para;</a></h3>
 <p>Create a sphere mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_sphere</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3109,7 +3061,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Create a cylinder mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cylinder</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3135,7 +3086,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Create a cone mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_cone</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3161,13 +3111,11 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Create a square mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_square</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMesh</code> | mesh object |</p>
 <h3 id="dvz_mesh_disc"><code>dvz_mesh_disc()</code><a class="headerlink" href="#dvz_mesh_disc" title="Permanent link">&para;</a></h3>
 <p>Create a disc mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMesh</span> <span class="nf">dvz_mesh_disc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3193,7 +3141,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Normalize a mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_normalize</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3214,7 +3161,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Destroy a mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_destroy</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3236,7 +3182,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Reset the mesh transformation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform_reset</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3257,7 +3202,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Append a mesh transformation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform_add</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">mat4</span> <span class="n">transform</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3283,7 +3227,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Append a translation transformation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_translate</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">translate</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3309,7 +3252,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Append a scaling transformation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_scale</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">scale</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3335,7 +3277,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Append a rotation transformation.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_rotate</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">,</span> <span class="kt">float</span> <span class="n">angle</span><span class="p">,</span> <span class="n">vec3</span> <span class="n">axis</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3366,7 +3307,6 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Apply the transformation matrix to a mesh.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mesh_transform</span><span class="p">(</span><span class="n">DvzMesh</span><span class="o">*</span> <span class="n">mesh</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -3388,26 +3328,22 @@ every triplet of vertex indices represents a triangular face of the mesh.</p>
 <p>Return a random integer number between 0 and 255.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span> <span class="nf">dvz_rand_byte</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>uint8_t</code> | number |</p>
 <h3 id="dvz_rand_float"><code>dvz_rand_float()</code><a class="headerlink" href="#dvz_rand_float" title="Permanent link">&para;</a></h3>
 <p>Return a random floating-point number between 0 and 1.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="nf">dvz_rand_float</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>float</code> | number |</p>
 <h3 id="dvz_rand_normal"><code>dvz_rand_normal()</code><a class="headerlink" href="#dvz_rand_normal" title="Permanent link">&para;</a></h3>
 <p>Return a random normal floating-point number.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="nf">dvz_rand_normal</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>float</code> | number |</p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <h3 id="dvz_sleep"><code>dvz_sleep()</code><a class="headerlink" href="#dvz_sleep" title="Permanent link">&para;</a></h3>
 <p>Wait a given number of milliseconds.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_sleep</span><span class="p">(</span><span class="kt">int</span> <span class="n">milliseconds</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>

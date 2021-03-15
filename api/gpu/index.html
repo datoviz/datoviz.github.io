@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1312,7 +1312,6 @@
 <p>Create a context associated to a GPU.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzContext</span><span class="o">*</span> <span class="nf">dvz_context</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">DvzWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1338,7 +1337,6 @@
 <p>Destroy all GPU resources in a GPU context.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_context_reset</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1359,7 +1357,6 @@
 <p>Destroy a context.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_context_destroy</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1383,7 +1380,6 @@
     <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="n">DvzBufferType</span> <span class="n">buffer_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">buffer_count</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1420,7 +1416,6 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_ctx_buffers_resize</span><span class="p">(</span>
     <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="n">DvzBufferRegions</span><span class="o">*</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">new_size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1453,7 +1448,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">DvzTexture</span><span class="o">*</span> <span class="nf">dvz_ctx_texture</span><span class="p">(</span>
     <span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">dims</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">size</span><span class="p">,</span> <span class="n">VkFormat</span> <span class="n">format</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1489,7 +1483,6 @@
 <p>Resize a texture.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_resize</span><span class="p">(</span><span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1520,7 +1513,6 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_filter</span><span class="p">(</span>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">DvzFilterType</span> <span class="n">type</span><span class="p">,</span> <span class="n">VkFilter</span> <span class="n">filter</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1552,7 +1544,6 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_address_mode</span><span class="p">(</span>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">DvzTextureAxis</span> <span class="n">axis</span><span class="p">,</span> <span class="n">VkSamplerAddressMode</span> <span class="n">address_mode</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1585,7 +1576,6 @@
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1634,7 +1624,6 @@ API instead.</p>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1683,7 +1672,6 @@ Transfers API instead.</p>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">src_offset</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">dst</span><span class="p">,</span>
     <span class="n">uvec3</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1725,7 +1713,6 @@ Transfers API instead.</p>
 <p>Destroy a texture.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_texture_destroy</span><span class="p">(</span><span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1747,7 +1734,6 @@ Transfers API instead.</p>
 <p>Create a new compute pipeline.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzCompute</span><span class="o">*</span> <span class="nf">dvz_ctx_compute</span><span class="p">(</span><span class="n">DvzContext</span><span class="o">*</span> <span class="n">context</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">shader_path</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1776,7 +1762,6 @@ Transfers API instead.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1819,7 +1804,6 @@ Transfers API instead.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1862,7 +1846,6 @@ Transfers API instead.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">src</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">src_offset</span><span class="p">,</span>
     <span class="n">DvzBufferRegions</span> <span class="n">dst</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1911,7 +1894,6 @@ Transfers API instead.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1959,7 +1941,6 @@ Transfers API instead.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2008,7 +1989,6 @@ Transfers API instead.</p>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">dst</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">dst_offset</span><span class="p">,</span> <span class="n">uvec3</span> <span class="n">shape</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2060,7 +2040,6 @@ Transfers API instead.</p>
 <p>Process the pending transfers.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_process_transfers</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>

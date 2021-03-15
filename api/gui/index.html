@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1176,7 +1176,6 @@
 <p>Create a new GUI dialog.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGui</span><span class="o">*</span> <span class="nf">dvz_gui</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">title</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1212,7 +1211,6 @@
 <p>Add a checkbox control.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_checkbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1249,7 +1247,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_slider_float</span><span class="p">(</span>
     <span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vmax</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1296,7 +1293,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_slider_int</span><span class="p">(</span>
     <span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vmax</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1342,7 +1338,6 @@
 <p>Add a static, non-modifiable label.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_label</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1378,7 +1373,6 @@
 <p>Add a textbox control for text input.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_textbox</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1414,7 +1408,6 @@
 <p>Add a button.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_button</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1450,7 +1443,6 @@
 <p>Add a colormap image.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGuiControl</span><span class="o">*</span> <span class="nf">dvz_gui_colormap</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">,</span> <span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1481,7 +1473,6 @@
 <p>Destroy a GUI.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_gui_destroy</span><span class="p">(</span><span class="n">DvzGui</span><span class="o">*</span> <span class="n">gui</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
