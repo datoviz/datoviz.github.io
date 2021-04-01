@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1272,22 +1272,26 @@
 
 <span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">colormap</span>
 </code></pre></div>
+
 <h2 id="creating-a-canvas">Creating a canvas<a class="headerlink" href="#creating-a-canvas" title="Permanent link">&para;</a></h2>
 <p>We create a <strong>canvas</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
+
 <p>We can also specify the initial width and height of the window using keyword arguments to <code>canvas()</code>.</p>
 <h2 id="creating-a-panel">Creating a panel<a class="headerlink" href="#creating-a-panel" title="Permanent link">&para;</a></h2>
 <p>Next, we create a <strong>panel</strong>, which is another word for "subplot". By default, there is only one panel spanning the entire canvas, but we can also define multiple panels.</p>
 <p>We also specify the panel's <strong>controller</strong>, which defines how we interact with it. The <code>axes</code> controller displays axes and ticks for 2D graphics.</p>
 <div class="highlight"><pre><span></span><code><span class="n">panel</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <h2 id="choosing-one-of-the-existing-visuals">Choosing one of the existing visuals<a class="headerlink" href="#choosing-one-of-the-existing-visuals" title="Permanent link">&para;</a></h2>
 <p>We'll make a simple <strong>scatter plot</strong> with 2D random points, and different colors and marker sizes.</p>
 <p>We refer to <a href="../../reference/visuals/">the list of all included visuals</a> provided by the Datoviz documentation, and we find that the <strong>marker visual</strong> is what we want for our scatter plot. We look at the <strong>visual properties</strong> (or <strong>props</strong>) for this visual: this is the data we'll need to feed to our visual.</p>
 <p>But first, we create our visual object by specifying its type:</p>
 <div class="highlight"><pre><span></span><code><span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <h2 id="preparing-the-visual-data">Preparing the visual data<a class="headerlink" href="#preparing-the-visual-data" title="Permanent link">&para;</a></h2>
 <p>We'll set:</p>
 <ul>
@@ -1300,6 +1304,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">100_000</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
+
 <p>Note that <strong>positions always have three dimensions</strong> in Datoviz. When using 2D plotting, we set the third component to zero.</p>
 <p>Datoviz uses the standard OpenGL 3D coordinate system:</p>
 <p><img alt="Datoviz coordinate system" src="../../images/cds.svg" />
@@ -1314,10 +1319,12 @@
 <p>We define random marker sizes as an array of floating-point values:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ms</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 </code></pre></div>
+
 <h3 id="colormap">Colormap<a class="headerlink" href="#colormap" title="Permanent link">&para;</a></h3>
 <p>Let's define the colors. We could use random RGBA values for the colors, but we'll use one of the built-in <strong>colormap</strong> instead.</p>
 <div class="highlight"><pre><span></span><code><span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">nr</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
 </code></pre></div>
+
 <p>The variable <code>color</code> is an <code>(N, 4)</code> array of <code>uint8</code> (byte values between 0 and 255).</p>
 <p>This line involves the following steps:</p>
 <ul>
@@ -1332,10 +1339,12 @@
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
+
 <h2 id="running-the-application">Running the application<a class="headerlink" href="#running-the-application" title="Permanent link">&para;</a></h2>
 <p>Finally, we run the application by starting the main event loop:</p>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">()</span>
 </code></pre></div>
+
 <h3 id="making-a-screenshot">Making a screenshot<a class="headerlink" href="#making-a-screenshot" title="Permanent link">&para;</a></h3>
 <p>We can easily make a screenshot of <em>the first frame</em> of the canvas.</p>
 <div class="admonition note">
@@ -1344,6 +1353,7 @@
 </div>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">screenshot</span><span class="o">=</span><span class="s2">&quot;screenshot.png&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <h3 id="recording-a-screencast-video">Recording a screencast video<a class="headerlink" href="#recording-a-screencast-video" title="Permanent link">&para;</a></h3>
 <p>If the library was compiled with ffmpeg, we can easily make a live mp4 screencast of the canvas.</p>
 <div class="admonition warning">
@@ -1352,6 +1362,7 @@
 </div>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="s2">&quot;screencast.mp4&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <p>This command <strong>does not</strong> start the video recording, one needs to press the <em>Play</em> button at the bottom right corner. We can pause and resume at any time. When we're done, we press the <em>Stop</em> button and the video will be saved to disk.</p>
 <p><img alt="Playback buttons for screencast" src="https://user-images.githubusercontent.com/1942359/107956919-2cae4100-6fa0-11eb-97d5-e83a70e01183.png" /></p>
 <h2 id="event-callbacks-and-mouse-picking">Event callbacks and mouse picking<a class="headerlink" href="#event-callbacks-and-mouse-picking" title="Permanent link">&para;</a></h2>
@@ -1374,6 +1385,7 @@
     <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), modifiers=</span><span class="si">{</span><span class="n">modifiers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <p>Clicking somewhere shows in the terminal output: <code>Pick at (0.4605, -0.1992), modifiers=()</code></p>
 <h3 id="coordinate-systems">Coordinate systems<a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h3>
 <p>By default, the <code>panel.pick()</code> function converts coordinates from the window coordinate system (used by the event callbacks) to the data coordinate system. There are other coordinate systems that you can convert to using the <code>target_cds</code> keyword argument to <code>pick()</code>:</p>
@@ -1421,6 +1433,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># We create a GUI dialog.</span>
 <span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;Test GUI&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <h3 id="adding-a-control-to-the-gui">Adding a control to the GUI<a class="headerlink" href="#adding-a-control-to-the-gui" title="Permanent link">&para;</a></h3>
 <p>We add a slider to change the visual marker size.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># We add a control, a slider controlling a float</span>
@@ -1430,6 +1443,7 @@
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">*</span> <span class="n">value</span><span class="p">)</span>
     <span class="c1"># NOTE: an upcoming version will support partial updates</span>
 </code></pre></div>
+
 <p><img alt="float slider" src="https://user-images.githubusercontent.com/1942359/107957858-82cfb400-6fa1-11eb-8369-effe0e0c1950.png" /></p>
 <p>We add another slider, using integers this time, to change the colormap.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># We add another control, a slider controlling an int between 1 and 4, to change the colormap.</span>
@@ -1444,6 +1458,7 @@
     <span class="c1"># Update the color visual</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 </code></pre></div>
+
 <p><img alt="int slider" src="https://user-images.githubusercontent.com/1942359/107957994-ac88db00-6fa1-11eb-9b00-62fc41e77a35.png" /></p>
 <p>Finally we add a button to regenerate the marker positions.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># We add a button to regenerate the marker positions</span>
@@ -1452,6 +1467,7 @@
     <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 </code></pre></div>
+
 <p><img alt="" src="https://user-images.githubusercontent.com/1942359/107958095-d17d4e00-6fa1-11eb-9a90-b1b6ba07785d.png" /></p>
 <div class="admonition note async callbacks">
 <p class="admonition-title">Note</p>

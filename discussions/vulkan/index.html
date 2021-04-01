@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1247,6 +1247,7 @@
     <span class="nb">gl_Position</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">*</span> <span class="n">view</span> <span class="o">*</span> <span class="n">model</span> <span class="o">*</span> <span class="kt">vec4</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <p>The variable <code>pos</code> is a 3D vector with the coordinates of 1 point. The GPU executes the vertex shader in parallel on many points. The output of the vertex shader is <code>gl_Position</code>, a vec4 vector (the last coordinate is the homogeneous coordinate, used for perspective).</p>
 <h4>Fragment shader</h4>
 <p>A trivial fragment shader could output a constant color, independently from the position of the pixel within a triangle. But typically, the fragment shader for a 3D mesh implements mathematical computations to account for lighting, which gives a much more realistic feel. While many lighting models have been created, Datoviz currently implements a classic technique called <em>Phong shading</em>. Again, the details are beyond the scope of this page.</p>
@@ -1334,6 +1335,7 @@ A GPU texture abstracts away the following Vulkan objects: Image, ImageView, Sam
 <span class="n">dvz_cmd_end_renderpass</span><span class="p">(...);</span>        <span class="c1">// end the renderpass</span>
 <span class="n">dvz_cmd_end</span><span class="p">(...);</span>                   <span class="c1">// stop recording the command buffer</span>
 </code></pre></div>
+
 <p>Once called on a command buffer, the command buffer is recorded and can be submitted to a GPU queue. Vulkan leaves to the user the choice of defining the number and types of GPU queues for the application. This is also depends heavily on the hardware. Currently, Datoviz requests four queues, but may end up with less queues if the hardware does not support them (this is all transparent to the user):</p>
 <ul>
 <li>a <strong>transfer queue</strong> receives command buffers for buffer/image upload, download, copy, transitions...</li>

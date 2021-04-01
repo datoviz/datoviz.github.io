@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1240,7 +1240,7 @@
 <li>
 <p>Clone the Datoviz repository and build the library:</p>
 <ol>
-<li><code>git clone --recursive git@github.com:datoviz/datoviz.git</code></li>
+<li><code>git clone --recursive https://github.com/datoviz/datoviz.git</code></li>
 <li><code>cd datoviz</code></li>
 <li><code>./manage.sh build</code></li>
 </ol>
@@ -1275,7 +1275,7 @@
 </ol>
 <h4>Install Datoviz</h4>
 <ol>
-<li><code>git clone --recursive git@github.com:datoviz/datoviz.git</code></li>
+<li><code>git clone --recursive https://github.com/datoviz/datoviz.git</code></li>
 <li><code>cd datoviz</code></li>
 <li><code>./manage.sh build</code></li>
 <li><code>./manage.sh demo</code></li>
@@ -1300,7 +1300,7 @@
 <li>Install the Windows Universal C Runtime https://stackoverflow.com/a/52329698</li>
 </ul>
 </li>
-<li>Clone the repository: <code>git clone --recursive git@github.com:datoviz/datoviz.git</code></li>
+<li>Clone the repository: <code>git clone --recursive https://github.com/datoviz/datoviz.git</code></li>
 <li>
 <p>Enter the following commands within the repository's directory (using the Windows terminal, <strong>not</strong> in Windows for Linux subsystem):</p>
 <div class="highlight"><pre><span></span><code>mkdir build
@@ -1309,6 +1309,7 @@ cmake .. -G &quot;MinGW Makefiles&quot;
 mingw32-make
 cd ..
 </code></pre></div>
+
 </li>
 <li>
 <p>To run an example (the batch script will only work in cmd.exe, not Powershell):</p>
@@ -1316,6 +1317,7 @@ cd ..
 set DVZ_INTERACT=1
 build\datoviz.exe test test_scene_ax
 </code></pre></div>
+
 </li>
 <li>
 <p>To build the Cython package:</p>
@@ -1325,6 +1327,7 @@ pip install -r requirements.txt
 python setup.py build_ext -i -c mingw32
 python setup.py develop
 </code></pre></div>
+
 </li>
 <li>
 <p>Copy <code>build\libdatoviz.dll</code> to <code>bindings\cython\datoviz\</code> (there has to be a better way)</p>
