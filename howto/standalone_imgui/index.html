@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1105,18 +1105,20 @@
 <p>This example shows how to <strong>write a standalone C++ application using Dear ImGui directly</strong>, without using the basic wrapper provided by Datoviz.</p>
 <p><img alt="" src="../../images/screenshots/standalone_imgui.png" /></p>
 <h2 id="full-source-code">Full source code<a class="headerlink" href="#full-source-code" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">// code from `examples/standalone_imgui.cpp`:</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// code from `examples/standalone/standalone_imgui.cpp`:</span>
 
 <span class="cm">/*************************************************************************************************/</span>
 <span class="cm">/*  Example of a standalone C++ application using the library and Dear ImGUI directly.           */</span>
 <span class="cm">/*************************************************************************************************/</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;IconsFontAwesome.h&gt;</span><span class="c1"> // used for FontAwesome icons</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="c1">  // import Datoviz</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;imgui/imgui.h&gt;</span><span class="c1">      // import Dear ImGui</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;IconsFontAwesome.h&gt; // used for FontAwesome icons</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;  // import Datoviz</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;imgui/imgui.h&gt;      // import Dear ImGui</span><span class="cp"></span>
 
 <span class="k">static</span> <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 <span class="k">static</span> <span class="kt">float</span> <span class="n">f</span><span class="p">;</span>
+
+
 
 <span class="c1">// This is where the Dear ImGui code goes:</span>
 <span class="kt">void</span> <span class="nf">_gui_callback</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">)</span>
@@ -1129,6 +1131,8 @@
     <span class="n">ImGui</span><span class="o">::</span><span class="n">InputText</span><span class="p">(</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">IM_ARRAYSIZE</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
     <span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;float&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">);</span>
 <span class="p">}</span>
+
+
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1143,8 +1147,27 @@
     <span class="c1">// ImGui functions to create dialogs.</span>
     <span class="n">dvz_event_callback</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">DVZ_EVENT_IMGUI</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_EVENT_MODE_SYNC</span><span class="p">,</span> <span class="n">_gui_callback</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 
-    <span class="c1">// Destroy the app.</span>
+
+
+<span class="c1">// NOTE: ignore this part, it is exclusively for the building and testing process.</span>
+<span class="cp">#ifdef AUTOMATED</span>
+    <span class="n">log_info</span><span class="p">(</span><span class="s">&quot;saving standalone imgui screenshot&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Instead of opening a live interactive canvas, save a screenshot and close the canvas</span>
+    <span class="c1">// immediately.</span>
+    <span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">dvz_screenshot_file</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="s">&quot;../../docs/images/screenshots/standalone_imgui.png&quot;</span><span class="p">);</span>
+<span class="cp">#else</span>
+    <span class="n">log_info</span><span class="p">(</span><span class="s">&quot;running standalone imgui example&quot;</span><span class="p">);</span>
+
+    <span class="c1">// We run the application. The last argument is the number of frames to run, or 0 for infinite</span>
+    <span class="c1">// loop (stop when escape is pressed or when the window is closed).</span>
     <span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="cp">#endif</span>
+
+
+
+    <span class="c1">// Destroy the app.</span>
     <span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>

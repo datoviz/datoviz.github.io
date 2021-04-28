@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1452,7 +1452,6 @@
 <p>Create an application instance.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzApp</span><span class="o">*</span> <span class="nf">dvz_app</span><span class="p">(</span><span class="n">DvzBackend</span> <span class="n">backend</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1480,7 +1479,6 @@ the Vulkan instance and is responsible for discovering the available GPUs.</p>
 <p>Create a canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzCanvas</span><span class="o">*</span> <span class="nf">dvz_canvas</span><span class="p">(</span><span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1517,7 +1515,6 @@ the Vulkan instance and is responsible for discovering the available GPUs.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzCanvas</span><span class="o">*</span> <span class="nf">dvz_canvas_offscreen</span><span class="p">(</span>
     <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1553,7 +1550,6 @@ the Vulkan instance and is responsible for discovering the available GPUs.</p>
 <p>Set the DPI scaling factor of a canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_dpi_scaling</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">float</span> <span class="n">scaling</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1579,7 +1575,6 @@ the Vulkan instance and is responsible for discovering the available GPUs.</p>
 <p>Create a scene with a grid layout.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzScene</span><span class="o">*</span> <span class="nf">dvz_scene</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">n_rows</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">n_cols</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1617,7 +1612,6 @@ various kinds of interactivity.</p>
 <p>Start the main event loop.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_app_run</span><span class="p">(</span><span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">frame_count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1644,7 +1638,6 @@ various kinds of interactivity.</p>
 <p>Destroy a scene.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_scene_destroy</span><span class="p">(</span><span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1666,7 +1659,6 @@ various kinds of interactivity.</p>
 <p>Destroy a canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_destroy</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1687,7 +1679,6 @@ various kinds of interactivity.</p>
 <p>Destroy the application.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_app_destroy</span><span class="p">(</span><span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1712,7 +1703,6 @@ various kinds of interactivity.</p>
     <span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col</span><span class="p">,</span>
     <span class="n">DvzControllerType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1758,7 +1748,6 @@ various kinds of interactivity.</p>
 <p>Create a builtin visual and add it to a panel.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzVisual</span><span class="o">*</span> <span class="nf">dvz_scene_visual</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzVisualType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1795,7 +1784,6 @@ various kinds of interactivity.</p>
 <p>Create a blank graphics (used when creating custom graphics and visuals).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGraphics</span><span class="o">*</span> <span class="nf">dvz_blank_graphics</span><span class="p">(</span><span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1826,7 +1814,6 @@ various kinds of interactivity.</p>
 <p>Make a custom graphics and add it to a visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_custom_graphics</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1852,7 +1839,6 @@ various kinds of interactivity.</p>
 <p>Create a blank visual (used when creating custom visuals).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzVisual</span><span class="o">*</span> <span class="nf">dvz_blank_visual</span><span class="p">(</span><span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1883,7 +1869,6 @@ various kinds of interactivity.</p>
 <p>Make a custom visual and add it to a panel.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_custom_visual</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1910,7 +1895,6 @@ various kinds of interactivity.</p>
 <p>Create a grid of panels.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGrid</span> <span class="nf">dvz_grid</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">row_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col_count</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1946,7 +1930,6 @@ various kinds of interactivity.</p>
 <p>Destroy a grid.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_grid_destroy</span><span class="p">(</span><span class="n">DvzGrid</span><span class="o">*</span> <span class="n">grid</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -1967,7 +1950,6 @@ various kinds of interactivity.</p>
 <p>Create a panel at a given location in a grid.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzPanel</span><span class="o">*</span> <span class="nf">dvz_panel</span><span class="p">(</span><span class="n">DvzGrid</span><span class="o">*</span> <span class="n">grid</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2003,7 +1985,6 @@ various kinds of interactivity.</p>
 <p>Update a panel viewport.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_update</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2024,7 +2005,6 @@ various kinds of interactivity.</p>
 <p>Set panel margins.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_margins</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">vec4</span> <span class="n">margins</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2051,7 +2031,6 @@ various kinds of interactivity.</p>
 <p>Set the unit in which the panel size is specified.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_unit</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzPanelSizeUnit</span> <span class="n">unit</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2077,7 +2056,6 @@ various kinds of interactivity.</p>
 <p>Set the panel mode (grid or detached).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_mode</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzPanelMode</span> <span class="n">mode</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2103,7 +2081,6 @@ various kinds of interactivity.</p>
 <p>Add a visual to a panel.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_visual</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2129,7 +2106,6 @@ various kinds of interactivity.</p>
 <p>Set a panel position (in detached mode).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_pos</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2161,7 +2137,6 @@ various kinds of interactivity.</p>
 <p>Set a panel size (in detached mode).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_size</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzGridAxis</span> <span class="n">axis</span><span class="p">,</span> <span class="kt">float</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2193,7 +2168,6 @@ various kinds of interactivity.</p>
 <p>Set the number of cells a panel is spanning.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_span</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzGridAxis</span> <span class="n">axis</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">span</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2224,7 +2198,6 @@ various kinds of interactivity.</p>
 <p>Set the position of a panel within a grid.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_cell</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">col</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2255,7 +2228,6 @@ various kinds of interactivity.</p>
 <p>Set the coordinate system transposition (order and direction of the 3 xyz axes).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_transpose</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">DvzCDSTranspose</span> <span class="n">transpose</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2279,9 +2251,8 @@ various kinds of interactivity.</p>
 </table>
 <h3 id="dvz_panel_contains"><code>dvz_panel_contains()</code><a class="headerlink" href="#dvz_panel_contains" title="Permanent link">&para;</a></h3>
 <p>Returns whether a point is contained in a panel.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">dvz_panel_contains</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">dvz_panel_contains</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">screen_pos</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2297,9 +2268,9 @@ various kinds of interactivity.</p>
 <td>the panel</td>
 </tr>
 <tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>screen_pos</code></td>
 <td><code>vec2</code></td>
-<td>the position</td>
+<td>the position in screen pixel coordinates</td>
 </tr>
 <tr>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
@@ -2310,9 +2281,8 @@ various kinds of interactivity.</p>
 </table>
 <h3 id="dvz_panel_at"><code>dvz_panel_at()</code><a class="headerlink" href="#dvz_panel_at" title="Permanent link">&para;</a></h3>
 <p>Return the panel at a given position within the canvas.</p>
-<div class="highlight"><pre><span></span><code><span class="n">DvzPanel</span><span class="o">*</span> <span class="nf">dvz_panel_at</span><span class="p">(</span><span class="n">DvzGrid</span><span class="o">*</span> <span class="n">grid</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">DvzPanel</span><span class="o">*</span> <span class="nf">dvz_panel_at</span><span class="p">(</span><span class="n">DvzGrid</span><span class="o">*</span> <span class="n">grid</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">screen_pos</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2328,9 +2298,9 @@ various kinds of interactivity.</p>
 <td>the grid</td>
 </tr>
 <tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>pos</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>screen_pos</code></td>
 <td><code>vec2</code></td>
-<td>the position in screen coordinates (pixels)</td>
+<td>the position in screen pixel coordinates</td>
 </tr>
 <tr>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code></td>
@@ -2343,7 +2313,6 @@ various kinds of interactivity.</p>
 <p>Destroy a panel and all visuals inside it.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_panel_destroy</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2364,7 +2333,6 @@ various kinds of interactivity.</p>
 <p>Return the viewport of a panel.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzViewport</span> <span class="nf">dvz_panel_viewport</span><span class="p">(</span><span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2391,7 +2359,6 @@ various kinds of interactivity.</p>
 <p>Fetch a color from a colormap and a value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap</span><span class="p">(</span><span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">,</span> <span class="n">cvec4</span> <span class="n">color</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2422,7 +2389,6 @@ various kinds of interactivity.</p>
 <p>Get the texture integer coordinates corresponding to a colormap and value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_idx</span><span class="p">(</span><span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">,</span> <span class="n">cvec2</span> <span class="n">out</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2453,7 +2419,6 @@ various kinds of interactivity.</p>
 <p>Get the texture normalized coordinates corresponding to a colormap and value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_uv</span><span class="p">(</span><span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">uv</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2485,7 +2450,6 @@ various kinds of interactivity.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_scale</span><span class="p">(</span>
     <span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">double</span> <span class="n">value</span><span class="p">,</span> <span class="kt">double</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">double</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">cvec4</span> <span class="n">color</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2528,7 +2492,6 @@ various kinds of interactivity.</p>
     <span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">values</span><span class="p">,</span>
     <span class="kt">double</span> <span class="n">vmin</span><span class="p">,</span> <span class="kt">double</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">cvec4</span><span class="o">*</span> <span class="n">out</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2574,7 +2537,6 @@ various kinds of interactivity.</p>
 <p>Pack an arbitrary RGB color into a special uv texture coordinates</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_packuv</span><span class="p">(</span><span class="n">cvec3</span> <span class="n">color</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">uv</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2604,7 +2566,6 @@ float32.</p>
 <p>Get the tex coords extent of a colormap.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_extent</span><span class="p">(</span><span class="n">DvzColormap</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">vec4</span> <span class="n">uvuv</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2630,7 +2591,6 @@ float32.</p>
 <p>Modify a color in the colormap array (on the CPU only).</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_set</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">col</span><span class="p">,</span> <span class="n">cvec4</span> <span class="n">color</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2661,7 +2621,6 @@ float32.</p>
 <p>Add a custom colormap.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_colormap_custom</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">cmap</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">color_count</span><span class="p">,</span> <span class="n">cvec4</span><span class="o">*</span> <span class="n">colors</span><span class="p">);</span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>

@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -824,20 +824,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#volume-slice" class="md-nav__link">
-    Volume slice
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#volume" class="md-nav__link">
-    Volume
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1268,35 +1254,431 @@
 <h2 id="2d-graphics">2D graphics<a class="headerlink" href="#2d-graphics" title="Permanent link">&para;</a></h2>
 <h3 id="marker">Marker<a class="headerlink" href="#marker" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/marker.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Marker</span>
-</code></pre></div>
-
+<h4>Vertex structure: <code>DvzGraphicsMarkerVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td><code>vec3</code></td>
+<td>position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>cvec4</code></td>
+<td>color</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>float</code></td>
+<td>marker size, in pixels</td>
+</tr>
+<tr>
+<td><code>marker</code></td>
+<td><code>uint8_t</code></td>
+<td>marker type enum</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>uint8_t</code></td>
+<td>angle, between 0 (0) included and 256 (M_2PI) excluded</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td><code>uint8_t</code></td>
+<td>transform enum</td>
+</tr>
+</tbody>
+</table>
+<h4>Params structure: <code>DvzGraphicsMarkerParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>edge_color</code></td>
+<td><code>vec4</code></td>
+<td>edge color RGBA</td>
+</tr>
+<tr>
+<td><code>edge_width</code></td>
+<td><code>float</code></td>
+<td>line width, in pixels</td>
+</tr>
+</tbody>
+</table>
 <h3 id="segment">Segment<a class="headerlink" href="#segment" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/segment.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Segment</span>
-</code></pre></div>
-
+<h4>Vertex structure: <code>DvzGraphicsSegmentVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>P0</code></td>
+<td><code>vec3</code></td>
+<td>start position</td>
+</tr>
+<tr>
+<td><code>P1</code></td>
+<td><code>vec3</code></td>
+<td>end position</td>
+</tr>
+<tr>
+<td><code>shift</code></td>
+<td><code>vec4</code></td>
+<td>shift of start (xy) and end (zw) positions, in pixels</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>cvec4</code></td>
+<td>color</td>
+</tr>
+<tr>
+<td><code>linewidth</code></td>
+<td><code>float</code></td>
+<td>line width, in pixels</td>
+</tr>
+<tr>
+<td><code>cap0</code></td>
+<td><code>DvzCapType</code></td>
+<td>start cap enum</td>
+</tr>
+<tr>
+<td><code>cap1</code></td>
+<td><code>DvzCapType</code></td>
+<td>end cap enum</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td><code>uint8_t</code></td>
+<td>transform enum</td>
+</tr>
+</tbody>
+</table>
 <h3 id="path">Path<a class="headerlink" href="#path" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/path.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Path</span>
-</code></pre></div>
-
+<h4>Vertex structure: <code>DvzGraphicsPathVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>p0</code></td>
+<td><code>vec3</code></td>
+<td>previous position</td>
+</tr>
+<tr>
+<td><code>p1</code></td>
+<td><code>vec3</code></td>
+<td>current position</td>
+</tr>
+<tr>
+<td><code>p2</code></td>
+<td><code>vec3</code></td>
+<td>next position</td>
+</tr>
+<tr>
+<td><code>p3</code></td>
+<td><code>vec3</code></td>
+<td>next next position</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>cvec4</code></td>
+<td>point color</td>
+</tr>
+</tbody>
+</table>
+<h4>Params structure: <code>DvzGraphicsPathParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>linewidth</code></td>
+<td><code>float</code></td>
+<td>line width in pixels</td>
+</tr>
+<tr>
+<td><code>miter_limit</code></td>
+<td><code>float</code></td>
+<td>miter limit for joins</td>
+</tr>
+<tr>
+<td><code>cap_type</code></td>
+<td><code>int32_t</code></td>
+<td>type of the ends of the path</td>
+</tr>
+<tr>
+<td><code>round_join</code></td>
+<td><code>int32_t</code></td>
+<td>whether to use round joins</td>
+</tr>
+</tbody>
+</table>
 <h3 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/text.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Text</span>
-</code></pre></div>
-
+<h4>Vertex structure: <code>DvzGraphicsTextVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td><code>vec3</code></td>
+<td>position</td>
+</tr>
+<tr>
+<td><code>shift</code></td>
+<td><code>vec2</code></td>
+<td>shift, in pixels</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>cvec4</code></td>
+<td>color</td>
+</tr>
+<tr>
+<td><code>glyph_size</code></td>
+<td><code>vec2</code></td>
+<td>glyph size, in pixels</td>
+</tr>
+<tr>
+<td><code>anchor</code></td>
+<td><code>vec2</code></td>
+<td>character anchor, in normalized coordinates</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td><code>float</code></td>
+<td>string angle</td>
+</tr>
+<tr>
+<td><code>glyph</code></td>
+<td><code>usvec4</code></td>
+<td>glyph: char code, char index, string length, string index</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td><code>uint8_t</code></td>
+<td>transform enum</td>
+</tr>
+</tbody>
+</table>
+<h4>Params structure: <code>DvzGraphicsTextParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grid_size</code></td>
+<td><code>ivec2</code></td>
+<td>font atlas grid size (rows, columns)</td>
+</tr>
+<tr>
+<td><code>tex_size</code></td>
+<td><code>ivec2</code></td>
+<td>font atlas texture size, in pixels</td>
+</tr>
+</tbody>
+</table>
 <h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/image.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Image</span>
-</code></pre></div>
-
+<h4>Item structure: <code>DvzGraphicsImageItem</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos0</code></td>
+<td><code>vec3</code></td>
+<td>top left corner</td>
+</tr>
+<tr>
+<td><code>pos1</code></td>
+<td><code>vec3</code></td>
+<td>top right corner</td>
+</tr>
+<tr>
+<td><code>pos2</code></td>
+<td><code>vec3</code></td>
+<td>bottom right corner</td>
+</tr>
+<tr>
+<td><code>pos3</code></td>
+<td><code>vec3</code></td>
+<td>bottom left corner</td>
+</tr>
+<tr>
+<td><code>uv0</code></td>
+<td><code>vec2</code></td>
+<td>tex coords of the top left corner</td>
+</tr>
+<tr>
+<td><code>uv1</code></td>
+<td><code>vec2</code></td>
+<td>tex coords of the top right corner</td>
+</tr>
+<tr>
+<td><code>uv2</code></td>
+<td><code>vec2</code></td>
+<td>tex coords of the bottom right corner</td>
+</tr>
+<tr>
+<td><code>uv3</code></td>
+<td><code>vec2</code></td>
+<td>tex coords of the bottom left corner</td>
+</tr>
+</tbody>
+</table>
+<h4>Vertex structure: <code>DvzGraphicsImageVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td><code>vec3</code></td>
+<td>position</td>
+</tr>
+<tr>
+<td><code>uv</code></td>
+<td><code>vec2</code></td>
+<td>tex coordinates</td>
+</tr>
+</tbody>
+</table>
+<h4>Params structure: <code>DvzGraphicsImageParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tex_coefs</code></td>
+<td><code>vec4</code></td>
+<td>blending coefficients for the four images</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3d-graphics">3D graphics<a class="headerlink" href="#3d-graphics" title="Permanent link">&para;</a></h2>
 <h3 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/mesh.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Mesh</span>
-</code></pre></div>
-
+<h4>Vertex structure: <code>DvzGraphicsMeshVertex</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pos</code></td>
+<td><code>vec4</code></td>
+<td>position</td>
+</tr>
+<tr>
+<td><code>normal</code></td>
+<td><code>vec4</code></td>
+<td>normal vector</td>
+</tr>
+<tr>
+<td><code>uv</code></td>
+<td><code>vec2</code></td>
+<td>tex coords</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td><code>uint8_t</code></td>
+<td>transparency value</td>
+</tr>
+</tbody>
+</table>
+<h4>Params structure: <code>DvzGraphicsMeshParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lights_pos_0</code></td>
+<td><code>mat4</code></td>
+<td>positions of each of the maximum four lights</td>
+</tr>
+<tr>
+<td><code>lights_params_0</code></td>
+<td><code>mat4</code></td>
+<td>ambient, diffuse, specular coefs for each light</td>
+</tr>
+<tr>
+<td><code>tex_coefs</code></td>
+<td><code>vec4</code></td>
+<td>blending coefficients for the four textures</td>
+</tr>
+<tr>
+<td><code>clip_coefs</code></td>
+<td><code>vec4</code></td>
+<td>clip coefficients</td>
+</tr>
+</tbody>
+</table>
 <p>The mesh graphics supports the following features:</p>
 <ul>
 <li>Phong shading</li>
@@ -1307,27 +1689,100 @@
 <li>Customizable plane clipping</li>
 </ul>
 <p>Plane clipping: when the clip vector is non-zero, the fragment shader implements the following test. If the dot product of the clip vector with the vertex position (in scene coordinates) is negative, the fragment is discarded. This feature allows to cut the mesh along any arbitrary affine plane.</p>
-<h3 id="volume-slice">Volume slice<a class="headerlink" href="#volume-slice" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../images/graphics/volume_slice.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">VolumeSlice</span>
-</code></pre></div>
+<!--
 
-<h3 id="volume">Volume<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../images/graphics/volume.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Volume</span>
-</code></pre></div>
+### Volume slice
+
+![](../images/graphics/volume_slice.png)
+
+#### Item structure: `DvzGraphicsVolumeSliceItem`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `pos0` | `vec3` | top left corner |
+| `pos1` | `vec3` | top right corner |
+| `pos2` | `vec3` | bottom right corner |
+| `pos3` | `vec3` | bottom left corner |
+| `uvw0` | `vec3` | tex coords of the top left corner |
+| `uvw1` | `vec3` | tex coords of the top right corner |
+| `uvw2` | `vec3` | tex coords of the bottom right corner |
+| `uvw3` | `vec3` | tex coords of the bottom left corner |
+
+#### Vertex structure: `DvzGraphicsVolumeSliceVertex`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `pos` | `vec3` | position |
+| `uvw` | `vec3` | 3D tex coords |
+
+#### Params structure: `DvzGraphicsVolumeSliceParams`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `x_cmap` | `vec4` | x values of the color transfer function |
+| `y_cmap` | `vec4` | y values of the color transfer function |
+| `x_alpha` | `vec4` | x values of the alpha transfer function |
+| `y_alpha` | `vec4` | y values of the alpha transfer function |
+| `cmap` | `int32_t` | colormap |
+| `scale` | `float` | scaling factor for the fetched volume values |
+
+
+
+
+### Volume
+
+![](../images/graphics/volume.png)
+
+#### Item structure: `DvzGraphicsVolumeItem`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `pos0` | `vec3` | top left front position |
+| `pos1` | `vec3` | bottom right back position |
+
+#### Vertex structure: `DvzGraphicsVolumeVertex`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `pos` | `vec3` | position |
+
+#### Params structure: `DvzGraphicsVolumeParams`
+
+| Field | Type | Description |
+| ---- | ---- | ---- |
+| `box_size` | `vec4` | size of the box containing the volume, in NDC |
+| `uvw0` | `vec4` | texture coordinates of the 2 corner points |
+| `uvw1` | `vec4` | texture coordinates of the 2 corner points |
+| `clip` | `vec4` | plane normal vector for volume slicing |
+| `transfer_xrange` | `vec2` | x coords of the endpoints of the transfer function |
+| `color_coef` | `float` | scaling coefficient when fetching voxel color |
+
+
+
+-->
 
 <h2 id="basic-graphics">Basic graphics<a class="headerlink" href="#basic-graphics" title="Permanent link">&para;</a></h2>
 <h3 id="points">Points<a class="headerlink" href="#points" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/point.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Point</span>
-</code></pre></div>
-
+<h4>Params structure: <code>DvzGraphicsPointParams</code></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>point_size</code></td>
+<td><code>float</code></td>
+<td>point size, in pixels</td>
+</tr>
+</tbody>
+</table>
 <h3 id="lines">Lines<a class="headerlink" href="#lines" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/line.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="n">Lines</span>
-</code></pre></div>
-
 <h3 id="line-strip">Line strip<a class="headerlink" href="#line-strip" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../images/graphics/line_strip.png" /></p>
 <h3 id="triangles">Triangles<a class="headerlink" href="#triangles" title="Permanent link">&para;</a></h3>

@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
@@ -1072,6 +1072,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adding-a-new-c-example" class="md-nav__link">
+    Adding a new C example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1119,7 +1126,7 @@
 <h2 id="implementing-a-new-visual">Implementing a new visual<a class="headerlink" href="#implementing-a-new-visual" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Determine the graphics you'll be using, and the list of source and props</li>
-<li><code>builtin_visuals.h</code>:<ul>
+<li><code>vislib.h</code>:<ul>
 <li>Make sure the <code>DvzVisualType</code> enum exists, or create a new one</li>
 </ul>
 </li>
@@ -1127,7 +1134,7 @@
 <li>Check that all prop types exist, otherwise add them</li>
 </ul>
 </li>
-<li><code>builtin_visuals.c</code>:<ul>
+<li><code>vislib.c</code>:<ul>
 <li>Make a new section for the visual code</li>
 <li>Write the main visual function<ul>
 <li>Specify the graphics pipeline(s)</li>
@@ -1157,11 +1164,11 @@
 <li>Add a new switch case in <code>dvz_visual_builtin()</code></li>
 </ul>
 </li>
-<li><code>test_builtin_visuals.h</code>:<ul>
+<li><code>test_vislib.h</code>:<ul>
 <li>Add a new visual test declaration</li>
 </ul>
 </li>
-<li><code>test_builtin_visuals.c</code>:<ul>
+<li><code>test_vislib.c</code>:<ul>
 <li>Write the body of the test function</li>
 </ul>
 </li>
@@ -1268,6 +1275,57 @@
 </li>
 <li>Run <code>./manage.sh cython</code></li>
 <li>Test in a Python example <code>gui.control('xxx', 'name', ...)</code></li>
+</ul>
+<h2 id="adding-a-new-c-example">Adding a new C example<a class="headerlink" href="#adding-a-new-c-example" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Create a new <code>examples/mynewexample.h</code> file</p>
+<ul>
+<li>Here is a template code snippet:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">/*************************************************************************************************/</span>
+<span class="cm">/*  My new example.                                                                              */</span>
+<span class="cm">/*************************************************************************************************/</span>
+
+<span class="c1">// NOTE: ignore this.</span>
+<span class="cp">#ifndef SCREENSHOT</span>
+<span class="cp">#define SCREENSHOT</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifndef NFRAMES</span>
+<span class="cp">#define NFRAMES 0</span>
+<span class="cp">#endif</span>
+
+<span class="c1">// We include the library header file.</span>
+<span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
+
+<span class="k">static</span> <span class="kt">int</span> <span class="nf">demo_mynewexample</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
+    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">dvz_gpu_best</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+    <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">dvz_canvas</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">DvzScene</span><span class="o">*</span> <span class="n">scene</span> <span class="o">=</span> <span class="n">dvz_scene</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">DvzPanel</span><span class="o">*</span> <span class="n">panel</span> <span class="o">=</span> <span class="n">dvz_scene_panel</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_CONTROLLER_PANZOOM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// Add your code here.</span>
+
+    <span class="n">SCREENSHOT</span>
+    <span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">NFRAMES</span><span class="p">);</span>
+
+    <span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>examples/examples.h</code></p>
+<ul>
+<li>add <code>#include "mynewexample.h"</code></li>
+</ul>
+</li>
+<li><code>cli/main.c</code><ul>
+<li>In <code>demo()</code>, add a new <code>SWITCH_DEMO(mynewexample)</code> line</li>
+</ul>
+</li>
 </ul>
                 
               
