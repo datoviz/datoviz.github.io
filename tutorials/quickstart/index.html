@@ -182,7 +182,7 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
-        Tutorials
+        Getting started
       </a>
     </li>
   
@@ -346,13 +346,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
-        Tutorials
+        Getting started
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
         <label class="md-nav__title" for="nav-2">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Getting started
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -431,6 +431,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-a-scene" class="md-nav__link">
+    Creating a scene
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-a-panel" class="md-nav__link">
     Creating a panel
   </a>
@@ -453,22 +460,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#random-positions" class="md-nav__link">
-    Random positions
+  <a href="#marker-positions" class="md-nav__link">
+    Marker positions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#random-marker-size" class="md-nav__link">
-    Random marker size
+  <a href="#marker-sizes" class="md-nav__link">
+    Marker sizes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#colormap" class="md-nav__link">
-    Colormap
+  <a href="#marker-colors" class="md-nav__link">
+    Marker colors
   </a>
   
 </li>
@@ -489,26 +496,6 @@
   <a href="#running-the-application" class="md-nav__link">
     Running the application
   </a>
-  
-    <nav class="md-nav" aria-label="Running the application">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#making-a-screenshot" class="md-nav__link">
-    Making a screenshot
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recording-a-screencast-video" class="md-nav__link">
-    Recording a screencast video
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -533,11 +520,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-a-simple-gui" class="md-nav__link">
-    Adding a simple GUI
+  <a href="#adding-a-graphical-user-interface" class="md-nav__link">
+    Adding a graphical user interface
   </a>
   
-    <nav class="md-nav" aria-label="Adding a simple GUI">
+    <nav class="md-nav" aria-label="Adding a graphical user interface">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -616,31 +603,7 @@
   
     <li class="md-nav__item">
       <a href="../../examples/quickstart/" class="md-nav__link">
-        Simple test with Python
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/colormap/" class="md-nav__link">
-        Custom colormap
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/signals/" class="md-nav__link">
-        Digital signals
+        Quickstart tutorial
       </a>
     </li>
   
@@ -652,7 +615,7 @@
   
     <li class="md-nav__item">
       <a href="../../examples/image/" class="md-nav__link">
-        Image
+        Image blending
       </a>
     </li>
   
@@ -675,20 +638,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/raster/" class="md-nav__link">
-        Raster plot
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/molecule/" class="md-nav__link">
-        Molecule 3D mesh
+      <a href="../../examples/signals/" class="md-nav__link">
+        Digital signals
       </a>
     </li>
   
@@ -711,8 +662,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/brain_highres/" class="md-nav__link">
-        3D high-res brain mesh
+      <a href="../../examples/twopanels/" class="md-nav__link">
+        Two panels
       </a>
     </li>
   
@@ -723,8 +674,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/twopanels/" class="md-nav__link">
-        Two panels
+      <a href="../../examples/colormap/" class="md-nav__link">
+        Custom colormap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/eventloop/" class="md-nav__link">
+        Async event loop
       </a>
     </li>
   
@@ -777,45 +740,31 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" data-md-state="indeterminate" type="checkbox" id="nav-4-2" checked>
+      
+      <label class="md-nav__link" for="nav-4-2">
+        Standalone C apps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Standalone C apps" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Standalone C apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../howto/standalone_scene/" class="md-nav__link">
-        How to write a standalone C app
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../howto/standalone_imgui/" class="md-nav__link">
-        How to use Dear ImGui directly
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../howto/visual/" class="md-nav__link">
-        How to write a custom visual
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../howto/graphics/" class="md-nav__link">
-        How to write a custom graphics
+        How to use the scene C API
       </a>
     </li>
   
@@ -841,6 +790,76 @@
       <a href="../../howto/standalone_vklite/" class="md-nav__link">
         How to use the vklite C API
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/standalone_imgui/" class="md-nav__link">
+        How to use Dear ImGui directly
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" data-md-state="indeterminate" type="checkbox" id="nav-4-3" checked>
+      
+      <label class="md-nav__link" for="nav-4-3">
+        Custom visuals and graphics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Custom visuals and graphics" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Custom visuals and graphics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/visual/" class="md-nav__link">
+        How to write a custom visual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howto/graphics/" class="md-nav__link">
+        How to write a custom graphics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -894,7 +913,7 @@
   
     <li class="md-nav__item">
       <a href="../../reference/visuals/" class="md-nav__link">
-        List of visuals
+        Library of visuals
       </a>
     </li>
   
@@ -906,7 +925,7 @@
   
     <li class="md-nav__item">
       <a href="../../reference/graphics/" class="md-nav__link">
-        List of graphics
+        Library of graphics
       </a>
     </li>
   
@@ -918,7 +937,7 @@
   
     <li class="md-nav__item">
       <a href="../../reference/colormaps/" class="md-nav__link">
-        List of colormaps
+        Library of colormaps
       </a>
     </li>
   
@@ -930,7 +949,7 @@
   
     <li class="md-nav__item">
       <a href="../../reference/controllers/" class="md-nav__link">
-        List of controllers
+        Library of controllers
       </a>
     </li>
   
@@ -1134,9 +1153,43 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2" data-md-state="indeterminate" type="checkbox" id="nav-7-2" checked>
+      
+      <label class="md-nav__link" for="nav-7-2">
+        For users
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="For users" data-md-level="2">
+        <label class="md-nav__title" for="nav-7-2">
+          <span class="md-nav__icon md-icon"></span>
+          For users
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../discussions/vulkan/" class="md-nav__link">
         Vulkan crash course
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/roadmap/" class="md-nav__link">
+        Roadmap
       </a>
     </li>
   
@@ -1159,9 +1212,15 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discussions/architecture/" class="md-nav__link">
-        Library architecture
+      <a href="../../discussions/faq/" class="md-nav__link">
+        FAQ
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1170,9 +1229,31 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" data-md-state="indeterminate" type="checkbox" id="nav-7-3" checked>
+      
+      <label class="md-nav__link" for="nav-7-3">
+        For developers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="For developers" data-md-level="2">
+        <label class="md-nav__title" for="nav-7-3">
+          <span class="md-nav__icon md-icon"></span>
+          For developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../discussions/roadmap/" class="md-nav__link">
-        Roadmap
+      <a href="../../discussions/architecture/" class="md-nav__link">
+        Library architecture
       </a>
     </li>
   
@@ -1202,14 +1283,8 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discussions/faq/" class="md-nav__link">
-        FAQ
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -1238,8 +1313,7 @@
                 
                 
                 <h1 id="quickstart-using-datoviz-in-python">Quickstart: using Datoviz in Python<a class="headerlink" href="#quickstart-using-datoviz-in-python" title="Permanent link">&para;</a></h1>
-<p>Once Datoviz has been properly installed, you can start to use it in a few lines of code!</p>
-<p>In this tutorial, we'll show <strong>how to make a simple 2D plot with Datoviz in Python</strong>, and we'll go through the most important features of the library.</p>
+<p>In this tutorial, we'll cover the most important features of Datoviz by <strong>creating a 2D raster plot in Python</strong>.</p>
 <p><img alt="" src="../../images/screenshots/standalone_scene.png" /></p>
 <p>We'll cover the following steps:</p>
 <ul>
@@ -1247,24 +1321,19 @@
 <li>how to create a canvas,</li>
 <li>how to create a panel with an axes controller,</li>
 <li>how to add a visual,</li>
-<li>how to use colormaps,</li>
+<li>how to use a colormap,</li>
 <li>how to set visual data,</li>
 <li>how to run the application,</li>
-<li>how to create a minimal GUI,</li>
+<li>how to create a graphical user interface (GUI),</li>
 <li>how to specify event callbacks,</li>
-<li>how to use mouse picking,</li>
-<li>how to make a live screencast video (<em>requires compilation with ffmpeg</em>),</li>
-<li>and more.</li>
+<li>how to implement mouse picking.</li>
 </ul>
-<p>Creating custom visuals, creating standalone C applications with Datoviz are advanced topics, they are covered in the <strong>How to</strong> section of the documentation.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Python bindings are at an early stage of development. They will be significantly improved in the near future.</p>
-</div>
+<p>More advanced topics are covered in the <strong>How to</strong> section of the documentation.</p>
 <h2 id="importing-the-library">Importing the library<a class="headerlink" href="#importing-the-library" title="Permanent link">&para;</a></h2>
+<p>Datoviz can be used from a Python script, or interactively in IPython.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For now, Datoviz should be used from a Python script. Integration with IPython and Jupyter is still a work in progress.</p>
+<p>Interactive use in IPython is still experimental.</p>
 </div>
 <p>First, we import NumPy and datoviz:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1274,107 +1343,128 @@
 </code></pre></div>
 <h2 id="creating-a-canvas">Creating a canvas<a class="headerlink" href="#creating-a-canvas" title="Permanent link">&para;</a></h2>
 <p>We create a <strong>canvas</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">()</span>
 </code></pre></div>
-<p>We can also specify the initial width and height of the window using keyword arguments to <code>canvas()</code>.</p>
+<p>The <code>canvas()</code> function accepts a few keyword arguments, including <code>width</code> and <code>height</code> for the window's initial size.</p>
+<h2 id="creating-a-scene">Creating a scene<a class="headerlink" href="#creating-a-scene" title="Permanent link">&para;</a></h2>
+<p>In order to draw something on the canvas, we need to define a <strong>scene</strong> which implements plotting functionality:</p>
+<p><code>s = c.scene()</code></p>
+<p>The scene contains subplots (also known as <strong>panels</strong>) organized in a two-dimensional grid layout. The number of rows and columns may be specified by the <code>rows</code> and <code>cols</code> keyword arguments to the <code>c.scene()</code> method. By default, <code>rows=1</code> and <code>cols=1</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Canvas vs Scene</p>
+<p>Why is there a distinction between the canvas and the scene? The canvas may be used by advanced users who need direct Vulkan access for anything that is not standard scientific visualization (interactive demos, video games, animations...) and who don't need/want the overhead of the scene API.</p>
+</div>
 <h2 id="creating-a-panel">Creating a panel<a class="headerlink" href="#creating-a-panel" title="Permanent link">&para;</a></h2>
-<p>Next, we create a <strong>panel</strong>, which is another word for "subplot". By default, there is only one panel spanning the entire canvas, but we can also define multiple panels.</p>
-<p>We also specify the panel's <strong>controller</strong>, which defines how we interact with it. The <code>axes</code> controller displays axes and ticks for 2D graphics.</p>
+<p>Each "cell" in the grid layout of the scene is a panel. Every panel has a <strong>controller</strong> which defines how we interact with the panel's visuals. There are several built-in controllers. In particular, the <code>axes</code> controller displays axes and ticks for 2D graphics:</p>
 <div class="highlight"><pre><span></span><code><span class="n">panel</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
 </code></pre></div>
+<div class="admonition note controllers">
+<p class="admonition-title">Note</p>
+<p>The controllers that are currently supported are: <code>static</code>, <code>panzoom</code>, <code>axes</code>, <code>arcbcall</code>, <code>camera</code>.</p>
+</div>
 <h2 id="choosing-one-of-the-existing-visuals">Choosing one of the existing visuals<a class="headerlink" href="#choosing-one-of-the-existing-visuals" title="Permanent link">&para;</a></h2>
-<p>We'll make a simple <strong>scatter plot</strong> with 2D random points, and different colors and marker sizes.</p>
-<p>We refer to <a href="../../reference/visuals/">the list of all included visuals</a> provided by the Datoviz documentation, and we find that the <strong>marker visual</strong> is what we want for our scatter plot. We look at the <strong>visual properties</strong> (or <strong>props</strong>) for this visual: this is the data we'll need to feed to our visual.</p>
-<p>But first, we create our visual object by specifying its type:</p>
+<p>The next step is to <strong>add a visual to a panel</strong>.</p>
+<p>Here, we'll make a <strong>scatter plot</strong> with random points in different colors and sizes.</p>
+<p>Datoviz comes with a <a href="../../reference/visuals/">library of built-in visuals</a>. For our scatter plot, we'll choose a <strong>marker visual</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span>
 </code></pre></div>
+<div class="admonition note marker visual vs point visual">
+<p class="admonition-title">Note</p>
+<p>We could also have used a <strong>point visual</strong>, which is faster and more lightweight, but only supports square markers. Another limitation is that all squares must have the same size in the visual (this limitation may be lifted in the future).</p>
+</div>
 <h2 id="preparing-the-visual-data">Preparing the visual data<a class="headerlink" href="#preparing-the-visual-data" title="Permanent link">&para;</a></h2>
-<p>We'll set:</p>
+<p>Once the visual has been created and added to the panel, we need to set its data. Visual data is specified with <strong>visual props</strong> (properties). The <a href="../../reference/visuals/">visual documentation</a> provides all props supported by each visual.</p>
+<p>Except from the universal <code>pos</code> prop which refers to the point positions, most props are optional and come with sensible defaults.</p>
+<p>In this example, we'll just set:</p>
 <ul>
-<li>the <strong>marker positions</strong>: <code>pos</code> prop,</li>
-<li>the <strong>marker colors</strong>: <code>color</code> prop,</li>
-<li>the <strong>marker sizes</strong>: <code>ms</code> prop.</li>
+<li><code>pos</code>: the <strong>marker positions</strong>,</li>
+<li><code>ms</code>: the <strong>marker sizes</strong>,</li>
+<li><code>color</code>: the <strong>marker colors</strong>.</li>
 </ul>
-<p>First, we generate the data for these props.</p>
-<h3 id="random-positions">Random positions<a class="headerlink" href="#random-positions" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">100_000</span>
+<p>We generate the data as NumPy arrays, and we pass them to the visual.</p>
+<h3 id="marker-positions">Marker positions<a class="headerlink" href="#marker-positions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<p>Note that <strong>positions always have three dimensions</strong> in Datoviz. When using 2D plotting, we set the third component to zero.</p>
-<p>Datoviz uses the standard OpenGL 3D coordinate system:</p>
+<p>Note that <strong>positions always have three dimensions</strong> in Datoviz. When using 2D plotting, we just set the third component to zero.</p>
+<p>Datoviz uses the standard OpenGL 3D coordinate system, with coordinates in <code>[-1, +1]</code>:</p>
 <p><img alt="Datoviz coordinate system" src="../../images/cds.svg" />
 <em>Datoviz coordinate system</em></p>
+<div class="admonition note vulkan coordinate system">
+<p class="admonition-title">Note</p>
+<p>Vulkan uses a slightly different coordinate system, the main differences are:</p>
+<ul>
+<li><code>y</code> and <code>z</code> go in the opposition direction,</li>
+<li><code>z</code> is in <code>[0, 1]</code>.</li>
+</ul>
+<p>The conventions chosen in Datoviz are closer to existing graphics libraries.</p>
+<p>The transformation from the Datoviz coordinate system to the Vulkan coordinate system is done at the final stage of data transformation in the vertex shader of all included visuals.</p>
+</div>
+<p>The point positions that are passed to Datoviz are defined in a <strong>data coordinate system</strong>. Datoviz takes care of the transformation into a normalized coordinate system that is more amenable to GPU interactive graphics.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note that this is different from the Vulkan coordinate system, where y and z go in the opposite direction. The other difference is that in Datoviz, all axes range in the interval <code>[-1, +1]</code>. In the original Vulkan coordinate system, <code>z</code> goes from 0 to 1 instead. The convention used in Datoviz makes it possible to use existing camera matrix routines implemented in the cglm library. The GPU code of all included shaders include the final OpenGL-&gt;Vulkan transformation right before the vertex shader output. Other conventions for <code>x, y, z</code> axes will be supported in the future.</p>
+<p>The data transformation pipeline in Datoviz only supports linear transformations at the moment. It will be improved soon.</p>
 </div>
-<p>Position props are specified in the original data coordinate system corresponding to the scientific data to be visualized. Yet, Datoviz requires vertex positions to be in normalized coordinates (between -1 and 1) when sent to the GPU. Since the GPU only deals with single-precision floating point numbers, doing data normalization on the GPU would result in significant loss of precision and would harm performance.</p>
-<p>Therefore, Datoviz provides a system to make transformations on the CPU <strong>in double precision</strong> before uploading the data to the GPU. By default, the data is linearly transformed to fit the [-1, +1] cube. Other types of transformations will soon be implemented (polar coordinates, geographic coordinate systems, and so on).</p>
-<h3 id="random-marker-size">Random marker size<a class="headerlink" href="#random-marker-size" title="Permanent link">&para;</a></h3>
-<p>We define random marker sizes as an array of floating-point values:</p>
+<h3 id="marker-sizes">Marker sizes<a class="headerlink" href="#marker-sizes" title="Permanent link">&para;</a></h3>
+<p>We define random marker sizes (in pixels) as an array of floating-point values:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ms</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="colormap">Colormap<a class="headerlink" href="#colormap" title="Permanent link">&para;</a></h3>
-<p>Let's define the colors. We could use random RGBA values for the colors, but we'll use one of the built-in <strong>colormap</strong> instead.</p>
-<div class="highlight"><pre><span></span><code><span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">nr</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
-</code></pre></div>
-<p>The variable <code>color</code> is an <code>(N, 4)</code> array of <code>uint8</code> (byte values between 0 and 255).</p>
-<p>This line involves the following steps:</p>
+<h3 id="marker-colors">Marker colors<a class="headerlink" href="#marker-colors" title="Permanent link">&para;</a></h3>
+<p>In Datoviz, colors are specified as either:</p>
 <ul>
-<li>Choosing a colormap, here <strong>viridis</strong> (see the <a href="../../reference/colormaps/">colormap reference page</a> with the list of ~150 included colormaps),</li>
-<li>Defining an array of scalar values to be fed to the colormap (random values between 0 and 1 here),</li>
-<li>(Optional) Defining the colormap range (<code>[0, 1]</code> here),</li>
-<li>(Optional) Setting an alpha transparency channel (0.75 here).</li>
+<li>arbitrary RGBA components, as <code>uint8</code> bytes (four bytes per color),</li>
+<li><strong>colormaps</strong>.</li>
 </ul>
+<p>Datoviz includes <a href="../../reference/colormaps/">a library of ~150 colormaps commonly used in popular scientific plotting software</a>. You can also define a custom colormap manually.</p>
+<p>Here, we'll use the <strong>viridis colormap</strong>.</p>
+<p>First, we define a scalar value for each point, which will be mapped to the colormap afterwards:</p>
+<div class="highlight"><pre><span></span><code><span class="n">color_values</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</code></pre></div>
+<p>We also prepare the alpha channel for transparency, from 0 (invisible) to 1 (opaque):</p>
+<div class="highlight"><pre><span></span><code><span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</code></pre></div>
+<p>Next, we compute the RGBA colors using the colormap:</p>
+<div class="highlight"><pre><span></span><code><span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span>
+    <span class="n">color_values</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>The variable <code>color</code> is an <code>(N, 4)</code> array of <code>uint8</code> (byte values between 0 and 255). It can be passed directly to the <code>color</code> prop of our visual.</p>
 <h2 id="set-the-visual-data">Set the visual data<a class="headerlink" href="#set-the-visual-data" title="Permanent link">&para;</a></h2>
-<p>Finally, the most important bit is to <strong>set the visual prop data with the arrays we just created</strong>:</p>
+<p>Once the data has been prepared, we can pass it to the visual:</p>
 <div class="highlight"><pre><span></span><code><span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
-<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="running-the-application">Running the application<a class="headerlink" href="#running-the-application" title="Permanent link">&para;</a></h2>
 <p>Finally, we run the application by starting the main event loop:</p>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">()</span>
 </code></pre></div>
-<h3 id="making-a-screenshot">Making a screenshot<a class="headerlink" href="#making-a-screenshot" title="Permanent link">&para;</a></h3>
-<p>We can easily make a screenshot of <em>the first frame</em> of the canvas.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Screenshot support will be improved soon.</p>
+<p class="admonition-title">IPython integration</p>
+<p>If you are in IPython's interactive terminal, you should do <code>%gui datoviz</code> first, and omit the call to <code>run()</code>.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">screenshot</span><span class="o">=</span><span class="s2">&quot;screenshot.png&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="recording-a-screencast-video">Recording a screencast video<a class="headerlink" href="#recording-a-screencast-video" title="Permanent link">&para;</a></h3>
-<p>If the library was compiled with ffmpeg, we can easily make a live mp4 screencast of the canvas.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The canvas should NOT be resized when doing a screencast, or the video will be corrupted.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="s2">&quot;screencast.mp4&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>This command <strong>does not</strong> start the video recording, one needs to press the <em>Play</em> button at the bottom right corner. We can pause and resume at any time. When we're done, we press the <em>Stop</em> button and the video will be saved to disk.</p>
-<p><img alt="Playback buttons for screencast" src="https://user-images.githubusercontent.com/1942359/107956919-2cae4100-6fa0-11eb-97d5-e83a70e01183.png" /></p>
 <h2 id="event-callbacks-and-mouse-picking">Event callbacks and mouse picking<a class="headerlink" href="#event-callbacks-and-mouse-picking" title="Permanent link">&para;</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>From now on, all the code snippets below needs to be added <strong>before</strong> calling <code>run()</code>.</p>
+<p>From now on, all of the code snippets need to be added <strong>before</strong> <code>run()</code>.</p>
 </div>
-<p>We'll write a callback function that is called when the user clicks in the canvas, and that prints the coordinates of the clicked point in the original data coordinate system.</p>
+<p>We'll write a callback function that runs whenever the user clicks somewhere in the canvas. It will display the coordinates of the clicked point in the original data coordinate system.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># We define an event callback to implement mouse picking</span>
 <span class="nd">@c</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span> <span class="nf">on_mouse_click</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">button</span><span class="p">,</span> <span class="n">modifiers</span><span class="o">=</span><span class="p">()):</span>
     <span class="c1"># x, y are in pixel coordinates</span>
     <span class="c1"># First, we find the picked panel</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">panel_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">panel_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span><span class="p">:</span>
         <span class="k">return</span>
-    <span class="c1"># Then, we transform into the data coordinate system</span>
+    <span class="c1"># Then, we transform the mouse positions into the data coordinate system.</span>
     <span class="c1"># Supported coordinate systems:</span>
     <span class="c1">#   target_cds=&#39;data&#39; / &#39;scene&#39; / &#39;vulkan&#39; / &#39;framebuffer&#39; / &#39;window&#39;</span>
     <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), modifiers=</span><span class="si">{</span><span class="n">modifiers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pick at (</span><span class="si">{</span><span class="n">xd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">), </span><span class="si">{</span><span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">modifiers</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">button</span><span class="si">}</span><span class="s2"> click&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Clicking somewhere shows in the terminal output: <code>Pick at (0.4605, -0.1992), modifiers=()</code></p>
+<p>Clicking somewhere shows in the terminal output:</p>
+<div class="highlight"><pre><span></span><code>Pick at (0.4605, -0.1992), modifiers=()
+</code></pre></div>
 <h3 id="coordinate-systems">Coordinate systems<a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h3>
 <p>By default, the <code>panel.pick()</code> function converts coordinates from the window coordinate system (used by the event callbacks) to the data coordinate system. There are other coordinate systems that you can convert to using the <code>target_cds</code> keyword argument to <code>pick()</code>:</p>
 <table>
@@ -1414,48 +1504,56 @@
 <li>There's a difference between the <code>framebuffer</code> and <code>window</code> systems with high-DPI monitors. This depends on the OS.</li>
 </ul>
 <p>For now, DPI support is semi-manual. Datoviz supports a special <code>dpi_scaling</code> variable that rescales the visual elements depending on this value, and that can be adjusted manually (to be documented later).</p>
-<h2 id="adding-a-simple-gui">Adding a simple GUI<a class="headerlink" href="#adding-a-simple-gui" title="Permanent link">&para;</a></h2>
-<p>Datoviz integrates the <a href="https://github.com/ocornut/imgui">Dear ImGUI library</a> which allows one to create GUIs directly in a Datoviz canvas, without using external dependencies such as Qt.</p>
+<h2 id="adding-a-graphical-user-interface">Adding a graphical user interface<a class="headerlink" href="#adding-a-graphical-user-interface" title="Permanent link">&para;</a></h2>
+<p>Datoviz supports built-in GUIs via the <a href="https://github.com/ocornut/imgui">Dear ImGui library</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dear ImGui allows you to create minimal GUIs without needing large dependencies such as Qt. However, full Qt support is also planned in the near future.</p>
+</div>
 <h3 id="adding-a-gui-dialog">Adding a GUI dialog<a class="headerlink" href="#adding-a-gui-dialog" title="Permanent link">&para;</a></h3>
-<p>We create a new GUI dialog.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># We create a GUI dialog.</span>
-<span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;Test GUI&quot;</span><span class="p">)</span>
+<p>We create a new GUI dialog:</p>
+<div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="s2">&quot;Test GUI&quot;</span><span class="p">)</span>  <span class="c1"># the argument is the dialog&#39;s title</span>
 </code></pre></div>
 <h3 id="adding-a-control-to-the-gui">Adding a control to the GUI<a class="headerlink" href="#adding-a-control-to-the-gui" title="Permanent link">&para;</a></h3>
 <p>We add a slider to change the visual marker size.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># We add a control, a slider controlling a float</span>
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;marker size&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">sf</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_float&quot;</span><span class="p">,</span> <span class="s2">&quot;marker size&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># We write the Python callback function for when the slider&#39;s value changes.</span>
+<span class="nd">@sf</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="c1"># Every time the slider value changes, we update the visual&#39;s marker size</span>
+    <span class="c1"># Every time the slider value changes, we update the visual&#39;s marker size.</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">*</span> <span class="n">value</span><span class="p">)</span>
-    <span class="c1"># NOTE: an upcoming version will support partial updates</span>
 </code></pre></div>
 <p><img alt="float slider" src="https://user-images.githubusercontent.com/1942359/107957858-82cfb400-6fa1-11eb-8369-effe0e0c1950.png" /></p>
 <p>We add another slider, using integers this time, to change the colormap.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># We add another control, a slider controlling an int between 1 and 4, to change the colormap.</span>
-<span class="c1"># NOTE: an upcoming version will provide a dropdown menu control</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># We add a second, slider controlling an integer between 1 and 4, to change the colormap.</span>
+<span class="c1"># NOTE: an upcoming version will provide a dropdown menu control.</span>
+<span class="n">si</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_int&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Predefined list of colormaps.</span>
 <span class="n">cmaps</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;cividis&#39;</span><span class="p">,</span> <span class="s1">&#39;autumn&#39;</span><span class="p">,</span> <span class="s1">&#39;winter&#39;</span><span class="p">]</span>
 
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;slider_int&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nd">@si</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="c1"># Recompute the colors.</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span>
-        <span class="n">color_values</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmaps</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
-    <span class="c1"># Update the color visual</span>
+    <span class="c1"># When the slider changes, we recompute the colors.</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">color_values</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">75</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmaps</span><span class="p">[</span><span class="n">value</span><span class="p">])</span>
+    <span class="c1"># We update the color visual.</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="int slider" src="https://user-images.githubusercontent.com/1942359/107957994-ac88db00-6fa1-11eb-9b00-62fc41e77a35.png" /></p>
 <p>Finally we add a button to regenerate the marker positions.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># We add a button to regenerate the marker positions</span>
-<span class="nd">@gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;new positions&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">control</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;new positions&quot;</span><span class="p">)</span>
+
+<span class="nd">@b</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># We update the marker positions.</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="https://user-images.githubusercontent.com/1942359/107958095-d17d4e00-6fa1-11eb-9a90-b1b6ba07785d.png" /></p>
-<div class="admonition note async callbacks">
-<p class="admonition-title">Note</p>
-<p>For now, the callbacks are synchronous by default: they run in the main thread. Any long-lasting callback will block the UI. In <code>gui.control()</code>, the keyword argument <code>async=True</code> allows to declare a callback as asynchronous. It will run in a background thread. <strong>This feature is still experimental.</strong> Currently, the only functionality available in async callbacks is doing data transfers with <code>visual.data()</code>. More async features will be implemented later.</p>
+<div class="admonition note">
+<p class="admonition-title">Asynchronous callbacks</p>
+<p>By default, callbacks are synchronous and run in the main thread. As such, they will block the user interface is they take too long to run. Currently, the only way of implementing an asynchronous callback is to use the <code>asyncio</code> event loop. <a href="../../examples/eventloop/">Look at the eventloop code example</a>.</p>
 </div>
                 
               
