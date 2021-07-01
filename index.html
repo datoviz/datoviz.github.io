@@ -361,6 +361,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-example" class="md-nav__link">
+    Code example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     Documentation
   </a>
@@ -1267,6 +1274,24 @@
 <h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/screenshots/datoviz.jpg" />
 <em>Credits: mouse brain volume: <a href="https://alleninstitute.github.io/AllenSDK/">Allen SDK</a>. France: <a href="https://www.naturalearthdata.com/">Natural Earth</a>. Molecule: <a href="https://www.rcsb.org/structure/4cmp">Crystal structure of S. pyogenes Cas9 from PDB</a> (thanks to Eric for conversion to OBJ mesh). Earth: <a href="https://pixabay.com/fr/illustrations/terre-planet-monde-globe-espace-1617121/">Pixabay</a>. Raster plot: IBL. 3D human brain: <a href="https://www.frontiersin.org/articles/10.3389/fnana.2020.536838/full">Anneke Alkemade et al. 2020</a>, thanks to Pierre-Louis Bazin and Julia Huntenburg.</em></p>
+<h2 id="code-example">Code example<a class="headerlink" href="#code-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">colormap</span>
+
+<span class="n">panel</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">scene</span><span class="p">()</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <p>The documentation is divided into:</p>
 <ul>

@@ -895,13 +895,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dvz_canvas_offscreen" class="md-nav__link">
-    dvz_canvas_offscreen()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#dvz_canvas_dpi_scaling" class="md-nav__link">
     dvz_canvas_dpi_scaling()
   </a>
@@ -1590,42 +1583,6 @@ the Vulkan instance and is responsible for discovering the available GPUs.</p>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
 <td><code>uint32_t</code></td>
 <td>the initial window height, in pixels</td>
-</tr>
-<tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>flags</code></td>
-<td><code>int</code></td>
-<td>the creation flags for the canvas</td>
-</tr>
-</tbody>
-</table>
-<h3 id="dvz_canvas_offscreen"><code>dvz_canvas_offscreen()</code><a class="headerlink" href="#dvz_canvas_offscreen" title="Permanent link">&para;</a></h3>
-<p>Create an offscreen canvas.</p>
-<div class="highlight"><pre><span></span><code><span class="n">DvzCanvas</span><span class="o">*</span> <span class="nf">dvz_canvas_offscreen</span><span class="p">(</span>
-    <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>gpu</code></td>
-<td><code>DvzGpu*</code></td>
-<td>the GPU to use for swapchain presentation</td>
-</tr>
-<tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>width</code></td>
-<td><code>uint32_t</code></td>
-<td>the canvas width, in pixels</td>
-</tr>
-<tr>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>height</code></td>
-<td><code>uint32_t</code></td>
-<td>the canvas height, in pixels</td>
 </tr>
 <tr>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"/></svg></span> <code>flags</code></td>

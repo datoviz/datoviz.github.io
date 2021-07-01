@@ -405,8 +405,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-compile-datoviz" class="md-nav__link">
-    How to compile Datoviz?
+  <a href="#how-to-install-datoviz" class="md-nav__link">
+    How to install Datoviz?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-datoviz-from-source" class="md-nav__link">
+    How to build Datoviz from source?
   </a>
   
 </li>
@@ -1204,18 +1211,68 @@
                 
                 
                 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-install-datoviz">How to install Datoviz?<a class="headerlink" href="#how-to-install-datoviz" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We are in the process of creating easy-to-install Python wheel packages for all operating systems. In the meantime, you need to compile Datoviz from source.</p>
+<p>Binary packages are still experimental. They are currently uploaded on GitHub releases, but not yet on PyPI. They will, once they have been sufficiently tested. In the meantime, please open an issue on GitHub if you have any problem.</p>
 </div>
-<h2 id="how-to-compile-datoviz">How to compile Datoviz?<a class="headerlink" href="#how-to-compile-datoviz" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
+<ol>
+<li>If you don't already have a <strong>Python distribution</strong>, install one. For example, <a href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">download the miniconda installer</a> for Linux 64-bit and install it.</li>
+<li>Open a terminal.</li>
+<li>
+<p>Type the following to install Datoviz:</p>
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-manylinux_2_24_x86_64.whl
+</code></pre></div>
+</li>
+<li>
+<p>Type the following to test Datoviz:</p>
+<div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">macOS</label><div class="tabbed-content">
+<ol>
+<li>If you don't already have a <strong>Python distribution</strong>, install one. For example, <a href="https://docs.conda.io/en/latest/miniconda.html#macosx-installers">download the miniconda pkg installer</a> for macOS and install it.</li>
+<li>Open a terminal.</li>
+<li>
+<p>Type the following to install Datoviz:</p>
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-macosx_10_9_x86_64.whl
+</code></pre></div>
+</li>
+<li>
+<p>Type the following to test Datoviz:</p>
+<div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Windows</label><div class="tabbed-content">
+<ol>
+<li>If you don't already have a <strong>Python distribution</strong>, install one. For example, <a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">download the miniconda installer</a> for Windows 64-bit and install it.</li>
+<li>Open an Anaconda prompt.</li>
+<li>
+<p>Type the following to install Datoviz:</p>
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-win_amd64.whl
+</code></pre></div>
+</li>
+<li>
+<p>Type the following to test Datoviz:</p>
+<div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+</div>
+<h2 id="how-to-build-datoviz-from-source">How to build Datoviz from source?<a class="headerlink" href="#how-to-build-datoviz-from-source" title="Permanent link">&para;</a></h2>
 <p>Datoviz is made of:</p>
 <ul>
 <li>a <strong>C library</strong> (also called libdatoviz),</li>
 <li>a <strong>Python wrapper</strong> (written in Cython)</li>
 </ul>
 <p>The philosophy of Datoviz is to <strong>implement all the logic and functionality in C</strong>, and provide minimal bindings in high-level languages. This will ensure that all wrappers share the same functionality.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Linux</label><div class="tabbed-content">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only Ubuntu 20.04 has been tested so far.</p>
@@ -1225,7 +1282,7 @@
 <li>
 <p>Install the build tools:</p>
 <div class="highlight"><pre><span></span><code>sudo apt install build-essential cmake ninja-build <span class="se">\</span>
-    xcb libx11-xcb-dev libglfw3-dev patchelf
+    xcb libx11-xcb-dev libxcursor-dev libxi-dev patchelf
 </code></pre></div>
 </li>
 <li>
@@ -1288,7 +1345,7 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 </li>
 </ol>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">macOS</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">macOS</label><div class="tabbed-content">
 <ol>
 <li>Open a terminal.</li>
 <li>Type <code>git</code> to install git.</li>
@@ -1342,7 +1399,7 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 </li>
 </ol>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Windows 10</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Windows 10</label><div class="tabbed-content">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Only <strong>mingw-w64</strong> is supported at the moment. Microsoft Visual C++ is not yet supported.</p>

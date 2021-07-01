@@ -1182,6 +1182,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adding-a-new-attribute-to-an-existing-graphics-pipeline" class="md-nav__link">
+    Adding a new attribute to an existing graphics pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-uniform-parameter-to-an-existing-graphics-pipeline" class="md-nav__link">
+    Adding a new uniform parameter to an existing graphics pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-texture-to-an-existing-graphics-pipeline" class="md-nav__link">
+    Adding a new texture to an existing graphics pipeline
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1455,6 +1476,139 @@
 </li>
 <li>Run <code>./manage.sh cython</code></li>
 <li>Test in a Python example <code>gui.control('xxx', 'name', ...)</code></li>
+</ul>
+<h2 id="adding-a-new-attribute-to-an-existing-graphics-pipeline">Adding a new attribute to an existing graphics pipeline<a class="headerlink" href="#adding-a-new-attribute-to-an-existing-graphics-pipeline" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>graphics_xxx.vert</code> (GLSL vertex shader file):<ul>
+<li>Choose an appropriate C type for the attribute, for example <code>vec2</code> (two single-precision floating-point values)</li>
+<li>Add the attribute to the shader by adding a line with <code>layout (location = N) in vec2 attribute_name;</code> (use the appropriate type, the appropriate attribute number)</li>
+<li>Make sure the attributelocations are strictly increasing (0, 1, 2, 3...)</li>
+</ul>
+</li>
+<li><code>graphics.h</code>:<ul>
+<li>Find the relevant <code>DvzGraphicsXXXVertex</code> structure</li>
+<li>Add the field with the same type and name, following the same order as in the shader attributes list</li>
+</ul>
+</li>
+<li><code>graphics.c</code>:<ul>
+<li>Find the <code>static void _graphics_xxx()</code> function body</li>
+<li>Determine the appropriate Vulkan format corresponding to the C format that you have chosen (<a href="https://datoviz.org/howto/graphics/#attribute-format">see the documentation</a>)</li>
+<li>Add a line with <code>ATTR(DvzGraphicsXXXVertex, VK_FORMAT_R32G32_SFLOAT, attribute_name)</code></li>
+</ul>
+</li>
+<li><em>The following steps are optional: follow them if you want to add visual props to the visuals that depend on the graphics pipeline</em></li>
+<li>
+<p><code>vislib.c</code>:</p>
+<ul>
+<li>Go through all visuals involving the graphics</li>
+<li>
+<p>For each visual, add a prop corresponding to the new attribute, for example: (make sure to modify the appropriate parameters when needed)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Document the prop.</span>
+<span class="n">prop</span> <span class="o">=</span> <span class="n">dvz_visual_prop</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_XXX</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_DTYPE_VEC2</span><span class="p">,</span> <span class="n">DVZ_SOURCE_TYPE_VERTEX</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">dvz_visual_prop_copy</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzGraphicsXXXVertex</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">),</span> <span class="n">DVZ_ARRAY_COPY_SINGLE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">dvz_visual_prop_default</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">(</span><span class="n">vec2</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>test_vislib.c</code>:</p>
+<ul>
+<li>Go through all tests involving the affected visuals, in <code>test_vislib_xxx()</code></li>
+<li>Set the prop data for the new prop</li>
+</ul>
+</li>
+</ul>
+<h2 id="adding-a-new-uniform-parameter-to-an-existing-graphics-pipeline">Adding a new uniform parameter to an existing graphics pipeline<a class="headerlink" href="#adding-a-new-uniform-parameter-to-an-existing-graphics-pipeline" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>graphics_xxx.yyy</code> (GLSL shader file, vertex or fragment shader):<ul>
+<li>Choose an appropriate C type for the uniform, for example <code>vec2</code> (two single-precision floating-point values)</li>
+<li><strong>Make sure not to use a type with a 3 in it</strong>, so as to avoid misalignment problems</li>
+<li>Add the uniform field to the Params structure</li>
+<li>If the params uniform is used in both the vertex and fragment shader, make sure both are updated accordingly</li>
+</ul>
+</li>
+<li><code>graphics.h</code>:<ul>
+<li>Find the relevant <code>DvzGraphicsXXXParams</code> structure</li>
+<li>Add the field with the same type and name, following the same order as in the shader</li>
+</ul>
+</li>
+<li><code>graphics.c</code>:<ul>
+<li>There's nothing to change in this file</li>
+</ul>
+</li>
+<li><em>The following steps are optional: follow them if you want to add visual props to the visuals that depend on the graphics pipeline</em></li>
+<li>
+<p><code>vislib.c</code>:</p>
+<ul>
+<li>Go through all visuals involving the graphics</li>
+<li>
+<p>For each visual, add a prop corresponding to the new uniform, for example: (make sure to modify the appropriate parameters when needed)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Document the prop.</span>
+<span class="n">prop</span> <span class="o">=</span> <span class="n">dvz_visual_prop</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_XXX</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_DTYPE_VEC2</span><span class="p">,</span> <span class="n">DVZ_SOURCE_TYPE_PARAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">dvz_visual_prop_copy</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzGraphicsXXXParams</span><span class="p">,</span> <span class="n">uniform_name</span><span class="p">),</span> <span class="n">DVZ_ARRAY_COPY_SINGLE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">dvz_visual_prop_default</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">(</span><span class="n">vec2</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>test_vislib.c</code>:</p>
+<ul>
+<li>Go through all tests involving the affected visuals, in <code>test_vislib_xxx()</code></li>
+<li>Set the prop data for the new prop</li>
+</ul>
+</li>
+</ul>
+<h2 id="adding-a-new-texture-to-an-existing-graphics-pipeline">Adding a new texture to an existing graphics pipeline<a class="headerlink" href="#adding-a-new-texture-to-an-existing-graphics-pipeline" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>graphics_xxx.frag</code> (GLSL fragment shader file):<ul>
+<li>Choose an appropriate texture dimension (1D, 2D, 3D)</li>
+<li>Add a new binding slot in the shader by adding a line with <code>layout(binding = (USER_BINDING + 2)) uniform sampler2D my_tex;</code> (make sure to use the appropriate number in <code>USER_BINDING + N</code>)</li>
+<li>Make sure you use the <code>USER_BINDING</code> constant rather than hard-coding values: this is the number of bindings that are shared by all graphics pipelines in Datoviz</li>
+<li>Make sure that the N is strictly increasing in the consecutive <code>layout(binding=...)</code> lines (N=0, 1, 2, 3...)</li>
+<li>Use the new texture in the fragment shader, with a call to <code>texture(my_tex, in_uv)</code> (make sure to use the appropriate texel coordinates variable)</li>
+</ul>
+</li>
+<li><code>graphics.h</code>:<ul>
+<li>There's nothing to change in this file</li>
+</ul>
+</li>
+<li>
+<p><code>graphics.c</code>:</p>
+<ul>
+<li>Find the <code>static void _graphics_xxx()</code> function body</li>
+<li>
+<p>Before the call to the <code>CREATE</code> macro, add a line with: (make sure to use the same number in <code>DVZ_USER_BINDING + N</code> as in the shader)</p>
+<div class="highlight"><pre><span></span><code><span class="n">dvz_graphics_slot</span><span class="p">(</span><span class="n">graphics</span><span class="p">,</span> <span class="n">DVZ_USER_BINDING</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><em>The following steps are optional: follow them if you want to add visual props to the visuals that depend on the graphics pipeline</em></p>
+</li>
+<li>
+<p><code>vislib.c</code>:</p>
+<ul>
+<li>Go through all visuals involving the graphics</li>
+<li>
+<p>For each visual, add a source corresponding to the new texture, for example: (make sure to modify the appropriate parameters when needed)</p>
+<div class="highlight"><pre><span></span><code><span class="n">dvz_visual_source</span><span class="p">(</span>                              <span class="c1">// image</span>
+    <span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_SOURCE_TYPE_IMAGE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>           <span class="c1">// 0 for the first sampler in the shader, 1 for the next, and so on</span>
+    <span class="n">DVZ_PIPELINE_GRAPHICS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// 0 for the first graphics pipeline of the visual, 1 for the next, and so on</span>
+    <span class="n">DVZ_USER_BINDING</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// make sure to use the same +N as above</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>test_vislib.c</code>:</p>
+<ul>
+<li>Go through all tests involving the affected visuals, in <code>test_vislib_xxx()</code></li>
+<li>Set the texture data</li>
+</ul>
+</li>
 </ul>
                 
               
