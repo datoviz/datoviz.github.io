@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
     
     
       
@@ -1197,18 +1197,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discussions/roadmap/" class="md-nav__link">
-        Roadmap
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../discussions/practices/" class="md-nav__link">
         Best practices
       </a>
@@ -1529,7 +1517,7 @@ layout (std140, binding = 1) uniform Viewport {...};
 </table>
 <p>This is done just by including <code>common.glsl</code> in every shader. Note that this is not required when using completely standalone graphics pipelines that will never be used with the scene API.</p>
 <p>When one needs to add another bindings, the numbering should start at <code>USER_BINDING</code>, a special GLSL macro that is currently 2.</p>
-<h4>Uniform alignment</h4>
+<h4 id="uniform-alignment">Uniform alignment<a class="headerlink" href="#uniform-alignment" title="Permanent link">&para;</a></h4>
 <p>The <code>std140</code> keyword refers to the alignment of the fields within the uniform structure. We're not going into the details, but we'll present some relatively arbitrary rules that we follow in Datoviz so that we don't need to think too much about memory alignment considerations when working with uniform structures:</p>
 <ul>
 <li><strong>always use the <code>std140</code> keyword</strong> when defining uniform resources in the shaders,</li>

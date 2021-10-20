@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
     
     
       
@@ -414,6 +414,13 @@
         <li class="md-nav__item">
   <a href="#how-to-build-datoviz-from-source" class="md-nav__link">
     How to build Datoviz from source?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-update-datoviz-when-it-was-compiled-from-source" class="md-nav__link">
+    How to update Datoviz when it was compiled from source?
   </a>
   
 </li>
@@ -1086,18 +1093,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discussions/roadmap/" class="md-nav__link">
-        Roadmap
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../discussions/practices/" class="md-nav__link">
         Best practices
       </a>
@@ -1222,7 +1217,7 @@
 <li>Open a terminal.</li>
 <li>
 <p>Type the following to install Datoviz:</p>
-<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-manylinux_2_24_x86_64.whl
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-manylinux_2_24_x86_64.whl
 </code></pre></div>
 </li>
 <li>
@@ -1238,7 +1233,7 @@
 <li>Open a terminal.</li>
 <li>
 <p>Type the following to install Datoviz:</p>
-<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-macosx_10_9_x86_64.whl
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-macosx_10_14_x86_64.whl
 </code></pre></div>
 </li>
 <li>
@@ -1254,7 +1249,7 @@
 <li>Open an Anaconda prompt.</li>
 <li>
 <p>Type the following to install Datoviz:</p>
-<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.0/datoviz-0.1.0a0-cp38-cp38-win_amd64.whl
+<div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-win_amd64.whl
 </code></pre></div>
 </li>
 <li>
@@ -1353,19 +1348,13 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 <li>Install <a href="https://brew.sh/">Homebrew</a>.</li>
 <li>
 <p>Install the build dependencies:</p>
-<div class="highlight"><pre><span></span><code>brew install cmake ninja
+<div class="highlight"><pre><span></span><code>brew install cmake ninja libpng
 </code></pre></div>
 </li>
 <li>
 <p>Download <a href="https://vulkan.lunarg.com/sdk/home#mac">the latest Vulkan SDK</a>.</p>
 </li>
-<li>
-<p>Install the Vulkan SDK:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /Volumes/vulkansdk-macos-*
-./install_vulkan.py
-<span class="nb">cd</span> ~
-</code></pre></div>
-</li>
+<li>Install it.</li>
 <li>
 <p>Clone the Datoviz repository:</p>
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/datoviz/datoviz.git
@@ -1440,6 +1429,12 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 </ol>
 </div>
 </div>
+<h2 id="how-to-update-datoviz-when-it-was-compiled-from-source">How to update Datoviz when it was compiled from source?<a class="headerlink" href="#how-to-update-datoviz-when-it-was-compiled-from-source" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>git pull
+./manage.sh build
+./manage.sh parseheaders
+./manage.sh cython
+</code></pre></div>
 <h2 id="what-are-the-dependencies-of-datoviz">What are the dependencies of Datoviz?<a class="headerlink" href="#what-are-the-dependencies-of-datoviz" title="Permanent link">&para;</a></h2>
 <p><strong>Mandatory dependencies</strong> are required for compilation:</p>
 <ul>
