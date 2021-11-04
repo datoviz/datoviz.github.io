@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1577,6 +1577,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">DvzCommands</span><span class="o">*</span> <span class="nf">dvz_canvas_commands</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">queue_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1613,6 +1614,7 @@
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_clear_color</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">float</span> <span class="n">red</span><span class="p">,</span> <span class="kt">float</span> <span class="n">green</span><span class="p">,</span> <span class="kt">float</span> <span class="n">blue</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1653,6 +1655,7 @@ color value.</p>
 <p>Get the canvas size.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_size</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzCanvasSizeType</span> <span class="n">type</span><span class="p">,</span> <span class="n">uvec2</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1683,6 +1686,7 @@ color value.</p>
 <p>Get the canvas aspect ratio.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="nf">dvz_canvas_aspect</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1708,6 +1712,7 @@ color value.</p>
 <p>Whether the canvas should close when Escape is pressed.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_close_on_esc</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">value</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1733,6 +1738,7 @@ color value.</p>
 <p>Recreate the canvas GPU resources and swapchain.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_recreate</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1753,6 +1759,7 @@ color value.</p>
 <p>Resize a canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_resize</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1785,6 +1792,7 @@ color value.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">size</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1832,6 +1840,7 @@ color value.</p>
 <p>Trigger a canvas refill at the next frame.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_to_refill</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1852,6 +1861,7 @@ color value.</p>
 <p>Close the canvas at the next frame.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_to_close</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1872,6 +1882,7 @@ color value.</p>
 <p>Destroy all canvases.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvases_destroy</span><span class="p">(</span><span class="n">DvzContainer</span><span class="o">*</span> <span class="n">canvases</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1893,6 +1904,7 @@ color value.</p>
 <p>Get the viewport corresponding to the full canvas.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzViewport</span> <span class="nf">dvz_viewport_full</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1918,6 +1930,7 @@ color value.</p>
 <p>Create a default viewport.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzViewport</span> <span class="nf">dvz_viewport_default</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">width</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">height</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1950,6 +1963,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_press</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1981,6 +1995,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_release</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2011,6 +2026,7 @@ color value.</p>
 <p>Emit a mouse move event.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_move</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2042,6 +2058,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_wheel</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">dir</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2078,6 +2095,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_click</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2114,6 +2132,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_double_click</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2150,6 +2169,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_drag</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2186,6 +2206,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_mouse_drag_end</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">vec2</span> <span class="n">pos</span><span class="p">,</span> <span class="n">DvzMouseButton</span> <span class="n">button</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2222,6 +2243,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_key_press</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzKeyCode</span> <span class="n">key_code</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2253,6 +2275,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_key_release</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzKeyCode</span> <span class="n">key_code</span><span class="p">,</span> <span class="kt">int</span> <span class="n">modifiers</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2284,6 +2307,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_frame</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2321,6 +2345,7 @@ color value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_timer</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2357,6 +2382,7 @@ color value.</p>
 <p>Prepare the canvas for a screencast.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screencast</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">double</span> <span class="n">interval</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">has_alpha</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2395,6 +2421,7 @@ seconds. The event payload will contain a pointer to the grabbed framebuffer ima
 <p>Destroy the screencast.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screencast_destroy</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2415,6 +2442,7 @@ seconds. The event payload will contain a pointer to the grabbed framebuffer ima
 <p>Make a screenshot.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">dvz_screenshot</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">has_alpha</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2447,6 +2475,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
 <p>Make a screenshot and save it to a PNG file.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_screenshot_file</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">png_path</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2479,6 +2508,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">int</span> <span class="n">framerate</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bitrate</span><span class="p">,</span>
     <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">path</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">record</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2520,6 +2550,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
 <p>Pause the live video screencast.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_pause</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">record</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2545,6 +2576,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
 <p>Stop the live video screencast and save the file.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_stop</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2566,6 +2598,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
 <p>Process a single frame in the event loop and present it to the window.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_canvas_frame</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2592,6 +2625,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
 <p>Submit the rendered frame to the swapchain system.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_canvas_frame_submit</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2615,6 +2649,7 @@ screenshots. For that, one should register a SCREENCAST event callback.</p>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEventType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">double</span> <span class="n">param</span><span class="p">,</span>
     <span class="n">DvzEventMode</span> <span class="n">mode</span><span class="p">,</span> <span class="n">DvzEventCallback</span> <span class="n">callback</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2665,6 +2700,7 @@ with the current state of the mouse and keyboard.</p>
 <p>Return the number of pending events.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">dvz_event_pending</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEventType</span> <span class="n">type</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2697,6 +2733,7 @@ queue.</p>
 <p>Stop the background event loop.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_event_stop</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2718,11 +2755,13 @@ queue.</p>
 <p>Create the mouse object holding the current mouse state.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzMouse</span> <span class="nf">dvz_mouse</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
+
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzMouse</code> | object |</p>
 <h3 id="dvz_mouse_toggle"><code>dvz_mouse_toggle()</code><a class="headerlink" href="#dvz_mouse_toggle" title="Permanent link">&para;</a></h3>
 <p>Active or deactivate interactive mouse events.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_toggle</span><span class="p">(</span><span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2748,6 +2787,7 @@ queue.</p>
 <p>Reset the mouse state.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_reset</span><span class="p">(</span><span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2768,6 +2808,7 @@ queue.</p>
 <p>Emit a mouse event.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_mouse_event</span><span class="p">(</span><span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2800,6 +2841,7 @@ queue.</p>
     <span class="n">DvzMouse</span><span class="o">*</span> <span class="n">mouse</span><span class="p">,</span> <span class="n">DvzMouseLocal</span><span class="o">*</span> <span class="n">mouse_local</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span>
     <span class="n">DvzViewport</span> <span class="n">viewport</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2840,11 +2882,13 @@ queue.</p>
 <p>Create the keyboard object holding the current keyboard state.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzKeyboard</span> <span class="nf">dvz_keyboard</span><span class="p">(</span><span class="kt">void</span> <span class="p">);</span>
 </code></pre></div>
+
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>DvzKeyboard</code> | object |</p>
 <h3 id="dvz_keyboard_toggle"><code>dvz_keyboard_toggle()</code><a class="headerlink" href="#dvz_keyboard_toggle" title="Permanent link">&para;</a></h3>
 <p>Active or deactivate interactive keyboard events.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_keyboard_toggle</span><span class="p">(</span><span class="n">DvzKeyboard</span><span class="o">*</span> <span class="n">keyboard</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2870,11 +2914,13 @@ queue.</p>
 <p>Reset the keyboard state</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_keyboard_reset</span><span class="p">(</span><span class="n">DvzKeyboard</span><span class="o">*</span> <span class="n">keyboard</span><span class="p">);</span>
 </code></pre></div>
+
 <p>| <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg></span> <code>returns</code> | <code>void</code> | object |</p>
 <h3 id="dvz_keyboard_event"><code>dvz_keyboard_event()</code><a class="headerlink" href="#dvz_keyboard_event" title="Permanent link">&para;</a></h3>
 <p>Emit a keyboard event.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_keyboard_event</span><span class="p">(</span><span class="n">DvzKeyboard</span><span class="o">*</span> <span class="n">keyboard</span><span class="p">,</span> <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzEvent</span> <span class="n">ev</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>

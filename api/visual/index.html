@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1498,6 +1498,7 @@
 <p>Create a blank visual.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzVisual</span> <span class="nf">dvz_visual</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1523,6 +1524,7 @@
 <p>Add a graphics pipeline to a visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_graphics</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1548,6 +1550,7 @@
 <p>Add a compute pipeline to a visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_compute</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzCompute</span><span class="o">*</span> <span class="n">compute</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1573,6 +1576,7 @@
 <p>Destroy a visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_destroy</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1595,6 +1599,7 @@
 <p>Define a new data group within a visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_group</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">group_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1627,6 +1632,7 @@
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzPropType</span> <span class="n">prop_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1670,6 +1676,7 @@
     <span class="kt">uint32_t</span> <span class="n">first_item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">data_item_count</span><span class="p">,</span>
     <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1724,6 +1731,7 @@ will be repeated as many times as necessary.</p>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzPropType</span> <span class="n">prop_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1767,6 +1775,7 @@ will be repeated as many times as necessary.</p>
     <span class="kt">uint32_t</span> <span class="n">first_item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">data_item_count</span><span class="p">,</span>
     <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1819,6 +1828,7 @@ will be repeated as many times as necessary.</p>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzSourceType</span> <span class="n">source_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">source_idx</span><span class="p">,</span>
     <span class="n">DvzBufferRegions</span> <span class="n">br</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1856,6 +1866,7 @@ will be repeated as many times as necessary.</p>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzSourceType</span> <span class="n">source_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">source_idx</span><span class="p">,</span>
     <span class="n">DvzTexture</span><span class="o">*</span> <span class="n">texture</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1895,6 +1906,7 @@ will be repeated as many times as necessary.</p>
     <span class="n">DvzPipelineType</span> <span class="n">pipeline</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">pipeline_idx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">slot_idx</span><span class="p">,</span>
     <span class="n">VkDeviceSize</span> <span class="n">item_size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1956,6 +1968,7 @@ index of the pipeline among all pipelines of the same type within the visual.</p
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzSourceType</span> <span class="n">source_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">source_idx</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">other_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1994,6 +2007,7 @@ index of the pipeline among all pipelines of the same type within the visual.</p
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzPropType</span> <span class="n">prop_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">,</span>
     <span class="n">DvzDataType</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">DvzSourceType</span> <span class="n">source_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">source_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2046,6 +2060,7 @@ index of the prop among all props of the same type within the visual.</p>
 <p>Set up a default value for a prop.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_prop_default</span><span class="p">(</span><span class="n">DvzProp</span><span class="o">*</span> <span class="n">prop</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">default_value</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2073,6 +2088,7 @@ index of the prop among all props of the same type within the visual.</p>
     <span class="n">DvzProp</span><span class="o">*</span> <span class="n">prop</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">field_idx</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">DvzArrayCopyType</span> <span class="n">copy_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">reps</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2115,6 +2131,7 @@ index of the prop among all props of the same type within the visual.</p>
     <span class="n">DvzProp</span><span class="o">*</span> <span class="n">prop</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">field_idx</span><span class="p">,</span> <span class="n">VkDeviceSize</span> <span class="n">offset</span><span class="p">,</span>
     <span class="n">DvzDataType</span> <span class="n">target_dtype</span><span class="p">,</span> <span class="n">DvzArrayCopyType</span> <span class="n">copy_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">reps</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2162,6 +2179,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_fill_callback</span><span class="p">(</span>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzVisualFillCallback</span> <span class="n">callback</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2190,6 +2208,7 @@ index of the prop among all props of the same type within the visual.</p>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">VkClearColorValue</span> <span class="n">clear_color</span><span class="p">,</span> <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span>
     <span class="kt">uint32_t</span> <span class="n">cmd_idx</span><span class="p">,</span> <span class="n">DvzViewport</span> <span class="n">viewport</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2235,6 +2254,7 @@ index of the prop among all props of the same type within the visual.</p>
 <p>Begin recording a command buffer and begin the render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_fill_begin</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2265,6 +2285,7 @@ index of the prop among all props of the same type within the visual.</p>
 <p>Stop recording a command buffer and stop the render pass.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_fill_end</span><span class="p">(</span><span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzCommands</span><span class="o">*</span> <span class="n">cmds</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2296,6 +2317,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_visual_callback_bake</span><span class="p">(</span>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzVisualDataCallback</span> <span class="n">callback</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2324,6 +2346,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzSource</span><span class="o">*</span> <span class="nf">dvz_source_get</span><span class="p">(</span>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzSourceType</span> <span class="n">source_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">source_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2360,6 +2383,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzProp</span><span class="o">*</span> <span class="nf">dvz_prop_get</span><span class="p">(</span>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzPropType</span> <span class="n">prop_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2396,6 +2420,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzArray</span><span class="o">*</span> <span class="nf">dvz_prop_array</span><span class="p">(</span>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzPropType</span> <span class="n">prop_type</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2431,6 +2456,7 @@ index of the prop among all props of the same type within the visual.</p>
 <p>Return the size of a prop array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint32_t</span> <span class="nf">dvz_prop_size</span><span class="p">(</span><span class="n">DvzProp</span><span class="o">*</span> <span class="n">prop</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2456,6 +2482,7 @@ index of the prop among all props of the same type within the visual.</p>
 <p>Return an item in a prop array.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span> <span class="nf">dvz_prop_item</span><span class="p">(</span><span class="n">DvzProp</span><span class="o">*</span> <span class="n">prop</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">prop_idx</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2488,6 +2515,7 @@ index of the prop among all props of the same type within the visual.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_callback</span><span class="p">(</span>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">DvzGraphicsCallback</span> <span class="n">callback</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2519,6 +2547,7 @@ details (tesselation with vertices).</p>
     <span class="n">DvzGraphics</span><span class="o">*</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">DvzArray</span><span class="o">*</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">DvzArray</span><span class="o">*</span> <span class="n">indices</span><span class="p">,</span>
     <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2559,6 +2588,7 @@ details (tesselation with vertices).</p>
 <p>Allocate the graphics data object with the appropriate number of elements.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_alloc</span><span class="p">(</span><span class="n">DvzGraphicsData</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">item_count</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2584,6 +2614,7 @@ details (tesselation with vertices).</p>
 <p>Add one graphical element after the graphics data object has been properly allocated.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">dvz_graphics_append</span><span class="p">(</span><span class="n">DvzGraphicsData</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">item</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2610,6 +2641,7 @@ details (tesselation with vertices).</p>
 <div class="highlight"><pre><span></span><code><span class="n">DvzGraphics</span><span class="o">*</span> <span class="nf">dvz_graphics_builtin</span><span class="p">(</span>
     <span class="n">DvzCanvas</span><span class="o">*</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">DvzGraphicsType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -2643,6 +2675,7 @@ details (tesselation with vertices).</p>
     <span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzViewport</span> <span class="n">viewport</span><span class="p">,</span> <span class="n">DvzDataCoords</span> <span class="n">coords</span><span class="p">,</span>
     <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">user_data</span><span class="p">);</span>
 </code></pre></div>
+
 <table>
 <thead>
 <tr>

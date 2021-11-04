@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1179,7 +1179,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
 
 <span class="c1">// Utility function to create the renderpass for offscreen rendering.</span>
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">create_renderpass</span><span class="p">(</span><span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">)</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">create_renderpass</span><span class="p">(</span><span class="n">DvzRenderpass</span><span class="o">*</span> <span class="n">renderpass</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Background color.</span>
     <span class="n">VkClearValue</span> <span class="n">clear_color</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
@@ -1218,7 +1218,7 @@
 <span class="p">}</span>
 
 <span class="c1">// This function downloads the contents of the GPU image on which we have rendered to.</span>
-<span class="k">static</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="nf">screenshot</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">image</span><span class="p">)</span>
+<span class="k">static</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">screenshot</span><span class="p">(</span><span class="n">DvzImages</span><span class="o">*</span> <span class="n">image</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">image</span><span class="o">-&gt;</span><span class="n">gpu</span><span class="p">;</span>
 
@@ -1271,7 +1271,7 @@
 <span class="p">}</span>
 
 <span class="c1">// Entry point.</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// We create a singleton application with a GLFW backend.</span>
     <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
@@ -1406,9 +1406,9 @@
         <span class="c1">// NOTE: in this example, we don&#39;t include the common.glsl shader and we use raw Vulkan</span>
         <span class="c1">// shaders. So the Vulkan coordinate system is used, with the y axis going down.</span>
         <span class="n">DvzVertex</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="p">{{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom left, red</span>
+            <span class="p">{{</span><span class="mi">-1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom left, red</span>
             <span class="p">{{</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// bottom right, green</span>
-            <span class="p">{{</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// top, blue</span>
+            <span class="p">{{</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="mi">-1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">}},</span> <span class="c1">// top, blue</span>
         <span class="p">};</span>
 
         <span class="c1">// We upload the data to the GPU vertex buffer.</span>

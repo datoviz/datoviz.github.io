@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1254,6 +1254,7 @@
 <span class="c1"># Start the event loop.</span>
 <span class="n">run</span><span class="p">()</span>
 </code></pre></div>
+
 </li>
 <li>
 <p><code>mkdocs.yml</code>:</p>
@@ -1283,7 +1284,7 @@
 <span class="c1">// We include the library header file.</span>
 <span class="cp">#include</span> <span class="cpf">&lt;datoviz/datoviz.h&gt;</span><span class="cp"></span>
 
-<span class="k">static</span> <span class="kt">int</span> <span class="nf">demo_mynewexample</span><span class="p">()</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">demo_mynewexample</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">DvzApp</span><span class="o">*</span> <span class="n">app</span> <span class="o">=</span> <span class="n">dvz_app</span><span class="p">(</span><span class="n">DVZ_BACKEND_GLFW</span><span class="p">);</span>
     <span class="n">DvzGpu</span><span class="o">*</span> <span class="n">gpu</span> <span class="o">=</span> <span class="n">dvz_gpu_best</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
@@ -1298,6 +1299,7 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+
 </li>
 <li>
 <p><code>examples/examples.h</code></p>
@@ -1496,6 +1498,7 @@
 <span class="n">dvz_visual_prop_copy</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzGraphicsXXXVertex</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">),</span> <span class="n">DVZ_ARRAY_COPY_SINGLE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="n">dvz_visual_prop_default</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">(</span><span class="n">vec2</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
 </code></pre></div>
+
 </li>
 </ul>
 </li>
@@ -1537,6 +1540,7 @@
 <span class="n">dvz_visual_prop_copy</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">offsetof</span><span class="p">(</span><span class="n">DvzGraphicsXXXParams</span><span class="p">,</span> <span class="n">uniform_name</span><span class="p">),</span> <span class="n">DVZ_ARRAY_COPY_SINGLE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="n">dvz_visual_prop_default</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">(</span><span class="n">vec2</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
 </code></pre></div>
+
 </li>
 </ul>
 </li>
@@ -1570,6 +1574,7 @@
 <p>Before the call to the <code>CREATE</code> macro, add a line with: (make sure to use the same number in <code>DVZ_USER_BINDING + N</code> as in the shader)</p>
 <div class="highlight"><pre><span></span><code><span class="n">dvz_graphics_slot</span><span class="p">(</span><span class="n">graphics</span><span class="p">,</span> <span class="n">DVZ_USER_BINDING</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER</span><span class="p">);</span>
 </code></pre></div>
+
 </li>
 </ul>
 </li>
@@ -1587,6 +1592,7 @@
     <span class="n">DVZ_PIPELINE_GRAPHICS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>                   <span class="c1">// 0 for the first graphics pipeline of the visual, 1 for the next, and so on</span>
     <span class="n">DVZ_USER_BINDING</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// make sure to use the same +N as above</span>
 </code></pre></div>
+
 </li>
 </ul>
 </li>

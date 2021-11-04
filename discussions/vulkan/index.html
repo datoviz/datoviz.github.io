@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1309,7 +1309,7 @@
 <p>Rendering high-quality 2D graphics on the GPU is significantly harder than rendering 3D graphics.</p>
 <h3 id="3d-rendering">3D rendering<a class="headerlink" href="#3d-rendering" title="Permanent link">&para;</a></h3>
 <p>Rendering a 3D mesh is relatively straightforward. A mesh is typically defined by a set of 3D <strong>points</strong>, and a set of <strong>faces</strong>. Each face is determined by three integers: the indices of the three triangle corners within the set of 3D points.</p>
-<h4 id="vertex-shader">Vertex shader<a class="headerlink" href="#vertex-shader" title="Permanent link">&para;</a></h4>
+<h4>Vertex shader</h4>
 <p>In the simplest case, the vertex shader takes as input the 3D points, and applies 3D transformation matrices to account for the camera position and perspective. By convention, there are generally three transformation 4x4 matrices:</p>
 <ul>
 <li><strong>model matrix</strong>: transformation from the local coordinate system (in which the mesh is defined) into the global coordinate system (the 3D world containing the mesh),</li>
@@ -1325,8 +1325,9 @@
     <span class="nb">gl_Position</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">*</span> <span class="n">view</span> <span class="o">*</span> <span class="n">model</span> <span class="o">*</span> <span class="kt">vec4</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <p>The variable <code>pos</code> is a 3D vector with the coordinates of 1 point. The GPU executes the vertex shader in parallel on many points. The output of the vertex shader is <code>gl_Position</code>, a vec4 vector (the last coordinate is the homogeneous coordinate, used for perspective).</p>
-<h4 id="fragment-shader">Fragment shader<a class="headerlink" href="#fragment-shader" title="Permanent link">&para;</a></h4>
+<h4>Fragment shader</h4>
 <p>A trivial fragment shader could output a constant color, independently from the position of the pixel within a triangle. But typically, the fragment shader for a 3D mesh implements mathematical computations to account for lighting, which gives a much more realistic feel. While many lighting models have been created, Datoviz currently implements a classic technique called <em>Phong shading</em>. Again, the details are beyond the scope of this page.</p>
 <p>One can also apply a texture on a mesh. Each point comes with a pair of special coordinates called the <strong>texture coordinates</strong>, noted <code>uv</code>. Normalized between 0 and 1, they refer to a specific pixel position within an associated 2D texture. The fragment shader typically fetches the color of the texture pixel (texel) at this exact position.</p>
 <p>Importantly, the GPU is able to make efficient linear interpolations of these values for pixels between two vertices of a given primitive. For example, to render an image, one specifies two triangles forming a square, and sets the uv coordinates of each of the six vertices (three per triangle) to the different combinations of <code>(0 or 1, 0 or 1)</code>. For every pixel in the square, the correct <code>uv</code> coordinates will be interpolated and the relevant texel will be fetched from the texture on the GPU.</p>
@@ -1412,6 +1413,7 @@ A GPU texture abstracts away the following Vulkan objects: Image, ImageView, Sam
 <span class="n">dvz_cmd_end_renderpass</span><span class="p">(...);</span>        <span class="c1">// end the renderpass</span>
 <span class="n">dvz_cmd_end</span><span class="p">(...);</span>                   <span class="c1">// stop recording the command buffer</span>
 </code></pre></div>
+
 <p>Once called on a command buffer, the command buffer is recorded and can be submitted to a GPU queue. Vulkan leaves to the user the choice of defining the number and types of GPU queues for the application. This is also depends heavily on the hardware. Currently, Datoviz requests four queues, but may end up with less queues if the hardware does not support them (this is all transparent to the user):</p>
 <ul>
 <li>a <strong>transfer queue</strong> receives command buffers for buffer/image upload, download, copy, transitions...</li>

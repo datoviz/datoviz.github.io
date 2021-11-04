@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1330,6 +1330,7 @@
 <span class="c1">// length prop, float data type</span>
 <span class="n">dvz_visual_prop</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_LENGTH</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DVZ_DTYPE_FLOAT</span><span class="p">,</span> <span class="n">DVZ_SOURCE_TYPE_VERTEX</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre></div>
+
 <h2 id="vertex-shader-attributes-vertex-buffer-vertex-structure">Vertex shader attributes, vertex buffer, vertex structure<a class="headerlink" href="#vertex-shader-attributes-vertex-buffer-vertex-structure" title="Permanent link">&para;</a></h2>
 <p>To each graphics is associated a particular vertex shader. A vertex shader defines a list of <strong>attributes</strong>, which correspond to the different vertex inputs. For example, the <code>triangle</code> graphics we will use in this example has two attributes in its vertex shader:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// This GLSL code is at the beginning of the triangle graphics vertex shader.</span>
@@ -1337,13 +1338,15 @@
 <span class="k">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mo">0</span><span class="p">)</span> <span class="k">in</span> <span class="kt">vec3</span> <span class="n">pos</span><span class="p">;</span>   <span class="c1">// vertex position</span>
 <span class="k">layout</span> <span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span> <span class="kt">vec4</span> <span class="n">color</span><span class="p">;</span> <span class="c1">// vertex color</span>
 </code></pre></div>
+
 <p>In Datoviz, the input data feeding these vertex shader attributes is stored in a GPU buffer called the <strong>vertex buffer</strong>. The GPU buffer contains a contiguous array of structure elements that match exactly these attributes. Here, the vertex structure of the <code>triangle</code> graphics, and of the other basic graphics, is the standard <code>DvzVertex</code> structure:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">DvzVertex</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">DvzVertex</span>
 <span class="p">{</span>
     <span class="n">vec3</span> <span class="n">pos</span><span class="p">;</span>    <span class="c1">// three single-precision floating-point numbers for x, y, z position</span>
     <span class="n">cvec4</span> <span class="n">color</span><span class="p">;</span> <span class="c1">// four uint8 bytes for the r, g, b, a color components</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <p>The vertex shader executes in parallel over all structure elements stored in the vertex buffer.</p>
 <p>We'll see in the custom graphics page more details about how we link this C structure to the GLSL attributes.</p>
 <p>The main role of the <strong>visual</strong> is to <strong>copy the user-specified props data into the vertex buffer</strong>. This is sometimes straightforward, like in the <code>marker</code> visual, where each vertex corresponds to one marker, but it is often less trivial. In the example covered in this page, where we need to transform squares into triangles, our custom visual will need to <strong>create six vertices in the vertex buffer for every square passed by the user</strong>. This is implemented in the <strong>visual baking function</strong>.</p>
@@ -1354,7 +1357,7 @@
 <p>The props and the vertex buffer (and other sources) come with <code>DvzArray</code> instances, which are thin wrappers around 1D arrays of homogeneous data types. They support few features: no multidimensional arrays, no vectorized operations.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// The following code snippet contains the body of the baking function.</span>
 
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">_bake_callback</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzVisualDataEvent</span> <span class="n">ev</span><span class="p">)</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">_bake_callback</span><span class="p">(</span><span class="n">DvzVisual</span><span class="o">*</span> <span class="n">visual</span><span class="p">,</span> <span class="n">DvzVisualDataEvent</span> <span class="n">ev</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">ASSERT</span><span class="p">(</span><span class="n">visual</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
 
@@ -1429,6 +1432,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+
 <h2 id="putting-everything-together">Putting everything together<a class="headerlink" href="#putting-everything-together" title="Permanent link">&para;</a></h2>
 <p>Here is the code to create the custom visual.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// We create a blank visual in the scene.</span>
@@ -1454,10 +1458,11 @@
 <span class="c1">// Finally, once the custom visual has been created, we can add it to the panel.</span>
 <span class="n">dvz_custom_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">);</span>
 </code></pre></div>
+
 <p>Once the custom visual has been created and added to the scene, the last step consists of setting some data, as usual:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// We define three squares.</span>
 <span class="n">dvz_visual_data</span><span class="p">(</span>
-    <span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_POS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">dvec3</span><span class="p">[]){{</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="o">+</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}});</span>
+    <span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_POS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">dvec3</span><span class="p">[]){{</span><span class="mf">-.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="o">+</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}});</span>
 
 <span class="c1">// We use a different color for each square.</span>
 <span class="n">dvz_visual_data</span><span class="p">(</span>
@@ -1467,6 +1472,7 @@
 <span class="c1">// NOTE: we use the same length for all squares.</span>
 <span class="n">dvz_visual_data</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">DVZ_PROP_LENGTH</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kt">float</span><span class="p">[]){</span><span class="mf">.25</span><span class="p">});</span>
 </code></pre></div>
+
 <p>Note that we used a single value for the last prop (edge length). Datoviz uses the convention that a prop may have less values than objects, in which case <strong>the last value is repeated over</strong>. In particular, defining a prop with a single element means using the same value for all items in the visual. This is a sort of "broadcasting" rule (following NumPy's terminology).</p>
 <h2 id="other-topics">Other topics<a class="headerlink" href="#other-topics" title="Permanent link">&para;</a></h2>
 <p>We didn't yet cover these other aspects:</p>

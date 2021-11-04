@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1219,11 +1219,13 @@
 <p>Type the following to install Datoviz:</p>
 <div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-manylinux_2_24_x86_64.whl
 </code></pre></div>
+
 </li>
 <li>
 <p>Type the following to test Datoviz:</p>
 <div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1236,11 +1238,13 @@
 <p>Type the following to install Datoviz:</p>
 <div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-macosx_10_14_x86_64.whl
 </code></pre></div>
+
 </li>
 <li>
 <p>Type the following to test Datoviz:</p>
 <div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1252,11 +1256,13 @@
 <p>Type the following to install Datoviz:</p>
 <div class="highlight"><pre><span></span><code>pip install http://dl.datoviz.org/v0.1.0-alpha.1/datoviz-0.1.0a1-cp38-cp38-win_amd64.whl
 </code></pre></div>
+
 </li>
 <li>
 <p>Type the following to test Datoviz:</p>
 <div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1280,6 +1286,7 @@
 <div class="highlight"><pre><span></span><code>sudo apt install build-essential cmake ninja-build <span class="se">\</span>
     xcb libx11-xcb-dev libxcursor-dev libxi-dev patchelf
 </code></pre></div>
+
 </li>
 <li>
 <p>Install the optional dependencies:</p>
@@ -1287,6 +1294,7 @@
     libavfilter-dev libavutil-dev libswresample-dev <span class="se">\</span>
     libqt5opengl5-dev libfreetype6-dev
 </code></pre></div>
+
 </li>
 <li>
 <p>Install the latest <a href="https://vulkan.lunarg.com/">Lunarg Vulkan SDK</a> (tarball SDK), for example in <code>~/vulkan</code>.</p>
@@ -1295,6 +1303,7 @@
 <p>Export the Vulkan environment variables:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/vulkan/setup-env.sh
 </code></pre></div>
+
 </li>
 <li>
 <p>Add <code>source ~/vulkan/setup-env.sh</code> to your <code>~/.bashrc</code> so that the <code>$VULKAN_SDK</code> environment variable and other variables are properly set in your terminal.</p>
@@ -1307,37 +1316,44 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/lib/libVkLayer_*.so /usr/local/lib/
 sudo mkdir -p /usr/local/share/vulkan/explicit_layer.d
 sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_*.json /usr/local/share/vulkan/explicit_layer.d
 </code></pre></div>
+
 </li>
 <li>
 <p>Clone the Datoviz repository:</p>
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/datoviz/datoviz.git
 <span class="nb">cd</span> datoviz
 </code></pre></div>
+
 </li>
 <li>
 <p>Build the C library:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh build
 </code></pre></div>
+
 </li>
 <li>
 <p>Check that the compilation worked by running an example:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh demo scatter
 </code></pre></div>
+
 </li>
 <li>
 <p>Once the C library is compiled, you need to compile the Cython module:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh cython
 </code></pre></div>
+
 </li>
 <li>
 <p>Export the shared library path to your environment:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> setup-env.sh
 </code></pre></div>
+
 </li>
 <li>
 <p>Try a Python example:</p>
 <div class="highlight"><pre><span></span><code>python bindings/cython/examples/quickstart.py
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1351,6 +1367,7 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 <p>Install the build dependencies:</p>
 <div class="highlight"><pre><span></span><code>brew install cmake ninja libpng
 </code></pre></div>
+
 </li>
 <li>
 <p>Download <a href="https://vulkan.lunarg.com/sdk/home#mac">the latest Vulkan SDK</a>.</p>
@@ -1361,31 +1378,37 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/datoviz/datoviz.git
 <span class="nb">cd</span> datoviz
 </code></pre></div>
+
 </li>
 <li>
 <p>Build the C library:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh build
 </code></pre></div>
+
 </li>
 <li>
 <p>Check that the compilation worked by running an example:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh demo scatter
 </code></pre></div>
+
 </li>
 <li>
 <p>Once the C library is compiled, you need to compile the Cython module:</p>
 <div class="highlight"><pre><span></span><code>./manage.sh cython
 </code></pre></div>
+
 </li>
 <li>
 <p>Export the shared library path to your environment:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> setup-env.sh
 </code></pre></div>
+
 </li>
 <li>
 <p>Try a Python example:</p>
 <div class="highlight"><pre><span></span><code>python bindings/cython/examples/quickstart.py
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1411,21 +1434,25 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/datoviz/datoviz.git
 <span class="k">cd</span> datoviz
 </code></pre></div>
+
 </li>
 <li>
 <p>Build the C library:</p>
 <div class="highlight"><pre><span></span><code>manage.bat build
 </code></pre></div>
+
 </li>
 <li>
 <p>Build the Cython module and create a wheel:</p>
 <div class="highlight"><pre><span></span><code>manage.bat wheel
 </code></pre></div>
+
 </li>
 <li>
 <p>Try a Python example:</p>
 <div class="highlight"><pre><span></span><code>python bindings\cython\examples\quickstart.py
 </code></pre></div>
+
 </li>
 </ol>
 </div>
@@ -1436,6 +1463,7 @@ sudo cp <span class="nv">$VULKAN_SDK</span>/etc/vulkan/explicit_layer.d/VkLayer_
 ./manage.sh parseheaders
 ./manage.sh cython
 </code></pre></div>
+
 <h2 id="what-are-the-dependencies-of-datoviz">What are the dependencies of Datoviz?<a class="headerlink" href="#what-are-the-dependencies-of-datoviz" title="Permanent link">&para;</a></h2>
 <p><strong>Mandatory dependencies</strong> are required for compilation:</p>
 <ul>

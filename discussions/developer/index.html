@@ -14,7 +14,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
     
     
       
@@ -1523,6 +1523,7 @@
 <span class="n">canvas</span><span class="p">()</span><span class="o">.</span><span class="n">gui_demo</span><span class="p">()</span>
 <span class="n">run</span><span class="p">()</span>
 </code></pre></div>
+
 <p>Make sure you have the latest versions of pip and virtualenv.</p>
 <div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux</label><div class="tabbed-content">
 <p>On Linux, we need to bundle dynamic libraries to the wheel, but <em>not</em> libvulkan as well as other graphics-related libraries.</p>
@@ -1561,6 +1562,7 @@
 manage.bat wheel
 manage.bat testwheel
 </code></pre></div>
+
 <p>On Windows, the <code>setup.py</code> script automatically bundles the file <code>libdatoviz.dll</code> (created by the build script) into the wheel.</p>
 <p>The wheel creating script uses the following command to create the wheel: <code>python setup.py bdist_wheel</code>.</p>
 </div>
