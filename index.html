@@ -6,15 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="High-performance interactive scientific data visualization library">
-      
+        <meta name="description" content="⚡ Datoviz: high-performance GPU scientific data visualization C/C++/Python library">
       
       
         <meta name="author" content="Cyrille Rossant">
       
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+      
+      
+        <link rel="next" href="userguide/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -22,40 +26,38 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
+    
     
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-      
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datoviz-gpu-interactive-scientific-data-visualization-with-vulkan" class="md-skip">
+        <a href="#datoviz-high-performance-gpu-scientific-data-visualization-cc-library" class="md-skip">
           Skip to content
         </a>
       
@@ -73,26 +75,30 @@
       
     </div>
     
+    
       
 
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="." title="Datoviz Documentation" class="md-header-nav__button md-logo" aria-label="Datoviz Documentation">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Datoviz Documentation" class="md-header__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
       
   <img src="images/logow.png" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             Datoviz Documentation
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               Home
@@ -102,30 +108,42 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -133,12 +151,11 @@
 </div>
     
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/datoviz/datoviz" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -147,15 +164,11 @@
       </div>
     
   </nav>
-</header>
+  
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -163,26 +176,15 @@
   
     
   
-
-
-  <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
-      Home
-    </a>
-  </li>
-
-      
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
         
   
+    
   
+  Home
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="tutorials/" class="md-tabs__link">
-        Getting started
       </a>
     </li>
   
@@ -191,86 +193,85 @@
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="userguide/" class="md-tabs__link">
+          
+  
+  User guide
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="examples/" class="md-tabs__link">
-        Examples
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="howto/" class="md-tabs__link">
-        How to guides
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="examples/" class="md-tabs__link">
+          
+  
+  Examples
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="reference/" class="md-tabs__link">
-        Reference
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="api/" class="md-tabs__link">
-        C API reference
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="colormaps/" class="md-tabs__link">
+          
+  
+  Reference
 
+        </a>
+      </li>
+    
+  
 
+      
+        
   
   
   
-    <li class="md-tabs__item">
-      <a href="discussions/" class="md-tabs__link">
-        Discussions
-      </a>
-    </li>
+    
+    
+      <li class="md-tabs__item">
+        <a href="ARCHITECTURE/" class="md-tabs__link">
+          
+  
+  Discussions
+
+        </a>
+      </li>
+    
   
 
       
     </ul>
   </div>
 </nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -278,11 +279,10 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-
 
 
   
@@ -292,7 +292,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation">
+    <a href="." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
       
   <img src="images/logow.png" alt="logo">
 
@@ -301,11 +301,10 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/datoviz/datoviz/" title="Go to repository" class="md-source">
+      <a href="https://github.com/datoviz/datoviz" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -317,31 +316,45 @@
     
       
       
-      
-
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -351,61 +364,50 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#screenshots" class="md-nav__link">
-    Screenshots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-example" class="md-nav__link">
-    Code example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preliminary-performance-results" class="md-nav__link">
-    Preliminary performance results
+  <a href="#screenshots-from-the-v01-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Screenshots from the v0.1 version
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
-    Features
+    <span class="md-ellipsis">
+      ✨ Features
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="Features">
+    <nav class="md-nav" aria-label="✨ Features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#current-features" class="md-nav__link">
-    Current features
+  <a href="#list-of-visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of visuals
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#experimentalwork-in-progress-features" class="md-nav__link">
-    Experimental/work-in-progress features
+  <a href="#work-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work in progress
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#longer-term-features" class="md-nav__link">
-    Longer-term features
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future work
+    </span>
   </a>
   
 </li>
@@ -416,56 +418,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#history-and-roadmap" class="md-nav__link">
-    History and roadmap
+  <a href="#installation-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Installation instructions
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits-and-related-projects" class="md-nav__link">
-    Credits and related projects
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Usage
+    </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Credits and related projects">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vispy" class="md-nav__link">
-    VisPy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#glumpy" class="md-nav__link">
-    Glumpy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependencies-and-algorithms" class="md-nav__link">
-    Dependencies and algorithms
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#related-projects" class="md-nav__link">
-    Related projects
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#funding" class="md-nav__link">
-    Funding
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-and-current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕰️ History and current status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙏 Credits
+    </span>
   </a>
   
 </li>
@@ -480,790 +490,377 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
       
-
-  
-  
-  
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            User guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="userguide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
-      
-      <label class="md-nav__link" for="nav-2">
-        Getting started
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          Getting started
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tutorials/" class="md-nav__link">
-        Index
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tutorials/install/" class="md-nav__link">
-        Installation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tutorials/quickstart/" class="md-nav__link">
-        Quickstart
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
       
-
-  
-  
-  
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
-      
-      <label class="md-nav__link" for="nav-3">
-        Examples
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Examples" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
-          <span class="md-nav__icon md-icon"></span>
-          Examples
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="examples/" class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/quickstart/" class="md-nav__link">
-        Quickstart tutorial
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/image/" class="md-nav__link">
-        Image blending
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/france/" class="md-nav__link">
-        France departements
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/signals/" class="md-nav__link">
-        Digital signals
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/brain/" class="md-nav__link">
-        3D brain mesh
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/twopanels/" class="md-nav__link">
-        Two panels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/colormap/" class="md-nav__link">
-        Custom colormap
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/eventloop/" class="md-nav__link">
-        Async event loop
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
       
-
-  
-  
-  
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
-      
-      <label class="md-nav__link" for="nav-4">
-        How to guides
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="How to guides" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
-          <span class="md-nav__icon md-icon"></span>
-          How to guides
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
           
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
-      <a href="howto/" class="md-nav__link">
-        Index
+      <a href="colormaps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colormaps reference
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" data-md-state="indeterminate" type="checkbox" id="nav-4-2" checked>
-      
-      <label class="md-nav__link" for="nav-4-2">
-        Standalone C apps
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Standalone C apps" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-2">
-          <span class="md-nav__icon md-icon"></span>
-          Standalone C apps
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/standalone_scene/" class="md-nav__link">
-        How to use the scene C API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/standalone_canvas/" class="md-nav__link">
-        How to use the canvas C API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/standalone_vklite/" class="md-nav__link">
-        How to use the vklite C API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/standalone_imgui/" class="md-nav__link">
-        How to use Dear ImGui directly
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" data-md-state="indeterminate" type="checkbox" id="nav-4-3" checked>
-      
-      <label class="md-nav__link" for="nav-4-3">
-        Custom visuals and graphics
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Custom visuals and graphics" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
-          <span class="md-nav__icon md-icon"></span>
-          Custom visuals and graphics
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/visual/" class="md-nav__link">
-        How to write a custom visual
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="howto/graphics/" class="md-nav__link">
-        How to write a custom graphics
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" data-md-state="indeterminate" type="checkbox" id="nav-5" checked>
-      
-      <label class="md-nav__link" for="nav-5">
-        Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Reference" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
-          <span class="md-nav__icon md-icon"></span>
-          Reference
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/" class="md-nav__link">
-        Index
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/visuals/" class="md-nav__link">
-        Library of visuals
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/graphics/" class="md-nav__link">
-        Library of graphics
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/colormaps/" class="md-nav__link">
-        Library of colormaps
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/controllers/" class="md-nav__link">
-        Library of controllers
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" data-md-state="indeterminate" type="checkbox" id="nav-6" checked>
-      
-      <label class="md-nav__link" for="nav-6">
-        C API reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="C API reference" data-md-level="1">
-        <label class="md-nav__title" for="nav-6">
-          <span class="md-nav__icon md-icon"></span>
-          C API reference
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
   
   
   
     <li class="md-nav__item">
       <a href="api/" class="md-nav__link">
-        Index
+        
+  
+  <span class="md-ellipsis">
+    C API reference
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/scene/" class="md-nav__link">
-        Scene API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/visual/" class="md-nav__link">
-        Visual API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/controller/" class="md-nav__link">
-        Controller API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/gui/" class="md-nav__link">
-        GUI API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/canvas/" class="md-nav__link">
-        Canvas API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/gpu/" class="md-nav__link">
-        GPU API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/vklite/" class="md-nav__link">
-        vklite API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/misc/" class="md-nav__link">
-        Misc API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/enums/" class="md-nav__link">
-        Enumerations
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
       
-
-  
-  
-  
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
-      
-      <label class="md-nav__link" for="nav-7">
-        Discussions
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Discussions" data-md-level="1">
-        <label class="md-nav__title" for="nav-7">
-          <span class="md-nav__icon md-icon"></span>
-          Discussions
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
           
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
+  
+  <span class="md-ellipsis">
+    Discussions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Discussions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
-      <a href="discussions/" class="md-nav__link">
-        Index
+      <a href="ARCHITECTURE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2" data-md-state="indeterminate" type="checkbox" id="nav-7-2" checked>
-      
-      <label class="md-nav__link" for="nav-7-2">
-        For users
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="For users" data-md-level="2">
-        <label class="md-nav__title" for="nav-7-2">
-          <span class="md-nav__icon md-icon"></span>
-          For users
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
   
   
   
     <li class="md-nav__item">
-      <a href="discussions/vulkan/" class="md-nav__link">
-        Vulkan crash course
+      <a href="BUILD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building instructions
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+  
   
   
   
     <li class="md-nav__item">
-      <a href="discussions/practices/" class="md-nav__link">
-        Best practices
+      <a href="CONTRIBUTING/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing notes
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+  
   
   
   
     <li class="md-nav__item">
-      <a href="discussions/faq/" class="md-nav__link">
-        FAQ
+      <a href="MAINTAINERS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintainers instructions
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
     </li>
   
 
-          
+              
             
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
+          </ul>
+        </nav>
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" data-md-state="indeterminate" type="checkbox" id="nav-7-3" checked>
-      
-      <label class="md-nav__link" for="nav-7-3">
-        For developers
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="For developers" data-md-level="2">
-        <label class="md-nav__title" for="nav-7-3">
-          <span class="md-nav__icon md-icon"></span>
-          For developers
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="discussions/architecture/" class="md-nav__link">
-        Library architecture
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="discussions/developer/" class="md-nav__link">
-        Developer notes
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="discussions/checklists/" class="md-nav__link">
-        Developer checklists
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1276,218 +873,206 @@
             
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <a href="https://github.com/datoviz/datoviz/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="datoviz-gpu-interactive-scientific-data-visualization-with-vulkan">Datoviz: GPU interactive scientific data visualization with <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr><a class="headerlink" href="#datoviz-gpu-interactive-scientific-data-visualization-with-vulkan" title="Permanent link">&para;</a></h1>
-<p><strong>Datoviz</strong> is an open-source <strong>high-performance interactive scientific data visualization library</strong> leveraging the graphics processing unit (<strong>GPU</strong>) for speed, visual quality, and scalability. It supports both 2D and 3D rendering, as well as minimal graphical user interfaces (using the <a href="https://github.com/ocornut/imgui">Dear ImGUI library</a>).</p>
-<p><strong>Written in C/C++</strong>, Datoviz has been designed from the ground up for <strong>performance</strong>. It provides native <strong>Python bindings</strong> (based on Cython). Bindings to other languages could be developed thanks to community efforts (Julia, R, MATLAB, Rust, C#, and so on). Datoviz uses the <a href="https://www.khronos.org/vulkan/"><strong><abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> graphics API</strong></a> created by the Khronos consortium, successor of OpenGL. Supporting other modern graphics API, such as WebGPU, would constitute interesting developments.</p>
-<p>Datoviz is currently being developed mostly by <a href="https://cyrille.rossant.net">Cyrille Rossant</a> at the <a href="http://internationalbrainlab.org/">International Brain Laboratory</a>, a consortium of neuroscience research labs around the world.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Datoviz is at an early stage of development and the API is not yet stabilized. Use at your own risks, but feel free to share your feedback, suggestions, use-cases, feature requests on GitHub.</p>
-</div>
-<h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
+                  
+
+  
+  
+
+
+<h1 id="datoviz-high-performance-gpu-scientific-data-visualization-cc-library">Datoviz: high-performance GPU scientific data visualization C/C++ library<a class="headerlink" href="#datoviz-high-performance-gpu-scientific-data-visualization-cc-library" title="Permanent link">&para;</a></h1>
+<p><a href="#%EF%B8%8F-installation-instructions"><strong>[Installation]</strong></a> &nbsp;
+<a href="#-usage"><strong>[Usage]</strong></a> &nbsp;
+<a href="userguide/"><strong>[User guide]</strong></a> &nbsp;
+<a href="examples/"><strong>[Examples]</strong></a> &nbsp;
+<a href="api/"><strong>[API reference]</strong></a> &nbsp;</p>
+<!-- INTRODUCTION -->
+
+<p><strong>⚡️ Datoviz</strong> is a cross-platform, open-source, high-performance GPU scientific data visualization library written in <strong>C/C++</strong> on top of the <a href="https://www.vulkan.org/"><strong>Khronos Vulkan</strong></a> graphics API and the <a href="https://www.glfw.org/"><strong>glfw</strong></a> window library. It provides raw ctypes bindings in <strong>Python 🐍</strong>. In the long term, Datoviz will mostly be used as a <strong>VisPy 2.0 backend</strong>.</p>
+<p>Designed for speed, visual quality, and scalability to datasets comprising millions of points, it supports 2D/3D interactive rendering and minimal GUIs via <a href="https://github.com/ocornut/imgui/">Dear ImGui</a>.</p>
+<p><strong>⚠️ Warning:</strong> Although Datoviz has been years in the making, it is still in its <strong>early stages</strong> and would greatly benefit from increased <strong>community feedback</strong>, particularly concerning package and hardware compatibility. The API is still evolving, so expect regular (though hopefully minimal) <strong>breaking changes</strong> for now. The current version is <strong>v0.2</strong>. The previous <strong>v0.1</strong> version is now deprecated.</p>
+<p><strong>🕐 Roadmap.</strong> In the medium term: increasing OS and hardware compatibility, providing more visuals, interactivity patterns, and GUI controls. In the long term: picking, custom visuals and shaders, nonlinear transforms, WebGPU/WebAssembly compatibility, integration with IPython, Jupyter and Qt.</p>
+<!-- SCREENSHOTS -->
+
+<h2 id="screenshots-from-the-v01-version">🖼️ Screenshots from the v0.1 version<a class="headerlink" href="#screenshots-from-the-v01-version" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/screenshots/datoviz.jpg" />
 <em>Credits: mouse brain volume: <a href="https://alleninstitute.github.io/AllenSDK/">Allen SDK</a>. France: <a href="https://www.naturalearthdata.com/">Natural Earth</a>. Molecule: <a href="https://www.rcsb.org/structure/4cmp">Crystal structure of S. pyogenes Cas9 from PDB</a> (thanks to Eric for conversion to OBJ mesh). Earth: <a href="https://pixabay.com/fr/illustrations/terre-planet-monde-globe-espace-1617121/">Pixabay</a>. Raster plot: IBL. 3D human brain: <a href="https://www.frontiersin.org/articles/10.3389/fnana.2020.536838/full">Anneke Alkemade et al. 2020</a>, thanks to Pierre-Louis Bazin and Julia Huntenburg.</em></p>
-<h2 id="code-example">Code example<a class="headerlink" href="#code-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">colormap</span>
+<!-- FEATURES -->
 
-<span class="n">panel</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span><span class="n">show_fps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">scene</span><span class="p">()</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
-<span class="n">visual</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">visual</span><span class="p">(</span><span class="s1">&#39;marker&#39;</span><span class="p">)</span>
+<h2 id="features">✨ Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>📊 High-quality antialiased 2D visuals</strong>: markers, lines, paths, glyphs</li>
+<li><strong>🌐 3D visuals</strong>: meshes, volumes, volume slices</li>
+<li><strong>🌈 150 colormaps</strong> included (from matplotlib, colorcet, MATLAB)</li>
+<li><strong>🖱️ High-level interactivity</strong>: pan &amp; zoom for 2D, arcball for 3D (more later)</li>
+<li><strong>🎥 Manual control of cameras</strong>: custom interactivity</li>
+<li><strong>𓈈 Figure subplots</strong> (aka "panels")</li>
+<li><strong>🖥️ Minimal GUIs</strong> using <a href="https://github.com/ocornut/imgui/">Dear ImGui</a></li>
+</ul>
+<h3 id="list-of-visuals">List of visuals<a class="headerlink" href="#list-of-visuals" title="Permanent link">&para;</a></h3>
+<p><img alt="List of visuals" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/visuals.png" /></p>
+<h3 id="work-in-progress">Work in progress<a class="headerlink" href="#work-in-progress" title="Permanent link">&para;</a></h3>
+<p>These features are currently planned for <strong>v0.3</strong>:</p>
+<ul>
+<li><strong>➕ Axes</strong>: ticks, grids, labels</li>
+<li><strong>🎨 Colorbars</strong></li>
+<li><strong>🖱️ More interactivity patterns</strong></li>
+<li><strong>📖 More documentation</strong></li>
+</ul>
+<h3 id="future-work">Future work<a class="headerlink" href="#future-work" title="Permanent link">&para;</a></h3>
+<p>These features are currently planned for <strong>v0.4 and later</strong>:</p>
+<ul>
+<li><strong>📐 More visuals</strong>: arrows, polygons, planar straight-line graphs (PSLG), histograms, areas, graphs</li>
+<li><strong>🎯 Picking</strong></li>
+<li><strong>📈 Nonlinear transforms</strong></li>
+<li><strong>🖌️ Dynamic shaders</strong></li>
+<li><strong>🌐 WebGPU/WebAssembly compatibility</strong></li>
+<li><strong>🧮 Compute shaders</strong></li>
+<li><strong>🐍 IPython, Jupyter, Qt integration</strong></li>
+</ul>
+<!-- INSTALLATION -->
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">ms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<h2 id="installation-instructions">🛠️ Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">&para;</a></h2>
+<p>Requirements:</p>
+<ul>
+<li>A supported OS (Linux, macOS 12+, Windows 10+)</li>
+<li>A Vulkan-capable graphics chipset (either integrated or dedicated graphics process unit)</li>
+<li>Python and NumPy</li>
+</ul>
+<p><em>Note</em>: You no longer need to install the Vulkan SDK or to manually build the library. Precompiled wheels for Linux, Windows, and macOS have been uploaded to PyPI.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>datoviz
+</code></pre></div>
+<!-- ### Ubuntu 24.04
 
-<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
-<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="p">)</span>
-<span class="n">visual</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+1. Download the .deb package.
+2. Install the .deb package on your system:
 
-<span class="n">run</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>libdatoviz*.deb
 </code></pre></div>
 
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<p>The documentation is divided into:</p>
-<ul>
-<li><strong><a href="https://datoviz.org/tutorials/install/">Installation</a></strong>: install guide,</li>
-<li><strong><a href="https://datoviz.org/tutorials/quickstart">Quick start tutorial</a></strong> with Python,</li>
-<li><strong><a href="https://datoviz.org/examples/">Examples</a></strong>: gallery of Python examples,</li>
-<li><strong><a href="https://datoviz.org/howto/">How to guides</a></strong>: advanced topics explaining how to use the C API, how to create custom visuals...</li>
-<li><strong><a href="https://datoviz.org/reference/">Reference</a></strong>: comprehensive list of included colormaps, visuals, and graphics pipelines,</li>
-<li><strong><a href="https://datoviz.org/discussions/">Discussions</a></strong>: high-level discussions, <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> crash course...</li>
-<li><strong><a href="https://datoviz.org/api/">C API reference</a></strong>,</li>
-</ul>
-<!-- NOTE: we use absolute URLs so that the links work on both the GitHub README and the website -->
+3. Try to run the built-in demo:
 
-<h2 id="preliminary-performance-results">Preliminary performance results<a class="headerlink" href="#preliminary-performance-results" title="Permanent link">&para;</a></h2>
+    ```bash
+    # The .deb package should have installed the shared library libdatoviz.so into /usr/local/lib
+    # This line loads this shared library and calls the exposed dvz_demo() C function from Python.
+    python3 -c "import ctypes; ctypes.cdll.LoadLibrary('libdatoviz.so').dvz_demo()"
+    ``` -->
+
+<!-- DOCUMENTATION -->
+
+<h2 id="usage">🚀 Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Simple scatter plot example (points with random positions, colors, and sizes) in Python, which closely follow the C API.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app_batch</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">scene</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="n">figure</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_default</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">panel_panzoom</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">point_alloc</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">point_position</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">low</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">240</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">point_color</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,),</span> <span class="n">low</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">point_size</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/examples/scatter.png" /></p>
+<p>Check out the <a href="examples/">examples documentation</a> for more usage examples.</p>
+<h2 id="documentation">📚 Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>scatter plot with 10M points: <strong>250 FPS</strong> (<code>point</code> visual)</li>
-<li>high-resolution 3D mesh with 10M triangles and 5M vertices: <strong>400 FPS</strong></li>
-<li>1000 signals with 30K points each (30M vertices): <strong>200 FPS</strong></li>
+<li><a href="userguide/"><strong>📖 User guide</strong></a></li>
+<li><a href="examples/"><strong>🐍 Examples</strong></a></li>
+<li><a href="api/"><strong>📚 API</strong> reference</a></li>
+<li><a href="ARCHITECTURE/"><strong>🏛️ Architecture</strong> overview</a></li>
+<li><a href="BUILD/"><strong>🏗️ Build</strong> instructions</a></li>
+<li><a href="CONTRIBUTING/"><strong>👥 Contributors</strong> instructions</a></li>
+<li><a href="MAINTAINERS/"><strong>🛠️ Maintainers</strong> instructions</a></li>
 </ul>
-<p><em>GPU: 2019 NVIDIA GeForce RTX 2070 SUPER. Window size: 1024x768.</em></p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<h3 id="current-features">Current features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>High-quality antialiased 2D visuals</strong>: markers, paths, lines (contributions by Nicolas P. Rougier, code from <a href="https://glumpy.github.io/">Glumpy</a>)</li>
-<li><strong>3D visuals</strong>: meshes</li>
-<li><strong>Mixing 2D and 3D</strong> plots seamlessly in the same window</li>
-<li><strong>~150 colormaps</strong> included (from matplotlib, colorcet, MATLAB)</li>
-<li><strong>High-level interactivity</strong>: pan &amp; zoom, mouse arcball, first-person cameras</li>
-<li><strong>Axes</strong>: ticks, grids, labels</li>
-<li><strong>Subplots</strong> organized in a grid layout</li>
-<li><strong>GUIs</strong> integrated via the <strong>Dear ImGUI</strong> C++ library (Qt or other backends not required)</li>
-<li><strong>Custom visuals</strong>, with custom <abbr title="code written in GLSL and executed on the GPU to customize the graphics pipeline">shaders</abbr> and/or custom data transformations</li>
-</ul>
-<h3 id="experimentalwork-in-progress-features">Experimental/work-in-progress features<a class="headerlink" href="#experimentalwork-in-progress-features" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Multiple canvases</li>
-<li>Builtin creencasts and video recording with ffmpeg (optional dependency)</li>
-<li>Offscreen rendering and CPU emulation via swiftshader</li>
-<li>Mouse picking</li>
-<li>IPython event-loop integration</li>
-<li>DPI-aware canvases</li>
-<li>Continuous integration and continuous building</li>
-<li>Panel linking, shared axes</li>
-</ul>
-<h3 id="longer-term-features">Longer-term features<a class="headerlink" href="#longer-term-features" title="Permanent link">&para;</a></h3>
-<ul>
-<li>More visuals: arrows, triangulations, planar straight-line graphs (PSLG), histograms, areas, graphs, fake 3D spheres...</li>
-<li>Further data transformations: logarithmic, polar, basic Earth coordinate systems for geographical data</li>
-<li>Fixed aspect ratio</li>
-<li>Colorbars</li>
-<li>3D axes</li>
-<li>Deep zooming</li>
-<li>CUDA-<abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> interoperability example</li>
-<li>Better support of multiple GPUs</li>
-<li>Qt integration</li>
-<li>Bindings in other languages (Julia, R, MATLAB, Rust...)</li>
-<li>Automated benchmarkes</li>
-<li>Distributed architecture (integration in the web browser, Jupyter...)</li>
-</ul>
-<h2 id="history-and-roadmap">History and roadmap<a class="headerlink" href="#history-and-roadmap" title="Permanent link">&para;</a></h2>
-<ul>
-<li>late 2019: first experiments with using <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> for scientific visualization</li>
-<li>2020: multiple cycles of prototyping and refactoring</li>
-<li><strong>17 Feb 2021</strong>: first public experimental release (manual compilation required)</li>
-<li><strong>31 May 2021</strong>: first experimental release <code>v0.1.0-alpha.0</code> with precompiled pip wheels for Linux, Windows, macOS</li>
-<li><strong>20 Oct 2021</strong>: new experimental release <code>v0.1.0-alpha.1</code> with bug fixes and minor improvements</li>
-<li><strong>early 2022?</strong>: final <code>v0.1.0</code> release</li>
-<li><strong>late 2022?</strong>: redesigned internal architecture for multithreading and distributed environments (still a work-in-progress)</li>
-</ul>
-<h2 id="credits-and-related-projects">Credits and related projects<a class="headerlink" href="#credits-and-related-projects" title="Permanent link">&para;</a></h2>
-<p>Datoviz borrows heavily ideas and code from other projects.</p>
-<h3 id="vispy">VisPy<a class="headerlink" href="#vispy" title="Permanent link">&para;</a></h3>
-<p><a href="https://vispy.org/"><strong>VisPy</strong></a> is a Python scientific visualization library created in 2013 by Luke Campagnola (developer of <a href="http://www.pyqtgraph.org/"><strong>pyqtgraph</strong></a>), Almar Klein (developer of <a href="https://github.com/almarklein/visvis"><strong>visvis</strong></a>), Nicolas Rougier (developer of <a href="https://glumpy.github.io/"><strong>glumpy</strong></a>), and myself (Cyrille Rossant, developer of <strong>galry</strong>). We joined forces to create a single library unifying all of our approaches. There is today a community of users and projects based on VisPy (<a href="https://napari.org/">napari</a>). David Hoese and some of the original VisPy developers are currently maintaining the library. The current version of VisPy suffers from the limitations of OpenGL, a 30-year-old technology.</p>
-<p>In 2020, VisPy received a 1-year <a href="https://chanzuckerberg.com/eoss/proposals/rebuilding-the-community-behind-vispys-fast-interactive-visualizations/">funding from the <strong>Chan Zuckerberg Initiative (CZI)</strong></a> to improve the documentation and knowledge base.</p>
-<p>In 2021, VisPy received another <a href="https://chanzuckerberg.com/eoss/proposals/vispy-2-0-next-generation-interactive-scientific-visualization-in-python/">CZI grant</a> for building VisPy 2.0, a completely redesigned library leveraging newer GPU technology such as <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> and WebGPU. The current strategy is to rebuild VisPy on top of Datoviz, pygfx (a WebGPU-based library developed by Almar Klein), and other backends.</p>
-<h3 id="glumpy">Glumpy<a class="headerlink" href="#glumpy" title="Permanent link">&para;</a></h3>
-<p>Glumpy, developed by Nicolas Rougier, provides <a href="https://www.labri.fr/perso/nrougier/python-opengl/">efficient implementations of high-quality 2D visuals on the GPU</a>, using algorithms from the antigrain geometry library. The GPU code of most 2D visuals in Datoviz comes directly from Glumpy.</p>
-<h3 id="dependencies-and-algorithms">Dependencies and algorithms<a class="headerlink" href="#dependencies-and-algorithms" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://www.lunarg.com/vulkan-sdk/">LunarG <abbr title="Low-level graphics API created by Khronos, and successor of OpenGL">Vulkan</abbr> SDK</a> <strong>(mandatory)</strong></li>
-<li><a href="https://www.glfw.org/">GLFW</a> <strong>(mandatory)</strong> (support for alternative window backends will be considered)</li>
-<li><a href="https://ffmpeg.org/">ffmpeg</a> (optional), for making live screencasts</li>
-<li><a href="http://www.libpng.org/pub/png/libpng.html">libpng</a> (optional), for making PNG screenshots</li>
-<li><a href="https://github.com/KhronosGroup/glslang">glslang</a> (optional), for compiling <abbr title="OpenGL shading language, the C-like language used to write shaders">GLSL</abbr> <abbr title="code written in GLSL and executed on the GPU to customize the graphics pipeline">shaders</abbr> to SPIR-V on the fly</li>
-<li><a href="https://github.com/mapbox/earcut">earcut</a> (included), developed by Mapbox, for polygon triangulations</li>
-<li><a href="https://www.cs.cmu.edu/~quake/triangle.html">triangle</a> (included), developed by Jonathan Richard Shewchuk, for Delaunay triangulations</li>
-<li><a href="http://vis.stanford.edu/papers/tick-labels">extended Wilkinson algorithm</a> (included) for tick placement</li>
-<li><a href="https://github.com/ocornut/imgui">Dear ImGUI</a> (included)</li>
-<li><a href="https://en.wikipedia.org/wiki/Anti-Grain_Geometry">antigrain geometry</a> (<abbr title="OpenGL shading language, the C-like language used to write shaders">GLSL</abbr> implementation included)</li>
-<li><a href="https://github.com/Chlumsky/msdfgen">msdfgen</a>: multi-channel signed distance field (to do: bundle as submodule?)</li>
-<li><a href="https://www.freetype.org/">freetype</a> (optional)</li>
-</ul>
-<h3 id="related-projects">Related projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a></li>
-<li><a href="https://vtk.org/">VTK</a></li>
-<li><a href="https://napari.org/">napari</a></li>
-<li><a href="https://github.com/marcomusy/vedo">vedo</a></li>
-<li><a href="https://ipygany.readthedocs.io/en/latest/">ipygany</a></li>
-<li><a href="https://github.com/maartenbreddels/ipyvolume">ipyvolume</a></li>
-<li><a href="http://makie.juliaplots.org/stable/">Makie.jl</a></li>
-</ul>
-<h2 id="funding">Funding<a class="headerlink" href="#funding" title="Permanent link">&para;</a></h2>
-<p>Datoviz is being developed by <a href="https://cyrille.rossant.net/">Cyrille Rossant</a> at the <a href="https://www.internationalbrainlab.com/">International Brain Laboratory</a>, with funding from the Simons Foundation, the Flatiron Institute, the Wellcome Trust, INCF. The logo was graciously created by <a href="https://www.linkedin.com/in/czini/">Chiara Zini</a>.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/datoviz/datoviz/main/docs/images/simons.png" />
-<img alt="" src="https://raw.githubusercontent.com/datoviz/datoviz/main/docs/images/flatiron.png" />
-<img alt="" src="https://raw.githubusercontent.com/datoviz/datoviz/main/docs/images/wellcome.jpg" />
-<img alt="" src="https://raw.githubusercontent.com/datoviz/datoviz/main/docs/images/incf.jpg" /></p>
-<p>Glossary:</p>
+<h2 id="history-and-current-status">🕰️ History and current status<a class="headerlink" href="#history-and-current-status" title="Permanent link">&para;</a></h2>
+<p>In <strong>2012</strong>, developers of various GPU scientific visualization libraries (Galry, Glumpy, pyqtgraph, visvis) collaborated to create <a href="https://vispy.org/"><strong>VisPy</strong></a>, an OpenGL-based scientific visualization library for Python.</p>
+<p>In <strong>2015</strong>, <a href="https://www.khronos.org/vulkan/"><strong>Vulkan</strong></a>, the successor to OpenGL, was announced by Khronos, <a href="https://cyrille.rossant.net/compiler-data-visualization/">sparking the idea of a future Vulkan-based visualization library</a>.</p>
+<p>In <strong>2019</strong>, <a href="https://cyrille.rossant.net/">Cyrille Rossant</a>, one of the original VisPy developers, began experimenting with Vulkan.</p>
+<p>In <strong>2021</strong>, the <a href="https://cyrille.rossant.net/datoviz/">first experimental version of Datoviz <strong>v0.1</strong> was released</a>. This initial release laid the groundwork for further development.</p>
+<p>Over the next three years, the technology matured, aided by a <a href="https://chanzuckerberg.com/eoss/proposals/">Chan Zuckerberg Initiative (CZI) grant</a> awarded to VisPy in <strong>2021</strong>.</p>
+<p>In <strong>2024</strong>, Datoviz <strong>v0.2</strong> is released. This version is redesigned from the ground up to enhance modularity and stability, ensuring it can keep pace with the continuous advancements in GPU hardware and graphics rendering APIs.
+It features a modular architecture that will allow the porting of Datoviz technology to non-Vulkan environments, such as WebGPU-enabled web browsers (thanks to a second <a href="https://chanzuckerberg.com/eoss/proposals/">CZI grant</a>).</p>
+<p>Datoviz is closely related to <strong>VisPy</strong>, as it is being developed by one of the VisPy cofounders. VisPy 2.0, initiated by Cyrille Rossant and Nicolas Rougier, will offer a high-level scientific API on top of Datoviz, matplotlib, and other renderers via a common medium-level visualization layer called "graphics server protocol (GSP)".</p>
+<p>The long-term vision is for high-performance GPU-based 2D/3D scientific visualization to be uniformly available across multiple platforms, environments (desktop, web, cloud-based remote visualization), and programming languages (C/C++, Python, Julia, Rust, etc.).</p>
+<h2 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>See the <a href="CONTRIBUTING/">contributing notes</a>.</p>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>See the <a href="LICENSE">MIT license</a>.</p>
+<h2 id="credits">🙏 Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
+<p>Datoviz is developed by <a href="https://cyrille.rossant.net">Cyrille Rossant</a> at the <a href="http://internationalbrainlab.org/">International Brain Laboratory</a>, a consortium of neuroscience research labs around the world.</p>
+<p>It is funded notably by <a href="https://chanzuckerberg.com/">Chan Zuckerberg Initiative</a>'s <a href="https://chanzuckerberg.com/eoss/">Essential Open Source Software for Science program</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
                 
-              
-              
-                
-
-
-              
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-        
-          <a href="tutorials/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Index
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: ".",
-          features: ['navigation.tabs', 'navigation.tabs.sticky', 'navigation.expand', 'toc.integrate'],
-          search: Object.assign({
-            worker: "assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
