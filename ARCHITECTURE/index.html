@@ -925,21 +925,29 @@
 <h3 id="vklite">vklite<a class="headerlink" href="#vklite" title="Permanent link">&para;</a></h3>
 <p>We built vklite, a thin wrapper on top of the Vulkan C API, that provides the most essential Vulkan functionality (<code>vklite.h</code>):</p>
 <ul>
-<li><strong>Device control and event loops:</strong></li>
+<li><strong>Device control and event loops:</strong><ul>
 <li>Device discovery (<code>dvz_gpu</code>)</li>
 <li>Swapchain presentation (<code>dvz_swapchain</code>, <code>dvz_renderpass</code>, <code>dvz_framebuffers</code>, <code>dvz_surface</code>)</li>
 <li>Synchronization primitives (<code>dvz_barrier</code>, <code>dvz_semaphores</code>, <code>dvz_fences</code>)</li>
-<li><strong>GPU memory:</strong></li>
+</ul>
+</li>
+<li><strong>GPU memory:</strong><ul>
 <li>GPU data buffers (<code>dvz_buffers</code>)</li>
 <li>GPU images (<code>dvz_images</code>)</li>
 <li>Samplers (<code>dvz_sampler</code>)</li>
-<li><strong>Pipelines and shaders:</strong></li>
+</ul>
+</li>
+<li><strong>Pipelines and shaders:</strong><ul>
 <li>Compute pipelines (<code>dvz_compute</code>)</li>
 <li>Graphics pipelines (<code>dvz_graphics</code>) with fixed pipeline and custom shaders</li>
 <li>Slots and bindings or descriptors (<code>dvz_slots</code>, <code>dvz_descriptors</code>)</li>
-<li><strong>Command buffers:</strong></li>
+</ul>
+</li>
+<li><strong>Command buffers:</strong><ul>
 <li>Command buffer creation and submission (<code>dvz_commands</code>, <code>dvz_submit</code>)</li>
 <li>Command buffer recording (<code>dvz_cmd</code>)</li>
+</ul>
+</li>
 </ul>
 <p>Broadly speaking, these low-level functions allow one to create objects on the GPU, mostly data buffers and textures (images and samplers), to define GPU compute and graphics pipelines via custom SPIR-V shaders (compiled from GLSL), and to send compute and rendering jobs to the GPU by asynchronously submitting recorded command buffers to a dedicated event loop displaying graphics on screen.</p>
 <h3 id="gpu-resources-and-data-transfers">GPU resources and data transfers<a class="headerlink" href="#gpu-resources-and-data-transfers" title="Permanent link">&para;</a></h3>
