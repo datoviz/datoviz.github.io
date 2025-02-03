@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://datoviz.org/examples/">
       
       
-        <link rel="prev" href="../userguide/">
+        <link rel="prev" href="../drp/">
       
       
         <link rel="next" href="../colormaps/">
@@ -389,7 +389,28 @@
         
   
   <span class="md-ellipsis">
-    User guide
+    User API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datoviz Rendering Protocol
   </span>
   
 
@@ -586,6 +607,15 @@
   <a href="#volume-example" class="md-nav__link">
     <span class="md-ellipsis">
       Volume example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datoviz-rendering-protocol-drp-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datoviz Rendering Protocol (DRP) example
     </span>
   </a>
   
@@ -878,6 +908,7 @@
 <li><a href="#spheres-example">Spheres example</a></li>
 <li><a href="#surface-example">Surface example</a></li>
 <li><a href="#volume-example">Volume example</a></li>
+<li><a href="#datoviz-rendering-protocol-(drp)-example">Datoviz Rendering Protocol (DRP) example</a></li>
 </ul>
 <h2 id="basic-visual-example">Basic visual example<a class="headerlink" href="#basic-visual-example" title="Permanent link">&para;</a></h2>
 <p>Show a colored triangle using a basic visual.</p>
@@ -1001,9 +1032,6 @@
         <span class="c1"># Update the mesh visual data with the new shape&#39;s data.</span>
         <span class="n">dvz</span><span class="o">.</span><span class="n">mesh_reshape</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
 
-        <span class="c1"># Update the visual after its data has changed.</span>
-        <span class="n">dvz</span><span class="o">.</span><span class="n">visual_update</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
-
     <span class="c1"># End the GUI dialog.</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_end</span><span class="p">()</span>
 
@@ -1032,8 +1060,6 @@
 
 <span class="c1"># Create a mesh visual directly instantiated with the shape data.</span>
 <span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">mesh_shape</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">MESH_FLAGS_LIGHTING</span><span class="p">)</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_pos</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_params</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec4</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 
 <span class="c1"># Add the visual to the panel.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1081,28 +1107,6 @@
 <span class="n">batch</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app_batch</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 <span class="n">scene</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">scene</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
 
-<span class="c1"># Create a figure 1000x1000.</span>
-<span class="n">figure</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Panel spanning the entire window.</span>
-<span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_default</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
-
-<span class="c1"># Panzoom interactivity.</span>
-<span class="n">pz</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_panzoom</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
-
-<span class="c1"># Image visual.</span>
-<span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># One image in this visual, there could be multiple images sharing the same underlying texture.</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">image_alloc</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># xy coordinates of the upper left corner, and lower right corner</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">image_position</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># uv coordinates of the upper left corner, and lower right corner</span>
-<span class="n">texcoords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">image_texcoords</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">texcoords</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Load a PNG image.</span>
 <span class="n">CURDIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
@@ -1119,18 +1123,51 @@
     <span class="c1"># Create a texture out of a RGB image.</span>
     <span class="n">tex</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">tex_image</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">A_</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
 
-    <span class="c1"># Assign the texture to the visual.</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">image_texture</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">address_mode</span><span class="p">)</span>
 
-    <span class="c1"># Add the visual.</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Create a figure 1000x1000.</span>
+<span class="n">figure</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-    <span class="c1"># Run the application.</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Panel spanning the entire window.</span>
+<span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_default</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
 
-    <span class="c1"># Cleanup.</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="c1"># Panzoom interactivity.</span>
+<span class="n">pz</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_panzoom</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+<span class="c1"># Image visual.</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">IMAGE_FLAGS_RESCALE</span><span class="p">)</span>
+
+<span class="c1"># One image in this visual, there could be multiple images sharing the same underlying texture.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_alloc</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># xyz coordinates of the top left corner.</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_position</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Image size, in pixels.</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_size</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Image anchor.</span>
+<span class="n">anchor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_anchor</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># uv coordinates of the top left corner, and bottom right corner.</span>
+<span class="n">texcoords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_texcoords</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">texcoords</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># Assign the texture to the visual.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_texture</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">address_mode</span><span class="p">)</span>
+
+<span class="c1"># Add the visual.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Run the application.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Cleanup.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div>
 </details>
 
@@ -1145,6 +1182,8 @@
 <li>Mesh visual and shape mesh</li>
 <li>Colormaps</li>
 <li>Manual mesh colors</li>
+<li>Timer events</li>
+<li>Dynamic visual updates</li>
 </ul>
 <p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/examples/mesh.png" /></p>
 <details>
@@ -1186,12 +1225,8 @@
 <span class="c1"># Set artificial vertex colors.</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nv</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nv</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">colormap_array</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">CMAP_BWR</span><span class="p">,</span> <span class="n">nv</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">colormap_array</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">CMAP_COOLWARM</span><span class="p">,</span> <span class="n">nv</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">mesh_color</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nv</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Lighting parameters.</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_pos</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_params</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec4</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 
 <span class="c1"># Add the visual to the panel.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1199,6 +1234,24 @@
 <span class="c1"># Initial arcball angles.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">arcball_initial</span><span class="p">(</span><span class="n">arcball</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="o">+</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">+</span><span class="mf">3.0</span><span class="p">))</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">panel_update</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+
+<span class="c1"># Timer callback: update the arcball angles in real time.</span>
+<span class="nd">@dvz</span><span class="o">.</span><span class="n">timer</span>
+<span class="k">def</span> <span class="nf">_on_timer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">window_id</span><span class="p">,</span> <span class="n">ev</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">time</span> <span class="o">%</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)))</span>
+
+    <span class="n">dvz</span><span class="o">.</span><span class="n">colormap_array</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">CMAP_COOLWARM</span><span class="p">,</span> <span class="n">nv</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">mesh_color</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nv</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># Create a timer (60 events per second).</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_timer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">60.</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Register a timer callback.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_ontimer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">_on_timer</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
 
 <span class="c1"># Run the application.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1552,7 +1605,7 @@
 <span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_default</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
 
 <span class="c1"># 3D camera.</span>
-<span class="n">camera</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_camera</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_camera</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 
 <span class="c1"># -------------------------------------------------------------------------------------------------</span>
@@ -1595,7 +1648,7 @@
 <span class="c1"># Now we compute the glyph shifts (called &quot;xywh&quot;) using our font.</span>
 <span class="n">xywh</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">font_ascii</span><span class="p">(</span><span class="n">af</span><span class="o">.</span><span class="n">font</span><span class="p">,</span> <span class="n">S_</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 <span class="c1"># We also define a global relative anchor point, in pixels (xy), for the string.</span>
-<span class="c1">#  By default, the anchor is (0, 0) which represents the lower left corner of the string. The</span>
+<span class="c1"># By default, the anchor is (0, 0) which represents the lower left corner of the string. The</span>
 <span class="c1"># anchor position is the string position defined above (1, 1, 0).</span>
 <span class="n">anchor</span> <span class="o">=</span> <span class="n">vec2</span><span class="p">(</span><span class="o">-</span><span class="mf">.5</span> <span class="o">*</span> <span class="n">font_size</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">font_size</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">glyph_xywh</span><span class="p">(</span><span class="n">glyph</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">xywh</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1702,6 +1755,8 @@
 <span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Cleanup.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">atlas_destroy</span><span class="p">(</span><span class="n">af</span><span class="o">.</span><span class="n">atlas</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">font_destroy</span><span class="p">(</span><span class="n">af</span><span class="o">.</span><span class="n">font</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div>
@@ -1746,8 +1801,8 @@
 <span class="n">col_count</span> <span class="o">=</span> <span class="n">row_count</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">row_count</span> <span class="o">*</span> <span class="n">col_count</span>
 <span class="n">o</span> <span class="o">=</span> <span class="n">vec3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">vec3</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">row_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">col_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">col_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">vec3</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">row_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Allocate heights and colors arrays.</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">row_count</span><span class="p">,</span> <span class="n">col_count</span><span class="p">)</span>
@@ -1776,7 +1831,7 @@
 <span class="c1"># Colors.</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">colormap_array</span><span class="p">(</span>
-    <span class="n">dvz</span><span class="o">.</span><span class="n">CMAP_PLASMA</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="n">heights</span><span class="p">,</span> <span class="o">-</span><span class="n">hmax</span><span class="p">,</span> <span class="o">-</span><span class="n">hmin</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">CMAP_PLASMA</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">heights</span><span class="p">,</span> <span class="n">hmin</span><span class="p">,</span> <span class="n">hmax</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
 
 <span class="c1"># Create the surface shape.</span>
 <span class="n">shape</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">shape_surface</span><span class="p">(</span><span class="n">row_count</span><span class="p">,</span> <span class="n">col_count</span><span class="p">,</span> <span class="n">heights</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1784,10 +1839,6 @@
 <span class="c1"># Create the mesh visual from the surface shape.</span>
 <span class="n">flags</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">MESH_FLAGS_LIGHTING</span>
 <span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">mesh_shape</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="c1"># Lighting parameters.</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_pos</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">dvz</span><span class="o">.</span><span class="n">mesh_light_params</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">vec4</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 
 <span class="c1"># Add the visual to the panel.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">panel_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1913,7 +1964,7 @@
 <span class="n">dvz</span><span class="o">.</span><span class="n">arcball_initial</span><span class="p">(</span><span class="n">arcball</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="o">-</span><span class="mf">2.25</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
 
 <span class="c1"># Initial camera position.</span>
-<span class="n">camera</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_camera</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_camera</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">camera_initial</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="n">vec3</span><span class="p">(),</span> <span class="n">vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
 <span class="c1"># Update the panel after updating the arcball and camera.</span>
@@ -1929,6 +1980,141 @@
 
 <span class="c1"># Cleanup.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div>
+</details>
+
+<h2 id="datoviz-rendering-protocol-drp-example">Datoviz Rendering Protocol (DRP) example<a class="headerlink" href="#datoviz-rendering-protocol-drp-example" title="Permanent link">&para;</a></h2>
+<p>Show a simple triangle using raw DRP requests.</p>
+<p>Illustrates:</p>
+<ul>
+<li>Using the DRP API</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/examples/drp.png" /></p>
+<details>
+<summary><strong>👨‍💻 Expand the code</strong> from <code>examples/drp.py</code></summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app_batch</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Constants.</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">768</span>
+
+<span class="c1"># Define the Vertex dtype</span>
+<span class="n">vertex_dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)),</span>  <span class="c1"># 3D position (vec3)</span>
+    <span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,))</span>   <span class="c1"># RGBA color (cvec4)</span>
+<span class="p">])</span>
+<span class="n">vertex_size</span> <span class="o">=</span> <span class="n">vertex_dtype</span><span class="o">.</span><span class="n">itemsize</span>
+<span class="n">pos_offset</span> <span class="o">=</span> <span class="n">vertex_dtype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">color_offset</span> <span class="o">=</span> <span class="n">vertex_dtype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="c1"># Create a canvas.</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">create_canvas</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">DEFAULT_CLEAR_COLOR</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">canvas_id</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span>
+
+
+<span class="c1"># Create a custom graphics.</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">create_graphics</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">GRAPHICS_CUSTOM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">graphics_id</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span>
+
+
+<span class="c1"># Vertex shader.</span>
+<span class="n">vertex_glsl</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 450</span>
+
+<span class="s2">layout(location = 0) in vec3 pos;</span>
+<span class="s2">layout(location = 1) in vec4 color;</span>
+<span class="s2">layout(location = 0) out vec4 out_color;</span>
+
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    gl_Position = vec4(pos, 1.0);</span>
+<span class="s2">    out_color = color;</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">create_glsl</span><span class="p">(</span>
+    <span class="n">batch</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">SHADER_VERTEX</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">S_</span><span class="p">(</span><span class="n">vertex_glsl</span><span class="p">))</span>
+
+<span class="c1"># Assign the shader to the graphics pipe.</span>
+<span class="n">vertex_id</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_shader</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="n">vertex_id</span><span class="p">)</span>
+
+
+<span class="c1"># Fragment shader.</span>
+<span class="n">fragment_glsl</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">#version 450</span>
+
+<span class="s2">layout(location = 0) in vec4 in_color;</span>
+<span class="s2">layout(location = 0) out vec4 out_color;</span>
+
+<span class="s2">void main()</span>
+<span class="s2">{</span>
+<span class="s2">    out_color = in_color;</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">create_glsl</span><span class="p">(</span>
+    <span class="n">batch</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">SHADER_FRAGMENT</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">S_</span><span class="p">(</span><span class="n">fragment_glsl</span><span class="p">))</span>
+
+<span class="c1"># Assign the shader to the graphics pipe.</span>
+<span class="n">fragment_id</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_shader</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="n">fragment_id</span><span class="p">)</span>
+
+
+<span class="c1"># Primitive topology.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_primitive</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">PRIMITIVE_TOPOLOGY_TRIANGLE_LIST</span><span class="p">)</span>
+
+<span class="c1"># Polygon mode.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_polygon</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">POLYGON_MODE_FILL</span><span class="p">)</span>
+
+
+<span class="c1"># Vertex binding.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_vertex</span><span class="p">(</span>
+    <span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vertex_size</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">VERTEX_INPUT_RATE_VERTEX</span><span class="p">)</span>
+
+<span class="c1"># Vertex attrs.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_attr</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">FORMAT_R32G32B32_SFLOAT</span><span class="p">,</span> <span class="n">pos_offset</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">set_attr</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">FORMAT_R8G8B8A8_UNORM</span><span class="p">,</span> <span class="n">color_offset</span><span class="p">)</span>
+
+
+<span class="c1"># Create the vertex buffer dat.</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">create_dat</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">BUFFER_TYPE_VERTEX</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">vertex_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">dat_id</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span>
+
+<span class="c1"># Bind the vertex buffer dat to the graphics pipe.</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">bind_vertex</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dat_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Upload the triangle data.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+    <span class="p">((</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+    <span class="p">((</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">vertex_dtype</span><span class="p">)</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">upload_dat</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">dat_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">vertex_size</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">A_</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1"># Commands.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">record_begin</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">canvas_id</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">record_viewport</span><span class="p">(</span>
+    <span class="n">batch</span><span class="p">,</span> <span class="n">canvas_id</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">DEFAULT_VIEWPORT</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">DEFAULT_VIEWPORT</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">record_draw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">canvas_id</span><span class="p">,</span> <span class="n">graphics_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">record_end</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">canvas_id</span><span class="p">)</span>
+
+
+<span class="c1"># Run the application.</span>
+
+<span class="c1"># NOTE: disabling this example for now as the current stable version of Datoviz is NOT built with</span>
+<span class="c1"># shaderc support, due to compatibility issues on Linux. We&#39;ll fix it later.</span>
+<span class="c1"># dvz.app_run(app, 0)</span>
+
+<span class="c1"># Cleanup.</span>
 <span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div>
 </details>

@@ -2,52 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://datoviz.org/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/ARCHITECTURE/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/BUILD/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/CONTRIBUTING/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/LICENSE/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/MAINTAINERS/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/api/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/colormaps/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://datoviz.org/drp/</loc>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/examples/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://datoviz.org/userguide/</loc>
-         <lastmod>2024-08-15</lastmod>
+         <lastmod>2025-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

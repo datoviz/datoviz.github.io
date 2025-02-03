@@ -389,7 +389,28 @@
         
   
   <span class="md-ellipsis">
-    User guide
+    User API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datoviz Rendering Protocol
   </span>
   
 
@@ -966,7 +987,7 @@
 <p>The client provides a thread-safe FIFO queue on which window and input events are sent.</p>
 <p>The GPU-agnostic client and the client-agnostic (static) renderer are linked together via the <strong>presenter</strong>, which allows dynamic processing of the incoming requests by the renderer and appropriate event loop synchronization.</p>
 <h2 id="datoviz-intermediate-protocol">Datoviz Intermediate Protocol<a class="headerlink" href="#datoviz-intermediate-protocol" title="Permanent link">&para;</a></h2>
-<p>The <strong>Datoviz Intermediate Protocol</strong> is entirely defined in <code>request.h</code>.</p>
+<p>The <strong>Datoviz Intermediate Protocol</strong> is entirely defined in <code>datoviz_protocol.h</code>.</p>
 <p>It provides a generic intermediate-level GPU visualization library that is somewhat similar to the WebGPU API. It deals exclusively with <strong>GPU objects</strong>, NOT visual objects. The protocol comes with NO graphical primitives, it supports arbitrary shaders and graphics pipelines. Graphical primitives and higher-level visualization constructs are implemented in the Visuals library and the Scene API described below</p>
 <blockquote>
 <p><em>Note</em>: although compute shaders are already mostly supported in the renderer, they are not yet implemented in the Datoviz Intermediate Protocol. They will be in the future, depending on user feedback. This should be fairly straightforward (adding functions in <code>requests.h</code>, implementing them in <code>renderer.cpp</code>, writing tests and documentation...).</p>

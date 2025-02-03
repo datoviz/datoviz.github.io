@@ -12,13 +12,13 @@
         <meta name="author" content="Cyrille Rossant">
       
       
-        <link rel="canonical" href="https://datoviz.org/MAINTAINERS/">
+        <link rel="canonical" href="https://datoviz.org/drp/">
       
       
-        <link rel="prev" href="../CONTRIBUTING/">
+        <link rel="prev" href="../userguide/">
       
       
-        <link rel="next" href="../LICENSE/">
+        <link rel="next" href="../examples/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Maintainers instructions - Datoviz Documentation</title>
+        <title>Datoviz Rendering Protocol - Datoviz Documentation</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maintainers-instructions" class="md-skip">
+        <a href="#datoviz-rendering-protocol" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Maintainers instructions
+              Datoviz Rendering Protocol
             
           </span>
         </div>
@@ -195,10 +195,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../userguide/" class="md-tabs__link">
           
   
@@ -249,12 +251,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../ARCHITECTURE/" class="md-tabs__link">
           
   
@@ -342,25 +342,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -371,7 +374,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             User guide
@@ -403,10 +406,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../drp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Datoviz Rendering Protocol
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -415,6 +438,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of requests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-creationdeletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object creation/deletion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resizing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uploading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics pipelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bindings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-buffer-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command buffer recording
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -588,28 +709,25 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -620,7 +738,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Discussions
@@ -694,30 +812,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Maintainers instructions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../MAINTAINERS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -726,119 +824,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#release-checklist-for-datoviz-maintainers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Release checklist for Datoviz maintainers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packaging-instructions-advanced-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      Packaging instructions (advanced users)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Packaging instructions (advanced users)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu-2404" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ubuntu 24.04
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-arm64" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS (arm64)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-intel-x86-64" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS (Intel x86-64)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github-actions-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      GitHub Actions notes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="GitHub Actions notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wheel-building" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wheel building
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -890,194 +875,95 @@
   
 
 
-<h1 id="maintainers-instructions">Maintainers instructions<a class="headerlink" href="#maintainers-instructions" title="Permanent link">&para;</a></h1>
-<h2 id="release-checklist-for-datoviz-maintainers">Release checklist for Datoviz maintainers<a class="headerlink" href="#release-checklist-for-datoviz-maintainers" title="Permanent link">&para;</a></h2>
-<p>Development happens on <code>dev</code> whereas <code>main</code> is stable.</p>
-<p>Release checklist from a Linux development machine:</p>
-<ol>
-<li><strong>Preparation.</strong><ul>
-<li><code>git branch</code>: check that you are on the <code>dev</code> branch.</li>
-<li>Write the <code>CHANGELOG.md</code> for the new version.</li>
-</ul>
-</li>
-<li><strong>Cross-platform release build and test.</strong><ul>
-<li>For each of Linux, macOS arm64, macOS x86_64, Windows, do:</li>
-<li><code>just clean release api</code>: rebuild in release mode.</li>
-<li><code>just test</code>: run the C testing suite.</li>
-<li><code>just pytest</code>: run the Python testing suite.</li>
-<li><code>just act test-linux</code>: <strong>on Linux only</strong>, simulate the GitHub Actions tests locally.</li>
-</ul>
-</li>
-<li><strong>Version bump.</strong><ul>
-<li><code>version=x.y.z</code>: set up the new version.</li>
-<li><code>just bump $version</code>: bump the codebase to the new version.</li>
-<li><code>just release</code>: recompile with the new version.</li>
-<li><code>git diff</code>: check the changes to commit.</li>
-<li><code>git commit -am "Bump version to v$version" &amp;&amp; git push</code>: commit the new version.</li>
-</ul>
-</li>
-<li><strong>Wheel build and test.</strong><ul>
-<li><code>just wheels</code>: build the wheels on GitHub Actions.</li>
-<li>Wait until the <a href="https://github.com/datoviz/datoviz/actions/workflows/wheels.yml">wheels have been successfully built on all supported platforms</a>. <strong>This will take about 15 minutes</strong> (the Windows build is currently much longer than macOS and Linux builds because GitHub Actions does not support Windows Docker containers yet).</li>
-<li>For each of Linux, macOS arm64, macOS x86_64, Windows, do:</li>
-<li><code>just checkartifact</code></li>
-<li>Fix and go back to (2) if there is any problem.</li>
-</ul>
-</li>
-<li><strong>Release.</strong><ul>
-<li><code>git fetch --all &amp;&amp; git status</code> : check we're up to date and on the <code>dev</code> branch.</li>
-<li><code>git checkout main &amp;&amp; git pull</code> : switch to <code>main</code> before merging.</li>
-<li><code>git merge dev</code>: merge <code>dev</code> to <code>main</code>.</li>
-<li><code>just tag $version</code>: once on <code>main</code>, tag with the new version.</li>
-<li><code>git push origin --tags</code>: push the tag.</li>
-<li><code>just draft</code>: create a new GitHub Release draft with the built wheels.</li>
-<li>Edit and publish the <a href="https://github.com/datoviz/datoviz/releases">GitHub Release</a>.</li>
-<li><code>just upload</code>: upload the wheels to PyPI.</li>
-<li><code>just bump a.b.c-dev</code>: bump to the new development version (replace with the next expected version number).</li>
-<li><code>git commit -am "Bump to development version" &amp;&amp; git push</code>: bump to the development version.</li>
-<li>Announce the new release on the various communication channels.</li>
-</ul>
-</li>
-</ol>
-<h2 id="packaging-instructions-advanced-users">Packaging instructions (advanced users)<a class="headerlink" href="#packaging-instructions-advanced-users" title="Permanent link">&para;</a></h2>
-<p>This section provides instructions for Datoviz maintainers who'd like to create binary packages and Python wheels.</p>
-<h3 id="ubuntu-2404">Ubuntu 24.04<a class="headerlink" href="#ubuntu-2404" title="Permanent link">&para;</a></h3>
-<p>Requirements:</p>
-<ul>
-<li>Docker</li>
-<li><a href="https://github.com/casey/just/releases">just</a></li>
-<li><code>sudo apt-get install dpkg-dev fakeroot nvidia-container-toolkit</code></li>
-</ul>
-<p>To build a release binary, see the <a href="../BUILD/">build instructions</a>:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>pydev
-just<span class="w"> </span>release
-</code></pre></div>
-<p>To build a <code>.deb</code> Debian installable package for development (with C headers and shared libraries):</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>deb
-</code></pre></div>
-<p>To test the <code>.deb</code> package in an isolated Docker container:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>testdeb
-</code></pre></div>
-<p>To build a <code>manylinux</code> wheel (using <code>manylinux_2_28_x86_64</code>, based on AlmaLinux 8):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Build Datoviz in the manylinux container.</span>
-just<span class="w"> </span>buildmany
+<h1 id="datoviz-rendering-protocol">Datoviz Rendering Protocol<a class="headerlink" href="#datoviz-rendering-protocol" title="Permanent link">&para;</a></h1>
+<p>The main Datoviz API is the scene API.
+It offers tools to create built-in visuals, manage interactivity controllers, and organize them within a figure.</p>
+<p>The scene API is built on top of a lower-level API, the <strong>Datoviz Rendering Protocol (DRP)</strong>.
+This API, similar to WebGPU, provides an asynchronous interface for creating GPU objects such as shaders, graphics pipelines, data buffers, and textures, as well as for generating command buffers.
+Although currently implemented for desktop use, it can also be adapted for distributed environments.</p>
+<p>The DRP is defined in the <code>datoviz_protocol.h</code> header file and documented in the <a href="../api/#datoviz-rendering-protocol-functions">API reference</a>.
+A "hello world" example can be found in <code>examples/drp.c</code> and <code>examples/drp.py</code>.</p>
+<p>Using DRP, you typically generate requests, group them into a batch, and a separate renderer processes these pending requests during the event loop.
+The architecture is designed with multithreading in mind, though this is not yet officially supported.
+Requests can be issued at initialization or in response to user events, such as mouse and keyboard inputs or timers.</p>
+<h2 id="usage-example">Usage example<a class="headerlink" href="#usage-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;datoviz_protocol.h&gt;</span>
 
-<span class="c1"># Build a Python wheel in that container (saved in dist/).</span>
-just<span class="w"> </span>wheelmany
+<span class="c1">// ...</span>
+
+<span class="c1">// Create an application (managing the event loop, renderer, and GPU access).</span>
+<span class="n">DvzApp</span><span class="o">*</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dvz_app</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Retrieve the batch which all pending requests until they are processed by the app&#39;s renderer.</span>
+<span class="n">DvzBatch</span><span class="o">*</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dvz_app_batch</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
+
+<span class="c1">// Create requests here.</span>
+
+<span class="c1">// Start the event loop. The second argument is the number of frames in the event loop.</span>
+<span class="c1">// The application stops afterwards, except if this number is 0, corresponding to an infinite loop.</span>
+<span class="n">dvz_app_run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">dvz_app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">);</span>
 </code></pre></div>
-<p>To test the <code>manylinux</code> wheel:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>testwheel
-</code></pre></div>
-<h3 id="macos-arm64">macOS (arm64)<a class="headerlink" href="#macos-arm64" title="Permanent link">&para;</a></h3>
-<p>Requirements:</p>
+<h2 id="types-of-requests">Types of requests<a class="headerlink" href="#types-of-requests" title="Permanent link">&para;</a></h2>
+<p>The <a href="../api/#datoviz-rendering-protocol-functions">API documentation</a> lists all functions that can be used to create requests.
+They all take the batch as a first argument.</p>
+<h3 id="object-creationdeletion">Object creation/deletion<a class="headerlink" href="#object-creationdeletion" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_create_</code>, are used to create/delete:</p>
 <ul>
-<li>Homebrew</li>
-<li><a href="https://github.com/casey/just/releases">just</a></li>
+<li>a board (an offscreen canvas)</li>
+<li>a canvas (a canvas on screen)</li>
+<li>a dat (GPU data buffer)</li>
+<li>a tex (GPU 1D, 2D, or 3D texture)</li>
+<li>a sampler (shader access to images)</li>
+<li>a shader, either in GLSL (will be compiled by Datoviz via libshaderc) or directly in SPIU-V</li>
+<li>a graphics pipeline</li>
 </ul>
-<p>To build a release binary, see the <a href="../BUILD/">build instructions</a>:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>pydev
-just<span class="w"> </span>release
-</code></pre></div>
-<p>To build a <code>.pkg</code> macOS installable package for development (with C headers and shared libraries):</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>pkg
-</code></pre></div>
-<p>To build a macOS Python wheel:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>wheel
-</code></pre></div>
-<p>To test the macOS package in an isolated environment:</p>
-<ol>
-<li>
-<p>Install sshpass:</p>
-<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>sshpass
-</code></pre></div>
-</li>
-<li>
-<p>Install <a href="https://mac.getutm.app/">UTM</a>.</p>
-</li>
-<li>Create a new macOS virtual machine (VM) with <strong>at least 64 GB storage</strong> (for Xcode).</li>
-<li>Install macOS in the virtual machine. For simplicity, use your <code>$USER</code> as the login and password.</li>
-<li>Once installed, find the IP address in the VM macOS system preferences and write it down (for example, <code>192.168.64.4</code>).</li>
-<li>Set up remote access via SSH in the VM macOS system preferences to set up a SSH server.</li>
-<li>
-<p>Open a terminal in the VM and type:</p>
-<div class="highlight"><pre><span></span><code>type:<span class="w"> </span>xcode-select<span class="w"> </span>--install
-</code></pre></div>
-</li>
-</ol>
-<p>Go back to the host machine and type:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Test the .pkg installation in an UTM virtual machine, using the IP address you wrote down earlier.</span>
-just<span class="w"> </span>testpkg<span class="w"> </span><span class="m">192</span>.168.64.4
-</code></pre></div>
-<p>The virtual machine should show the Datoviz demo in a window.</p>
-<p>To test the macOS wheel, you can either test in a virtual Python environment, or in a virtual machine using UTM.</p>
-<p>To test the macOS wheel in a virtual Python environment:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>testwheel
-</code></pre></div>
-<p>To test the macOS wheel in a virtual machine, set up the virtual machine as indicated above, then run (replacing the IP address with your virtual machine's IP):</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>testwheel<span class="w"> </span><span class="m">192</span>.168.64.4
-</code></pre></div>
-<h3 id="macos-intel-x86-64">macOS (Intel x86-64)<a class="headerlink" href="#macos-intel-x86-64" title="Permanent link">&para;</a></h3>
-<p>Requirements:</p>
+<p>(Support for compute shaders coming soon).</p>
+<h3 id="resizing">Resizing<a class="headerlink" href="#resizing" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_resize_</code>, are used to resize:</p>
 <ul>
-<li>Homebrew</li>
-<li><a href="https://github.com/casey/just/releases">just</a></li>
+<li>a board</li>
+<li>a dat</li>
+<li>a tex</li>
 </ul>
-<p>To build a release binary, see the <a href="../BUILD/">build instructions</a>:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>pydev
-just<span class="w"> </span>release
-</code></pre></div>
-<p>To build a <code>.pkg</code> macOS installable package for development (with C headers and shared libraries):</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>pkg
-</code></pre></div>
-<p>To build a macOS Python wheel:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>wheel
-</code></pre></div>
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>Requirements:</p>
+<h3 id="uploading">Uploading<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_upload_</code>, are used to upload to the GPU:</p>
 <ul>
-<li><a href="https://git-scm.com/download/win">Git for Windows</a></li>
-<li><a href="https://winlibs.com/">WinLibs</a></li>
-<li><a href="https://github.com/casey/just/releases">just</a></li>
-<li><a href="https://vulkan.lunarg.com/sdk/home#windows">LunarG Vulkan SDK for Windows</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2</a></li>
-<li><a href="https://vcpkg.io/en/">vcpkg</a></li>
+<li>a dat</li>
+<li>a tex</li>
 </ul>
-<p>To build a release binary, see the <a href="../BUILD/">build instructions</a>:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release
-</code></pre></div>
-<p>To build a Windows Python wheel, open a Git Bash and type:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># see https://stackoverflow.com/a/36530750/1595060</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;alias python=&#39;winpty python.exe&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bash_profile
-just<span class="w"> </span>pydev
-just<span class="w"> </span>wheel
-</code></pre></div>
-<p>To test the wheel in a Python virtual environment:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>testwheel
-</code></pre></div>
-<h2 id="github-actions-notes">GitHub Actions notes<a class="headerlink" href="#github-actions-notes" title="Permanent link">&para;</a></h2>
-<p>Datoviz relies on GitHub Actions for cross-platform automated testing and wheel building.</p>
-<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
-<p><a href=".github/workflows/test.yml">This workflow is defined in <code>test.yml</code></a></p>
-<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
-<p>The <code>test-linux</code> job relies on the custom Docker image <a href="https://hub.docker.com/repository/docker/rossant/datoviz_ubuntu/"><code>rossant/datoviz_ubuntu</code></a> (see the <a href="docker/Dockerfile_ubuntu">Dockerfile</a>).
-This image has all build and run dependencies, as well as the Swiftshader software Vulkan renderer, and xvfb to run graphical applications on a headless server.</p>
-<h4 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h4>
-<p>Docker seems to be not supported on GitHub Actions macOS servers. The <code>test_macos</code> job installs build dependencies with Homebrew, Python dependencies, it builds Datoviz and it run the test suite.</p>
-<p>Note that there is a workaround to remove Mono's freetype library which conflicts with Homebrew's one.</p>
-<h4 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">&para;</a></h4>
-<p>There is a custom Docker image <a href="https://hub.docker.com/repository/docker/rossant/datoviz_windows/"><code>rossant/datoviz_windows</code></a> which is however unused at the moment because GitHub Actions Windows servers to not seem to support custom Docker images at the moment.</p>
-<p>Instead, the job installs dependencies with Chocolatey, vcpkg, the Vulkan SDK, and it extracts the Swiftshader dynamic library.
-Note that the Swiftshader Windows library is very large (&gt;100 MB) so it is stored as a compressed zip file in the <a href="https://github.com/datoviz/data"><code>datoviz/data</code> submodule</a>.</p>
-<h3 id="wheel-building">Wheel building<a class="headerlink" href="#wheel-building" title="Permanent link">&para;</a></h3>
-<p><a href=".github/workflows/wheels.yml">This workflow is defined in <code>wheels.yml</code></a></p>
-<p>For each supported platform, this workflow builds the library in release mode, builds the wheel, renames it for the current platform, and uploads it as a GitHub Actions build artifact.</p>
-<p>Refer to the Testing workflow for more information about the building process, which is mostly replicated in this workflow.</p>
-<h4 id="linux-notes">Linux notes<a class="headerlink" href="#linux-notes" title="Permanent link">&para;</a></h4>
-<p>For improved compatibility with Linux Python wheels uploaded to PyPI, it is necessary to build Datoviz on a particular Linux distribution based on <a href="https://en.wikipedia.org/wiki/AlmaLinux">AlmaLinux</a> (based on Red Hat Enterprise Linux, REHL).</p>
-<p>There is a custom Docker image <a href="https://hub.docker.com/repository/docker/rossant/datoviz_manylinux/"><code>rossant/datoviz_manylinux</code></a> based on <code>quay.io/pypa/manylinux_2_28_x86_64</code> (see the <a href="docker/Dockerfile_manylinux">Dockerfile</a>) with all build dependencies.
-It also has Swiftshader compiled for this platform.</p>
-<h4 id="macos-notes">macOS notes<a class="headerlink" href="#macos-notes" title="Permanent link">&para;</a></h4>
-<p>There are two separate jobs for x86_64 and amd64 architectures.</p>
+<h3 id="graphics-pipelines">Graphics pipelines<a class="headerlink" href="#graphics-pipelines" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_set_</code>, are used to specify the fixed state function of graphics pipelines and other attributes:</p>
+<ul>
+<li>the primitive topology</li>
+<li>the blend mode</li>
+<li>the depth test</li>
+<li>the polygon mode</li>
+<li>the cull mode</li>
+<li>the front face</li>
+<li>the shaders</li>
+<li>the vertex bindings</li>
+<li>the vertex attributes</li>
+<li>the binding slots (descriptors)</li>
+<li>the specialization constants.</li>
+</ul>
+<h3 id="bindings">Bindings<a class="headerlink" href="#bindings" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_bind_</code>, are used to bind to graphics pipelines:</p>
+<ul>
+<li>a vertex buffer</li>
+<li>an index buffer</li>
+<li>a dat as uniform or storage buffer</li>
+<li>a tex and sampler as a texture</li>
+</ul>
+<h3 id="command-buffer-recording">Command buffer recording<a class="headerlink" href="#command-buffer-recording" title="Permanent link">&para;</a></h3>
+<p>These functions, that start with <code>dvz_record_</code>, are used to record in the a canvas' command buffer the following commands:</p>
+<ul>
+<li>begin a command buffer</li>
+<li>set a viewport for the next drawing calls</li>
+<li>draw a graphics pipeline (indexed or not, direct or indirect)</li>
+<li>end a command buffer</li>
+</ul>
+<p>Support for more complex command buffers will be implemented later (in particular, compute pipelines, synchronization mechanisms, multipass rendering).</p>
 
 
 

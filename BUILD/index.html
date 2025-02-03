@@ -389,7 +389,28 @@
         
   
   <span class="md-ellipsis">
-    User guide
+    User API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datoviz Rendering Protocol
   </span>
   
 
@@ -814,6 +835,7 @@
 
 <h1 id="building-instructions">Building instructions<a class="headerlink" href="#building-instructions" title="Permanent link">&para;</a></h1>
 <p>If packages are not available on your system, you can build Datoviz yourself.</p>
+<p><strong>Note:</strong> Datoviz is currently built and tested with the <strong>Vulkan LunarG SDK v1.3.280</strong> (you normally don't need to install it to build Datoviz on Linux and macOS, only on Windows). We'll regularly update this version.</p>
 <h2 id="ubuntu-2404">Ubuntu 24.04<a class="headerlink" href="#ubuntu-2404" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install the build and system dependencies.</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>gcc<span class="w"> </span>ccache<span class="w"> </span>ninja-build<span class="w"> </span>xorg-dev<span class="w"> </span>clang-format<span class="w"> </span>patchelf<span class="w"> </span>tree<span class="w"> </span>libtinyxml2-dev<span class="w"> </span>libfreetype-dev
@@ -851,7 +873,7 @@ python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;i
 <span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># Install build dependencies.</span>
-brew<span class="w"> </span>install<span class="w"> </span>just<span class="w"> </span>cmake<span class="w"> </span>ccache<span class="w"> </span>ninja<span class="w"> </span>freetype<span class="w"> </span>clang-format<span class="w"> </span>tree<span class="w"> </span>cloc
+brew<span class="w"> </span>install<span class="w"> </span>just<span class="w"> </span>cmake<span class="w"> </span>ccache<span class="w"> </span>ninja<span class="w"> </span>freetype<span class="w"> </span>clang-format<span class="w"> </span>tree<span class="w"> </span>cloc<span class="w"> </span>jq
 
 <span class="c1"># Clone the Datoviz repo.</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/datoviz/datoviz.git<span class="w"> </span>--recursive
@@ -883,7 +905,7 @@ python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;i
 <span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># Install build dependencies.</span>
-brew<span class="w"> </span>install<span class="w"> </span>just<span class="w"> </span>cmake<span class="w"> </span>ccache<span class="w"> </span>ninja<span class="w"> </span>freetype<span class="w"> </span>clang-format<span class="w"> </span>tree<span class="w"> </span>cloc
+brew<span class="w"> </span>install<span class="w"> </span>just<span class="w"> </span>cmake<span class="w"> </span>ccache<span class="w"> </span>ninja<span class="w"> </span>freetype<span class="w"> </span>clang-format<span class="w"> </span>tree<span class="w"> </span>cloc<span class="w"> </span>jq
 
 <span class="c1"># Clone the Datoviz repo.</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/datoviz/datoviz.git<span class="w"> </span>--recursive
@@ -909,34 +931,42 @@ just<span class="w"> </span>example<span class="w"> </span>scatter
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
-<p><em>Note</em>: we have less experience with Windows, improvements welcome.</p>
 <p>Requirements:</p>
 <ul>
 <li><a href="https://git-scm.com/download/win">Git for Windows</a>.</li>
-<li><a href="https://winlibs.com/">WinLibs</a>: download and install the latest gcc UCRT version with POSIX threads..</li>
-<li><a href="https://github.com/casey/just/releases">just</a>.</li>
+<li><a href="https://winlibs.com/">WinLibs</a>: Download and install the latest gcc UCRT version with POSIX threads.</li>
 <li><a href="https://vulkan.lunarg.com/sdk/home#windows">LunarG Vulkan SDK for Windows</a>.</li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2</a>.</li>
-<li><a href="https://vcpkg.io/en/">vcpkg</a>. The <code>VCPKG_ROOT</code> environment variable should be set and should be in the <code>PATH</code>.</li>
-<li>Python (e.g. conda).</li>
+<li><a href="https://vcpkg.io/en/">vcpkg</a>: The <code>VCPKG_ROOT</code> environment variable should be set and should be in the <code>PATH</code>.</li>
+<li><a href="https://github.com/casey/just/releases">just</a>: Extract the just.exe file into C:\mingw64\bin (created by WinLibs).`</li>
+<li><a href="https://jqlang.github.io/jq/download/">jq</a>: For example, with winget, use <code>winget install jqlang.jq</code></li>
+<li><a href="https://www.python.org/downloads">Python</a>.</li>
 </ul>
 <p>Instructions:</p>
 <ol>
-<li>Copy the decompressed <code>just.exe</code> into <code>C:\mingw64\bin</code> (which should have been created by WinLibs).</li>
-<li>Open a Git Bash terminal.</li>
-<li>Add this to your <code>~/.bash_profile</code>: <code>export VCPKG_ROOT=/path/to/vcpkg</code> after putting the path to vcpkg.</li>
-<li>Clone the Datoviz GitHub repository in a folder.</li>
-<li>Go to that folder in the terminal.</li>
-<li>Type:</li>
+<li>Install the above dependencies.</li>
+<li>Open Windows git-bash terminal at the directory location for the datoviz build.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>wsl.exe<span class="w"> </span>--install
-wsl.exe<span class="w"> </span>--update
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone the Datoviz repo.</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/datoviz/datoviz.git<span class="w"> </span>--recursive
+<span class="nb">cd</span><span class="w"> </span>datoviz
+
+<span class="c1"># Build Python requirements</span>
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-dev.txt
-just<span class="w"> </span>build<span class="w">  </span><span class="c1"># this one may fail, try again below:</span>
+
+<span class="c1"># NOTE: this call will fail, but the build will succeed the second time.</span>
+<span class="c1"># Fix welcome (see https://github.com/Chlumsky/msdf-atlas-gen/issues/98)</span>
 just<span class="w"> </span>build
-<span class="c1"># Try the builtin demo.</span>
-build<span class="se">\d</span>atoviz.exe<span class="w"> </span>demo
-<span class="c1"># Try running the demo from Python.</span>
+
+<span class="c1"># That one should succeed.</span>
+just<span class="w"> </span>build
+
+<span class="c1"># Try a demo.</span>
+just<span class="w"> </span>demo
+
+<span class="c1"># Compile and run a C example.</span>
+just<span class="w"> </span>example<span class="w"> </span>scatter
+
+<span class="c1"># Run the demo from Python.</span>
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
 
