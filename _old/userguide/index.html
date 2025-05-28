@@ -1,0 +1,2145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="⚡ Datoviz: high-performance scientific data visualization">
+      
+      
+        <meta name="author" content="Cyrille Rossant">
+      
+      
+        <link rel="canonical" href="https://datoviz.org/_old/userguide/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>User guide - Datoviz Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Datoviz Documentation" class="md-header__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Datoviz Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/datoviz/datoviz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/" class="md-tabs__link">
+          
+  
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/shape/" class="md-tabs__link">
+          
+  
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gallery/" class="md-tabs__link">
+          
+  
+  
+  Gallery
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/api_py/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../discussions/ARCHITECTURE/" class="md-tabs__link">
+          
+  
+  
+  Discussions
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
+      
+  <img src="../../images/logow.png" alt="logo">
+
+    </a>
+    Datoviz Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/datoviz/datoviz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/common/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Visuals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Visuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/visuals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/pixel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pixel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Marker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/segment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Segment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/glyph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glyph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/mesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mesh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sphere
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/volume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Volume
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visuals/slice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/texture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Texture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/interactivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactivity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/shape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timers and Frame Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graphical User Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Datoviz in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datoviz Rendering Protocol (DRP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gallery
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Gallery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api_py/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/colormaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colormaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Discussions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Discussions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/BUILD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contribution Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/MAINTAINERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maintainer Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/LICENSE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-and-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      App and scene
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Panels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visuals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-ctypes-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python ctypes bindings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-data-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic data updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shapes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactivity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-3d-camera-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual 3D camera control
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphical-user-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphical User Interfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-datoviz-in-a-cc-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Datoviz in a C/C++ application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Datoviz in a C/C++ application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-arm64" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS (arm64)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-notes-for-cc-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical notes for C/C++ developers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link">&para;</a></h1>
+<p>Datoviz is a C-first library.
+It provides auto-generated Python ctypes bindings that closely follow the Datoviz C API.</p>
+<p>While this user guide focuses on <strong>Python</strong> for convenience, it can be readily translated into C.</p>
+<p>To use a Datoviz C function in Python, you typically need to replace the <code>dvz_</code> (functions), <code>DVZ_</code> (enumerations), or <code>Dvz</code> (structures) prefix with <code>dvz.</code> after importing Datoviz with <code>import datoviz as dvz</code>.</p>
+<p>Please note that this user guide is a work in progress. We strongly recommend looking at the examples (located in the <code>examples/</code> subfolder of the repository) and the auto-generated C API reference (found in <code>docs/api.md</code>).</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Creating a GPU-based interactive visualization script with Datoviz in Python typically involves the following steps:</p>
+<ol>
+<li>Creating an <code>app</code> and a <code>scene</code>.</li>
+<li>Creating one or several <code>figures</code> (window).</li>
+<li>Creating one or several <code>panels</code> (subplots) in each figure, defined by their offset and size in pixels.</li>
+<li>Creating <code>visuals</code> of predefined types.</li>
+<li>Setting the visual data (position, size, color, groups...).</li>
+<li>Optionally, setting up event callbacks (mouse, keyboard, timers...).</li>
+<li>Optionally, creating GUIs.</li>
+<li>Running the application.</li>
+<li>Closing and destroying the <code>scene</code> and <code>app</code>.</li>
+</ol>
+<p>GPU knowledge is not required when using this interface.
+The lower-level GPU-based layers are not yet exposed in the <code>datoviz.h</code> public header file.
+Contact us if you would be interested in using them in your application.</p>
+<h2 id="app-and-scene">App and scene<a class="headerlink" href="#app-and-scene" title="Permanent link">&para;</a></h2>
+<p>The <code>app</code> handles the window, user events, event loop.</p>
+<p>The <code>scene</code> handles the panels, visuals, and data.</p>
+<p>A visualization script is typically organized as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This imports the binary libdatoviz shared library.</span>
+<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+
+<span class="c1"># Create an application. The argument is reserved to optional flags, like dvz.APP_FLAGS_OFFSCREEN</span>
+<span class="c1"># for running an offscreen application (without a window, saving a figure to a PNG file).</span>
+<span class="c1"># See the offscreen.py example.</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Retrieve the app&#39;s batch, which contains a stream of Datoviz Intermediate Protocol requests that</span>
+<span class="c1"># will be processed at the next frame by the app&#39;s event loop. It&#39;s used to create visuals.</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">app_batch</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Create a scene, which handles the plotting objects (figures, panels, visuals, data, callbacks).</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">scene</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="c1"># ... your code here ...</span>
+
+<span class="c1"># Run the application. The last argument is the number of frames (0 = infinite loop).</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_run</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># App and scene clean up, memory freeing, etc.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">scene_destroy</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_destroy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div>
+<p>Internally, the <code>scene</code> API generates a stream of Datoviz Intermediate Protocol (DIP) requests and sends them to the Datoviz Vulkan renderer (managed by the <code>app</code>). The DIP closely resembles the WebGPU specification. This decoupled architecture ensures that, in the future, the <code>scene</code> API can be implemented on top of other non-Vulkan DIP renderers (including a future JavaScript-based one).</p>
+<p>Although the architecture is designed with multithreading in mind (allowing for data computation and transfers without blocking the event loop), our primary focus has been on single-threaded applications so far. Multithreading functionality will be provided and documented at a later time.</p>
+<h2 id="figures">Figures<a class="headerlink" href="#figures" title="Permanent link">&para;</a></h2>
+<p>A <code>Figure</code> is a window on which to draw visuals.
+It is created as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a figure with size 800 x 600 and no optional flags.</span>
+<span class="n">figure</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="panels">Panels<a class="headerlink" href="#panels" title="Permanent link">&para;</a></h2>
+<p>A <code>Panel</code> is a rectangular portion of a <code>Figure</code> on which to render visuals.</p>
+<p>You can create a default panel spanning the entire figure as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_default</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+</code></pre></div>
+<p>Create an arbitrary panel as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># x, y is the offset of the top left panel corner.</span>
+<span class="c1"># w, h is the size in pixels of the panel.</span>
+<span class="n">panel</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">figure</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="visuals">Visuals<a class="headerlink" href="#visuals" title="Permanent link">&para;</a></h2>
+<p>The <code>Visual</code> is the most important object type in Datoviz. It represents a visual collection of similar elements, such as points, markers, segments, glyphs (text), paths, images, meshes, and more.</p>
+<p>The concept of a collection is crucial for high-performance rendering with GPUs. Visual elements of the same type should be grouped within the same <code>Visual</code> to optimize performance.</p>
+<p>The primary limitation of grouping elements together is that they currently share the same transform, meaning they share the same coordinate system.</p>
+<p>Datoviz offers a predefined set of common visuals:</p>
+<ul>
+<li><strong>Basic visuals</strong> (faster but lower quality than other visuals): <code>basic</code> with an adequate <code>dvz.PRIMITIVE_TOPOLOGY_*</code> enumeration, supporting pixels (<code>POINT_LIST</code>), aliased thin lines (<code>LINE_LIST</code>, <code>LINE_STRIP</code>), triangles (<code>TRIANGLE_LIST</code>, <code>TRIANGLE_STRIP</code>);</li>
+<li><strong>0D visuals</strong>: <code>pixel</code>, <code>point</code> (disc), <code>marker</code>, <code>glyph</code> (string characters rendered on the GPU with multichannel signed distance fields);</li>
+<li><strong>1D visuals</strong>: <code>segment</code>, <code>path</code>;</li>
+<li><strong>2D visuals</strong>: <code>image</code>;</li>
+<li><strong>3D visuals</strong>: <code>mesh</code>, <code>sphere</code> (2D sprites with "fake" 3D rendering, also known as impostors), <code>volume</code> (currently using a basic GPU raymarching algorithm), <code>slice</code> (volume image slices).</li>
+</ul>
+<p><img alt="List of visuals" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/visuals.png" /></p>
+<p>The visuals are implemented on the GPU using advanced antialiasing techniques within the shaders.</p>
+<p>Additional visuals and the ability to create custom visuals via user-provided shaders will be added in the future.</p>
+<p>To create a visual, use this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a `point` visual with no optional flags.</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="visual-data">Visual data<a class="headerlink" href="#visual-data" title="Permanent link">&para;</a></h2>
+<p>Once a visual is created, you can specify its data using the provided visual-specific functions.</p>
+<p>The most common types of visual properties are point positions and colors, but each visual has its own specific data properties (e.g., size, shape, groups). For more details, refer to the <a href="../api/">C API reference</a>.</p>
+<h2 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h2>
+<p>Rendering high-quality text on the GPU efficiently is challenging. Several methods have been developed within the graphics community. Datoviz currently offers or plans to offer the following visuals:</p>
+<ul>
+<li><strong><code>glyph</code></strong>: Reasonably good quality, supports scaling, but currently not ideal for small font sizes. Utilizes multi-channel signed distance fields. Refer to <a href="https://github.com/Chlumsky/msdf-atlas-gen/">Chlumsky's code</a>.</li>
+<li><strong><code>monoglyph</code></strong>: Fast but very low quality and still experimental (may not work on Linux for now). See <a href="https://github.com/glumpy/glumpy/blob/master/glumpy/app/console.py#L12">glumpy's example</a>.</li>
+<li><strong><code>font</code></strong>: High quality but slow and does not support scaling. Renders on the CPU with freetype.</li>
+<li><strong><code>vectorglyph</code></strong>: Potentially the most promising option, though not yet implemented! Refer to <a href="https://github.com/GreenLightning/gpu-font-rendering">GreenLightning's code</a>.</li>
+</ul>
+<p>Datoviz currently includes the Roboto font and supports loading TTF/OTF fonts directly via freetype, which is a library dependency. Additional fonts may be integrated into Datoviz in the near future.</p>
+<p>Additionally, we are exploring basic standalone LaTeX rendering in Datoviz, potentially using a micro LaTeX renderer such as <a href="https://github.com/NanoMichael/MicroTeX">MicroTeX</a>. This approach would not require a LaTeX distribution on the client side and would be particularly useful for rendering mathematical equations.
+This could work via bundling of the <a href="https://ctan.org/pkg/newcomputermodern?lang=en">New Computer Modern</a> font (<code>NewCMMath-Regular.otf</code>).</p>
+<h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h3>
+<p>We use the following terminology:</p>
+<ul>
+<li><strong>item</strong>: A single visual element, such as a particular point, marker, or a single image within an <code>image</code> visual. Each visual represents a collection of elements, so an <code>image</code> visual may represent one or multiple images.</li>
+<li><strong>group</strong>: A consecutive sequence of items that share common properties. This concept is mostly used in the <code>path</code> visual, where a group refers to an entire path, while an item refers to a point within that path. Thus, a <code>path</code> visual contains a set of points (items) organized into one or multiple disjoint paths (groups).</li>
+<li><strong>vertex</strong>: A 3D point sent to the GPU, which is managed transparently by Datoviz. For example, a single image is represented by two triangles and six vertices. Datoviz automatically handles the triangulation, so you typically don't need to concern yourself with vertices.</li>
+<li><strong>index</strong>: In the mesh visual, an index refers to the set of vertices. A mesh is primarily defined by (1) a set of 3D points (vertices), and (2) a set of index triplets (three indices) that define a triangular face.</li>
+</ul>
+<p>A visual represents a collection of <code>n</code> items, indexed from <code>0</code> to <code>n-1</code>.</p>
+<h3 id="python-ctypes-bindings">Python ctypes bindings<a class="headerlink" href="#python-ctypes-bindings" title="Permanent link">&para;</a></h3>
+<p>C visual data functions expect pointers to arrays of a specific type, such as an array of <code>vec3</code> (three <code>float32</code> values) for positions, or an array of <code>cvec4</code> (four <code>char</code>, representing RGBA <code>uint8</code> unsigned bytes) for colors.</p>
+<p>Python ctypes bindings are auto-generated and expect a NumPy array when a C visual data function expects a pointer to an array of values. Currently, the ctypes bindings check the <code>dtype</code>, shape, and C-contiguity of the provided arrays.</p>
+<h3 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h3>
+<p>The <code>position</code> property specifies the 3D coordinates of visual points. Some visuals require the point positions in a specific format. For instance, segment positions are defined by the 3D coordinates of the start and end points of each segment. Image positions are currently defined by the 2D coordinates of the top left and bottom right corners, though this may change based on user feedback.</p>
+<p>To set the positions of a visual, for example the <code>point</code> visual, use this:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Define a (N, 3) NumPy array of float32 values (one row = one point).</span>
+<span class="c1"># Note that the C function dvz_point_position() expects a vec3 array.</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="c1"># Set the positions of `n` items starting with item #0.</span>
+<span class="c1"># The last argument represents the optional data transfer flags (typically 0).</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">point_position</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+The coordinate system is defined as follows:</p>
+<ul>
+<li><strong>x</strong>: left to right <code>[-1, +1]</code></li>
+<li><strong>y</strong>: bottom to top <code>[-1, +1]</code></li>
+<li><strong>z</strong>: front to back <code>[-1, +1]</code></li>
+</ul>
+<p>Positions must be provided in a normalized coordinate system, known as normalized device coordinates (NDC) in computer graphics terminology. Since your data is typically not in this range, you'll need to manually normalize it to the <code>[-1, +1]</code> interval before passing it to Datoviz.</p>
+<p>Datoviz v0.2 does not yet include built-in axes or data normalization features, but these will be introduced in v0.3.</p>
+<h3 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h3>
+<p>Colors are passed as RGBA values, each represented by four <code>uint8</code> values. Use opacity values less than 255 in the last component (the alpha channel, <code>a</code>) to create transparent elements.</p>
+<h3 id="textures">Textures<a class="headerlink" href="#textures" title="Permanent link">&para;</a></h3>
+<p>Textures are used in the <code>image</code> (2D textures), <code>mesh</code> (2D textures), and <code>volume</code> (3D textures) visuals. Refer to the examples for more details.</p>
+<p>For example, here’s how to create a 2D texture and apply it to an <code>image</code> visual:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Assuming rgba is a 3D NumPy array (height, width, 4).</span>
+<span class="c1"># NOTE: the dtype of the NumPy array should match the Vulkan format below.</span>
+<span class="c1"># NOTE: Datoviz expects row-major order for arrays (C order)</span>
+<span class="c1"># TODO: write a NumPy-Vulkan/Datoviz format correspondance table in the documentation.</span>
+<span class="c1"># TODO: write a utility function automatically mapping NumPy dtypes to Vulkan/Datoviz formats.</span>
+<span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">rgba</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Texture parameters.</span>
+<span class="nb">format</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">FORMAT_R8G8B8A8_UNORM</span>  <span class="c1"># This Vulkan format corresponds to 4*uint8 values.</span>
+<span class="n">address_mode</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">SAMPLER_ADDRESS_MODE_CLAMP_TO_BORDER</span>  <span class="c1"># Texture address mode.</span>
+<span class="nb">filter</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">FILTER_LINEAR</span>  <span class="c1"># Linear filtering, use dvz.FILTER_NEAREST to disable.</span>
+
+<span class="c1"># Create a texture out of a RGB image.</span>
+<span class="c1"># NOTE: since dvz_tex_image() accepts any type of pointer, we need to manually convert the NumPy</span>
+<span class="c1"># array to a void* pointer. This is done with the `A_()` function (`from datoviz import A_`).</span>
+<span class="n">tex</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">tex_image</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">A_</span><span class="p">(</span><span class="n">rgb</span><span class="p">))</span>
+
+<span class="c1"># Finally, we assign this texture to the image visual.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">image_texture</span><span class="p">(</span><span class="n">visual</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">address_mode</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="data-sharing">Data sharing<a class="headerlink" href="#data-sharing" title="Permanent link">&para;</a></h3>
+<p>Since textures are decoupled from visuals, they can be easily shared across different visuals.</p>
+<p>However, it is not yet straightforward to share other types of data between visuals. While the underlying architecture is designed to support this, the user-facing API does not currently offer this capability.</p>
+<h3 id="dynamic-data-updates">Dynamic data updates<a class="headerlink" href="#dynamic-data-updates" title="Permanent link">&para;</a></h3>
+<p>You can modify the data of a visual dynamically while the event loop is running, such as in an event callback.
+After updating a visual, the function <code>dvz.visual_update(visual)</code> is automatically called internally to trigger the data updates on the GPU, so you should not need to call it manually in most cases.</p>
+<h3 id="shapes">Shapes<a class="headerlink" href="#shapes" title="Permanent link">&para;</a></h3>
+<p>The <code>mesh</code> visual can be directly used with properties such as vertices, indices, colors, normals, and texture coordinates. Alternatively, you can use the <code>Shape</code> structure, which encapsulates these arrays. Shapes can be created using functions for predefined forms, along with affine transforms, merging, and other operations.</p>
+<h2 id="interactivity">Interactivity<a class="headerlink" href="#interactivity" title="Permanent link">&para;</a></h2>
+<p>Two types of interactivity patterns are currently supported:</p>
+<ul>
+<li><strong>Panzoom</strong> (2D): Pan with left mouse drag, zoom with right mouse drag.</li>
+<li><strong>Arcball</strong> (3D): Rotate with left mouse drag.</li>
+</ul>
+<p>Additional interactivity patterns will be implemented in the future.</p>
+<p>To define the interactivity pattern in a panel:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pz</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_panzoom</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">arcball</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_arcball</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+</code></pre></div>
+<p>Refer to the <a href="../api/">C API reference</a> for functions you can use to manually control the panzoom or arcball. After updating these interactivity objects, you need to update the panel to apply your changes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dvz</span><span class="o">.</span><span class="n">panel_update</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="event-callbacks">Event callbacks<a class="headerlink" href="#event-callbacks" title="Permanent link">&para;</a></h2>
+<p>You can define custom event callbacks to respond to mouse and keyboard interactions, as well as set up timers.</p>
+<h3 id="mouse">Mouse<a class="headerlink" href="#mouse" title="Permanent link">&para;</a></h3>
+<p>Define a mouse callback as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@dvz</span><span class="o">.</span><span class="n">mouse</span>
+<span class="k">def</span> <span class="nf">on_mouse</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">window_id</span><span class="p">,</span> <span class="n">ev</span><span class="p">):</span>
+    <span class="c1"># Access the mouse event structure.</span>
+    <span class="c1"># Mouse position.</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">pos</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Position </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Detect mouse event type.</span>
+    <span class="k">if</span> <span class="n">ev</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">dvz</span><span class="o">.</span><span class="n">MOUSE_EVENT_CLICK</span><span class="p">:</span>
+        <span class="c1"># Identify mouse click button.</span>
+        <span class="n">button</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">button</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Clicked with button </span><span class="si">{</span><span class="n">button</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The mouse event types are:</p>
+<div class="highlight"><pre><span></span><code>MOUSE_EVENT_RELEASE             b       DvzMouseButtonEvent
+MOUSE_EVENT_PRESS               b       DvzMouseButtonEvent
+MOUSE_EVENT_MOVE
+MOUSE_EVENT_CLICK               c       DvzMouseClickEvent
+MOUSE_EVENT_DOUBLE_CLICK        c       DvzMouseClickEvent
+MOUSE_EVENT_DRAG_START          d       DvzMouseDragEvent
+MOUSE_EVENT_DRAG                d       DvzMouseDragEvent
+MOUSE_EVENT_DRAG_STOP           d       DvzMouseDragEvent
+MOUSE_EVENT_WHEEL               w       DvzMouseWheelEvent
+</code></pre></div>
+<p>Use the corresponding letter after <code>ev.content.</code>, such as <code>ev.content.b</code> for a <code>DvzMouseButtonEvent</code> structure. Refer to the <a href="../api/">C API reference</a> for more details about the fields in these structures.</p>
+<p>The mouse buttons are:</p>
+<div class="highlight"><pre><span></span><code>MOUSE_BUTTON_LEFT = 1
+MOUSE_BUTTON_MIDDLE = 2
+MOUSE_BUTTON_RIGHT = 3
+</code></pre></div>
+<p>Datoviz currently does not provide built-in picking functionality. The only information available in mouse event callbacks is the pixel coordinates of the mouse cursor.</p>
+<h3 id="keyboard">Keyboard<a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h3>
+<p>Define a keyboard callback as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Keyboard event callback function.</span>
+<span class="nd">@dvz</span><span class="o">.</span><span class="n">keyboard</span>
+<span class="k">def</span> <span class="nf">on_keyboard</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">window_id</span><span class="p">,</span> <span class="n">ev</span><span class="p">):</span>
+
+    <span class="c1"># Get the key code (refer to the C API reference).</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">key</span>
+
+    <span class="c1"># Determine modifier flags.</span>
+    <span class="n">mods</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;shift&#39;</span><span class="p">:</span> <span class="n">ev</span><span class="o">.</span><span class="n">mods</span> <span class="o">&amp;</span> <span class="n">dvz</span><span class="o">.</span><span class="n">KEY_MODIFIER_SHIFT</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;control&#39;</span><span class="p">:</span> <span class="n">ev</span><span class="o">.</span><span class="n">mods</span> <span class="o">&amp;</span> <span class="n">dvz</span><span class="o">.</span><span class="n">KEY_MODIFIER_CONTROL</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;alt&#39;</span><span class="p">:</span> <span class="n">ev</span><span class="o">.</span><span class="n">mods</span> <span class="o">&amp;</span> <span class="n">dvz</span><span class="o">.</span><span class="n">KEY_MODIFIER_ALT</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;sup&#39;</span><span class="p">:</span> <span class="n">ev</span><span class="o">.</span><span class="n">mods</span> <span class="o">&amp;</span> <span class="n">dvz</span><span class="o">.</span><span class="n">KEY_MODIFIER_SUPER</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">mods</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">mods</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">val</span><span class="p">)</span>
+
+    <span class="c1"># Identify the keyboard event type (PRESS, RELEASE, REPEAT).</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">dvz</span><span class="o">.</span><span class="n">KEYBOARD_EVENT_PRESS</span><span class="p">:</span> <span class="s1">&#39;press&#39;</span><span class="p">,</span>
+        <span class="n">dvz</span><span class="o">.</span><span class="n">KEYBOARD_EVENT_REPEAT</span><span class="p">:</span> <span class="s1">&#39;repeat&#39;</span><span class="p">,</span>
+        <span class="n">dvz</span><span class="o">.</span><span class="n">KEYBOARD_EVENT_RELEASE</span><span class="p">:</span> <span class="s1">&#39;release&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">mods</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Register the keyboard callback function.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_onkeyboard</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">on_keyboard</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="timer">Timer<a class="headerlink" href="#timer" title="Permanent link">&para;</a></h3>
+<p>Define a timer as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Timer callback.</span>
+<span class="nd">@dvz</span><span class="o">.</span><span class="n">timer</span>
+<span class="k">def</span> <span class="nf">on_timer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">window_id</span><span class="p">,</span> <span class="n">ev</span><span class="p">):</span>
+    <span class="c1"># Use the timer index for identifying multiple timers.</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">timer_idx</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">step_idx</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">time</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">: timer #</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">, step </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set the timer frequency.</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># Define a timer with this frequency, starting after 0.5 seconds, stopping after 50 ticks.</span>
+<span class="c1"># Use 0 as the last argument for an infinite timer.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_timer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">frequency</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Register the timer callback.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_ontimer</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">on_timer</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="manual-3d-camera-control">Manual 3D camera control<a class="headerlink" href="#manual-3d-camera-control" title="Permanent link">&para;</a></h3>
+<p>By default, a panel is 2D. To define a 3D panel, you can either use an arcball (see above) or a generic 3D perspective camera. Here's how to define a 3D perspective camera:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">vec3</span>
+
+<span class="c1"># Define a 3D perspective camera.</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">panel_camera</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+<span class="c1"># Set the camera position.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">camera_position</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+
+<span class="c1"># Set the position of the point the camera is looking at.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">camera_lookat</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span><span class="p">))</span>
+</code></pre></div>
+<p>You can implement custom 3D camera control by calling these functions within mouse and keyboard callbacks. After these camera functions are called, it is crucial to apply the changes to the panel:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dvz</span><span class="o">.</span><span class="n">panel_update</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="graphical-user-interfaces">Graphical User Interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Permanent link">&para;</a></h2>
+<p>Datoviz includes basic GUI capabilities via the Dear ImGui C++ library. A future version of Datoviz may allow more direct use of Dear ImGui functionalities beyond the current wrappers.</p>
+<p>To display a GUI dialog, follow these steps:</p>
+<ol>
+<li>Use the <code>dvz.CANVAS_FLAGS_IMGUI</code> flag when creating a figure (last argument of <code>dvz.figure()</code>).</li>
+<li>Define a GUI callback function.</li>
+<li>Register the GUI callback function.</li>
+</ol>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">vec2</span><span class="p">,</span> <span class="n">S_</span>
+
+<span class="nd">@dvz</span><span class="o">.</span><span class="n">gui</span>
+<span class="k">def</span> <span class="nf">on_gui</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">ev</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;GUI callback function.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Set the size of the next GUI dialog.</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_size</span><span class="p">(</span><span class="n">vec2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+    <span class="c1"># Start a GUI dialog with a title.</span>
+    <span class="c1"># Use `S_()` to pass a Python string to a C function expecting a const char*.</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_begin</span><span class="p">(</span><span class="n">S_</span><span class="p">(</span><span class="s2">&quot;My GUI dialog&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Display a button.</span>
+    <span class="n">clicked</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_button</span><span class="p">(</span><span class="n">S_</span><span class="p">(</span><span class="s2">&quot;Click me&quot;</span><span class="p">),</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">clicked</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clicked!&quot;</span><span class="p">)</span>
+
+    <span class="c1"># End the GUI dialog.</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_end</span><span class="p">()</span>
+
+<span class="c1"># Associate a GUI callback function with a figure.</span>
+<span class="n">dvz</span><span class="o">.</span><span class="n">app_gui</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">dvz</span><span class="o">.</span><span class="n">figure_id</span><span class="p">(</span><span class="n">figure</span><span class="p">),</span> <span class="n">on_gui</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<p>The GUI callback function is called on every frame. To avoid blocking the main event loop, ensure there is no long-lasting computation within it. Dear ImGui recreates the entire GUI at each frame (immediate mode rendering). GUI widget functions like <code>dvz.gui_button()</code> typically return a boolean indicating whether the widget's state has changed.</p>
+<h2 id="using-datoviz-in-a-cc-application">Using Datoviz in a C/C++ application<a class="headerlink" href="#using-datoviz-in-a-cc-application" title="Permanent link">&para;</a></h2>
+<p>This section provides general instructions for C/C++ developers who want to use Datoviz in their library or application.</p>
+<h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h3>
+<p><em>Note</em>: to be completed.</p>
+<p>Install the <code>.deb</code> package and look at the <code>.c</code> examples in <code>examples/</code>.</p>
+<h3 id="macos-arm64">macOS (arm64)<a class="headerlink" href="#macos-arm64" title="Permanent link">&para;</a></h3>
+<p>Looking at the <code>justfile</code> (<code>pkg</code> and <code>testpkg</code> commands) may be helpful.
+To build an application using Datoviz:</p>
+<ol>
+<li>You need to link your application to <code>libdatoviz.dylib</code>, that you can build yourself or find in the provided <code>.pkg</code> installation file.</li>
+<li>You also need to link to the non-system dependencies of Datoviz, for now they are <code>libvulkan</code>, <code>libshaderc_shared</code>, <code>libMoltenVK</code> ("emulating" Vulkan on top of Apple Metal), <code>libpng</code> and <code>freetype</code>. You can see the dependencies with <code>just deps</code> (which uses <code>otool</code> on <code>libdatoviz.dylib</code>). You'll find these dependencies in <code>libs/vulkan/macos</code> in the GitHub repository.</li>
+<li>You should bundle these <code>dylib</code> dependencies alongside your application, and that will depend on how your application is built and distributed.</li>
+<li>Note that the <code>just pkg</code> script modifies the rpath of <code>libdatoviz.dylib</code> with <a href="https://www.unix.com/man-page/osx/1/install_name_tool/"><code>install_name_tool</code></a> before building the <code>.pkg</code> package to declare that its dependencies are to be found in the same directory.</li>
+<li>Another thing to keep in mind is that, for now, the <code>VK_DRIVER_FILES</code> environment variable needs to be set to the absolute path to <code>libs/vulkan/macos/MoltenVK_icd.json</code> (available in this GitHub repository). The <code>.pkg</code> package installs it to <code>/usr/local/lib/datoviz/MoltenVK_icd.json</code>. Right now, <code>datoviz.h</code> automatically sets this environment variable if it's included in the source file implementing your <code>main()</code> entry-point. These complications are necessary to avoid requiring the end-users to install the Vulkan SDK manually.</li>
+</ol>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>To be completed.</p>
+<h3 id="technical-notes-for-cc-developers">Technical notes for C/C++ developers<a class="headerlink" href="#technical-notes-for-cc-developers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>🧠 Memory management.</strong> Datoviz uses opaque pointers and manages its own memory. Porting the relatively light high-level code of Datoviz (scene API) to a more modern and safer language may be considered in the future.</li>
+<li><strong>💻 C/C++ usage.</strong> Datoviz employs a restricted and straightforward usage of C, with very limited C++ functionality (mostly common dynamic data structures, in ~10% of the code).</li>
+<li><strong>📂 Data copies.</strong> When passing data to visuals, data is copied by default to Datoviz for memory safety reasons. This might impact performance and memory usage when handling large datasets (tens of millions of points). We will soon document how to avoid these extra copies and prevent crashes related to Datoviz accessing deallocated memory.</li>
+<li><strong>🏗️ Modular architecture.</strong> Datoviz v0.2+ features a modular architecture where the low-level Vulkan-specific rendering engine is decoupled from the higher-level visual and interactive logic. A private asynchronous message-based protocol is used internally, enabling a future Javascript/WebAssembly/WebGPU port of Datoviz, which we plan to work on in the coming years.</li>
+<li><strong>👥 Contributing.</strong> This modular architecture allows C/C++ contributors without GPU knowledge to propose improvements and new functionality in the higher-level parts.</li>
+<li><strong>🔗 Bindings.</strong> While we provide raw ctypes bindings in Python to the Datoviz C API, our goal is to implement as much functionality in C/C++ to offer the same functionality to other languages that may provide Datoviz bindings in the future (Julia, Rust, R, MATLAB...).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.tabs.link", "navigation.footer", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
