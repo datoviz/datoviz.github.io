@@ -2,314 +2,330 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://datoviz.org/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/quickstart/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/_old/api/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/_old/colormaps/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/_old/drp/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/_old/userguide/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/discussions/ARCHITECTURE/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/discussions/BUILD/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/discussions/CONTRIBUTING/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/discussions/LICENSE/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/discussions/MAINTAINERS/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/anchor/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/arcball/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/axes/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/gallery/features/basic_shape/</loc>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/basic_topology/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/camera/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/fixed/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/gui/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/gui_panel/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/hide/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/keyboard/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/light/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/marker_mode/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/mesh_light/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/gallery/features/mesh_transparent/</loc>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/mouse/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/obj/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/offscreen/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/panel/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/polygon/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/segment_cap/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/shapes/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/surface/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/tile/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/timestamps/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/features/video/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/showcase/brain_field/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/gallery/showcase/choropleth/</loc>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/showcase/lidar/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/showcase/molecule/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/showcase/mouse_brain/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/showcase/raster/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/basic/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/glyph/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/image/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/marker/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/mesh/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/path/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/pixel/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/point/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/segment/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/sphere/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/gallery/visuals/volume/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/gallery/visuals/wiggle/</loc>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/c/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/common/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/drp/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/events/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/gui/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/input/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/interactivity/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/shape/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/texture/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/guide/visuals/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/reference/api_c/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/reference/api_py/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/reference/colormaps/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/basic/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/glyph/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/image/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/marker/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/mesh/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/path/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/pixel/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/point/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/segment/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/slice/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/sphere/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/visuals/volume/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-30</lastmod>
     </url>
 </urlset>

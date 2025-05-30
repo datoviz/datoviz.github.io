@@ -12,23 +12,21 @@
         <meta name="author" content="Cyrille Rossant">
       
       
-        <link rel="canonical" href="https://datoviz.org/">
+        <link rel="canonical" href="https://datoviz.org/gallery/visuals/wiggle/">
       
       
       
-        <link rel="next" href="guide/">
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Datoviz Documentation</title>
+        <title>Wiggle visual - Datoviz Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -47,11 +45,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datoviz-high-performance-rendering-for-scientific-data-visualization" class="md-skip">
+        <a href="#wiggle-visual" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +84,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Datoviz Documentation" class="md-header__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
+    <a href="../../.." title="Datoviz Documentation" class="md-header__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
       
-  <img src="images/logow.png" alt="logo">
+  <img src="../../../images/logow.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Wiggle visual
             
           </span>
         </div>
@@ -184,11 +182,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -209,7 +205,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="guide/" class="md-tabs__link">
+        <a href="../../../guide/" class="md-tabs__link">
           
   
   
@@ -229,7 +225,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="guide/shape/" class="md-tabs__link">
+        <a href="../../../guide/shape/" class="md-tabs__link">
           
   
   
@@ -249,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="gallery/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -269,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/api_py/" class="md-tabs__link">
+        <a href="../../../reference/api_py/" class="md-tabs__link">
           
   
   
@@ -289,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="discussions/ARCHITECTURE/" class="md-tabs__link">
+        <a href="../../../discussions/ARCHITECTURE/" class="md-tabs__link">
           
   
   
@@ -329,9 +325,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
+    <a href="../../.." title="Datoviz Documentation" class="md-nav__button md-logo" aria-label="Datoviz Documentation" data-md-component="logo">
       
-  <img src="images/logow.png" alt="logo">
+  <img src="../../../images/logow.png" alt="logo">
 
     </a>
     Datoviz Documentation
@@ -355,32 +351,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -391,71 +365,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#current-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✨ Current features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 API philosophy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get started
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -510,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/" class="md-nav__link">
+      <a href="../../../guide/" class="md-nav__link">
         
   
   
@@ -533,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quickstart/" class="md-nav__link">
+      <a href="../../../quickstart/" class="md-nav__link">
         
   
   
@@ -556,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/common/" class="md-nav__link">
+      <a href="../../../guide/common/" class="md-nav__link">
         
   
   
@@ -622,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/visuals/" class="md-nav__link">
+      <a href="../../../guide/visuals/" class="md-nav__link">
         
   
   
@@ -645,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/basic/" class="md-nav__link">
+      <a href="../../../visuals/basic/" class="md-nav__link">
         
   
   
@@ -668,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/pixel/" class="md-nav__link">
+      <a href="../../../visuals/pixel/" class="md-nav__link">
         
   
   
@@ -691,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/point/" class="md-nav__link">
+      <a href="../../../visuals/point/" class="md-nav__link">
         
   
   
@@ -714,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/marker/" class="md-nav__link">
+      <a href="../../../visuals/marker/" class="md-nav__link">
         
   
   
@@ -737,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/segment/" class="md-nav__link">
+      <a href="../../../visuals/segment/" class="md-nav__link">
         
   
   
@@ -760,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/path/" class="md-nav__link">
+      <a href="../../../visuals/path/" class="md-nav__link">
         
   
   
@@ -783,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/image/" class="md-nav__link">
+      <a href="../../../visuals/image/" class="md-nav__link">
         
   
   
@@ -806,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/glyph/" class="md-nav__link">
+      <a href="../../../visuals/glyph/" class="md-nav__link">
         
   
   
@@ -829,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/mesh/" class="md-nav__link">
+      <a href="../../../visuals/mesh/" class="md-nav__link">
         
   
   
@@ -852,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/sphere/" class="md-nav__link">
+      <a href="../../../visuals/sphere/" class="md-nav__link">
         
   
   
@@ -875,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/volume/" class="md-nav__link">
+      <a href="../../../visuals/volume/" class="md-nav__link">
         
   
   
@@ -898,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visuals/slice/" class="md-nav__link">
+      <a href="../../../visuals/slice/" class="md-nav__link">
         
   
   
@@ -929,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/texture/" class="md-nav__link">
+      <a href="../../../guide/texture/" class="md-nav__link">
         
   
   
@@ -952,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/interactivity/" class="md-nav__link">
+      <a href="../../../guide/interactivity/" class="md-nav__link">
         
   
   
@@ -1025,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/shape/" class="md-nav__link">
+      <a href="../../../guide/shape/" class="md-nav__link">
         
   
   
@@ -1048,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/input/" class="md-nav__link">
+      <a href="../../../guide/input/" class="md-nav__link">
         
   
   
@@ -1071,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/events/" class="md-nav__link">
+      <a href="../../../guide/events/" class="md-nav__link">
         
   
   
@@ -1094,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/gui/" class="md-nav__link">
+      <a href="../../../guide/gui/" class="md-nav__link">
         
   
   
@@ -1117,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/c/" class="md-nav__link">
+      <a href="../../../guide/c/" class="md-nav__link">
         
   
   
@@ -1140,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guide/drp/" class="md-nav__link">
+      <a href="../../../guide/drp/" class="md-nav__link">
         
   
   
@@ -1213,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gallery/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -1286,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api_py/" class="md-nav__link">
+      <a href="../../../reference/api_py/" class="md-nav__link">
         
   
   
@@ -1309,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api_c/" class="md-nav__link">
+      <a href="../../../reference/api_c/" class="md-nav__link">
         
   
   
@@ -1332,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/colormaps/" class="md-nav__link">
+      <a href="../../../reference/colormaps/" class="md-nav__link">
         
   
   
@@ -1405,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="discussions/ARCHITECTURE/" class="md-nav__link">
+      <a href="../../../discussions/ARCHITECTURE/" class="md-nav__link">
         
   
   
@@ -1428,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="discussions/BUILD/" class="md-nav__link">
+      <a href="../../../discussions/BUILD/" class="md-nav__link">
         
   
   
@@ -1451,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="discussions/CONTRIBUTING/" class="md-nav__link">
+      <a href="../../../discussions/CONTRIBUTING/" class="md-nav__link">
         
   
   
@@ -1474,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="discussions/MAINTAINERS/" class="md-nav__link">
+      <a href="../../../discussions/MAINTAINERS/" class="md-nav__link">
         
   
   
@@ -1497,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="discussions/LICENSE/" class="md-nav__link">
+      <a href="../../../discussions/LICENSE/" class="md-nav__link">
         
   
   
@@ -1540,59 +1449,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#current-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✨ Current features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 API philosophy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get started
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1610,57 +1466,85 @@
   
 
 
-<h1 id="datoviz-high-performance-rendering-for-scientific-data-visualization">Datoviz: high-performance rendering for scientific data visualization<a class="headerlink" href="#datoviz-high-performance-rendering-for-scientific-data-visualization" title="Permanent link">&para;</a></h1>
-<!-- INTRODUCTION -->
+<h1 id="wiggle-visual">Wiggle visual<a class="headerlink" href="#wiggle-visual" title="Permanent link">&para;</a></h1>
+<p>Show the wiggle visual.</p>
+<p><strong>Tags</strong>: wiggle, panzoom, texture</p>
+<p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/visuals/wiggle.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<p><strong>⚡️ Datoviz</strong> is an open-source, cross-platform, <strong>high-performance rendering library for scientific data visualization</strong>.</p>
-<p>It delivers fast, <strong>high-quality GPU rendering</strong> of 2D and 3D graphical primitives—markers, paths, images, text, meshes, volumes, and more—that scale to millions of elements. Datoviz also supports <strong>graphical user interfaces (GUIs)</strong> for interactive visualization.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/hero.jpg" /></p>
-<p>Built from the ground up with performance in mind, Datoviz is written primarily in <strong>C</strong> and <strong>C++</strong>, leveraging the <a href="https://www.vulkan.org/"><strong>Khronos Vulkan graphics API</strong></a>. It offers a C API, low-level Python bindings via <code>ctypes</code>, and a higher-level, idiomatic <strong>Python API 🐍</strong>.</p>
-<p>Written by one of the original creators of <a href="https://vispy.org">VisPy</a>, a GPU-based Python scientific visualization library, Datoviz aims to serve as the default backend for the upcoming <strong>VisPy 2.0</strong>.</p>
-<p>The library is lightweight with minimal dependencies: mostly Vulkan, <a href="https://www.glfw.org/"><strong>GLFW</strong></a> for windowing, and <a href="https://github.com/ocornut/imgui/">Dear ImGui</a> for GUIs.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Datoviz is a young library. The API is stabilizing, but breaking changes may still occur as the project evolves with broader usage.</p>
-</div>
-<!-- FEATURES -->
+<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
 
-<h2 id="current-features">✨ Current features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>📊 2D visuals</strong>: antialiased points, markers, line segments, paths, text, images</li>
-<li><strong>📈 2D axes</strong></li>
-<li><strong>🌐 3D visuals</strong>: meshes, volumes, volume slices</li>
-<li><strong>🌈 150 colormaps</strong> included (from matplotlib, colorcet, MATLAB)</li>
-<li><strong>🖱️ High-level interactivity</strong>: pan &amp; zoom for 2D, arcball for 3D (more later)</li>
-<li><strong>🎥 Manual control of cameras</strong>: custom interactivity</li>
-<li><strong>𓈈 Figure subplots</strong> (aka "panels")</li>
-<li><strong>🖥️ GUIs</strong> using <a href="https://github.com/ocornut/imgui/">Dear ImGui</a></li>
-</ul>
-<!-- API PHILOSOPHY -->
 
-<h2 id="api-philosophy">🧩 API philosophy<a class="headerlink" href="#api-philosophy" title="Permanent link">&para;</a></h2>
-<p>Datoviz does <strong>not</strong> use high-level plotting functions like <code>plot()</code>, <code>scatter()</code>, or <code>imshow()</code>. Instead, it exposes flexible visual primitives—markers, images, meshes, and more—that can be added to a scene and customized directly with data. This approach offers fine-grained control and high performance, while remaining concise enough for quick plots.</p>
-<p>A <a href="https://github.com/vispy/vispy/discussions/2661">higher-level plotting interface is under development as part of <strong>VisPy 2.0</strong></a>, which will use Datoviz as its rendering backend. An intermediate layer called <strong>GSP</strong> (Graphics Specification Protocol) will provide a backend-agnostic API for declarative plotting.</p>
-<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
-<ul>
-<li>👉 <strong><a href="quickstart/">Quickstart guide</a></strong> — create your first scatter plot in a few lines of code</li>
-<li>📚 <strong><a href="guide/">Learn</a></strong> — deep dive into visuals, layout, interactivity, and more</li>
-<li>🖼️ <strong><a href="gallery/">Gallery</a></strong> — curated examples of what Datoviz can render</li>
-<li>🧩 <strong><a href="reference/api_py/">API Reference</a></strong> — full Python and C documentation</li>
-</ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>Datoviz runs out of the box on all major platforms:</p>
-<ul>
-<li>✅ <strong>Windows</strong>, <strong>macOS</strong> (Intel and Apple Silicon), and <strong>Linux</strong></li>
-<li>✅ Prebuilt wheels for 64-bit architectures (x86_64 and arm64)</li>
-<li>✅ No system dependencies — just install and run</li>
-</ul>
-<p>Install the Python package via pip:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>datoviz
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">samples</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a texture with the given number of channels and samples.&quot;&quot;&quot;</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="n">channels</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">8</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="mf">0.5</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sinc</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">channels</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">c0</span><span class="p">)</span> <span class="o">/</span> <span class="n">c0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">texdata</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">texdata</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">channels</span><span class="p">,</span> <span class="n">samples</span><span class="p">))</span>
+
+
+<span class="n">channels</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="mi">1024</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+<span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">anchor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">texcoords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+<span class="n">figure</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">panel</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
+<span class="n">panzoom</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">panzoom</span><span class="p">()</span>
+
+<span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">wiggle</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">negative_color</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+    <span class="n">positive_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">texture_2D</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">set_texture</span><span class="p">(</span><span class="n">texture</span><span class="p">)</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
+
+
+<span class="n">scale</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">Out</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_gui</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_pos</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_size</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">70</span><span class="p">))</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_begin</span><span class="p">(</span><span class="s1">&#39;Change the scale&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">has_changed</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider</span><span class="p">(</span><span class="s1">&#39;scale&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+    <span class="n">dvz</span><span class="o">.</span><span class="n">gui_end</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">has_changed</span><span class="p">:</span>
+        <span class="n">visual</span><span class="o">.</span><span class="n">set_scale</span><span class="p">(</span><span class="n">scale</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
 </code></pre></div>
-<p>To use the C library directly, see the <a href="discussions/BUILD/">build instructions</a>.</p>
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>Datoviz is open source and licensed under the <a href="discussions/LICENSE/">MIT License</a>.</p>
+</div>
+</div>
+</div>
+<p><a href="../../#visuals">← Back to gallery</a></p>
 
 
 
@@ -1694,28 +1578,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-        
-          
-          <a href="guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Overview
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1741,10 +1603,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.tabs.link", "navigation.footer", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.footer", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
