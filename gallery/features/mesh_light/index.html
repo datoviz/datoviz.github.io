@@ -22,7 +22,7 @@
     
     
       
-        <title>Mesh light example - Datoviz Documentation</title>
+        <title>Advanced mesh lights - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mesh-light-example" class="md-skip">
+        <a href="#advanced-mesh-lights" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mesh light example
+              Advanced mesh lights
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,15 +1489,15 @@
   
 
 
-<h1 id="mesh-light-example">Mesh light example<a class="headerlink" href="#mesh-light-example" title="Permanent link">&para;</a></h1>
+<h1 id="advanced-mesh-lights">Advanced mesh lights<a class="headerlink" href="#advanced-mesh-lights" title="Permanent link">&para;</a></h1>
 <p>Show how to manipulate advanced mesh lights.</p>
 <p><strong>Tags</strong>: mesh, light</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/features/mesh_light.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
-<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">Out</span><span class="p">,</span> <span class="n">vec3</span><span class="p">,</span> <span class="n">vec4</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="kn">import</span> <span class="n">Out</span><span class="p">,</span> <span class="n">vec3</span><span class="p">,</span> <span class="n">vec4</span>
 
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;mesh/bunny.obj&#39;</span><span class="p">)</span>
 
@@ -1492,15 +1515,14 @@
     <span class="n">vec4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>  <span class="c1"># Green</span>
 <span class="p">)</span>
 
-<span class="n">material</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">vec3</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>  <span class="c1"># Ambient   R, G, B</span>
-    <span class="n">vec3</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>  <span class="c1"># Diffuse   R, G, B</span>
-    <span class="n">vec3</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>  <span class="c1"># Specular  R, G, B</span>
-    <span class="n">vec3</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>  <span class="c1"># Emission  R, G, B</span>
+<span class="n">material</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">ambient_params</span><span class="o">=</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>  <span class="c1"># R, G, B levels</span>
+    <span class="n">diffuse_params</span><span class="o">=</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">),</span>
+    <span class="n">specular_params</span><span class="o">=</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">),</span>
+    <span class="n">emission_params</span><span class="o">=</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="n">shine</span><span class="o">=</span><span class="n">Out</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+    <span class="n">emit</span><span class="o">=</span><span class="n">Out</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span>
 <span class="p">)</span>
-
-<span class="n">shine</span> <span class="o">=</span> <span class="n">Out</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
-<span class="n">emit</span> <span class="o">=</span> <span class="n">Out</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
 
 
 <span class="n">sc</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">ShapeCollection</span><span class="p">()</span>
@@ -1508,30 +1530,31 @@
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 <span class="c1"># NOTE: at the moment, you must indicate gui=True if you intend to use a GUI in a figure</span>
-<span class="n">figure</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">figure</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># Create two panels side-by-side.</span>
 <span class="n">panel</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Offset the panel to the right so that is not over the controls.</span>
-<span class="c1"># panel.margins(0, 0, 0, 400)</span>
 
 <span class="n">arcball</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">arcball</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">camera</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">initial_lookat</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
 <span class="n">panel</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
 
 
 <span class="c1"># GUI callback</span>
-<span class="k">def</span> <span class="nf">update_params</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_params</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">light_color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">set_light_color</span><span class="p">(</span>
             <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)),</span> <span class="n">i</span>
         <span class="p">)</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">set_light_pos</span><span class="p">(</span><span class="n">light_pos</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">visual</span><span class="o">.</span><span class="n">set_material_params</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>  <span class="c1"># for ambient, specular, diffuse, and emission.</span>
-    <span class="n">visual</span><span class="o">.</span><span class="n">set_shine</span><span class="p">(</span><span class="n">shine</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-    <span class="n">visual</span><span class="o">.</span><span class="n">set_emit</span><span class="p">(</span><span class="n">emit</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_ambient_params</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;ambient_params&#39;</span><span class="p">])</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_diffuse_params</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;diffuse_params&#39;</span><span class="p">])</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_specular_params</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;specular_params&#39;</span><span class="p">])</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_emission_params</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;emission_params&#39;</span><span class="p">])</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_shine</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;shine&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">visual</span><span class="o">.</span><span class="n">set_emit</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="s1">&#39;emit&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
     <span class="n">visual</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
 
@@ -1539,7 +1562,7 @@
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">on_gui</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_gui</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_size</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_pos</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
@@ -1563,12 +1586,12 @@
     <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec4</span><span class="p">(</span><span class="s1">&#39;Color 3 RGBA&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">light_color</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_text</span><span class="p">(</span><span class="s1">&#39;Material properties:&#39;</span><span class="p">)</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Ambient RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Diffuse RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Specular RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Emission RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider</span><span class="p">(</span><span class="s1">&#39;Shininess level&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shine</span><span class="p">)</span>
-    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider</span><span class="p">(</span><span class="s1">&#39;Emission level&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">emit</span><span class="p">)</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Ambient RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;ambient_params&#39;</span><span class="p">])</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Diffuse RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;diffuse_params&#39;</span><span class="p">])</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Specular RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;specular_params&#39;</span><span class="p">])</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider_vec3</span><span class="p">(</span><span class="s1">&#39;Emission RGB&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;emission_params&#39;</span><span class="p">])</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider</span><span class="p">(</span><span class="s1">&#39;Shininess level&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;shine&#39;</span><span class="p">])</span>
+    <span class="n">has_changed</span> <span class="o">|=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">gui_slider</span><span class="p">(</span><span class="s1">&#39;Emission level&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">material</span><span class="p">[</span><span class="s1">&#39;emit&#39;</span><span class="p">])</span>
 
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_end</span><span class="p">()</span>
 

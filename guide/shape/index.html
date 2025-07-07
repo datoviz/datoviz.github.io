@@ -721,6 +721,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../visuals/glyph/" class="md-nav__link">
         
   
@@ -1866,8 +1889,11 @@
 <ul>
 <li><code>points</code>: Nx2 array of polygon vertices</li>
 <li>Uses <strong>earcut</strong> triangulation internally</li>
-<li>Contour rendering is experimental</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There may be visual artifacts along the contours of highly irregular polygons, such as those derived from geographical data. These can be addressed with a more robust triangulation algorithm. Improvements are planned for a future release.</p>
+</div>
 <h3 id="surface">Surface<a class="headerlink" href="#surface" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">sc</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">heights</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
 </code></pre></div>
@@ -1903,9 +1929,9 @@
 </code></pre></div>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">rows</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="mi">16</span>

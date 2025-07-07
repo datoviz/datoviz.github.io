@@ -715,6 +715,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../visuals/glyph/" class="md-nav__link">
         
   
@@ -1468,27 +1491,27 @@
 
 <h1 id="lidar-point-cloud">LIDAR point cloud<a class="headerlink" href="#lidar-point-cloud" title="Permanent link">&para;</a></h1>
 <p>Data origin: https://lidarpayload.com/sample-data/, RESEPI-M2X-100m10ms-FOV90-On RangerPro.laz</p>
-<p><strong>Tags</strong>: pixel, arcball</p>
+<p><strong>Tags</strong>: pixel, fly</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/showcase/lidar.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;misc/lidar.npz&#39;</span><span class="p">))</span>
 <span class="n">pos</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Loaded LIDAR data with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="si">}</span><span class="s1"> points.&#39;</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="n">pos</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pos</span> <span class="o">*=</span> <span class="mi">5</span>
 
 <span class="c1"># -------------------------------------------------------------------------------------------------</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 <span class="n">figure</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">panel</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">arcball</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">arcball</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
-<span class="n">camera</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">camera</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+<span class="n">fly</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">fly</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="n">initial_lookat</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
 <span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">depth_test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">panel</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>

@@ -730,13 +730,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -834,6 +834,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1610,13 +1633,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1713,7 +1736,7 @@
 <li>You need variable width, style, or shift per segment</li>
 </ul>
 <hr />
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <h3 id="per-item">Per-item<a class="headerlink" href="#per-item" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1750,7 +1773,7 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>Parameter</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1799,12 +1822,12 @@
 <p>Use <code>visual.set_cap(initial, terminal)</code> to set cap styles.</p>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 
-<span class="k">def</span> <span class="nf">generate_data</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">():</span>
     <span class="n">N</span> <span class="o">=</span> <span class="mi">16</span>
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.9</span>

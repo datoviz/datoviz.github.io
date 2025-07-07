@@ -18,7 +18,7 @@
         <link rel="prev" href="../path/">
       
       
-        <link rel="next" href="../glyph/">
+        <link rel="next" href="../wiggle/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -776,13 +776,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -893,6 +893,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1664,13 +1687,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1819,7 +1842,7 @@
 <li>You need to visualize single-channel arrays with a colormap</li>
 </ul>
 <hr />
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <p>Each item in the visual is a single image. Multiple images can be efficiently displayed at different positions in the same visual.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1893,7 +1916,7 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>Parameter</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2013,7 +2036,7 @@
 <table>
 <thead>
 <tr>
-<th>Attribute</th>
+<th>Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2077,13 +2100,13 @@ For example, <code>(0, 1)</code> is the default (UV); <code>(1, 0)</code> uses V
 <p>This can be useful when image data is stored with flipped or transposed axes.</p>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">imageio.v3</span> <span class="k">as</span> <span class="nn">iio</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">imageio.v3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">iio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 
-<span class="k">def</span> <span class="nf">load_image</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_image</span><span class="p">():</span>
     <span class="n">filepath</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;textures/image.png&#39;</span><span class="p">)</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
@@ -2189,13 +2212,13 @@ For example, <code>(0, 1)</code> is the default (UV); <code>(1, 0)</code> uses V
         
         
           
-          <a href="../glyph/" class="md-footer__link md-footer__link--next" aria-label="Next: Glyph">
+          <a href="../wiggle/" class="md-footer__link md-footer__link--next" aria-label="Next: Wiggle">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Glyph
+                Wiggle
               </div>
             </div>
             <div class="md-footer__button md-icon">

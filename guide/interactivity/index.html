@@ -729,6 +729,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../visuals/glyph/" class="md-nav__link">
         
   
@@ -946,6 +969,15 @@
   <a href="#arcball-interactivity-3d" class="md-nav__link">
     <span class="md-ellipsis">
       Arcball Interactivity (3D)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fly-camera-interactivity-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fly Camera Interactivity (3D)
     </span>
   </a>
   
@@ -1584,6 +1616,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fly-camera-interactivity-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fly Camera Interactivity (3D)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camera-interactivity-3d" class="md-nav__link">
     <span class="md-ellipsis">
       Camera Interactivity (3D)
@@ -1625,8 +1666,8 @@
 <ul>
 <li>Mouse-based pan and zoom</li>
 <li>3D arcball rotation</li>
+<li>Fly camera</li>
 <li>Orthographic projection control</li>
-<li>Full 3D camera navigation</li>
 </ul>
 <p>These modes are attached to a panel and control the panel's internal transformation matrices.</p>
 <div class="admonition warning">
@@ -1665,9 +1706,34 @@
 <span class="n">angles</span> <span class="o">=</span> <span class="n">arcball</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>    <span class="c1"># get current rotation</span>
 <span class="n">arcball</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>           <span class="c1"># reset to initial state</span>
 </code></pre></div>
+<p>When using an arcball, you can add a 3D gizmo with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">panel</span><span class="o">.</span><span class="n">gizmo</span><span class="p">()</span>
+</code></pre></div>
+<figure>
+<img alt="3D gizmo" src="https://raw.githubusercontent.com/datoviz/data/main/screenshots/guide/gizmo.png" width="300" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is still experimental. A known issue is that the gizmo may be obscured by other visuals in the scene if they are rendered in front of it. This will be fixed in version 0.4.</p>
+</div>
+<hr />
+<h2 id="fly-camera-interactivity-3d">Fly Camera Interactivity (3D)<a class="headerlink" href="#fly-camera-interactivity-3d" title="Permanent link">&para;</a></h2>
+<p>The fly camera allows you to navigate through a 3D scene as if you were flying. It provides controls for moving forward, backward, left, right, and up/down, as well as rotating the view using the mouse or keyboard.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fly</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">fly</span><span class="p">()</span>
+</code></pre></div>
+<p>Features:</p>
+<ul>
+<li><strong>Mouse Controls</strong>: Drag the left mouse button to rotate the view (yaw/pitch). Drag the right mouse button to roll or move sideways/upwards. Use the mouse wheel to move forward/backward.</li>
+<li><strong>Keyboard Controls</strong>: Use arrow keys to move forward, backward, left, or right.</li>
+<li><strong>Reset</strong>: Double-click to reset the camera to its initial position and orientation.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This controller is still experimental and may need further testing.</p>
+</div>
 <hr />
 <h2 id="camera-interactivity-3d">Camera Interactivity (3D)<a class="headerlink" href="#camera-interactivity-3d" title="Permanent link">&para;</a></h2>
-<p>Adds a full 3D camera with position, target (look-at), and up vector.</p>
+<p>Adds a 3D camera with position, target (look-at), and up vector.</p>
 <div class="highlight"><pre><span></span><code><span class="n">camera</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
 </code></pre></div>
 <p>You can initialize it with:</p>
@@ -1685,7 +1751,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">camera</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="n">lookat</span><span class="o">=</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="n">up</span><span class="o">=</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
 </code></pre></div>
-<p>This interactivity is suited for full 3D scenes, model navigation, and dynamic viewing.</p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <table>
@@ -1713,9 +1778,14 @@
 <td>Object inspection, rotation</td>
 </tr>
 <tr>
+<td><code>fly()</code></td>
+<td>Fly camera</td>
+<td>Navigation in a 3D scene</td>
+</tr>
+<tr>
 <td><code>camera()</code></td>
-<td>Full 3D camera</td>
-<td>Volumes, meshes, 3D scenes</td>
+<td>Custom 3D camera control</td>
+<td>Navigation in a 3D scene</td>
 </tr>
 </tbody>
 </table>

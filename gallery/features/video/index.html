@@ -22,7 +22,7 @@
     
     
       
-        <title>Video example - Datoviz Documentation</title>
+        <title>Video generation - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#video-example" class="md-skip">
+        <a href="#video-generation" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Video example
+              Video generation
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,26 +1489,30 @@
   
 
 
-<h1 id="video-example">Video example<a class="headerlink" href="#video-example" title="Permanent link">&para;</a></h1>
+<h1 id="video-generation">Video generation<a class="headerlink" href="#video-generation" title="Permanent link">&para;</a></h1>
 <p>Show how to generate an offscreen video.</p>
-<p>NOTE: experimental, the API will change.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is experimental, the API is likely to change in a future version.</p>
+</div>
 <p><strong>Tags</strong>: offscreen, video</p>
+<p><strong>Extra Python dependencies</strong>: imageio, tqdm</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">imageio</span>
-    <span class="kn">import</span> <span class="nn">tqdm</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tqdm</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This example requires the tqdm and imageio dependencies. Aborting&#39;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">()</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
-<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">vec3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="kn">import</span> <span class="n">vec3</span>
 
 <span class="c1"># Image size.</span>
 <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">1920</span><span class="p">,</span> <span class="mi">1280</span>
@@ -1502,7 +1529,7 @@
 
 
 <span class="c1"># Rendering function.</span>
-<span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
     <span class="c1"># Update the arcball angle.</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">arcball_set</span><span class="p">(</span><span class="n">arcball</span><span class="p">,</span> <span class="n">vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">panel_update</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>

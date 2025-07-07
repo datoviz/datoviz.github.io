@@ -22,7 +22,7 @@
     
     
       
-        <title>Light example - Datoviz Documentation</title>
+        <title>Light manipulation - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#light-example" class="md-skip">
+        <a href="#light-manipulation" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Light example
+              Light manipulation
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,15 +1489,15 @@
   
 
 
-<h1 id="light-example">Light example<a class="headerlink" href="#light-example" title="Permanent link">&para;</a></h1>
+<h1 id="light-manipulation">Light manipulation<a class="headerlink" href="#light-manipulation" title="Permanent link">&para;</a></h1>
 <p>Show how to manipulate lights.</p>
 <p><strong>Tags</strong>: sphere, light, gui</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/features/light.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
-<span class="kn">from</span> <span class="nn">datoviz</span> <span class="kn">import</span> <span class="n">vec4</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="kn">import</span> <span class="n">vec4</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 <span class="c1"># NOTE: at the moment, you must indicate gui=True if you intend to use a GUI in a figure</span>
@@ -1499,7 +1522,7 @@
 
 
 <span class="c1"># GUI callback</span>
-<span class="k">def</span> <span class="nf">update_params</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_params</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">light_color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">set_light_color</span><span class="p">(</span>
@@ -1513,7 +1536,7 @@
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">on_gui</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_gui</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_size</span><span class="p">(</span><span class="n">dvz</span><span class="o">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">350</span><span class="p">))</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">gui_begin</span><span class="p">(</span><span class="s1">&#39;Change the lights&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">has_changed</span> <span class="o">=</span> <span class="kc">False</span>

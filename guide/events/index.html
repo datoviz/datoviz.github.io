@@ -721,6 +721,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../visuals/glyph/" class="md-nav__link">
         
   
@@ -1623,7 +1646,7 @@
 <p>Frame events are called once per render loop iteration. They allow you to update visuals or application state continuously, such as animating objects or polling data.</p>
 <p>To register a frame event handler, decorate a function named <code>on_frame</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">on_frame</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_frame</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
     <span class="c1"># Update something every frame</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rendering frame&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -1637,7 +1660,7 @@
 <h2 id="timer-events">Timer events<a class="headerlink" href="#timer-events" title="Permanent link">&para;</a></h2>
 <p>Use timers to trigger a function at regular time intervals.</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">timer</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">max_count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">my_timer</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_timer</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Timer tick&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="parameters">Parameters:<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>

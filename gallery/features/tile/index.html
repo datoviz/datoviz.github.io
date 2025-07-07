@@ -22,7 +22,7 @@
     
     
       
-        <title>Tiled image grid visual - Datoviz Documentation</title>
+        <title>Tiled image grid - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tiled-image-grid-visual" class="md-skip">
+        <a href="#tiled-image-grid" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tiled image grid visual
+              Tiled image grid
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,20 +1489,21 @@
   
 
 
-<h1 id="tiled-image-grid-visual">Tiled image grid visual<a class="headerlink" href="#tiled-image-grid-visual" title="Permanent link">&para;</a></h1>
+<h1 id="tiled-image-grid">Tiled image grid<a class="headerlink" href="#tiled-image-grid" title="Permanent link">&para;</a></h1>
 <p>Split an image into a grid of smaller images displayed using a single image visual.</p>
 <p><strong>Tags</strong>: image, texture, panzoom</p>
+<p><strong>Extra Python dependencies</strong>: imageio</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/features/tile.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">imageio.v3</span> <span class="k">as</span> <span class="nn">iio</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">imageio.v3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">iio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 
-<span class="k">def</span> <span class="nf">load_image</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_image</span><span class="p">():</span>
     <span class="n">filepath</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;textures/image.png&#39;</span><span class="p">)</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>

@@ -22,7 +22,7 @@
     
     
       
-        <title>Mesh visual example - Datoviz Documentation</title>
+        <title>Mesh visual from an OBJ file - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mesh-visual-example" class="md-skip">
+        <a href="#mesh-visual-from-an-obj-file" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mesh visual example
+              Mesh visual from an OBJ file
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,14 +1489,14 @@
   
 
 
-<h1 id="mesh-visual-example">Mesh visual example<a class="headerlink" href="#mesh-visual-example" title="Permanent link">&para;</a></h1>
-<p>Show the mesh visual with predefined shapes.</p>
-<p><strong>Tags</strong>: mesh, shape, obj, arcball</p>
+<h1 id="mesh-visual-from-an-obj-file">Mesh visual from an OBJ file<a class="headerlink" href="#mesh-visual-from-an-obj-file" title="Permanent link">&para;</a></h1>
+<p>Show the mesh visual with an OBJ file and a 3D gizmo.</p>
+<p><strong>Tags</strong>: mesh, shape, obj, arcball, gizmo</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/features/obj.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;mesh/bunny.obj&#39;</span><span class="p">)</span>
 
@@ -1490,8 +1513,10 @@
 <span class="n">camera</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">camera</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">linewidth</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">)</span>
-
 <span class="n">panel</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
+
+<span class="c1"># Add a 3D gizmo.</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">gizmo</span><span class="p">()</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>

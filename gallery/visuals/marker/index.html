@@ -22,7 +22,7 @@
     
     
       
-        <title>Marker visual example - Datoviz Documentation</title>
+        <title>Marker visual - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#marker-visual-example" class="md-skip">
+        <a href="#marker-visual" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Marker visual example
+              Marker visual
             
           </span>
         </div>
@@ -698,6 +698,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1466,19 +1489,20 @@
   
 
 
-<h1 id="marker-visual-example">Marker visual example<a class="headerlink" href="#marker-visual-example" title="Permanent link">&para;</a></h1>
+<h1 id="marker-visual">Marker visual<a class="headerlink" href="#marker-visual" title="Permanent link">&para;</a></h1>
 <p>Show the different types of marker visuals.</p>
 <p><strong>Tags</strong>: marker, texture, svg</p>
+<p><strong>Extra Python dependencies</strong>: imageio</p>
 <p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/visuals/marker.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">imageio.v3</span> <span class="k">as</span> <span class="nn">iio</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">imageio.v3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">iio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
@@ -1486,7 +1510,7 @@
 <span class="n">svg_path</span> <span class="o">=</span> <span class="s1">&#39;M50,10 L61.8,35.5 L90,42 L69,61 L75,90 L50,75 L25,90 L31,61 L10,42 L38.2,35.5 Z&#39;</span>
 
 
-<span class="k">def</span> <span class="nf">generate_data</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">():</span>
     <span class="n">grid_x</span> <span class="o">=</span> <span class="mi">6</span>
     <span class="n">grid_y</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">grid_x</span> <span class="o">*</span> <span class="n">grid_y</span>
@@ -1514,26 +1538,26 @@
     <span class="k">return</span> <span class="n">N</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">sizes</span>
 
 
-<span class="k">def</span> <span class="nf">load_texture_rgba</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_texture_rgba</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">arr</span>
 
 
-<span class="k">def</span> <span class="nf">make_texture</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_texture</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">make_svg_msdf_texture</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_svg_msdf_texture</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
     <span class="n">msdf</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">msdf_from_svg</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">msdf_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">rgb_to_rgba_float</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="n">msdf</span><span class="p">,</span> <span class="n">msdf_alpha</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">msdf_alpha</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">make_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">):</span>
     <span class="n">N</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">()</span>
     <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
     <span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">marker</span><span class="p">(</span>

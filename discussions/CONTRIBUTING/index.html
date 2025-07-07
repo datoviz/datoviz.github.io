@@ -721,6 +721,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../visuals/glyph/" class="md-nav__link">
         
   
@@ -1844,7 +1867,7 @@ C enums like <code>DVZ_MYENUM</code> become <code>dvz.MYENUM</code> in Python.</
 <h3 id="high-level-pythonic-api">High-level Pythonic API<a class="headerlink" href="#high-level-pythonic-api" title="Permanent link">&para;</a></h3>
 <p>Since version <strong>v0.3</strong>, Datoviz also includes a more idiomatic Python API built on top of the <code>ctypes</code> layer. This API offers simplified, object-oriented access to Datoviz functionality.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1886,7 +1909,9 @@ For debugging, you can inspect these requests to determine whether issues origin
 <h3 id="performance-monitoring">Performance monitoring<a class="headerlink" href="#performance-monitoring" title="Permanent link">&para;</a></h3>
 <p>Set the following environment variables to enable performance-related diagnostics:</p>
 <ul>
-<li><code>DVZ_FPS=1</code> — Display an FPS (frames per second) counter.</li>
+<li><code>DVZ_FPS=1</code> enables an FPS (frames per second) counter</li>
+<li><code>DVZ_MAX_FPS=200</code> sets a frame rate limit (default is 200 FPS to reduce GPU usage)</li>
+<li><code>DVZ_MAX_FPS=0</code> disables the frame rate limit for benchmarking purposes</li>
 <li><code>DVZ_MONITOR=1</code> — Show a GPU memory monitor (allocated memory usage).</li>
 </ul>
 <div class="admonition note">

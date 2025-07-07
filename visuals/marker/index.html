@@ -707,13 +707,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -894,6 +894,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1670,13 +1693,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Properties
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1836,7 +1859,7 @@
 <li>You need high flexibility for scatter or symbol-based plots</li>
 </ul>
 <hr />
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2116,12 +2139,12 @@
 </ul>
 <hr />
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">import</span> <span class="nn">imageio.v3</span> <span class="k">as</span> <span class="nn">iio</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">imageio.v3</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">iio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">datoviz</span> <span class="k">as</span> <span class="nn">dvz</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
 <span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
 <span class="n">W</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
@@ -2129,7 +2152,7 @@
 <span class="n">svg_path</span> <span class="o">=</span> <span class="s1">&#39;M50,10 L61.8,35.5 L90,42 L69,61 L75,90 L50,75 L25,90 L31,61 L10,42 L38.2,35.5 Z&#39;</span>
 
 
-<span class="k">def</span> <span class="nf">generate_data</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">():</span>
     <span class="n">grid_x</span> <span class="o">=</span> <span class="mi">6</span>
     <span class="n">grid_y</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">grid_x</span> <span class="o">*</span> <span class="n">grid_y</span>
@@ -2157,26 +2180,26 @@
     <span class="k">return</span> <span class="n">N</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">sizes</span>
 
 
-<span class="k">def</span> <span class="nf">load_texture_rgba</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_texture_rgba</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">arr</span>
 
 
-<span class="k">def</span> <span class="nf">make_texture</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_texture</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span>
     <span class="k">assert</span> <span class="n">image</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">make_svg_msdf_texture</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_svg_msdf_texture</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
     <span class="n">msdf</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">msdf_from_svg</span><span class="p">(</span><span class="n">svg_path</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">msdf_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">dvz</span><span class="o">.</span><span class="n">rgb_to_rgba_float</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="n">msdf</span><span class="p">,</span> <span class="n">msdf_alpha</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">texture</span><span class="p">(</span><span class="n">msdf_alpha</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">make_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_visual</span><span class="p">(</span><span class="n">panel</span><span class="p">):</span>
     <span class="n">N</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">()</span>
     <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
     <span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">marker</span><span class="p">(</span>

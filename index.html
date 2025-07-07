@@ -426,9 +426,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparison-with-other-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Comparison with other libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Comparison with other libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐍 Matplotlib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vtk" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧊 VTK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-started" class="md-nav__link">
     <span class="md-ellipsis">
-      Get started
+      🚀 Get started
     </span>
   </a>
   
@@ -437,7 +470,7 @@
         <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      🛠️ Installation
     </span>
   </a>
   
@@ -446,7 +479,7 @@
         <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
-      License
+      📄 License
     </span>
   </a>
   
@@ -789,6 +822,29 @@
   
   <span class="md-ellipsis">
     Image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="visuals/wiggle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiggle
     
   </span>
   
@@ -1565,9 +1621,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparison-with-other-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Comparison with other libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Comparison with other libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐍 Matplotlib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vtk" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧊 VTK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-started" class="md-nav__link">
     <span class="md-ellipsis">
-      Get started
+      🚀 Get started
     </span>
   </a>
   
@@ -1576,7 +1665,7 @@
         <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      🛠️ Installation
     </span>
   </a>
   
@@ -1585,7 +1674,7 @@
         <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
-      License
+      📄 License
     </span>
   </a>
   
@@ -1611,11 +1700,9 @@
 
 
 <h1 id="datoviz-high-performance-rendering-for-scientific-data-visualization">Datoviz: high-performance rendering for scientific data visualization<a class="headerlink" href="#datoviz-high-performance-rendering-for-scientific-data-visualization" title="Permanent link">&para;</a></h1>
-<!-- INTRODUCTION -->
-
-<p><strong>⚡️ Datoviz</strong> is an open-source, cross-platform, <strong>high-performance rendering library for scientific data visualization</strong>.</p>
-<p>It delivers fast, <strong>high-quality GPU rendering</strong> of 2D and 3D graphical primitives—markers, paths, images, text, meshes, volumes, and more—that scale to millions of elements. Datoviz also supports <strong>graphical user interfaces (GUIs)</strong> for interactive visualization.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/hero.jpg" /></p>
+<p><strong>⚡️ Datoviz</strong> is an open-source, cross-platform, <strong>high-performance rendering library for scientific data visualization</strong> making extensive use of the graphics processing unit (GPU).</p>
+<p>Up to <strong>10,000x faster than matplotlib</strong>, it delivers highly efficient <strong>high-quality GPU rendering</strong> of 2D and 3D graphical primitives—markers, paths, images, text, meshes, volumes, and more—that scale to millions of elements. Datoviz also supports <strong>graphical user interfaces (GUIs)</strong> for interactive visualization.</p>
+<p><a href="https://raw.githubusercontent.com/datoviz/data/master/hero.jpg"><img alt="" src="https://raw.githubusercontent.com/datoviz/data/master/hero.jpg" /></a></p>
 <p>Built from the ground up with performance in mind, Datoviz is written primarily in <strong>C</strong> and <strong>C++</strong>, leveraging the <a href="https://www.vulkan.org/"><strong>Khronos Vulkan graphics API</strong></a>. It offers a C API, low-level Python bindings via <code>ctypes</code>, and a higher-level, idiomatic <strong>Python API 🐍</strong>.</p>
 <p>Written by one of the original creators of <a href="https://vispy.org">VisPy</a>, a GPU-based Python scientific visualization library, Datoviz aims to serve as the default backend for the upcoming <strong>VisPy 2.0</strong>.</p>
 <p>The library is lightweight with minimal dependencies: mostly Vulkan, <a href="https://www.glfw.org/"><strong>GLFW</strong></a> for windowing, and <a href="https://github.com/ocornut/imgui/">Dear ImGui</a> for GUIs.</p>
@@ -1623,8 +1710,6 @@
 <p class="admonition-title">Warning</p>
 <p>Datoviz is a young library. The API is stabilizing, but breaking changes may still occur as the project evolves with broader usage.</p>
 </div>
-<!-- FEATURES -->
-
 <h2 id="current-features">✨ Current features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>📊 2D visuals</strong>: antialiased points, markers, line segments, paths, text, images</li>
@@ -1636,19 +1721,32 @@
 <li><strong>𓈈 Figure subplots</strong> (aka "panels")</li>
 <li><strong>🖥️ GUIs</strong> using <a href="https://github.com/ocornut/imgui/">Dear ImGui</a></li>
 </ul>
-<!-- API PHILOSOPHY -->
-
 <h2 id="api-philosophy">🧩 API philosophy<a class="headerlink" href="#api-philosophy" title="Permanent link">&para;</a></h2>
 <p>Datoviz does <strong>not</strong> use high-level plotting functions like <code>plot()</code>, <code>scatter()</code>, or <code>imshow()</code>. Instead, it exposes flexible visual primitives—markers, images, meshes, and more—that can be added to a scene and customized directly with data. This approach offers fine-grained control and high performance, while remaining concise enough for quick plots.</p>
 <p>A <a href="https://github.com/vispy/vispy/discussions/2661">higher-level plotting interface is under development as part of <strong>VisPy 2.0</strong></a>, which will use Datoviz as its rendering backend. An intermediate layer called <strong>GSP</strong> (Graphics Specification Protocol) will provide a backend-agnostic API for declarative plotting.</p>
-<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<h2 id="comparison-with-other-libraries">🔍 Comparison with other libraries<a class="headerlink" href="#comparison-with-other-libraries" title="Permanent link">&para;</a></h2>
+<h3 id="matplotlib">🐍 Matplotlib<a class="headerlink" href="#matplotlib" title="Permanent link">&para;</a></h3>
+<p><strong>Matplotlib</strong> is the gold standard for static, publication-quality figures, with a mature, feature-rich API. But it's not optimized for interactivity or large datasets.</p>
+<p><strong>Datoviz</strong>, in contrast, is a younger, GPU-based library designed for fast, interactive visualization. It lacks Matplotlib’s high-level API but excels at rendering millions of points in real time.</p>
+<p>Use <strong>Matplotlib</strong> for polished static plots, <strong>Datoviz</strong> for responsive data exploration.</p>
+<h4 id="preliminary-performance-benchmark">Preliminary performance benchmark<a class="headerlink" href="#preliminary-performance-benchmark" title="Permanent link">&para;</a></h4>
+<p>The figure below shows a preliminary <a href="https://github.com/datoviz/datoviz/blob/main/examples/benchmarks/benchmark_mpl.py"><strong>performance benchmark</strong></a> comparing Datoviz and Matplotlib on an interactive 2D scatter plot, with increasing numbers of points and a simulated zoom interaction:</p>
+<p align="center">
+  <a href="https://github.com/datoviz/datoviz/blob/main/examples/benchmarks/benchmark_mpl.py"><img src="https://raw.githubusercontent.com/datoviz/data/master/screenshots/benchmark.png" alt="Datoviz vs Matplotlib benchmark"></a>
+</p>
+
+<p>In this benchmark, <strong>Datoviz outperforms Matplotlib by a factor of up to 10,000×</strong>, maintaining interactive framerates even with millions of points. Matplotlib, in contrast, becomes sluggish or fails entirely as the dataset size increases.</p>
+<h3 id="vtk">🧊 VTK<a class="headerlink" href="#vtk" title="Permanent link">&para;</a></h3>
+<p>Datoviz is lighter, simpler, and easier to install than VTK. It compiles in seconds, has minimal dependencies, and focuses exclusively on real-time rendering of visual primitives. Unlike VTK, it does not include data file I/O (except minimal test loaders like <code>.obj</code>), computational geometry, or data processing.</p>
+<p>VTK is a powerful, heavyweight toolkit for 3D visualization, simulation, and scientific computing workflows. In contrast, Datoviz is designed for fast, high-quality 2D and 3D rendering.</p>
+<h2 id="get-started">🚀 Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <ul>
 <li>👉 <strong><a href="quickstart/">Quickstart guide</a></strong> — create your first scatter plot in a few lines of code</li>
 <li>📚 <strong><a href="guide/">Learn</a></strong> — deep dive into visuals, layout, interactivity, and more</li>
 <li>🖼️ <strong><a href="gallery/">Gallery</a></strong> — curated examples of what Datoviz can render</li>
 <li>🧩 <strong><a href="reference/api_py/">API Reference</a></strong> — full Python and C documentation</li>
 </ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h2 id="installation">🛠️ Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Datoviz runs out of the box on all major platforms:</p>
 <ul>
 <li>✅ <strong>Windows</strong>, <strong>macOS</strong> (Intel and Apple Silicon), and <strong>Linux</strong></li>
@@ -1659,7 +1757,7 @@
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>datoviz
 </code></pre></div>
 <p>To use the C library directly, see the <a href="discussions/BUILD/">build instructions</a>.</p>
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p>Datoviz is open source and licensed under the <a href="discussions/LICENSE/">MIT License</a>.</p>
 
 
