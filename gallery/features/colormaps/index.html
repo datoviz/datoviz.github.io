@@ -12,7 +12,7 @@
         <meta name="author" content="Cyrille Rossant">
       
       
-        <link rel="canonical" href="https://datoviz.org/gallery/visuals/pixel/">
+        <link rel="canonical" href="https://datoviz.org/gallery/features/colormaps/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Pixel visual - Datoviz Documentation</title>
+        <title>List colormaps - Datoviz Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pixel-visual" class="md-skip">
+        <a href="#list-colormaps" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pixel visual
+              List colormaps
             
           </span>
         </div>
@@ -1489,73 +1489,46 @@
   
 
 
-<h1 id="pixel-visual">Pixel visual<a class="headerlink" href="#pixel-visual" title="Permanent link">&para;</a></h1>
-<p>Show the pixel visual.</p>
-<p><strong>Tags</strong>: pixel, panzoom</p>
-<p><strong>Extra Python dependencies</strong>: matplotlib</p>
-<p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/visuals/pixel.png" /></p>
+<h1 id="list-colormaps">List colormaps<a class="headerlink" href="#list-colormaps" title="Permanent link">&para;</a></h1>
+<p>Show all colormaps and print on the terminal the colormap under the cursor.</p>
+<p><strong>Tags</strong>: colormap, image, mouse</p>
+<p><img alt="Screenshot" src="https://raw.githubusercontent.com/datoviz/data/main/gallery/features/colormaps.png" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
+<span class="n">colormaps</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">colormaps</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colormaps</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cmap</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colormaps</span><span class="p">):</span>
+    <span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return N, positions (N,3) float32, colors (N,4) uint8&quot;&quot;&quot;</span>
-    <span class="c1"># Parameters</span>
-    <span class="n">n_arms</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">n_particles_per_arm</span> <span class="o">=</span> <span class="mi">200_000</span>
-    <span class="n">n_total</span> <span class="o">=</span> <span class="n">n_arms</span> <span class="o">*</span> <span class="n">n_particles_per_arm</span>
-
-    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">3141</span><span class="p">)</span>
-
-    <span class="c1"># Radius from center, with more points toward center</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_total</span><span class="p">)</span>  <span class="c1"># values in [0, 1), biased toward 0</span>
-
-    <span class="c1"># Angle with swirl per arm and some noise</span>
-    <span class="n">base_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n_arms</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">n_particles_per_arm</span><span class="p">)</span>
-    <span class="n">swirl</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># spiral effect</span>
-    <span class="n">noise</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_total</span><span class="p">)</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">base_theta</span> <span class="o">+</span> <span class="n">swirl</span> <span class="o">+</span> <span class="n">noise</span>
-
-    <span class="c1"># Convert polar to Cartesian</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="mf">6.0</span> <span class="o">/</span> <span class="mf">8.0</span>  <span class="c1"># HACK: window aspect ratio</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-
-    <span class="c1"># Colors based on radius and angle — create a vibrant, cosmic feel</span>
-    <span class="n">hue</span> <span class="o">=</span> <span class="p">(</span><span class="n">theta</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># hue from angle</span>
-    <span class="n">saturation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># more saturated at edges</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">hue</span><span class="p">)</span>
-
-    <span class="c1"># Convert HSV to RGB</span>
-
-    <span class="n">rgb</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">hue</span><span class="p">,</span> <span class="n">saturation</span><span class="p">,</span> <span class="n">value</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">rgb_u8</span> <span class="o">=</span> <span class="p">(</span><span class="n">rgb</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-    <span class="c1"># Alpha: slight fade with radius</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">128</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">r</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-    <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">rgb_u8</span><span class="p">,</span> <span class="n">alpha</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">n_total</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">colors</span>
-
-
-<span class="n">N</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">()</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">texcoords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 <span class="n">figure</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">panel</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
-<span class="n">panzoom</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">panzoom</span><span class="p">()</span>
 
-<span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+<span class="n">visual</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;ndc&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">texcoords</span><span class="o">=</span><span class="n">texcoords</span><span class="p">,</span> <span class="n">rescale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">texture_2D</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+<span class="n">visual</span><span class="o">.</span><span class="n">set_texture</span><span class="p">(</span><span class="n">texture</span><span class="p">)</span>
 <span class="n">panel</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_mouse</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">mouse_event</span><span class="p">()</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">w</span><span class="p">)),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;colormap: </span><span class="si">{</span><span class="n">colormaps</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">79</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 
 <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
@@ -1563,7 +1536,7 @@
 </div>
 </div>
 </div>
-<p><a href="../../#visuals">← Back to gallery</a></p>
+<p><a href="../../#features">← Back to gallery</a></p>
 
 
 

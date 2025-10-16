@@ -1502,6 +1502,8 @@ not support lighting, texturing, or wireframes. It only allows a single color pe
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">datoviz</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dvz</span>
 
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">3141</span><span class="p">)</span>
+
 <span class="c1"># Load the bunny mesh.</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">ShapeCollection</span><span class="p">()</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">dvz</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="s1">&#39;mesh/bunny.obj&#39;</span><span class="p">)</span>
@@ -1516,7 +1518,7 @@ not support lighting, texturing, or wireframes. It only allows a single color pe
 
 <span class="c1"># Random colors.</span>
 <span class="n">nv</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">vertex_count</span><span class="p">()</span>
-<span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nv</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nv</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">color</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>  <span class="c1"># Set alpha channel to fully opaque.</span>
 
 <span class="c1"># Create a basic visual from the ShapeCollection.</span>

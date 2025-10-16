@@ -1666,7 +1666,7 @@ We regularly update the supported Vulkan SDK version.</p>
 </ul>
 <h2 id="ubuntu-2404">Ubuntu 24.04<a class="headerlink" href="#ubuntu-2404" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install the build and system dependencies.</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>gcc<span class="w"> </span>ccache<span class="w"> </span>ninja-build<span class="w"> </span>xorg-dev<span class="w"> </span>clang-format<span class="w"> </span>patchelf<span class="w"> </span>tree<span class="w"> </span>libtinyxml2-dev<span class="w"> </span>libfreetype-dev
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>curl<span class="w"> </span>gcc<span class="w"> </span>git<span class="w"> </span>ccache<span class="w"> </span>ninja-build<span class="w"> </span>xorg-dev<span class="w"> </span>clang-format<span class="w"> </span>patchelf<span class="w"> </span>tree<span class="w"> </span>libtinyxml2-dev<span class="w"> </span>libfreetype-dev
 
 <span class="c1"># Install just, see https://github.com/casey/just</span>
 curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://just.systems/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
@@ -1688,14 +1688,17 @@ just<span class="w"> </span>build
 <span class="c1"># Try a demo.</span>
 just<span class="w"> </span>demo
 
-<span class="c1"># Compile and run a C example.</span>
-just<span class="w"> </span>example<span class="w"> </span>scatter
+<span class="c1"># Install the development version of Datoviz as a pip package.</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># Run the demo from Python.</span>
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
 <h2 id="macos-arm64">macOS (arm64)<a class="headerlink" href="#macos-arm64" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install brew if you don&#39;t have it already.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install XCode if you don&#39;t have it already.</span>
+xcode-select<span class="w"> </span>--install
+
+<span class="c1"># Install brew if you don&#39;t have it already.</span>
 /bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 <span class="o">(</span>echo<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span><span class="o">)</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zprofile
 <span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">&quot;</span>
@@ -1720,14 +1723,17 @@ just<span class="w"> </span>build
 <span class="c1"># Try a demo.</span>
 just<span class="w"> </span>demo
 
-<span class="c1"># Compile and run a C example.</span>
-just<span class="w"> </span>example<span class="w"> </span>scatter
+<span class="c1"># Install the development version of Datoviz as a pip package.</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># Run the demo from Python.</span>
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
 </code></pre></div>
 <h2 id="macos-intel-x86-64">macOS (Intel x86-64)<a class="headerlink" href="#macos-intel-x86-64" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install brew if you don&#39;t have it already.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install XCode if you don&#39;t have it already.</span>
+xcode-select<span class="w"> </span>--install
+
+<span class="c1"># Install brew if you don&#39;t have it already.</span>
 /bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 <span class="o">(</span>echo<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span><span class="o">)</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zprofile
 <span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">&quot;</span>
@@ -1752,8 +1758,8 @@ just<span class="w"> </span>build
 <span class="c1"># Try a demo.</span>
 just<span class="w"> </span>demo
 
-<span class="c1"># Compile and run a C example.</span>
-just<span class="w"> </span>example<span class="w"> </span>scatter
+<span class="c1"># Install the development version of Datoviz as a pip package.</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># Run the demo from Python.</span>
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
@@ -1791,8 +1797,8 @@ just<span class="w"> </span>build
 <span class="c1"># Try a demo.</span>
 just<span class="w"> </span>demo
 
-<span class="c1"># Compile and run a C example.</span>
-just<span class="w"> </span>example<span class="w"> </span>scatter
+<span class="c1"># Install the development version of Datoviz as a pip package.</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># Run the demo from Python.</span>
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz; datoviz.demo()&quot;</span>
