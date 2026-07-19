@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "datoviz_wasm_scene.data": {
+      "bytes": 6514314,
+      "sha256": "49102166520a3ff9a1ac3a1899378890386049b44e549182ea5ac98295ed0116"
+    },
+    "datoviz_wasm_scene.mjs": {
+      "bytes": 78170,
+      "sha256": "ce3a86bd3a2a92087468d296fd75e9a8adb40cc0ab9bc033d9f2e0546b269e42"
+    },
+    "datoviz_wasm_scene.wasm": {
+      "bytes": 2869831,
+      "sha256": "8220a80559216ac85ad3a2d59b784cae10aafe89b5fd1b4d92b29a4ee7bd0ad4"
+    }
+  },
+  "schema": "datoviz.wasm-assets.v1",
+  "version": "sha256-e724c1bbb5a79d6f99e5dae24bae9f5d95d9ecb7e708748a7fef2e2d4bf3b4b7"
+}

@@ -11148,7 +11148,20 @@
 
 <p>This example renders a prepared RGB LiDAR point cloud with direct colors.</p>
 <h2 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Screenshot</label><label for="__tabbed_1_2">Live WebGPU</label></div>
+<div class="dvz-public-webgpu-fallback">
+<div class="dvz-gallery-media dvz-gallery-media--video" data-gallery-lazy="video">
+  <img class="dvz-gallery-poster" src="../../../../assets/gallery/v0.4/showcases/showcases_point_cloud.poster.webp" alt="Point Cloud" loading="lazy">
+  <video aria-label="Point Cloud preview" class="dvz-gallery-video" loop="loop" muted="muted" playsinline="playsinline" poster="../../../../assets/gallery/v0.4/showcases/showcases_point_cloud.poster.webp" preload="none">
+    <source data-src="../../../../assets/gallery/v0.4/showcases/showcases_point_cloud.mp4" type="video/mp4">
+  </video>
+</div>
+<aside class="dvz-webgpu-unavailable" role="note">
+<strong>No live WebGPU preview</strong>
+<span>Browser support for this example is not currently implemented. The preview above shows the native version. <a href="../../../../reference/webgpu-subset/">Learn about browser support</a>.</span>
+</aside>
+</div>
+<div class="dvz-local-webgpu-tabs" hidden="hidden">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Screenshot</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><div class="dvz-gallery-media dvz-gallery-media--video" data-gallery-lazy="video">
@@ -11157,17 +11170,19 @@
          poster="../../../../assets/gallery/v0.4/showcases/showcases_point_cloud.poster.webp" aria-label="Point Cloud preview">
     <source data-src="../../../../assets/gallery/v0.4/showcases/showcases_point_cloud.mp4" type="video/mp4">
   </video>
-</div></p>
+</p>
 </div>
+</div>
+</div>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Live WebGPU</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <p><div class="dvz-webgpu-live" markdown="1">
-<iframe src="../../../webgpu/live.html?id=showcases_point_cloud&embedded=1" title="Point Cloud WebGPU live example" loading="lazy" allow="fullscreen; webgpu"></iframe>
+<iframe data-src="../../../webgpu/live.html?id=showcases_point_cloud" title="Point Cloud local WebGPU example" loading="lazy" allow="fullscreen; webgpu"></iframe>
 </div></p>
-<p><aside class="dvz-webgpu-unavailable" role="note">
-<strong>WebGPU rendering difference</strong>
-<span><code>EDL</code>: The desktop example enables eye-dome lighting; the WebGPU route uses direct point rendering.</span>
-</aside></p>
-<p><a href="../../../webgpu/live.html?id=showcases_point_cloud">Open the live WebGPU example</a>.</p>
+<p><a href="../../../webgpu/live.html?id=showcases_point_cloud">Open the local WebGPU example</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -11195,8 +11210,8 @@ Use your configured build environment; Python routes additionally require local 
 </tr>
 <tr>
 <td>Browser</td>
-<td>Live WebGPU route</td>
-<td><a href="../../../webgpu/live.html?id=showcases_point_cloud">Open live example</a></td>
+<td>Deferred</td>
+<td>the browser route renders a prepared 500k-point subset locally, but the source LiDAR dataset is third-party (Inertial Labs RESEPI sample data, all rights reserved) and cannot be redistributed as a public web data bundle <span class="dvz-local-webgpu-action" hidden>Local development: <a href="../../../webgpu/live.html?id=showcases_point_cloud">Open WebGPU example</a>.</span></td>
 </tr>
 </tbody>
 </table>
@@ -11216,7 +11231,7 @@ after verifying the linked API reference.</p>
 <p>Real data is loaded from <code>.cache/datoviz/examples/point_cloud/prepared/point_cloud.bin</code>. Generate it from the upstream LAZ source with:</p>
 <p><code>python tools/data/prepare_point_cloud.py --force</code></p>
 <h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label><label for="__tabbed_2_2">C</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label><label for="__tabbed_3_2">C</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
@@ -11916,9 +11931,8 @@ after verifying the linked API reference.</p>
 <li>Approved adaptation starter: <code>no</code></li>
 <li>Python source: <a href="https://github.com/datoviz/datoviz/blob/v0.4-dev/examples/python/gallery/showcases/point_cloud.py"><code>examples/python/gallery/showcases/point_cloud.py</code></a></li>
 <li>Python adaptation: Available</li>
-<li>Browser support: Live in browser</li>
-<li>WebGPU live route: <a href="../../../webgpu/live.html?id=showcases_point_cloud"><code>examples/webgpu/live.html?id=showcases_point_cloud</code></a></li>
-<li>Browser note: the portable WebGPU route renders a prepared 500k-point subset; tuning controls remain native-only</li>
+<li>Browser support: Deferred</li>
+<li>Browser note: the browser route renders a prepared 500k-point subset locally, but the source LiDAR dataset is third-party (Inertial Labs RESEPI sample data, all rights reserved) and cannot be redistributed as a public web data bundle</li>
 <li>Browser capability tags: <code>pixel</code>, <code>dense-point-cloud</code>, <code>fly</code>, <code>prepared-data</code></li>
 <li>Browser rendering effects: <code>edl</code> (unavailable)</li>
 <li>Validation: <code>smoke+screenshot</code></li>

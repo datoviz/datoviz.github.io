@@ -11359,6 +11359,11 @@ animation, or data transforms in JavaScript just to make the page work.</p>
 <div class="highlight"><pre><span></span><code>just<span class="w"> </span>wasm-scene-build
 just<span class="w"> </span>serve
 </code></pre></div>
+<p>The build also emits <code>datoviz_wasm_scene.assets.json</code>. Deploy it atomically with the generated
+<code>.mjs</code>, <code>.wasm</code>, and <code>.data</code> files. The browser uses the manifest's output-derived version for all
+three payload URLs, so unchanged builds reuse cached bytes while a changed payload receives a new
+cache key. The live page reports byte-level network progress after one second; WebGPU
+initialization is intentionally not represented as a percentage.</p>
 <h3 id="route-shape">Route shape<a class="headerlink" href="#route-shape" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>examples/webgpu/live.html?id=&lt;scene-id&gt;
 </code></pre></div>
