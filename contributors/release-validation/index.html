@@ -11130,13 +11130,13 @@ just<span class="w"> </span>spec-check
 <div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-preflight<span class="w"> </span>rc1
 </code></pre></div>
 <p>For the v0.4 release automation front door, use:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-plan<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
-just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run
-just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc1
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-plan<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
+just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run
+just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc2
 </code></pre></div>
 <p><code>release-candidate</code> writes local state under <code>build/release/&lt;version&gt;/</code>. The first automation slice
 does not tag, upload, publish, push, or mutate GitHub. Publication remains a separate approval-gated
@@ -11146,10 +11146,10 @@ it as the GitHub draft notes artifact. Review and edit the wording before using 
 <code>release-docs-validate</code> records <code>docs-api-check</code> plus selected fenced code-block doctests in
 <code>build/release/&lt;version&gt;/docs-validation.json</code>.</p>
 <p>For installed-artifact validation on a physical machine, use:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-validation-pack<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
-just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-validation-pack<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
+just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
 </code></pre></div>
-<p>Copy <code>build/release/0.4.0rc1/validation-pack/datoviz-0.4.0rc1-validation.tar.gz</code> to the target
+<p>Copy <code>build/release/0.4.0rc2/validation-pack/datoviz-0.4.0rc2-validation.tar.gz</code> to the target
 machine, extract it, then run:</p>
 <div class="highlight"><pre><span></span><code>./validate-rc.sh
 </code></pre></div>
@@ -11157,8 +11157,8 @@ machine, extract it, then run:</p>
 <div class="highlight"><pre><span></span><code><span class="p">./</span><span class="n">validate</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Profile</span> <span class="n">rc</span>
 </code></pre></div>
 <p>If the target machine has the repository checkout, it can run the validator directly:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-machine-validate<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl<span class="w"> </span>--profile<span class="w"> </span>rc
-just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc1
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-machine-validate<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl<span class="w"> </span>--profile<span class="w"> </span>rc
+just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc2
 </code></pre></div>
 <p>The <code>quick</code> profile runs wheel inventory plus installed import/CLI smoke. The <code>rc</code> profile adds the
 CMake consumer smoke and installed Python/C no-window example smokes. The <code>full</code> profile adds
@@ -11180,15 +11180,15 @@ example set and record the maintainer's observations.</p>
 <div class="highlight"><pre><span></span><code><span class="p">./</span><span class="n">archive-evidence</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-MachineId</span> <span class="p">&lt;</span><span class="n">machine-id</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Back in the release checkout, ingest it and refresh the matrix report:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-ingest-evidence<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>path/to/evidence-&lt;machine-id&gt;.tar.gz
-just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--strict-matrix
-just<span class="w"> </span>release-gates<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--write-artifacts<span class="w"> </span>--strict-matrix
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-ingest-evidence<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>path/to/evidence-&lt;machine-id&gt;.tar.gz
+just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--strict-matrix
+just<span class="w"> </span>release-gates<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--write-artifacts<span class="w"> </span>--strict-matrix
 </code></pre></div>
 <p>Publication rehearsals stay approval-gated:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl<span class="w"> </span>--dist-dir<span class="w"> </span>dist<span class="w"> </span>--write-report
-just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run<span class="w"> </span>--dist-dir<span class="w"> </span>dist
-just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl<span class="w"> </span>--dist-dir<span class="w"> </span>dist<span class="w"> </span>--write-report
+just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run<span class="w"> </span>--dist-dir<span class="w"> </span>dist
+just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run
 just<span class="w"> </span>release-create-tag<span class="w"> </span><span class="m">0</span>.4.0<span class="w"> </span>--dry-run
 just<span class="w"> </span>release-pypi<span class="w"> </span><span class="m">0</span>.4.0<span class="w"> </span>--dry-run
 just<span class="w"> </span>release-github-publish<span class="w"> </span><span class="m">0</span>.4.0<span class="w"> </span>--dry-run

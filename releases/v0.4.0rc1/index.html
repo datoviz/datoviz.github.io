@@ -11018,7 +11018,7 @@
 </tr>
 <tr>
 <td>macOS arm64/x86_64</td>
-<td>Hosted build and Python 3.10–3.14 installed-wheel smoke passed; both conformance lanes passed. The exact arm64 wheel also passed physical unattended proof and seven attended interaction scenarios.</td>
+<td>Hosted build and Python 3.10–3.14 installed-wheel smoke passed; both original conformance lanes passed. Post-release testing found that those lanes covered offscreen rendering but not an installed native window. The seven attended labels covered checkout-built examples, not a separately recorded exact-wheel Quickstart.</td>
 </tr>
 <tr>
 <td>Windows AMD64/ARM64</td>
@@ -11061,10 +11061,13 @@
 <p>The <a href="https://github.com/datoviz/datoviz/blob/v0.4.0rc1/docs/reference/v03-visible-parity.md">v0.3 parity</a> page has the detailed migration disposition. The scope and limitations above supersede the tagged feature-status page where RC1 package availability is concerned.</p>
 <h2 id="known-limitations">Known limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Attended testing of the exact RC1 wheels was completed on macOS arm64 only; the other five targets have comprehensive unattended hosted evidence.</li>
+<li><strong>macOS RC1 wheel native windows are broken.</strong> The packaged library and GLFW can select different Vulkan loaders, causing <code>glfwCreateWindowSurface()</code> to fail. Offscreen rendering is unaffected. Upgrade to the published RC2 package for native-window use. The RC1 release evidence originally overstated this path because the exact-wheel Quickstart was not represented separately and manual labels allowed empty observations.</li>
+<li>Attended macOS arm64 testing covered checkout-built interaction examples, while the exact RC1
+  wheel had comprehensive unattended offscreen and installed-package evidence. The other five
+  targets have unattended hosted evidence only.</li>
 <li>WebGPU/WASM covers only the promoted example subset.</li>
 <li>Compute+graphics is experimental, not a general compute framework.</li>
-<li>Qt/PyQt hosting is implemented but source-build-only in RC1. The wheels include the <code>datoviz.qt</code> adapter, and the <code>datoviz[qt]</code> extra installs PyQt6, but neither supplies the native <code>datoviz_qtbridge</code> library required for hosted rendering. Build the bridge with <code>DVZ_ENABLE_QT_BRIDGE=ON</code> and, if necessary, set <code>DATOVIZ_QTBRIDGE_LIBRARY</code>. A packaged provider is planned for RC2, preferably through conda-forge first.</li>
+<li>Qt/PyQt hosting is implemented but source-build-only in RC1. The wheels include the <code>datoviz.qt</code> adapter, and the <code>datoviz[qt]</code> extra installs PyQt6, but neither supplies the native <code>datoviz_qtbridge</code> library required for hosted rendering. Build the bridge with <code>DVZ_ENABLE_QT_BRIDGE=ON</code> and, if necessary, set <code>DATOVIZ_QTBRIDGE_LIBRARY</code>. A packaged provider is planned for RC3, preferably through conda-forge first.</li>
 </ul>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
 <p>Most useful: installation on clean machines, behavior across GPUs and drivers, clarity of the C and Python APIs, the examples, and the experimental WebGPU and compute paths.</p>

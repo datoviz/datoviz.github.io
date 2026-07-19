@@ -11457,7 +11457,7 @@ missing.</p>
 </code></pre></div>
 <p>Use <code>--qt-probe required</code> only on a machine or CI runner where PyQt6, Qt Vulkan support, and the
 Datoviz Qt bridge provider are expected to be present.</p>
-<p>RC1 has no packaged Qt bridge provider; its Qt/PyQt path is source-build-only. The RC2 release goal
+<p>RC2 has no packaged Qt bridge provider; its Qt/PyQt path is source-build-only. The RC3 release goal
 is a separate provider route, not a base-wheel dependency. Source builds may build
 <code>datoviz_qtbridge</code> with <code>DVZ_ENABLE_QT_BRIDGE=ON</code> or <code>AUTO</code>; local and split provider validation
 should point <code>datoviz.qt</code> at that bridge with <code>DATOVIZ_QTBRIDGE_LIBRARY</code>. Conda-forge is the
@@ -11514,16 +11514,16 @@ uploaded candidate.</p>
 <p>After the upload, verify the package-index path against the exact successful Wheels run:</p>
 <div class="highlight"><pre><span></span><code>gh<span class="w"> </span>workflow<span class="w"> </span>run<span class="w"> </span>package-index-verification.yml<span class="w"> </span>--ref<span class="w"> </span>v0.4-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-f<span class="w"> </span><span class="nv">index</span><span class="o">=</span>testpypi<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-f<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="m">0</span>.4.0rc1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-f<span class="w"> </span><span class="nv">wheel_run_id</span><span class="o">=</span><span class="m">29641789685</span>
+<span class="w">  </span>-f<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="m">0</span>.4.0rc2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span><span class="nv">wheel_run_id</span><span class="o">=</span>&lt;wheels-run-id&gt;
 </code></pre></div>
 <p><code>workflow_dispatch</code> requires the workflow file to exist on the repository default branch. Before
 that is true for a release branch, commit
 <code>.github/package-index-verification-request.json</code> on <code>v0.4-dev</code> with the equivalent request:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpypi&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.4.0rc1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;wheel_run_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29641789685&quot;</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.4.0rc2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;wheel_run_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;wheels-run-id&gt;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Changing that request file triggers the same workflow on the release branch. Do not create or

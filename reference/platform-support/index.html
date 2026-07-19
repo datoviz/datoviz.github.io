@@ -11222,8 +11222,8 @@ separately in smoke output or compatibility notes.</p>
 <tbody>
 <tr>
 <td>Qt/PyQt hosting</td>
-<td>Implemented; source-build-only in RC1</td>
-<td>Needs a source-built <code>datoviz_qtbridge</code>, compatible Qt runtime, PyQt6 Vulkan binding surface, and platform WSI support. A packaged provider is planned for RC2.</td>
+<td>Implemented; source-build-only in RC2</td>
+<td>Needs a source-built <code>datoviz_qtbridge</code>, compatible Qt runtime, PyQt6 Vulkan binding surface, and platform WSI support. A packaged provider is planned for RC3.</td>
 </tr>
 <tr>
 <td>PySide6 hosting</td>
@@ -11247,7 +11247,7 @@ separately in smoke output or compatibility notes.</p>
 </tr>
 </tbody>
 </table>
-<p>The base <code>libdatoviz</code> build and base Python wheel do not link Qt. RC1 wheels include the
+<p>The base <code>libdatoviz</code> build and base Python wheel do not link Qt. RC2 wheels include the
 <code>datoviz.qt</code> adapter, and the <code>datoviz[qt]</code> extra installs PyQt6, but neither includes the native
 bridge. PyQt hosting therefore needs a <code>datoviz_qtbridge</code> shared library built with
 <code>DVZ_ENABLE_QT_BRIDGE=ON</code> or supplied separately, plus a compatible Qt/PyQt runtime at load time.</p>

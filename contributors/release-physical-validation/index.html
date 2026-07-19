@@ -11308,7 +11308,9 @@ cp<span class="w"> </span>/path/to/datoviz/examples/docs/quickstart.py<span clas
 <span class="p">&amp;</span> <span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">wheel-venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">quickstart</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
 <p>Ask the maintainer to resize, pan, zoom, and close the window normally. Record <code>pass</code> only after all
-four actions succeed. Retain the wheel checksum beside this result.</p>
+four actions succeed. The exact-wheel Quickstart is a distinct manual scenario; neither an
+offscreen render nor a checkout-built native example can satisfy it. Retain the wheel checksum,
+interpreter path, imported <code>datoviz</code> path, command, and interaction observation beside this result.</p>
 <h2 id="3-run-the-fixed-native-interaction-set">3. Run The Fixed Native Interaction Set<a class="headerlink" href="#3-run-the-fixed-native-interaction-set" title="Permanent link">&para;</a></h2>
 <p>Build the checkout at the artifact commit, or at a descendant release commit whose intervening diff
 has also been audited as runtime-neutral. Launch each executable without <code>--png</code>,
@@ -11397,35 +11399,38 @@ artifact-neutral release commit does not require a rebuild or repeat pass.</p>
 <p>The worker agent can download the native wheel from an exact successful Wheels run, clear local
 Vulkan SDK and dynamic-library discovery overrides, and run the shared cloud/physical unattended
 profile twice without maintainer input:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-test-physical<span class="w"> </span><span class="m">29635132595</span><span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--machine-id<span class="w"> </span>macbook-m3
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-test-physical<span class="w"> </span>&lt;wheels-run-id&gt;<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--machine-id<span class="w"> </span>macbook-m3
 </code></pre></div>
 <p>After it guides the maintainer through the fixed interaction set above, it records every result.
 Omitted scenarios remain pending and cannot be approved:</p>
 <div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-test-approve<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--evidence-dir<span class="w"> </span>build/release/0.4.0rc1/conformance/macbook-m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--evidence-dir<span class="w"> </span>build/release/&lt;version&gt;/conformance/macbook-m3<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--approved-by<span class="w"> </span>cyrille<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>scatter-panzoom<span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>arcball-3d<span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>text-resize<span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>image-probe<span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>textured-mesh<span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span><span class="nv">picking</span><span class="o">=</span>pass<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--result<span class="w"> </span>close-reopen<span class="o">=</span>pass
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;exact-wheel-quickstart=pass:wheel SHA-256, interpreter, import path, command; resize, pan, zoom, and close succeeded&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;scatter-panzoom=pass:resize, pan, and wheel-zoom succeeded&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;arcball-3d=pass:rotate and zoom succeeded&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;text-resize=pass:text remained legible after resize&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;image-probe=pass:probe readout changed coherently&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;textured-mesh=pass:texture and depth remained correct while rotating&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;picking=pass:picking and resize succeeded&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--result<span class="w"> </span><span class="s1">&#39;close-reopen=pass:closed, reopened, and closed normally&#39;</span>
 </code></pre></div>
+<p>Every manual result requires a non-empty observation. Use <code>skip:&lt;reason&gt;</code> for an unavailable
+optional scenario and <code>fail:&lt;observation&gt;</code> for a failure; do not turn an automated native-window
+smoke into a human interaction pass.</p>
 <p>Submission requires ORAS, GitHub CLI authentication, package write access, and explicit upload
 approval. <code>--confirm yes</code> creates a checksummed archive, pushes it to
 <code>ghcr.io/datoviz/datoviz-release-evidence</code>, and dispatches the intake workflow:</p>
 <div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-test-submit<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--evidence-dir<span class="w"> </span>build/release/0.4.0rc1/conformance/macbook-m3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--evidence-dir<span class="w"> </span>build/release/&lt;version&gt;/conformance/macbook-m3<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--confirm<span class="w"> </span>yes
 </code></pre></div>
 <p>The intake workflow safely extracts the bundle, checks the immutable campaign identity, rejects
 failed or unapproved evidence, and retains the accepted bundle as a GitHub Actions artifact. The
 release machine is also a worker and must submit its own evidence. Its agent may repeatedly poll
 accepted submissions and regenerate the combined hosted/physical HTML report:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-evidence-sync<span class="w"> </span><span class="m">29635132595</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--input<span class="w"> </span>build/wheel-reports/29635132595<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--expected-machine<span class="w"> </span>release-linux-x86_64<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-evidence-sync<span class="w"> </span>&lt;wheels-run-id&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>path/to/hosted-evidence<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--expected-machine<span class="w"> </span>macbook-m3
 </code></pre></div>
 <p>The report opens from <code>build/physical-evidence/report/index.html</code>. Hosted and physical rows retain

@@ -11250,14 +11250,14 @@
 
 <h1 id="embed-in-qt">Embed in Qt<a class="headerlink" href="#embed-in-qt" title="Permanent link">&para;</a></h1>
 <p>Integrate Datoviz with a Qt application that owns the window and event loop.</p>
-<p>Qt hosting is implemented, but it is source-build-only in RC1. It is an advanced native integration
+<p>Qt hosting is implemented, but it is source-build-only in RC2. It is an advanced native integration
 to configure, and it does not make Qt a dependency of the base Datoviz library. No packaged native
-Qt bridge provider is available in RC1; build or supply the bridge separately. A packaged provider
-is planned for RC2.</p>
+Qt bridge provider is available in RC2; build or supply the bridge separately. A packaged provider
+is planned for RC3.</p>
 <div class="admonition info">
 <p class="admonition-title">At a glance</p>
 <ul>
-<li><strong>Status:</strong> Implemented; source-build-only in RC1, with a packaged provider planned for RC2.</li>
+<li><strong>Status:</strong> Implemented; source-build-only in RC2, with a packaged provider planned for RC3.</li>
 <li><strong>Languages:</strong> C++/Qt and Python/PyQt6 through the optional bridge.</li>
 <li><strong>Prerequisites:</strong> Matching Qt development/runtime libraries, Vulkan hosting support, and a built/discoverable bridge.</li>
 <li><strong>Result:</strong> Qt owns the window/event loop while Datoviz renders one hosted view and receives forwarded events.</li>
@@ -11390,9 +11390,9 @@ Datoviz render through the existing view.</p>
 surface is unavailable during this cleanup pass is expected; graphics validation errors are not
 expected.</p>
 <h2 id="pyqt-hosting">PyQt hosting<a class="headerlink" href="#pyqt-hosting" title="Permanent link">&para;</a></h2>
-<p>The Python hosted path uses the optional <code>datoviz_qtbridge</code> provider. RC1 wheels contain the
+<p>The Python hosted path uses the optional <code>datoviz_qtbridge</code> provider. RC2 wheels contain the
 <code>datoviz.qt</code> adapter but not the native bridge. The <code>datoviz[qt]</code> extra installs PyQt6 only; it does
-not make Qt hosting usable by itself. For RC1, build the bridge with <code>DVZ_ENABLE_QT_BRIDGE=ON</code> or
+not make Qt hosting usable by itself. For RC2, build the bridge with <code>DVZ_ENABLE_QT_BRIDGE=ON</code> or
 supply a compatible source-built bridge separately. The loader checks the package directory, its
 <code>.libs</code> directory, common source-checkout build directories, and the platform library search path.
 Set <code>DATOVIZ_QTBRIDGE_LIBRARY</code> only when discovery needs an explicit bridge path.</p>

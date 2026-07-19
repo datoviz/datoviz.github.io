@@ -11253,13 +11253,13 @@ notes, and validation records.</p>
 </tr>
 <tr>
 <td>RC2</td>
-<td>Documentation and gallery candidate.</td>
-<td>Mostly final docs, examples, gallery media, known gaps.</td>
+<td>Narrow packaged native-window hotfix.</td>
+<td>Replacement wheels and exact-wheel regression evidence.</td>
 </tr>
 <tr>
 <td>RC3</td>
-<td>Packaging and quality candidate.</td>
-<td>Final packaging checks, licenses, checksums, blocker fixes only.</td>
+<td>Documentation, packaging, and quality candidate.</td>
+<td>Former RC2 scope, Qt provider, final packaging and docs.</td>
 </tr>
 <tr>
 <td>Final</td>
@@ -11268,8 +11268,9 @@ notes, and validation records.</p>
 </tr>
 </tbody>
 </table>
-<p>RC1 can still expose rough documentation and known issues. RC2 should make the user story coherent.
-RC3 should be close enough that only release-blocking defects change before final.</p>
+<p>RC1 exposed a macOS packaged native-window defect, so RC2 is deliberately limited to that repair
+and its regression proof. RC3 absorbs the former RC2 documentation/gallery/provider scope and
+should finish close enough that only release-blocking defects change before final.</p>
 <h2 id="release-inputs">Release Inputs<a class="headerlink" href="#release-inputs" title="Permanent link">&para;</a></h2>
 <p>Before starting an RC branch pass, collect these inputs:</p>
 <ol>
@@ -11293,20 +11294,20 @@ git<span class="w"> </span>diff<span class="w"> </span>--check
 artifacts from a tree with unreviewed staged changes, generated binary payloads, or an unintended
 <code>data</code> submodule update.</p>
 <p>For the automation front door, start with a dry run:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-plan<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
-just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-plan<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-dry-run<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
+just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run
 </code></pre></div>
 <p><code>release-dry-run</code> chains the plan, candidate dry-run, optional validation-pack rehearsal, strict
 matrix report when state exists, and publication dry-runs. Add <code>--write-report</code> to save
 <code>build/release/&lt;version&gt;/dry-run-report.md</code>.</p>
 <p>After reviewing the dry-run output, run the local candidate flow:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc1
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-candidate<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc2
 </code></pre></div>
-<p>This writes <code>build/release/0.4.0rc1/release-state.json</code>, command logs, generated source bundle
+<p>This writes <code>build/release/0.4.0rc2/release-state.json</code>, command logs, generated source bundle
 metadata, discovered wheel checksums, generated release notes, documentation validation evidence,
 and the first release report inputs. It does not tag, upload, publish, push, or create a GitHub
 release.</p>
@@ -11316,7 +11317,7 @@ just<span class="w"> </span><span class="nb">test</span>
 just<span class="w"> </span>spec-check
 </code></pre></div>
 <p>Documentation validation is recorded separately because it produces release evidence:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc1
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-docs-validate<span class="w"> </span><span class="m">0</span>.4.0rc2
 </code></pre></div>
 <p>By default this runs the generated C API classification check and selected fenced code-block
 doctests. Pass repeated <code>--file &lt;path&gt;</code> arguments to validate additional markdown pages.</p>
@@ -11343,10 +11344,10 @@ During development, the Python package may use a development version such as:</p
 </code></pre></div>
 <p>For an RC, set the Python package metadata to the intended PEP 440 release-candidate version, for
 example:</p>
-<div class="highlight"><pre><span></span><code>0.4.0rc1
+<div class="highlight"><pre><span></span><code>0.4.0rc2
 </code></pre></div>
 <p>Use tag names that make the artifact identity obvious:</p>
-<div class="highlight"><pre><span></span><code>v0.4.0rc1
+<div class="highlight"><pre><span></span><code>v0.4.0rc2
 v0.4.0rc2
 v0.4.0rc3
 v0.4.0
@@ -11369,10 +11370,10 @@ manual upload workflow should publish vetted artifacts to TestPyPI or PyPI.</p>
 creation, machine validation, release reports, and later publication automation. If an artifact
 checksum changes after validation begins, rerun validation or discard the stale evidence.</p>
 <p>Create a portable validation pack for physical validation machines:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-validation-pack<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
-just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-validation-pack<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
+just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl
 </code></pre></div>
-<p>Copy the generated <code>datoviz-0.4.0rc1-validation.tar.gz</code> to each target machine listed by
+<p>Copy the generated <code>datoviz-0.4.0rc2-validation.tar.gz</code> to each target machine listed by
 <code>release-machine-plan</code>. After extraction, run:</p>
 <div class="highlight"><pre><span></span><code>./validate-rc.sh
 </code></pre></div>
@@ -11381,7 +11382,7 @@ just<span class="w"> </span>release-machine-plan<span class="w"> </span><span cl
 </code></pre></div>
 <p>If the target machine already has the repository checkout, it may instead run the
 installed-artifact validator directly against the exact wheel or source artifact under review:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-machine-validate<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc1-...whl<span class="w"> </span>--profile<span class="w"> </span>rc
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-machine-validate<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--wheel<span class="w"> </span>path/to/datoviz-0.4.0rc2-...whl<span class="w"> </span>--profile<span class="w"> </span>rc
 </code></pre></div>
 <p>Use <code>quick</code> for a short install/import/CLI smoke, <code>rc</code> for CMake consumer evidence, and <code>full</code> for
 shaderc plus render smoke on a graphics-capable host. The validator writes environment metadata,
@@ -11397,12 +11398,12 @@ neither may be substituted for the other.</p>
 </code></pre></div>
 <p>On Windows PowerShell, use <code>./archive-evidence.ps1 -MachineId &lt;machine-id&gt;</code>.</p>
 <p>Ingest returned evidence in the release checkout:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-ingest-evidence<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>path/to/evidence-&lt;machine-id&gt;.tar.gz
-just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc1
-just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--strict-matrix
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-ingest-evidence<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>path/to/evidence-&lt;machine-id&gt;.tar.gz
+just<span class="w"> </span>release-machine-plan<span class="w"> </span><span class="m">0</span>.4.0rc2
+just<span class="w"> </span>release-report<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--strict-matrix
 </code></pre></div>
 <p>Before any publication rehearsal, generate the release safety summary and local checksum artifacts:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-gates<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--write-artifacts<span class="w"> </span>--strict-matrix
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-gates<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--write-artifacts<span class="w"> </span>--strict-matrix
 </code></pre></div>
 <p>This writes <code>build/release/&lt;version&gt;/release-report.md</code>, <code>SHA256SUMS</code>, and <code>SHA512SUMS</code>. A nonzero
 exit means the gate summary still has blocking failures or missing required machine evidence.</p>
@@ -11418,8 +11419,8 @@ just<span class="w"> </span>testpypi-upload<span class="w"> </span>&lt;host-plat
 just<span class="w"> </span>testpypi-upload-all<span class="w"> </span>wheelhouse<span class="w"> </span>yes
 </code></pre></div>
 <p>The release automation wrapper keeps the same irreversible-action split:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run<span class="w"> </span>--dist-dir<span class="w"> </span>dist
-just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dist-dir<span class="w"> </span>dist<span class="w"> </span>--confirm<span class="w"> </span>yes
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run<span class="w"> </span>--dist-dir<span class="w"> </span>dist
+just<span class="w"> </span>release-testpypi<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dist-dir<span class="w"> </span>dist<span class="w"> </span>--confirm<span class="w"> </span>yes
 </code></pre></div>
 <p>It refuses to upload unless the release gates are satisfied, or the maintainer explicitly passes
 <code>--allow-incomplete</code> for a rehearsal with known gaps.</p>
@@ -11459,11 +11460,11 @@ one unattended workflow.</p>
 <p>Keep known issues honest. If a platform or optional provider is untested, record it as untested
 rather than supported.</p>
 <p>Generate the first draft from release state and git history:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc1
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-notes<span class="w"> </span><span class="m">0</span>.4.0rc2
 </code></pre></div>
-<p>Review <code>build/release/0.4.0rc1/release-notes.md</code> and replace generated commit grouping with
+<p>Review <code>build/release/0.4.0rc2/release-notes.md</code> and replace generated commit grouping with
 user-facing highlights before GitHub draft approval.</p>
-<p>The published RC1 record lives in <a href="../../releases/v0.4.0rc1/">v0.4.0rc1 release notes</a>. For future
+<p>The active candidate record lives in <a href="../../releases/v0.4.0rc2/">v0.4.0rc2 release notes</a>. For future
 candidates, keep the note as a draft until the final commit, tag, artifact URLs, checksums, and
 platform validation matrix are filled in.</p>
 <p>For final <code>v0.4.0</code>, enable or verify GitHub-Zenodo archiving before creating the GitHub release.
@@ -11486,8 +11487,8 @@ identifiers is needed; if it is added, keep it consistent with <code>CITATION.cf
 <p>After these approvals exist, tools may execute the corresponding commands and API calls. The
 decision remains manual; the mechanics should be automated.</p>
 <p>For GitHub release drafts, use a dry run first:</p>
-<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--dry-run
-just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc1<span class="w"> </span>--confirm<span class="w"> </span>yes
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--dry-run
+just<span class="w"> </span>release-github-draft<span class="w"> </span><span class="m">0</span>.4.0rc2<span class="w"> </span>--confirm<span class="w"> </span>yes
 </code></pre></div>
 <p>The command creates or updates a draft release and uploads the recorded source bundle, wheels,
 validation pack, release report, and checksum artifacts. It does not publish the release.</p>

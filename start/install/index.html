@@ -11119,8 +11119,7 @@
 
 
 <h1 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h1>
-<p>These instructions target the published Datoviz v0.4.0rc1 release candidate. Choose a path by what
-you want to run.</p>
+<p>These instructions target Datoviz v0.4.0rc2, the active release candidate published on PyPI and GitHub. Choose a path by what you want to run.</p>
 <div class="dvz-context-strip">
   <span>v0.4 release candidate</span>
   <span>Python 3.10+</span>
@@ -11128,9 +11127,7 @@ you want to run.</p>
   <span>Vulkan runtime required</span>
 </div>
 
-<p>See the <a href="../../releases/v0.4.0rc1/">v0.4.0rc1 release notes</a> for the exact package, artifacts,
-validation evidence, and known limitations. Check
-<a href="../../reference/project-status/">project status</a> for the broader release posture.</p>
+<p>See the <a href="../../releases/v0.4.0rc2/">v0.4.0rc2 release notes</a> for the package, validation scope, and known limitations. Check <a href="../../reference/project-status/">project status</a> for the broader release posture.</p>
 <h2 id="choose-an-installation-path">Choose an installation path<a class="headerlink" href="#choose-an-installation-path" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -11160,22 +11157,26 @@ validation evidence, and known limitations. Check
 </table>
 <p>Native windows and offscreen rendering require a working Vulkan-capable GPU, driver, and runtime.
 Browser routes use the smaller, experimental <a href="../../reference/webgpu-subset/">WebGPU subset</a>.</p>
+<div class="admonition success">
+<p class="admonition-title">RC2 is published</p>
+<p>RC2 fixes the packaged macOS native-window Vulkan-loader defect found in RC1. Install RC2 from PyPI for native-window use; RC1 remains available for reproducibility but is superseded.</p>
+</div>
 <h2 id="python-package-path">Python package path<a class="headerlink" href="#python-package-path" title="Permanent link">&para;</a></h2>
-<p>Create an isolated environment, then install the exact RC1 version from PyPI.</p>
+<p>Create an isolated environment and install the exact version from PyPI.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS / Linux</label><label for="__tabbed_1_2">Windows PowerShell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span><span class="nv">datoviz</span><span class="o">==</span><span class="m">0</span>.4.0rc1
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span><span class="nv">datoviz</span><span class="o">==</span><span class="m">0</span>.4.0rc2
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">py</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
 <span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
 <span class="n">py</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="n">pip</span>
-<span class="n">py</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">datoviz</span><span class="p">==</span><span class="n">0</span><span class="p">.</span><span class="n">4</span><span class="p">.</span><span class="n">0rc1</span>
+<span class="n">py</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">datoviz</span><span class="p">==</span><span class="n">0</span><span class="p">.</span><span class="n">4</span><span class="p">.</span><span class="n">0rc2</span>
 </code></pre></div>
 </div>
 </div>
@@ -11186,17 +11187,16 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <p>Verify the active environment after installation:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import datoviz as dvz; print(&#39;datoviz import ok&#39;)&quot;</span>
 </code></pre></div>
-<p>Then continue with the <a href="../quickstart/">Quickstart</a>. Before choosing optional providers or deployment
-targets, review <a href="../../reference/platform-support/">platform support and known limitations</a>.</p>
+<p>Then continue with the <a href="../quickstart/">Quickstart</a>. Before choosing optional providers or deployment targets, review <a href="../../reference/platform-support/">platform support and known limitations</a>.</p>
 <h2 id="c-and-c-package-path">C and C++ package path<a class="headerlink" href="#c-and-c-package-path" title="Permanent link">&para;</a></h2>
 <p>Installed Datoviz packages expose the native library, public headers, runtime assets, and an
 exported CMake package:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">find_package</span><span class="p">(</span><span class="s">datoviz</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">my_app</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">datoviz::datoviz</span><span class="p">)</span>
 </code></pre></div>
-<p>This CMake fragment is an integration example, not a complete project. The RC1 wheels expose the
-installed C package and passed the release CMake-consumer checks. Source developers and system
-packagers may instead follow <a href="../build-from-source/">Build from source</a>, then use the
+<p>This CMake fragment is an integration example, not a complete project. The RC2 wheels expose the
+installed C package and are required to pass the release CMake-consumer checks. Source developers
+and system packagers may instead follow <a href="../build-from-source/">Build from source</a>, then use the
 <a href="../../how-to/c-integration/">C/C++ integration guide</a>.</p>
 <h2 id="source-build-path">Source-build path<a class="headerlink" href="#source-build-path" title="Permanent link">&para;</a></h2>
 <p>Build from source when no published package exists, when you need the current development branch,
@@ -11215,7 +11215,7 @@ vendored dependencies, macOS, Linux, native Windows, WSL2, verification, and exa
 <tbody>
 <tr>
 <td>Python RC package</td>
-<td>Published on PyPI as <code>datoviz==0.4.0rc1</code>; six native wheels are validated.</td>
+<td><code>datoviz==0.4.0rc2</code> is published on PyPI and verified against the canonical release wheels.</td>
 </tr>
 <tr>
 <td>Source build</td>
@@ -11223,15 +11223,15 @@ vendored dependencies, macOS, Linux, native Windows, WSL2, verification, and exa
 </tr>
 <tr>
 <td>Native Windows wheels</td>
-<td>AMD64 and ARM64 wheels are published and passed hosted package-index verification.</td>
+<td>RC2 AMD64 and ARM64 wheels are published and passed hosted build, package, and clean-install validation.</td>
 </tr>
 <tr>
 <td>Source bundle</td>
-<td>Published with the GitHub prerelease and covered by the release checksums.</td>
+<td>The RC2 source bundle is published with the GitHub prerelease.</td>
 </tr>
 <tr>
 <td>vcpkg and conda-forge</td>
-<td>Engineering and preflight paths; not published as RC1 package channels.</td>
+<td>Engineering and preflight paths; not published as RC2 package channels.</td>
 </tr>
 </tbody>
 </table>
