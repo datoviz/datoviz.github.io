@@ -1,0 +1,251 @@
+sections:
+  - id: showcases
+    title: Showcases
+    overview: showcases.md
+    lanes: [showcases]
+    highlights:
+      - showcases_streaming_daq
+      - showcases_choropleth
+      - showcases_gpu_particle_smoke
+      - showcases_galaxy
+      - showcases_cortical_activity
+      - showcases_protein
+      - showcases_textured_planet
+      - showcases_point_cloud
+    groups:
+      - title: 2D
+        examples:
+          - showcases_scientific_plotting
+          - showcases_streaming_daq
+          - showcases_panel_linked_axes
+          - showcases_linked_probe_colorbar
+          - showcases_scalebar_measurement
+          - showcases_choropleth
+          - showcases_wind_field
+          - showcases_svg_tiger
+          - showcases_gpu_particle_smoke
+      - title: 3D
+        examples:
+          - showcases_galaxy
+          - showcases_brain_volume
+          - showcases_cortical_activity
+          - showcases_protein
+          - showcases_point_cloud
+          - showcases_spherical_harmonics
+          - showcases_surface_grid
+          - showcases_terrain_relief
+          - showcases_textured_planet
+
+  - id: visuals
+    title: Visuals & Composites
+    overview: visuals.md
+    lanes: [visuals, composites]
+    highlights:
+      - visuals_marker
+      - visuals_vector
+      - visuals_image_rgba
+      - visuals_text
+    groups:
+      - title: 0D — point-like
+        examples:
+          - visuals_point
+          - visuals_pixel
+          - visuals_marker
+          - visuals_splat
+      - title: 1D — line-like
+        examples:
+          - visuals_segment
+          - visuals_path
+          - visuals_vector
+          - visuals_primitive
+      - title: 2D — planar
+        examples:
+          - visuals_image
+          - visuals_image_rgba
+          - visuals_text
+          - visuals_glyph
+          - visuals_labels
+      - title: 3D — volumetric
+        examples:
+          - visuals_mesh
+          - visuals_sphere
+          - visuals_volume
+      - title: Composites
+        examples:
+          - composites_polygon
+          - composites_graph
+
+  - id: features
+    title: Features
+    overview: features.md
+    lanes: [features]
+    highlights:
+      - features_panel_view2d
+      - features_user_scale
+      - features_bars_bands
+      - features_controller_turntable
+      - features_builtin_shapes_3d
+      - features_isolines
+      - features_lighting
+      - features_selection_mesh_instances
+    groups:
+      - title: Scene & Layout
+        examples:
+          - features_basic_scene
+          - features_coordinate_system
+          - features_panel_single
+          - features_panel_grid
+          - features_panel_multi
+          - features_panel_linked
+          - features_panel_view2d
+          - features_panel_background
+          - features_user_scale
+          - features_view_size_policies
+          - features_visual_transform
+          - features_visibility
+      - title: Navigation
+        examples:
+          - features_camera_manual
+          - features_panzoom
+          - features_controller_arcball
+          - features_controller_turntable
+          - features_controller_fly
+          - features_orientation_gizmo
+          - features_reference_grid
+      - title: Adornments
+        examples:
+          - features_axis_labels
+          - features_axes_2d
+          - features_datetime_axis
+          - features_guide_lines
+          - features_guide_spans
+          - features_bars_bands
+          - features_scalebar
+          - features_scalebar_units
+          - features_colorbar
+          - features_colormap_scale
+          - features_legend_categorical
+          - features_annotation_readout
+          - features_text_block
+          - features_overlay_card
+          - features_probe_labels
+      - title: Shapes & Geometry
+        examples:
+          - features_builtin_shapes_2d
+          - features_builtin_shapes_3d
+          - features_marker_symbols
+          - features_bezier_curve_path
+          - features_path_join
+          - features_obj_loading
+      - title: Scalar Fields
+        examples:
+          - features_sampled_field_update
+          - features_isolines
+          - features_image_probe
+      - title: Materials & Lighting
+        examples:
+          - features_lighting
+          - features_mesh_texture
+          - features_material_mesh
+      - title: Rendering Techniques
+        examples:
+          - features_technique_depth_cue
+          - features_technique_edl
+          - features_technique_ssao
+          - features_technique_msaa
+          - features_technique_transparency
+          - features_alpha_blending
+          - features_technique_depth_test
+      - title: Interaction & Selection
+        examples:
+          - features_picking
+          - features_selection_pixel
+          - features_selection_sphere
+          - features_selection_mesh_instances
+      - title: Animation & Updates
+        examples:
+          - features_animation_tracks
+          - features_timer_animation
+          - features_compute_buffer_animation
+          - features_update_partial
+          - features_update_visual_data
+      - title: GUI
+        examples:
+          - features_gui_controls
+          - features_gui_viewport
+          - features_gui_cimgui
+      - title: Input & Diagnostics
+        examples:
+          - features_input_events
+          - features_json_export
+          - features_bounds_overlay
+    index_groups:
+      - title: Layout
+        examples:
+          - features_panel_grid
+          - features_panel_multi
+          - features_panel_linked
+      - title: Adornments
+        examples:
+          - features_axis_labels
+          - features_colorbar
+          - features_scalebar
+          - features_colormap_scale
+      - title: Navigation
+        examples:
+          - features_panzoom
+          - features_controller_arcball
+          - features_controller_fly
+          - features_controller_turntable
+      - title: Scalar Fields
+        examples:
+          - features_sampled_field_update
+          - features_isolines
+          - features_image_probe
+      - title: 3D Rendering
+        examples:
+          - features_lighting
+          - features_mesh_texture
+          - features_technique_ssao
+          - features_technique_depth_cue
+      - title: Animation & Interaction
+        examples:
+          - features_animation_tracks
+          - features_timer_animation
+          - features_selection_sphere
+      - title: GUI
+        examples:
+          - features_gui_controls
+          - features_gui_viewport
+          - features_gui_cimgui
+
+  - id: runtime
+    title: Runtime & Capture
+    overview: runtime.md
+    lanes: [runtime]
+    groups:
+      - title: Window Lifecycle
+        examples:
+          - runtime_app_glfw
+          - runtime_multi_window
+      - title: Capture, Export & Replay
+        examples:
+          - runtime_offscreen_capture
+          - runtime_video_export
+          - runtime_record_replay
+
+  - id: advanced
+    title: Advanced
+    page_title: Advanced Examples
+    overview: advanced.md
+    lanes: [advanced]
+    index_groups:
+      - title: Host Integration
+        examples:
+          - advanced_external_surface_glfw
+          - advanced_qt_hosting
+    examples:
+      - advanced_external_surface_glfw
+      - advanced_qt_hosting
+      - advanced_raw_triangle_drp2
+      - advanced_raw_triangle_vklite

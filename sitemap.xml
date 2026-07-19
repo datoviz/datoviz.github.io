@@ -2,342 +2,1078 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://datoviz.org/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/quickstart/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/ai-agents/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/discussions/ARCHITECTURE/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/advanced/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/discussions/BUILD/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/advanced/drp2-command-streams/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/discussions/CONTRIBUTING/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/advanced/runtime-internals/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/discussions/LICENSE/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/blog/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/discussions/MAINTAINERS/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/blog/datoviz-v0-4-release-candidate/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/blog/specifications-before-code-rebuilding-datoviz-with-coding-agents/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/anchor/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/adding-a-drp2-command/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/animation/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/adding-a-webgpu-fixture/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/arcball/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/agent-release-checklist/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/axes/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/architecture-map/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/basic_shape/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/example-selection-by-capability/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/camera/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/generated-documentation/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/colorbar/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/release-flight-checklist/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/colormaps/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/release-physical-validation/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/fixed/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/release-process/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/fly/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/release-validation/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/gui/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/contributors/release-wheels/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/gui_panel/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/hide/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/advanced/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/keyboard/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/features/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/light/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/runtime/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/mesh_light/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/showcases/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/mesh_transparent/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/validation-gallery/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/mouse/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/visuals/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/obj/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/webgpu-matrix/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/offscreen/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/advanced/advanced_external_surface_glfw/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/orbit/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/advanced/advanced_qt_hosting/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/panel/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/advanced/advanced_raw_triangle_drp2/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/polygon/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/advanced/advanced_raw_triangle_vklite/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/shapes/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/composites/composites_graph/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/sphere_textures/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/composites/composites_polygon/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/stop/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_alpha_blending/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/surface/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_animation_tracks/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/tile/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_annotation_readout/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/timer/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_axes_2d/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/timestamps/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_axis_labels/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/features/video/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_bars_bands/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/brain_field/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_basic_scene/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/choropleth/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_bezier_curve_path/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/lidar/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_bounds_overlay/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/molecule/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_builtin_shapes_2d/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/mouse_brain/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_builtin_shapes_3d/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/raster/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_camera_manual/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/showcase/splatting/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_colorbar/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/basic/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_colormap_scale/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/glyph/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_compute_buffer_animation/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/image/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_controller_arcball/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/marker/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_controller_fly/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/mesh/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_controller_turntable/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/path/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_coordinate_system/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/pixel/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_datetime_axis/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/point/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_gui_cimgui/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/segment/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_gui_controls/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/sphere/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_gui_viewport/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/volume/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_guide_lines/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/gallery/visuals/wiggle/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_guide_spans/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_image_probe/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/c/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_input_events/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/common/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_isolines/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/drp/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_json_export/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/events/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_legend_categorical/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/gui/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_lighting/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/input/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_marker_symbols/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/interactivity/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_material_mesh/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/shape/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_mesh_texture/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/texture/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_obj_loading/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/guide/visuals/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_orientation_gizmo/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/reference/api_c/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_overlay_card/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/reference/api_py/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_background/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_grid/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_linked/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_multi/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_single/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panel_view2d/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_panzoom/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_path_join/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_picking/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_probe_labels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_reference_grid/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_sampled_field_update/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_scalebar/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_scalebar_units/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_selection_mesh_instances/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_selection_pixel/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_selection_sphere/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_depth_cue/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_depth_test/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_edl/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_msaa/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_ssao/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_technique_transparency/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_text_block/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_timer_animation/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_update_partial/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_update_visual_data/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_user_scale/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_view_size_policies/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_visibility/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/features/features_visual_transform/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/runtime/runtime_app_glfw/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/runtime/runtime_multi_window/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/runtime/runtime_offscreen_capture/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/runtime/runtime_record_replay/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/runtime/runtime_video_export/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_brain_volume/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_choropleth/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_cortical_activity/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_galaxy/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_gpu_particle_smoke/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_linked_probe_colorbar/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_panel_linked_axes/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_point_cloud/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_protein/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_scalebar_measurement/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_scientific_plotting/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_spherical_harmonics/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_streaming_daq/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_surface_grid/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_svg_tiger/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_terrain_relief/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_textured_planet/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/showcases/showcases_wind_field/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_glyph/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_image/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_image_rgba/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_labels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_marker/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_mesh/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_path/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_pixel/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_point/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_primitive/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_segment/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_sphere/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_splat/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_text/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_vector/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/gallery/visuals/visuals_volume/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/architecture/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/coordinate-systems/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/figure-panel-visual-model/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/frame-lifecycle/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/gpu-resource-ownership/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/gsp-vispy2-boundary/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/interaction-model/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/invalidation-and-caching/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/query-pick-probe-model/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/retained-resources/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/explanation/scene-to-runtime-boundary/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/3d-navigation/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/add-a-visual/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/add-annotations/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/adornments/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/animation/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/axes/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/c-integration/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/capture-an-image/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/choose-a-visual-family/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/configure-cameras/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/coordinate-systems/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/create-a-scene/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/create-a-window/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/create-multiple-panels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/debug-rendering/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/debug-webgpu/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/deploy-to-web/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/depth-blending/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/diagnose-platform/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/embed-in-qt/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/input-events/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/lighting-and-materials/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/link-panels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/multiple-panels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/pick-items/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/probe-fields/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/profile-performance/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/record-replay/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/render-offscreen/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/rendering-techniques/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/replay-dvzr/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/screenshots/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/select-items/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/transforms-and-scales/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/update-visual-data/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-colormaps/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-ipython/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-panzoom/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-python/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-raw-ctypes/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/use-sampled-fields/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/video-export/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/how-to/window-size/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/landing/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/build-options/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/callbacks/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/citation/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
          <loc>https://datoviz.org/reference/colormaps/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/basic/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/compute-graphics/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/glyph/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/controllers/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/image/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/coordinate-systems/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/marker/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/ctypes/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/mesh/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/errors-and-logging/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/path/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/feature-status/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/pixel/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/objects-and-lifetimes/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/point/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/platform-support/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/segment/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/project-status/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/slice/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/python-direct-engine/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/sphere/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/queries/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/volume/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/v03-visible-parity/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
     <url>
-         <loc>https://datoviz.org/visuals/wiggle/</loc>
-         <lastmod>2026-01-21</lastmod>
+         <loc>https://datoviz.org/reference/visual-attributes/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/webgpu-subset/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/app/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/drp2/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/ffi/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/frame-plan/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime-controllers/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime-math/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime-utilities/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime-vklite/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime-vulkan/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/runtime/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/scene/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/techniques/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/types/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/c-api/visuals/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/glyph/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/image/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/labels/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/marker/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/mesh/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/path/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/pixel/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/point/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/primitive/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/segment/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/sphere/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/splat/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/text/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/vector/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/reference/visual-families/volume/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/releases/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/releases/v0.4.0rc1/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/ai-workflow/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/build-from-source/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/choose-your-layer/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/core-concepts/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/first-c-program/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/install/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/quickstart/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/start/what-is-datoviz/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/tutorials/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/tutorials/first-scene/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/examples/webgpu/COMPAT/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/webgpu-data/examples/cortical_activity/sha256-4b8e4d31566009f3/PROVENANCE/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/webgpu-data/examples/orbital_debris/sha256-5ae33a50aeb8fa81/PROVENANCE/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/webgpu-data/examples/planet_sky/sha256-ca8592458acb5ae2/PROVENANCE/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/webgpu-data/examples/svg_tiger/sha256-640a536d848ff2eb/PROVENANCE/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/webgpu-data/examples/terrain_relief/sha256-0539b707993348c0/PROVENANCE/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/blog/archive/2026/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/blog/category/development/</loc>
+         <lastmod>2026-07-19</lastmod>
+    </url>
+    <url>
+         <loc>https://datoviz.org/blog/category/releases/</loc>
+         <lastmod>2026-07-19</lastmod>
     </url>
 </urlset>

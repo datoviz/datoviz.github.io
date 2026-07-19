@@ -1,0 +1,971 @@
+{
+  "name": "wasm_api_scene",
+  "version": {
+    "major": 2,
+    "minor": 0
+  },
+  "commands": [
+    {
+      "cmd": "HelloRenderer",
+      "version": {
+        "major": 2,
+        "minor": 0
+      },
+      "client_name": "scene-runtime"
+    },
+    {
+      "cmd": "RendererHelloReply",
+      "version": {
+        "major": 2,
+        "minor": 0
+      },
+      "status": "ok",
+      "renderer_name": "datoviz-drp2-runtime"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 20,
+      "size": 36,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 20,
+      "offset": 0,
+      "size": 36,
+      "data": "7FE4v1yPwr4K16M+pHA9P3sUrr7sUTi+AAAAAOxROD/sUTg+"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 21,
+      "size": 12,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 21,
+      "offset": 0,
+      "size": 12,
+      "data": "9Xha/1DSw//111r/"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 22,
+      "size": 12,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 22,
+      "offset": 0,
+      "size": 12,
+      "data": "7FE4PgrXIz4pXA8+"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 23,
+      "size": 144,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 23,
+      "offset": 0,
+      "size": 144,
+      "data": "ZmbmvjMzsz6F61E/AAAAAI/CdT6F61E/j8J1PgAA0EEAAIA/AACAPwAAAAAAAAAAAACAPwAAgD8AAIA/AACAP1K4Hj97FK4+AAAAAM3MzD0AAAAAAAAAAAAAAADNzMw9AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAQEAAAAAA"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 24,
+      "size": 432,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 24,
+      "offset": 0,
+      "size": 432,
+      "data": "AAAgvwAAIL8AACA/AAAgPwAAIL8AACA/AAAgvwAAID8AACA/AAAgPwAAIL8AACA/AAAgPwAAID8AACA/AAAgvwAAID8AACA/AAAgPwAAIL8AACC/AAAgvwAAIL8AACC/AAAgPwAAID8AACC/AAAgvwAAIL8AACC/AAAgvwAAID8AACC/AAAgPwAAID8AACC/AAAgPwAAIL8AACA/AAAgPwAAIL8AACC/AAAgPwAAID8AACA/AAAgPwAAIL8AACC/AAAgPwAAID8AACC/AAAgPwAAID8AACA/AAAgvwAAIL8AACC/AAAgvwAAIL8AACA/AAAgvwAAID8AACC/AAAgvwAAIL8AACA/AAAgvwAAID8AACA/AAAgvwAAID8AACC/AAAgvwAAID8AACA/AAAgPwAAID8AACA/AAAgvwAAID8AACC/AAAgPwAAID8AACA/AAAgPwAAID8AACC/AAAgvwAAID8AACC/AAAgvwAAIL8AACC/AAAgPwAAIL8AACC/AAAgvwAAIL8AACA/AAAgPwAAIL8AACC/AAAgPwAAIL8AACA/AAAgvwAAIL8AACA/"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 25,
+      "size": 144,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 25,
+      "offset": 0,
+      "size": 144,
+      "data": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 26,
+      "size": 432,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 26,
+      "offset": 0,
+      "size": 432,
+      "data": "AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAA"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 27,
+      "size": 288,
+      "usage": [
+        "COPY_DST",
+        "VERTEX"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 27,
+      "offset": 0,
+      "size": 288,
+      "data": "AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 28,
+      "size": 144,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 28,
+      "offset": 0,
+      "size": 144,
+      "data": "ZmbmvlyPwr7NzEw/AAAAAKabRD64HmU/uB4FP+J6lkIAAABAAACAPwAAAAAAAAAAZmaGP4/CdT8AAIA/AACAPz0K1z64HgU/CtcjPQrXIz4AAAAAAAAAAAAAAAAK1yM+AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAQEAAAAAA"
+    },
+    {
+      "cmd": "CreateTexture",
+      "id": 29,
+      "dimension": "2d",
+      "width": 16,
+      "height": 16,
+      "depth": 1,
+      "format": "rgba8unorm",
+      "usage": [
+        "COPY_DST",
+        "TEXTURE_BINDING"
+      ],
+      "color_role": "srgb_color",
+      "mip_level_count": 1,
+      "sample_count": 1
+    },
+    {
+      "cmd": "WriteTexture",
+      "texture_id": 29,
+      "mip_level": 0,
+      "origin": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "size": {
+        "width": 16,
+        "height": 16,
+        "depth": 1
+      },
+      "bytes_per_row": 64,
+      "rows_per_image": 16,
+      "data": "9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/0G05v9BtOb/QbTm/0G05v/1c1D/9XNQ//VzUP/1c1D/QbTm/0G05v9BtOb/QbTm//VzUP/1c1D/9XNQ//VzUP9BtOb/QbTm/0G05v9BtOb/9XNQ//VzUP/1c1D/9XNQ/w=="
+    },
+    {
+      "cmd": "CreateTexture",
+      "id": 5000,
+      "dimension": "2d",
+      "width": 64,
+      "height": 64,
+      "depth": 1,
+      "format": "rgba8unorm",
+      "usage": [
+        "COPY_SRC",
+        "TEXTURE_BINDING",
+        "RENDER_ATTACHMENT"
+      ],
+      "mip_level_count": 1,
+      "sample_count": 1
+    },
+    {
+      "cmd": "CreateBindGroupLayout",
+      "id": 5001,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "visibility": [
+            "VERTEX",
+            "FRAGMENT"
+          ]
+        },
+        {
+          "binding": 1,
+          "binding_type": "uniform_buffer",
+          "visibility": [
+            "VERTEX",
+            "FRAGMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 5002,
+      "size": 208,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 5003,
+      "size": 16,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "CreateBindGroup",
+      "id": 5004,
+      "bind_group_layout_id": 5001,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 5002,
+          "offset": 0,
+          "size": 208
+        },
+        {
+          "binding": 1,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 5003,
+          "offset": 0,
+          "size": 16
+        }
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 5002,
+      "offset": 0,
+      "size": 208,
+      "data": "LrxHP4b9ob1y2B4/AAAAAAb0Ib64Tm8/LdWiPgAAAAB/7Rq/LEqxvkOCNz8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAABAwAAAgD95ghpAAAAAAAAAAAAAAAAAAAAAAHmCGkAAAAAAAAAAAAAAAAAAAAAAmkGAvwAAgL8AAAAAAAAAAEgBTb4AAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 5003,
+      "offset": 0,
+      "size": 16,
+      "data": "AAAAAAAAAAAAAIBCAACAQg=="
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5005,
+      "stage": "VERTEX",
+      "format": "wgsl",
+      "entry_point": "main",
+      "builtin_family": "scene.sphere",
+      "builtin_variant": "default",
+      "builtin_version": 1,
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n// Shared transform pipeline for builtin scene vertex shaders.\n//\n// Bind group layout (group 0):\n//   binding 0: MVP { model, view, proj, time, flags }\n//   binding 1: Viewport { x, y, width, height }\n\nstruct MVP {\n    model: mat4x4f,\n    view: mat4x4f,\n    proj: mat4x4f,\n    time: f32,\n    flags: u32,\n}\n\nstruct Viewport {\n    rect: vec4f,\n}\n\n@group(0) @binding(0) var<uniform> mvp: MVP;\n@group(0) @binding(1) var<uniform> viewport: Viewport;\n\nfn transform(position: vec3f) -> vec4f {\n    return mvp.proj * mvp.view * mvp.model * vec4f(position, 1.0);\n}\n\n\nstruct VertexIn {\n    @location(0) position: vec3f,\n    @location(1) color: vec4f,\n    @location(2) radius: f32,\n}\n\nstruct VertexOut {\n    @builtin(position) position: vec4f,\n    @location(0) color: vec4f,\n    @location(1) center_view: vec4f,\n    @location(2) radius: f32,\n    @location(3) sprite_scale: f32,\n    @location(4) coord: vec2f,\n}\n\nfn transform_radius(radius: f32) -> f32 {\n    let sx = length(mvp.model[0].xyz);\n    let sy = length(mvp.model[1].xyz);\n    let sz = length(mvp.model[2].xyz);\n    return radius * max(max(sx, sy), sz);\n}\n\nfn quad_corner(vertex_id: u32) -> vec2f {\n    let corners = array<vec2f, 6>(\n        vec2f(-1.0, -1.0),\n        vec2f( 1.0, -1.0),\n        vec2f(-1.0,  1.0),\n        vec2f(-1.0,  1.0),\n        vec2f( 1.0, -1.0),\n        vec2f( 1.0,  1.0),\n    );\n    return corners[vertex_id];\n}\n\n@vertex\nfn main(@builtin(vertex_index) vertex_id: u32, input: VertexIn) -> VertexOut {\n    let corner = quad_corner(vertex_id);\n    let center_view = mvp.view * mvp.model * vec4f(input.position, 1.0);\n    let center = transform(input.position);\n    let radius = max(transform_radius(input.radius), 1e-6);\n    let inv_w = 1.0 / max(abs(center.w), 1e-6);\n    let ndc_radius_data = vec2f(\n        radius * abs(mvp.proj[0][0]) * inv_w,\n        radius * abs(mvp.proj[1][1]) * inv_w,\n    );\n    let radius_px = 0.5 * max(\n        ndc_radius_data.x * viewport.rect.z,\n        ndc_radius_data.y * viewport.rect.w,\n    );\n    let padded_radius_px = radius_px + 1.5;\n    let ndc_radius = ndc_radius_data + vec2f(\n        3.0 / max(viewport.rect.z, 1.0),\n        3.0 / max(viewport.rect.w, 1.0),\n    );\n\n    var output: VertexOut;\n    output.position = vec4f(center.xy + corner * ndc_radius * center.w, center.zw);\n    output.color = input.color;\n    output.center_view = center_view;\n    output.radius = radius;\n    output.sprite_scale = padded_radius_px / max(radius_px, 1e-6);\n    output.coord = corner * output.sprite_scale;\n    return output;\n}\n"
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5006,
+      "stage": "FRAGMENT",
+      "format": "wgsl",
+      "entry_point": "main",
+      "builtin_family": "scene.sphere",
+      "builtin_variant": "default",
+      "builtin_version": 1,
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n// Shared transform pipeline for builtin scene vertex shaders.\n//\n// Bind group layout (group 0):\n//   binding 0: MVP { model, view, proj, time, flags }\n//   binding 1: Viewport { x, y, width, height }\n\nstruct MVP {\n    model: mat4x4f,\n    view: mat4x4f,\n    proj: mat4x4f,\n    time: f32,\n    flags: u32,\n}\n\nstruct Viewport {\n    rect: vec4f,\n}\n\n@group(0) @binding(0) var<uniform> mvp: MVP;\n@group(0) @binding(1) var<uniform> viewport: Viewport;\n\nfn transform(position: vec3f) -> vec4f {\n    return mvp.proj * mvp.view * mvp.model * vec4f(position, 1.0);\n}\n\nfn dvz_inverse_mat3x3f(m: mat3x3f) -> mat3x3f {\n    let c0 = cross(m[1], m[2]);\n    let c1 = cross(m[2], m[0]);\n    let c2 = cross(m[0], m[1]);\n    let inv_det = 1.0 / dot(m[0], c0);\n    return transpose(mat3x3f(c0 * inv_det, c1 * inv_det, c2 * inv_det));\n}\n\nfn dvz_affine_inverse_translation(m: mat4x4f) -> vec3f {\n    let linear = mat3x3f(m[0].xyz, m[1].xyz, m[2].xyz);\n    return -(dvz_inverse_mat3x3f(linear) * m[3].xyz);\n}\n\nfn camera_position_from_view() -> vec3f {\n    return dvz_affine_inverse_translation(mvp.view);\n}\n\nfn srgb_to_linear(srgb: vec3f) -> vec3f {\n    let clipped = clamp(srgb, vec3f(0.0), vec3f(1.0));\n    let lo = clipped / vec3f(12.92);\n    let hi = pow((clipped + vec3f(0.055)) / vec3f(1.055), vec3f(2.4));\n    return select(hi, lo, clipped <= vec3f(0.04045));\n}\n\nfn semantic_color_to_linear(color: vec4f) -> vec4f {\n    let clipped = clamp(color.rgb, vec3f(0.0), vec3f(1.0));\n    if (DVZ_LEGACY_SRGB_BLEND) {\n        return vec4f(clipped, clamp(color.a, 0.0, 1.0));\n    }\n    return vec4f(srgb_to_linear(clipped), clamp(color.a, 0.0, 1.0));\n}\n\nfn sampled_texture_color_to_linear(color: vec4f, params: vec4f) -> vec4f {\n    if (params.x > 0.5) {\n        return semantic_color_to_linear(color);\n    }\n    return vec4f(color.rgb, clamp(color.a, 0.0, 1.0));\n}\n\nstruct SceneMaterial {\n    light_direction: vec4f,\n    params: vec4f,\n    model: vec4f,\n    base_color_factor: vec4f,\n    standard_params: vec4f,\n    emissive_rim: vec4f,\n    depth_cue: vec4f,\n    depth_cue_color: vec4f,\n    depth_cue_extra: vec4f,\n}\n\n@group(1) @binding(0) var<uniform> material: SceneMaterial;\n\nfn evaluate_scene_material_linear_item(\n    linear_item_color: vec4f,\n    normal: vec3f,\n    world_position: vec3f,\n    camera_position: vec3f,\n) -> vec4f {\n    let model = i32(material.model.x + 0.5);\n    let opacity = clamp(material.model.y, 0.0, 1.0);\n    let linear_base_color = semantic_color_to_linear(material.base_color_factor);\n    let emissive = srgb_to_linear(material.emissive_rim.rgb);\n    let base = linear_item_color.rgb * linear_base_color.rgb;\n    let alpha = linear_item_color.a * linear_base_color.a * opacity;\n    if (model == 0) {\n        return vec4f(clamp(base + emissive, vec3f(0.0), vec3f(1.0)), alpha);\n    }\n\n    let n = normalize(normal);\n    let l = normalize(material.light_direction.xyz);\n    let v = normalize(camera_position - world_position);\n    let h = normalize(l + v);\n    let lambert = max(dot(n, l), 0.0);\n    if (model == 2) {\n        let roughness = clamp(material.standard_params.x, 0.0, 1.0);\n        let specular_strength = max(material.standard_params.y, 0.0);\n        let metallic = clamp(material.standard_params.z, 0.0, 1.0);\n        let rim_strength = max(material.standard_params.w, 0.0);\n        let shininess = max(1.0, 128.0 * (1.0 - roughness) + 1.0);\n        let specular = pow(max(dot(n, h), 0.0), shininess) * specular_strength;\n        let rim = pow(1.0 - max(dot(n, v), 0.0), 2.0) * rim_strength;\n        let diffuse = base * (0.04 + (1.0 - metallic) * lambert);\n        let rgb = diffuse + vec3f(specular + rim) + emissive;\n        return vec4f(clamp(rgb, vec3f(0.0), vec3f(1.0)), alpha);\n    }\n\n    let specular = pow(max(dot(n, h), 0.0), max(material.params.w, 1.0));\n    let rgb = base * (material.params.x + material.params.y * lambert) +\n        vec3f(material.params.z * specular);\n    return vec4f(clamp(rgb, vec3f(0.0), vec3f(1.0)), alpha);\n}\n\nfn evaluate_scene_material(\n    item_color: vec4f,\n    normal: vec3f,\n    world_position: vec3f,\n    camera_position: vec3f,\n) -> vec4f {\n    return evaluate_scene_material_linear_item(\n        semantic_color_to_linear(item_color), normal, world_position, camera_position);\n}\n\nfn depth_cue_coordinate(cue: vec3f) -> f32 {\n    let metric = i32(material.depth_cue_extra.x + 0.5);\n    if (metric == 1) {\n        return cue.y;\n    }\n    if (metric == 2) {\n        return cue.z;\n    }\n    return cue.x;\n}\n\nfn depth_cue_factor(cue: vec3f) -> f32 {\n    let strength = clamp(material.depth_cue.z, 0.0, 1.0);\n    let mode = i32(material.depth_cue.w + 0.5);\n    if (mode == 0 || strength <= 0.0) {\n        return 0.0;\n    }\n\n    let denom = max(material.depth_cue.y - material.depth_cue.x, 1e-6);\n    let coord = depth_cue_coordinate(cue);\n    var t = clamp((coord - material.depth_cue.x) / denom, 0.0, 1.0);\n    let falloff = i32(material.depth_cue_extra.y + 0.5);\n    if (falloff == 1) {\n        let density = max(material.depth_cue_extra.z, 1e-6);\n        t = (1.0 - exp(-density * t)) / max(1.0 - exp(-density), 1e-6);\n    }\n    return t * strength;\n}\n\nfn apply_depth_cue(rgb: vec3f, cue: vec3f) -> vec3f {\n    let mode = i32(material.depth_cue.w + 0.5);\n    let t = depth_cue_factor(cue);\n    if (t <= 0.0) {\n        return rgb;\n    }\n    if (mode == 1) {\n        return mix(rgb, srgb_to_linear(material.depth_cue_color.rgb), t);\n    }\n    if (mode == 2) {\n        let luma = dot(rgb, vec3f(0.2126, 0.7152, 0.0722));\n        return mix(rgb, vec3f(luma), t);\n    }\n    if (mode == 3) {\n        return mix(rgb, vec3f(0.0), t);\n    }\n    return rgb;\n}\n\n\nstruct FragmentIn {\n    @location(0) color: vec4f,\n    @location(1) center_view: vec4f,\n    @location(2) radius: f32,\n    @location(3) sprite_scale: f32,\n    @location(4) coord: vec2f,\n}\n\nstruct FragmentOut {\n    @builtin(frag_depth) depth: f32,\n    @location(0) color: vec4f,\n}\n\nfn coverage_threshold(position: vec4f) -> f32 {\n    return fract(52.9829189 * fract(0.06711056 * position.x + 0.00583715 * position.y));\n}\n\nfn project_depth(view_position: vec4f) -> vec4f {\n    var clip = mvp.proj * view_position;\n    clip.y = -clip.y;\n    clip.z = 0.5 * (clip.z + clip.w);\n    return clip;\n}\n\nfn raycast_sphere(coord: vec2f, center_view: vec4f, radius: f32) -> vec4f {\n    let ortho = abs(mvp.proj[3][3]) > 0.5;\n    var ro = vec3f(0.0);\n    var rd = vec3f(0.0, 0.0, -1.0);\n    let plane_point = center_view.xyz + vec3f(coord.x * radius, coord.y * radius, 0.0);\n    if (ortho) {\n        ro = plane_point + vec3f(0.0, 0.0, radius);\n    } else {\n        rd = normalize(plane_point);\n    }\n\n    let oc = ro - center_view.xyz;\n    let b = dot(oc, rd);\n    let c = dot(oc, oc) - radius * radius;\n    let h = b * b - c;\n    if (h < 0.0) {\n        return vec4f(0.0);\n    }\n    let t = -b - sqrt(h);\n    if (t <= 0.0) {\n        return vec4f(0.0);\n    }\n    return vec4f(ro + t * rd, 1.0);\n}\n\nfn view_to_world_position(view_position: vec3f) -> vec3f {\n    let linear = mat3x3f(mvp.view[0].xyz, mvp.view[1].xyz, mvp.view[2].xyz);\n    let inv_linear = dvz_inverse_mat3x3f(linear);\n    return inv_linear * (view_position - mvp.view[3].xyz);\n}\n\nfn view_to_world_direction(view_direction: vec3f) -> vec3f {\n    let linear = mat3x3f(mvp.view[0].xyz, mvp.view[1].xyz, mvp.view[2].xyz);\n    return dvz_inverse_mat3x3f(linear) * view_direction;\n}\n\n@fragment\nfn main(input: FragmentIn, @builtin(position) frag_position: vec4f) -> FragmentOut {\n    let coord = vec2f(input.coord.x, -input.coord.y);\n    let dist = length(coord);\n    let coverage = clamp((1.0 - dist) / max(fwidth(dist), 1e-6) + 0.5, 0.0, 1.0);\n    if (coverage <= coverage_threshold(frag_position)) {\n        discard;\n    }\n\n    let surface_coord = select(coord, coord / max(dist, 1e-6), dist > 1.0);\n    let edge = 1.0 - dot(surface_coord, surface_coord);\n    var normal_view = normalize(vec3f(surface_coord, sqrt(max(edge, 0.0))));\n    var surface_view = input.center_view + vec4f(normal_view * input.radius, 0.0);\n    let mode = i32(material.depth_cue_extra.w + 0.5);\n    if (mode == 1) {\n        surface_view = raycast_sphere(surface_coord, input.center_view, input.radius);\n        if (surface_view.w == 0.0) {\n            discard;\n        }\n        normal_view = normalize(surface_view.xyz - input.center_view.xyz);\n    }\n\n    let depth_clip = project_depth(surface_view);\n    let depth = clamp(depth_clip.z / max(abs(depth_clip.w), 1e-6), 0.0, 1.0);\n    let world_position = view_to_world_position(surface_view.xyz);\n    let camera_position = camera_position_from_view();\n    let normal_world = normalize(view_to_world_direction(normal_view));\n    let shaded = evaluate_scene_material(input.color, normal_world, world_position, camera_position);\n    let cue = vec3f(depth, length(camera_position - world_position), length(world_position));\n    let color = vec4f(apply_depth_cue(shaded.rgb, cue), shaded.a);\n    if (color.a <= 0.0) {\n        discard;\n    }\n    return FragmentOut(depth, color);\n}\n"
+    },
+    {
+      "cmd": "CreateBindGroupLayout",
+      "id": 5008,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "visibility": [
+            "VERTEX",
+            "FRAGMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "cmd": "CreateRenderPipeline",
+      "id": 5007,
+      "vertex_buffer_slots": 3,
+      "vertex_shader_module_id": 5005,
+      "fragment_shader_module_id": 5006,
+      "builtin_pipeline": "scene.sphere",
+      "builtin_version": 1,
+      "bind_group_layout_ids": [
+        5001,
+        5008
+      ],
+      "topology": "triangle-list",
+      "vertex_buffers": [
+        {
+          "array_stride": 12,
+          "step_mode": "instance",
+          "attributes": [
+            {
+              "shader_location": 0,
+              "offset": 0,
+              "format": "float32x3"
+            }
+          ]
+        },
+        {
+          "array_stride": 4,
+          "step_mode": "instance",
+          "attributes": [
+            {
+              "shader_location": 1,
+              "offset": 0,
+              "format": "unorm8x4"
+            }
+          ]
+        },
+        {
+          "array_stride": 4,
+          "step_mode": "instance",
+          "attributes": [
+            {
+              "shader_location": 2,
+              "offset": 0,
+              "format": "float32"
+            }
+          ]
+        }
+      ],
+      "multisample": {
+        "sample_count": 1,
+        "alpha_to_coverage_enabled": false
+      },
+      "color_targets": [
+        {
+          "format": "rgba8unorm",
+          "write_mask": [
+            "red",
+            "green",
+            "blue",
+            "alpha"
+          ]
+        }
+      ],
+      "depth_stencil": {
+        "format": "depth32float",
+        "depth_write_enabled": true,
+        "depth_compare": "less-equal"
+      }
+    },
+    {
+      "cmd": "CreateBindGroup",
+      "id": 5009,
+      "bind_group_layout_id": 5008,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 23,
+          "offset": 0,
+          "size": 144
+        }
+      ]
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 5010,
+      "size": 208,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 5011,
+      "size": 16,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "CreateBindGroup",
+      "id": 5012,
+      "bind_group_layout_id": 5001,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 5010,
+          "offset": 0,
+          "size": 208
+        },
+        {
+          "binding": 1,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 5011,
+          "offset": 0,
+          "size": 16
+        }
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 5010,
+      "offset": 0,
+      "size": 208,
+      "data": "LrxHP4b9ob1y2B4/AAAAAAb0Ib64Tm8/LdWiPgAAAAB/7Rq/LEqxvkOCNz8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAABAwAAAgD95ghpAAAAAAAAAAAAAAAAAAAAAAHmCGkAAAAAAAAAAAAAAAAAAAAAAmkGAvwAAgL8AAAAAAAAAAEgBTb4AAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 5011,
+      "offset": 0,
+      "size": 16,
+      "data": "AAAAAAAAAAAAAIBCAACAQg=="
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5013,
+      "stage": "VERTEX",
+      "format": "wgsl",
+      "entry_point": "main",
+      "builtin_family": "scene.mesh",
+      "builtin_variant": "textured",
+      "builtin_version": 1,
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n// datoviz-builtin-shader: scene.mesh textured vertex v1\n\n// Shared transform pipeline for builtin scene vertex shaders.\n//\n// Bind group layout (group 0):\n//   binding 0: MVP { model, view, proj, time, flags }\n//   binding 1: Viewport { x, y, width, height }\n\nstruct MVP {\n    model: mat4x4f,\n    view: mat4x4f,\n    proj: mat4x4f,\n    time: f32,\n    flags: u32,\n}\n\nstruct Viewport {\n    rect: vec4f,\n}\n\n@group(0) @binding(0) var<uniform> mvp: MVP;\n@group(0) @binding(1) var<uniform> viewport: Viewport;\n\nfn transform(position: vec3f) -> vec4f {\n    return mvp.proj * mvp.view * mvp.model * vec4f(position, 1.0);\n}\n\nfn dvz_inverse_mat3x3f(m: mat3x3f) -> mat3x3f {\n    let c0 = cross(m[1], m[2]);\n    let c1 = cross(m[2], m[0]);\n    let c2 = cross(m[0], m[1]);\n    let inv_det = 1.0 / dot(m[0], c0);\n    return transpose(mat3x3f(c0 * inv_det, c1 * inv_det, c2 * inv_det));\n}\n\nfn dvz_affine_inverse_translation(m: mat4x4f) -> vec3f {\n    let linear = mat3x3f(m[0].xyz, m[1].xyz, m[2].xyz);\n    return -(dvz_inverse_mat3x3f(linear) * m[3].xyz);\n}\n\nfn camera_position_from_view() -> vec3f {\n    return dvz_affine_inverse_translation(mvp.view);\n}\n\n\nstruct VertexIn {\n    @location(0) position: vec3f,\n    @location(1) color: vec4f,\n    @location(2) normal: vec3f,\n    @location(3) uv: vec2f,\n}\n\nstruct VertexOut {\n    @builtin(position) position: vec4f,\n    @location(0) color: vec4f,\n    @location(1) normal: vec3f,\n    @location(2) uv: vec2f,\n    @location(3) depth: f32,\n    @location(4) world_position: vec3f,\n    @location(5) camera_position: vec3f,\n}\n\n@vertex\nfn main(input: VertexIn) -> VertexOut {\n    var output: VertexOut;\n    let world = mvp.model * vec4f(input.position, 1.0);\n    let clip = transform(input.position);\n    output.position = clip;\n    output.color = input.color;\n    output.normal = mat3x3f(\n        mvp.model[0].xyz,\n        mvp.model[1].xyz,\n        mvp.model[2].xyz\n    ) * input.normal;\n    output.uv = input.uv;\n    output.depth = clip.z / max(abs(clip.w), 1e-6);\n    output.world_position = world.xyz;\n    output.camera_position = camera_position_from_view();\n    return output;\n}\n"
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5014,
+      "stage": "FRAGMENT",
+      "format": "wgsl",
+      "entry_point": "main",
+      "builtin_family": "scene.mesh",
+      "builtin_variant": "textured",
+      "builtin_version": 1,
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n// datoviz-builtin-shader: scene.mesh textured fragment v1\n\nfn srgb_to_linear(srgb: vec3f) -> vec3f {\n    let clipped = clamp(srgb, vec3f(0.0), vec3f(1.0));\n    let lo = clipped / vec3f(12.92);\n    let hi = pow((clipped + vec3f(0.055)) / vec3f(1.055), vec3f(2.4));\n    return select(hi, lo, clipped <= vec3f(0.04045));\n}\n\nfn semantic_color_to_linear(color: vec4f) -> vec4f {\n    let clipped = clamp(color.rgb, vec3f(0.0), vec3f(1.0));\n    if (DVZ_LEGACY_SRGB_BLEND) {\n        return vec4f(clipped, clamp(color.a, 0.0, 1.0));\n    }\n    return vec4f(srgb_to_linear(clipped), clamp(color.a, 0.0, 1.0));\n}\n\nfn sampled_texture_color_to_linear(color: vec4f, params: vec4f) -> vec4f {\n    if (params.x > 0.5) {\n        return semantic_color_to_linear(color);\n    }\n    return vec4f(color.rgb, clamp(color.a, 0.0, 1.0));\n}\n\nstruct SceneMaterial {\n    light_direction: vec4f,\n    params: vec4f,\n    model: vec4f,\n    base_color_factor: vec4f,\n    standard_params: vec4f,\n    emissive_rim: vec4f,\n    depth_cue: vec4f,\n    depth_cue_color: vec4f,\n    depth_cue_extra: vec4f,\n}\n\n@group(1) @binding(0) var<uniform> material: SceneMaterial;\n\nfn evaluate_scene_material_linear_item(\n    linear_item_color: vec4f,\n    normal: vec3f,\n    world_position: vec3f,\n    camera_position: vec3f,\n) -> vec4f {\n    let model = i32(material.model.x + 0.5);\n    let opacity = clamp(material.model.y, 0.0, 1.0);\n    let linear_base_color = semantic_color_to_linear(material.base_color_factor);\n    let emissive = srgb_to_linear(material.emissive_rim.rgb);\n    let base = linear_item_color.rgb * linear_base_color.rgb;\n    let alpha = linear_item_color.a * linear_base_color.a * opacity;\n    if (model == 0) {\n        return vec4f(clamp(base + emissive, vec3f(0.0), vec3f(1.0)), alpha);\n    }\n\n    let n = normalize(normal);\n    let l = normalize(material.light_direction.xyz);\n    let v = normalize(camera_position - world_position);\n    let h = normalize(l + v);\n    let lambert = max(dot(n, l), 0.0);\n    if (model == 2) {\n        let roughness = clamp(material.standard_params.x, 0.0, 1.0);\n        let specular_strength = max(material.standard_params.y, 0.0);\n        let metallic = clamp(material.standard_params.z, 0.0, 1.0);\n        let rim_strength = max(material.standard_params.w, 0.0);\n        let shininess = max(1.0, 128.0 * (1.0 - roughness) + 1.0);\n        let specular = pow(max(dot(n, h), 0.0), shininess) * specular_strength;\n        let rim = pow(1.0 - max(dot(n, v), 0.0), 2.0) * rim_strength;\n        let diffuse = base * (0.04 + (1.0 - metallic) * lambert);\n        let rgb = diffuse + vec3f(specular + rim) + emissive;\n        return vec4f(clamp(rgb, vec3f(0.0), vec3f(1.0)), alpha);\n    }\n\n    let specular = pow(max(dot(n, h), 0.0), max(material.params.w, 1.0));\n    let rgb = base * (material.params.x + material.params.y * lambert) +\n        vec3f(material.params.z * specular);\n    return vec4f(clamp(rgb, vec3f(0.0), vec3f(1.0)), alpha);\n}\n\nfn evaluate_scene_material(\n    item_color: vec4f,\n    normal: vec3f,\n    world_position: vec3f,\n    camera_position: vec3f,\n) -> vec4f {\n    return evaluate_scene_material_linear_item(\n        semantic_color_to_linear(item_color), normal, world_position, camera_position);\n}\n\nfn depth_cue_coordinate(cue: vec3f) -> f32 {\n    let metric = i32(material.depth_cue_extra.x + 0.5);\n    if (metric == 1) {\n        return cue.y;\n    }\n    if (metric == 2) {\n        return cue.z;\n    }\n    return cue.x;\n}\n\nfn depth_cue_factor(cue: vec3f) -> f32 {\n    let strength = clamp(material.depth_cue.z, 0.0, 1.0);\n    let mode = i32(material.depth_cue.w + 0.5);\n    if (mode == 0 || strength <= 0.0) {\n        return 0.0;\n    }\n\n    let denom = max(material.depth_cue.y - material.depth_cue.x, 1e-6);\n    let coord = depth_cue_coordinate(cue);\n    var t = clamp((coord - material.depth_cue.x) / denom, 0.0, 1.0);\n    let falloff = i32(material.depth_cue_extra.y + 0.5);\n    if (falloff == 1) {\n        let density = max(material.depth_cue_extra.z, 1e-6);\n        t = (1.0 - exp(-density * t)) / max(1.0 - exp(-density), 1e-6);\n    }\n    return t * strength;\n}\n\nfn apply_depth_cue(rgb: vec3f, cue: vec3f) -> vec3f {\n    let mode = i32(material.depth_cue.w + 0.5);\n    let t = depth_cue_factor(cue);\n    if (t <= 0.0) {\n        return rgb;\n    }\n    if (mode == 1) {\n        return mix(rgb, srgb_to_linear(material.depth_cue_color.rgb), t);\n    }\n    if (mode == 2) {\n        let luma = dot(rgb, vec3f(0.2126, 0.7152, 0.0722));\n        return mix(rgb, vec3f(luma), t);\n    }\n    if (mode == 3) {\n        return mix(rgb, vec3f(0.0), t);\n    }\n    return rgb;\n}\n\n\n@group(1) @binding(1) var tex: texture_2d<f32>;\n@group(1) @binding(2) var samp: sampler;\n@group(1) @binding(3) var<uniform> texture_params: vec4f;\n\nstruct FragmentIn {\n    @location(0) color: vec4f,\n    @location(1) normal: vec3f,\n    @location(2) uv: vec2f,\n    @location(3) depth: f32,\n    @location(4) world_position: vec3f,\n    @location(5) camera_position: vec3f,\n}\n\n@fragment\nfn main(input: FragmentIn) -> @location(0) vec4f {\n    let texel = sampled_texture_color_to_linear(textureSample(tex, samp, input.uv), texture_params);\n    let base = texel * semantic_color_to_linear(input.color);\n    let shaded = evaluate_scene_material_linear_item(\n        base, input.normal, input.world_position, input.camera_position);\n    let cue = vec3f(\n        input.depth, length(input.camera_position - input.world_position),\n        length(input.world_position));\n    return vec4f(apply_depth_cue(shaded.rgb, cue), shaded.a);\n}\n"
+    },
+    {
+      "cmd": "CreateBindGroupLayout",
+      "id": 5016,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "visibility": [
+            "VERTEX",
+            "FRAGMENT"
+          ]
+        },
+        {
+          "binding": 1,
+          "binding_type": "sampled_texture",
+          "visibility": [
+            "FRAGMENT"
+          ]
+        },
+        {
+          "binding": 2,
+          "binding_type": "sampler",
+          "visibility": [
+            "FRAGMENT"
+          ]
+        },
+        {
+          "binding": 3,
+          "binding_type": "uniform_buffer",
+          "visibility": [
+            "FRAGMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "cmd": "CreateRenderPipeline",
+      "id": 5015,
+      "vertex_buffer_slots": 4,
+      "vertex_shader_module_id": 5013,
+      "fragment_shader_module_id": 5014,
+      "builtin_pipeline": "scene.mesh",
+      "builtin_version": 1,
+      "bind_group_layout_ids": [
+        5001,
+        5016
+      ],
+      "topology": "triangle-list",
+      "vertex_buffers": [
+        {
+          "array_stride": 12,
+          "step_mode": "vertex",
+          "attributes": [
+            {
+              "shader_location": 0,
+              "offset": 0,
+              "format": "float32x3"
+            }
+          ]
+        },
+        {
+          "array_stride": 4,
+          "step_mode": "vertex",
+          "attributes": [
+            {
+              "shader_location": 1,
+              "offset": 0,
+              "format": "unorm8x4"
+            }
+          ]
+        },
+        {
+          "array_stride": 12,
+          "step_mode": "vertex",
+          "attributes": [
+            {
+              "shader_location": 2,
+              "offset": 0,
+              "format": "float32x3"
+            }
+          ]
+        },
+        {
+          "array_stride": 8,
+          "step_mode": "vertex",
+          "attributes": [
+            {
+              "shader_location": 3,
+              "offset": 0,
+              "format": "float32x2"
+            }
+          ]
+        }
+      ],
+      "multisample": {
+        "sample_count": 1,
+        "alpha_to_coverage_enabled": false
+      },
+      "color_targets": [
+        {
+          "format": "rgba8unorm",
+          "write_mask": [
+            "red",
+            "green",
+            "blue",
+            "alpha"
+          ]
+        }
+      ],
+      "depth_stencil": {
+        "format": "depth32float",
+        "depth_write_enabled": true,
+        "depth_compare": "less-equal"
+      }
+    },
+    {
+      "cmd": "CreateSampler",
+      "id": 5017,
+      "mag_filter": "linear",
+      "min_filter": "linear",
+      "mipmap_filter": "nearest",
+      "address_mode_u": "clamp-to-edge",
+      "address_mode_v": "clamp-to-edge"
+    },
+    {
+      "cmd": "CreateBuffer",
+      "id": 5018,
+      "size": 16,
+      "usage": [
+        "COPY_DST",
+        "MAP_WRITE",
+        "UNIFORM"
+      ]
+    },
+    {
+      "cmd": "CreateBindGroup",
+      "id": 5019,
+      "bind_group_layout_id": 5016,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 28,
+          "offset": 0,
+          "size": 144
+        },
+        {
+          "binding": 1,
+          "binding_type": "sampled_texture",
+          "resource_kind": "texture",
+          "resource_id": 29
+        },
+        {
+          "binding": 2,
+          "binding_type": "sampler",
+          "resource_kind": "sampler",
+          "resource_id": 5017
+        },
+        {
+          "binding": 3,
+          "binding_type": "uniform_buffer",
+          "resource_kind": "buffer",
+          "resource_id": 5018,
+          "offset": 0,
+          "size": 16
+        }
+      ]
+    },
+    {
+      "cmd": "WriteBuffer",
+      "buffer_id": 5018,
+      "offset": 0,
+      "size": 16,
+      "data": "AACAPwAAAAAAAAAAAAAAAA=="
+    },
+    {
+      "cmd": "BeginCommandEncoder",
+      "id": 10000
+    },
+    {
+      "cmd": "BeginRenderPass",
+      "id": 10001,
+      "encoder_id": 10000,
+      "color_attachments": [
+        {
+          "texture_id": 5000,
+          "load_op": "clear",
+          "store_op": "store",
+          "clear_value": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          }
+        }
+      ],
+      "depth_stencil_attachment": {
+        "texture_id": 0,
+        "depth_load_op": "clear",
+        "depth_store_op": "store",
+        "depth_clear_value": 1
+      }
+    },
+    {
+      "cmd": "SetViewport",
+      "pass_id": 10001,
+      "x": 0,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "min_depth": 0,
+      "max_depth": 1
+    },
+    {
+      "cmd": "SetScissor",
+      "pass_id": 10001,
+      "x": 0,
+      "y": 0,
+      "width": 64,
+      "height": 64
+    },
+    {
+      "cmd": "SetPipeline",
+      "pass_id": 10001,
+      "pipeline_id": 5007
+    },
+    {
+      "cmd": "SetBindGroup",
+      "pass_id": 10001,
+      "slot": 0,
+      "bind_group_id": 5004
+    },
+    {
+      "cmd": "SetBindGroup",
+      "pass_id": 10001,
+      "slot": 1,
+      "bind_group_id": 5009
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 0,
+      "buffer_id": 20,
+      "offset": 0
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 1,
+      "buffer_id": 21,
+      "offset": 0
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 2,
+      "buffer_id": 22,
+      "offset": 0
+    },
+    {
+      "cmd": "Draw",
+      "pass_id": 10001,
+      "vertex_count": 6,
+      "instance_count": 3,
+      "first_vertex": 0,
+      "first_instance": 0
+    },
+    {
+      "cmd": "SetPipeline",
+      "pass_id": 10001,
+      "pipeline_id": 5015
+    },
+    {
+      "cmd": "SetBindGroup",
+      "pass_id": 10001,
+      "slot": 0,
+      "bind_group_id": 5012
+    },
+    {
+      "cmd": "SetBindGroup",
+      "pass_id": 10001,
+      "slot": 1,
+      "bind_group_id": 5019
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 0,
+      "buffer_id": 24,
+      "offset": 0
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 1,
+      "buffer_id": 25,
+      "offset": 0
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 2,
+      "buffer_id": 26,
+      "offset": 0
+    },
+    {
+      "cmd": "SetVertexBuffer",
+      "pass_id": 10001,
+      "slot": 3,
+      "buffer_id": 27,
+      "offset": 0
+    },
+    {
+      "cmd": "Draw",
+      "pass_id": 10001,
+      "vertex_count": 36,
+      "instance_count": 1,
+      "first_vertex": 0,
+      "first_instance": 0
+    },
+    {
+      "cmd": "EndRenderPass",
+      "pass_id": 10001
+    },
+    {
+      "cmd": "CreateSampler",
+      "id": 5020,
+      "mag_filter": "linear",
+      "min_filter": "linear",
+      "mipmap_filter": "nearest",
+      "address_mode_u": "clamp-to-edge",
+      "address_mode_v": "clamp-to-edge"
+    },
+    {
+      "cmd": "CreateBindGroupLayout",
+      "id": 5021,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "sampled_texture",
+          "visibility": [
+            "FRAGMENT"
+          ]
+        },
+        {
+          "binding": 1,
+          "binding_type": "sampler",
+          "visibility": [
+            "FRAGMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "cmd": "CreateBindGroup",
+      "id": 5022,
+      "bind_group_layout_id": 5021,
+      "entries": [
+        {
+          "binding": 0,
+          "binding_type": "sampled_texture",
+          "resource_kind": "texture",
+          "resource_id": 5000
+        },
+        {
+          "binding": 1,
+          "binding_type": "sampler",
+          "resource_kind": "sampler",
+          "resource_id": 5020
+        }
+      ]
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5023,
+      "stage": "VERTEX",
+      "format": "wgsl",
+      "entry_point": "main",
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n@vertex fn main(@builtin(vertex_index) idx: u32) -> @builtin(position) vec4f { var pos = array<vec2f, 3>(vec2f(-1.0, -1.0), vec2f(3.0, -1.0), vec2f(-1.0, 3.0)); return vec4f(pos[idx], 0.0, 1.0); }"
+    },
+    {
+      "cmd": "CreateShaderModule",
+      "id": 5024,
+      "stage": "FRAGMENT",
+      "format": "wgsl",
+      "entry_point": "main",
+      "code": "const DVZ_LEGACY_SRGB_BLEND: bool = false;\n@group(0) @binding(0) var source_tex: texture_2d<f32>;\n@group(0) @binding(1) var samp: sampler;\nfn linear_to_srgb(linear_color: vec3f) -> vec3f {\n    let clipped = clamp(linear_color, vec3f(0.0), vec3f(1.0));\n    let lo = vec3f(12.92) * clipped;\n    let hi = vec3f(1.055) * pow(clipped, vec3f(1.0 / 2.4)) - vec3f(0.055);\n    return select(hi, lo, clipped <= vec3f(0.0031308));\n}\n@fragment fn main(@builtin(position) pos: vec4f) -> @location(0) vec4f {\n    let p = vec2i(pos.xy);\n    let color = textureLoad(source_tex, p, 0);\n    return vec4f(linear_to_srgb(color.rgb), clamp(color.a, 0.0, 1.0));\n}\n"
+    },
+    {
+      "cmd": "CreateRenderPipeline",
+      "id": 5025,
+      "vertex_buffer_slots": 0,
+      "vertex_shader_module_id": 5023,
+      "fragment_shader_module_id": 5024,
+      "bind_group_layout_ids": [
+        5021
+      ],
+      "vertex_buffers": [],
+      "multisample": {
+        "sample_count": 1,
+        "alpha_to_coverage_enabled": false
+      },
+      "color_targets": [
+        {
+          "format": "rgba8unorm",
+          "write_mask": [
+            "red",
+            "green",
+            "blue",
+            "alpha"
+          ]
+        }
+      ]
+    },
+    {
+      "cmd": "BeginRenderPass",
+      "id": 10004,
+      "encoder_id": 10000,
+      "color_attachments": [
+        {
+          "texture_id": 0,
+          "load_op": "clear",
+          "store_op": "store",
+          "clear_value": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          }
+        }
+      ]
+    },
+    {
+      "cmd": "SetPipeline",
+      "pass_id": 10004,
+      "pipeline_id": 5025
+    },
+    {
+      "cmd": "SetBindGroup",
+      "pass_id": 10004,
+      "slot": 0,
+      "bind_group_id": 5022
+    },
+    {
+      "cmd": "Draw",
+      "pass_id": 10004,
+      "vertex_count": 3,
+      "instance_count": 1,
+      "first_vertex": 0,
+      "first_instance": 0
+    },
+    {
+      "cmd": "EndRenderPass",
+      "pass_id": 10004
+    },
+    {
+      "cmd": "FinishCommandEncoder",
+      "encoder_id": 10000,
+      "command_buffer_id": 10002
+    },
+    {
+      "cmd": "QueueSubmit",
+      "command_buffer_ids": [
+        10002
+      ],
+      "submission_id": 10003
+    }
+  ],
+  "expected": {
+    "outcome": "success"
+  }
+}
